@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+enum FlipConnectErrors: Error {
+    case malformedURI
+    case wrongParameters(message: String)
+}

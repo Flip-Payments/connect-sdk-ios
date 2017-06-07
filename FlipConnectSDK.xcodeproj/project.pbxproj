@@ -11,6 +11,7 @@
 		A117ACEA1EE782FE00B74705 /* FlipConnectSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACE91EE782FE00B74705 /* FlipConnectSDKTests.swift */; };
 		A117ACEC1EE782FE00B74705 /* FlipConnectSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */; };
+		A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF71EE7851D00B74705 /* FCErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		A117ACE91EE782FE00B74705 /* FlipConnectSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipConnectSDKTests.swift; sourceTree = "<group>"; };
 		A117ACEB1EE782FE00B74705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		A117ACF71EE7851D00B74705 /* FCErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 				A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */,
 				A117ACDF1EE782FE00B74705 /* Info.plist */,
 				A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */,
+				A117ACF71EE7851D00B74705 /* FCErrors.swift */,
 			);
 			path = FlipConnectSDK;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
+				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
