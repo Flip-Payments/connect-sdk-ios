@@ -55,6 +55,25 @@ class FlipConnectSDKTests: XCTestCase {
         }
     }
     
+    func testWebUrlMount() {
+        let bundle = Bundle.init(for: type(of: self))
+        do {
+            let utils = try Utils(jsonArray: bundle.infoDictionary)
+            
+            let testURL = URL(string: "testing://test")!
+            let clientID = UUID().uuidString
+            
+            let url = utils.mountWebURL(withRedirectUri: testURL, andID: clientID)
+            
+            let expected = "\(FCConsts.connectWebUrl)?clientId=\(clientID)&redirectUri=\(testURL)&state=\(UserDefaults.standard.state!)&responseType=code"
+            
+            XCTAssertTrue(expected == url.absoluteString)
+        } catch let error {
+            print(error.localizedDescription)
+            XCTAssertTrue(false)
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
