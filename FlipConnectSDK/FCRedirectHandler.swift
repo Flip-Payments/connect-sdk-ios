@@ -10,14 +10,15 @@ import Foundation
 
 public typealias JSON = [String: Any]
 
-struct Utils {
+struct FCRedirectHandler {
     
     private let identifier = "FlipConnectSDK"
     private let urlNameKey = "CFBundleURLName"
     private let urlTypeKey = "CFBundleURLTypes"
     private let urlSchemeKey = "CFBundleURLSchemes"
     private let urlQueryStateKey = "state"
-    private let urlQueryAuthCodeKey = "authcode"
+    private let urlQueryAuthCodeKey = "code"
+    private let authorizeOperation = "authorize"
     
     private var plist: JSON = [:]
     private var config: [JSON] = [[:]]
@@ -74,15 +75,30 @@ struct Utils {
             throw FCErrors.malformedURI
         }
         
-        //TODO: Verificar State
+        // Verify if the state is valid
         let stateValue = items.filter{ $0.name.lowercased() == urlQueryStateKey }.first?.value
-        
         guard stateValue! == UserDefaults.standard.state! else {
             throw FCErrors.stateIsInvalid
         }
         
-        guard items.first?.name.lowercased() == urlQueryAuthCodeKey, let propertyValue = items.first?.value else {
-            throw FCErrors.wrongParameters(message: "Parameters from URI are not correct")
+        //deeplink://something?operation=authorize&code=f117d5fe-a5ef-40bd-b171-55c8210c1cbd&state=undefined
+        guard let operation = items.first?.value! else {
+            throw FCErrors.invalidOperation
+        }
+        
+        switch operation {
+        case authorizeOperation:
+            try handleAuthorizeRedirect(queryItems: items)
+        default:
+            throw FCErrors.invalidOperation
+        }
+    }
+    
+    func handleAuthorizeRedirect(queryItems items: [URLQueryItem]) throws {
+        let authorizationCode = items.filter{ $0.name == urlQueryAuthCodeKey }.first
+        
+        guard let propertyValue = authorizationCode?.value else {
+            throw FCErrors.wrongParameters(message: "\(urlQueryAuthCodeKey) was not found as a parameter")
         }
         
         UserDefaults.standard.authorizationCode = propertyValue

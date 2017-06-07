@@ -17,4 +17,5 @@ enum FCErrors: Error {
     case urlSchemeDoesNotExist
     case incorrectIdentifier
     case stateIsInvalid
+    case invalidOperation
 }

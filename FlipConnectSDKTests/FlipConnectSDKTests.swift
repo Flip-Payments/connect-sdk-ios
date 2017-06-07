@@ -47,30 +47,30 @@ class FlipConnectSDKTests: XCTestCase {
     func testBundle() {
         let bundle = Bundle.init(for: type(of: self))
         do {
-            let result = try Utils(jsonArray: bundle.infoDictionary)
+            let result = try FCRedirectHandler(jsonArray: bundle.infoDictionary)
             XCTAssertTrue(result.urlScheme == "testuri")
-        } catch let error {
-            print(error.localizedDescription)
-            XCTAssertTrue(false)
+        } catch {
+            print("\(error)")
+            XCTFail()
         }
     }
     
     func testWebUrlMount() {
         let bundle = Bundle.init(for: type(of: self))
         do {
-            let utils = try Utils(jsonArray: bundle.infoDictionary)
+            let redirectHandler = try FCRedirectHandler(jsonArray: bundle.infoDictionary)
             
             let testURL = URL(string: "testing://test")!
             let clientID = UUID().uuidString
             
-            let url = utils.mountWebURL(withRedirectUri: testURL, andID: clientID)
+            let url = redirectHandler.mountWebURL(withRedirectUri: testURL, andID: clientID)
             
             let expected = "\(FCConsts.connectWebUrl)?clientId=\(clientID)&redirectUri=\(testURL)&state=\(UserDefaults.standard.state!)&responseType=code"
             
             XCTAssertTrue(expected == url.absoluteString)
-        } catch let error {
-            print(error.localizedDescription)
-            XCTAssertTrue(false)
+        } catch {
+            print("\(error)")
+            XCTFail()
         }
     }
     
