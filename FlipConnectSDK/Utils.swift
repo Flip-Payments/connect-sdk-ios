@@ -57,7 +57,7 @@ struct Utils {
         self.urlScheme = urlScheme.lowercased()
     }
     
-    func mountURL(withRedirectUri uri: URL, andID clientID: String) -> URL {
+    func mountWebURL(withRedirectUri uri: URL, andID clientID: String) -> URL {
         UserDefaults.standard.state = UUID().uuidString
         return URL(string: "\(FCConsts.connectWebUrl)?clientId=\(clientID)&redirectUri=\(uri.absoluteString)&state=\(UserDefaults.standard.state!)&responseType=code")!
     }
