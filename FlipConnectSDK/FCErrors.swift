@@ -8,7 +8,12 @@
 
 import Foundation
 
-enum FlipConnectErrors: Error {
+enum FCErrors: Error {
     case malformedURI
     case wrongParameters(message: String)
+    case plistNotFound
+    case configNotFound
+    case urlNameDifferentFromIdentifier
+    case urlSchemeDoesNotExist
+    case incorrectIdentifier
 }

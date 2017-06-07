@@ -12,6 +12,8 @@
 		A117ACEC1EE782FE00B74705 /* FlipConnectSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */; };
 		A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF71EE7851D00B74705 /* FCErrors.swift */; };
+		A117ACFA1EE7885200B74705 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF91EE7885200B74705 /* Utils.swift */; };
+		A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACFB1EE7A43A00B74705 /* FCConsts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,8 @@
 		A117ACEB1EE782FE00B74705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		A117ACF71EE7851D00B74705 /* FCErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCErrors.swift; sourceTree = "<group>"; };
+		A117ACF91EE7885200B74705 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		A117ACFB1EE7A43A00B74705 /* FCConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCConsts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				A117ACDF1EE782FE00B74705 /* Info.plist */,
 				A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */,
 				A117ACF71EE7851D00B74705 /* FCErrors.swift */,
+				A117ACF91EE7885200B74705 /* Utils.swift */,
+				A117ACFB1EE7A43A00B74705 /* FCConsts.swift */,
 			);
 			path = FlipConnectSDK;
 			sourceTree = "<group>";
@@ -203,8 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
+				A117ACFA1EE7885200B74705 /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
