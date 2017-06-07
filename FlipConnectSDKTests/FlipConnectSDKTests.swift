@@ -44,6 +44,17 @@ class FlipConnectSDKTests: XCTestCase {
         UserDefaults.standard.set(testConsts.authorizationCode, forKey: testConsts.authorizationCodeKey)
     }
     
+    func testBundle() {
+        let bundle = Bundle.init(for: type(of: self))
+        do {
+            let result = try PlistURL(jsonArray: bundle.infoDictionary)
+            XCTAssertTrue(result.urlScheme == "testuri")
+        } catch let error {
+            print(error.localizedDescription)
+            XCTAssertTrue(false)
+        }
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
