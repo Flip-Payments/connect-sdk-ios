@@ -47,7 +47,7 @@ class FlipConnectSDKTests: XCTestCase {
     func testBundle() {
         let bundle = Bundle.init(for: type(of: self))
         do {
-            let result = try PlistURL(jsonArray: bundle.infoDictionary)
+            let result = try Utils(jsonArray: bundle.infoDictionary)
             XCTAssertTrue(result.urlScheme == "testuri")
         } catch let error {
             print(error.localizedDescription)
