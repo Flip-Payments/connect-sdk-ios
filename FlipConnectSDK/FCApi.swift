@@ -9,6 +9,49 @@
 import Foundation
 
 struct FCApi {
+    
+    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+        let parameters: Parameters = [
+            "grantType": "authorization_code",
+            "authorizationCode": "\(code)",
+            "redirectUri": "\(uri)"
+        ]
+        
+        var resp = JSON()
+        var err: Error? = nil
+        
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            guard error == nil else {
+                err = error
+                return
+            }
+            resp = response
+        }
+        
+        completion(resp, err)
+    }
+    
+    static func requestRefreshToken(tokenToRefresh token: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+        let parameters: Parameters = [
+            "grantType": "refresh_token",
+            "refreshToken": "\(token)",
+            "clientId": "\(id)"
+        ]
+        
+        var resp = JSON()
+        var err: Error? = nil
+        
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            guard error == nil else {
+                err = error
+                return
+            }
+            resp = response
+        }
+        
+        completion(resp, err)
+    }
+    
     static func request(toURL url: URL, withVerb httpMethod: HTTPVerb = .get, withParameters parameters: Parameters? = nil, withHeaders headers: Headers? = nil, withBody body: JSON? = nil, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         var url = url
         var errorResponse: Error? = nil
