@@ -8,11 +8,23 @@
 
 import UIKit
 import CoreData
+import FlipConnectSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        do {
+            let loginFlip = try FCLogin()
+            try loginFlip.handleRedirect(fromURL: url)
+        } catch {
+            print(error)
+        }
+        
+        return true
+    }
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

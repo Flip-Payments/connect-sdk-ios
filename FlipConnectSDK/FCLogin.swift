@@ -29,7 +29,7 @@ public class FCLogin {
     /// Opens Safari with Login Page
     public func openLoginURL() {
         if let clientID = UserDefaults.standard.clientID {
-            let url = FCConsts.mountWebURL(withRedirectUri: URL(string: FCConsts.connectWebUrl)!, andID: clientID)
+            let url = redirectHandler.mountWebURL(withRedirectUri: URL(string: FCConsts.connectWebUrl)!, andID: clientID)
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
@@ -42,10 +42,13 @@ public class FCLogin {
         }
         FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectHandler.urlScheme) { resp, error in
             guard error == nil else {
+                print("deu merda \(error.debugDescription)")
                 return
             }
             
+            //TODO ver porque essa porra tá zoada
             guard let token = resp["accessToken"] as? String else {
+                print("não consegui pegar o token")
                 return
             }
             
