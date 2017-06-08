@@ -74,6 +74,22 @@ class FlipConnectSDKTests: XCTestCase {
         }
     }
     
+    func testApiRequest() {
+        let parameters: Parameters = [
+            "grantType": "authorization_code",
+            "authorizationCode": "29bd29a5-b62c-4876-9e5f-572ee9c53ed9",
+            "redirectUri": "https://www.ipiranga.com.br"
+        ]
+        
+        let requestExpectation = expectation(description: "Make successful API Call")
+        
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response in
+            XCTAssertTrue(response.count > 0)
+            requestExpectation.fulfill()
+        }
+        waitForExpectations(timeout: 60, handler: nil)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

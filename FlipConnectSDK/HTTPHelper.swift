@@ -7,3 +7,15 @@
 //
 
 import Foundation
+
+enum HTTPVerb: String {
+    case get = "GET"
+    case post = "POST"
+    case put = "PUT"
+    case patch = "PATCH"
+    case delete = "DELETE"
+}
+
+typealias Parameters = [String: String]
+
+typealias Headers = [String: String]

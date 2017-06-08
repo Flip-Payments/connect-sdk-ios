@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FlipConnectSDK
 
 class ViewController: UIViewController {
 
