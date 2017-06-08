@@ -58,11 +58,6 @@ struct FCRedirectHandler {
         self.urlScheme = urlScheme.lowercased()
     }
     
-    func mountWebURL(withRedirectUri uri: URL, andID clientID: String) -> URL {
-        UserDefaults.standard.state = UUID().uuidString
-        return URL(string: "\(FCConsts.connectWebUrl)?clientId=\(clientID)&redirectUri=\(uri.absoluteString)&state=\(UserDefaults.standard.state!)&responseType=code")!
-    }
-    
     func handleURI(open url: URL) throws {
         guard url.scheme?.lowercased() == self.urlScheme else {
             // it don't throws because it can be any URL
