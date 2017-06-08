@@ -83,8 +83,9 @@ class FlipConnectSDKTests: XCTestCase {
         
         let requestExpectation = expectation(description: "Make successful API Call")
         
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response in
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
             XCTAssertTrue(response.count > 0)
+            XCTAssertNil(error)
             requestExpectation.fulfill()
         }
         waitForExpectations(timeout: 60, handler: nil)

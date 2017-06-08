@@ -9,8 +9,9 @@
 import Foundation
 
 struct FCApi {
-    static func request(toURL url: URL, withVerb httpMethod: HTTPVerb = .get, withParameters parameters: Parameters? = nil, withHeaders headers: Headers? = nil, withBody body: JSON? = nil, completion: @escaping (_ response: [JSON]) -> Void) {
+    static func request(toURL url: URL, withVerb httpMethod: HTTPVerb = .get, withParameters parameters: Parameters? = nil, withHeaders headers: Headers? = nil, withBody body: JSON? = nil, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         var url = url
+        var errorResponse: Error? = nil
         
         if let prmtrs = parameters {
             url = mountRequestURL(url, withParameters: prmtrs)
@@ -19,27 +20,37 @@ struct FCApi {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         
-//        let postString = "id=13&name=Jack"
-//        
-//        request.httpBody = postString.data(using: .utf8)
+        if let headers = headers {
+            for (key, value) in headers {
+                request.addValue(value, forHTTPHeaderField: key)
+            }
+        }
+        
+        if let body = body {
+            let data = try? JSONSerialization.data(withJSONObject: body, options: [])
+            request.httpBody = data
+        }
+        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(String(describing: error))")
+            guard let data = data, error == nil else {         // check for fundamental networking error
+                errorResponse = FCErrors.requestUnsuccessful(message: "There was an error with the request \(error.debugDescription))")
                 return
             }
             
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(String(describing: response))")
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode < 200, httpStatus.statusCode > 399 {           // check for http errors
+                errorResponse = FCErrors.requestUnsuccessful(message: "StatusCode: \(httpStatus.statusCode) and response = \(String(describing: response))")
+                return
             }
             
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(String(describing: responseString))")
+            var responseJSON = JSON()
             
-            let fodase: JSON = [
-                "sua mae": "me ama"
-            ]
-            completion([fodase])
+            do {
+                responseJSON = try JSONSerialization.jsonObject(with: data, options: []) as! JSON
+            } catch {
+                errorResponse = FCErrors.requestUnsuccessful(message: "Serialization failed: \(error.localizedDescription)")
+            }
+            
+            completion(responseJSON, errorResponse)
         }
         task.resume()
     }

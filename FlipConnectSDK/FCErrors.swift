@@ -18,4 +18,5 @@ enum FCErrors: Error {
     case incorrectIdentifier
     case stateIsInvalid
     case invalidOperation
+    case requestUnsuccessful(message: String)
 }
