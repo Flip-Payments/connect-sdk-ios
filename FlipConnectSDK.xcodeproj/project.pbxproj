@@ -18,6 +18,7 @@
 		A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */; };
 		A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD501EE9289C00B74705 /* FCLogin.swift */; };
 		A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD521EE936AB00B74705 /* PlistHelper.swift */; };
+		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHelper.swift; sourceTree = "<group>"; };
 		A117AD501EE9289C00B74705 /* FCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCLogin.swift; sourceTree = "<group>"; };
 		A117AD521EE936AB00B74705 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
+		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */,
 				A117AD501EE9289C00B74705 /* FCLogin.swift */,
 				A117AD521EE936AB00B74705 /* PlistHelper.swift */,
+				A1E6D5BC1EE9E52400488490 /* FCColors.swift */,
 			);
 			path = FlipConnectSDK;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
+				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
 			);

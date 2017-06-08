@@ -17,9 +17,19 @@ public class FCLogin {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
     }
-    
-    func loginWithButton() {
         
+    public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors = .green, title: String = "Login to FlipConnect") {
+        let buttonColor = FCColorHelper.getUIColor(color: color)
+        
+        let myLoginButton = UIButton(type: .custom)
+        myLoginButton.backgroundColor = buttonColor.fromButton
+        myLoginButton.setTitleColor(buttonColor.fromText, for: UIControlState.normal)
+        myLoginButton.frame = frame
+        myLoginButton.center = center;
+        myLoginButton.setTitle(title, for: .normal)
+        
+        // Handle clicks on the button
+        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)        
     }
     
     @objc public func loginButtonClicked() {
