@@ -58,7 +58,7 @@ class FlipConnectSDKTests: XCTestCase {
     func testWebUrlMount() {
         let bundle = Bundle.init(for: type(of: self))
         do {
-            _ = try FCRedirectHandler(jsonArray: bundle.infoDictionary)
+            _ = try FCRedirectHandler(bundle: bundle.infoDictionary)
             
             let testURL = URL(string: "testing://test")!
             let clientID = UUID().uuidString

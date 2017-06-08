@@ -13,7 +13,8 @@ extension UserDefaults {
         static let AuthorizationCode = "FCAuthorizationCode"
         static let State = "FCState"
         static let ClientID = "FCClientID"
-        static let SecretToken = "FCSecretToken"
+        static let AccessToken = "FCAccessToken"
+        static let RefreshToken = "FCRefreshToken"
     }
     
     public internal(set) var authorizationCode: String? {
@@ -40,11 +41,19 @@ extension UserDefaults {
         }
     }
     
-    public internal(set) var secretToken: String? {
+    public internal(set) var accessToken: String? {
         get {
-            return UserDefaults.standard.string(forKey: Keys.SecretToken)
+            return UserDefaults.standard.string(forKey: Keys.AccessToken)
         } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.SecretToken)
+            UserDefaults.standard.set(newValue, forKey: Keys.AccessToken)
+        }
+    }
+    
+    public internal(set) var refreshToken: String? {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.RefreshToken)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.RefreshToken)
         }
     }
 }

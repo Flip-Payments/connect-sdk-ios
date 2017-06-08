@@ -9,10 +9,14 @@
 import Foundation
 import UIKit
 
-public final class FCLogin {
-    private init() {}
+public class FCLogin {
+    var plistHelper: PlistHelper
+    var redirectHandler: FCRedirectHandler
     
-    static let shared = FCLogin()
+    public init() throws {
+        plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
+        redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
+    }
     
     func loginWithButton() {
         
@@ -22,8 +26,30 @@ public final class FCLogin {
         openLoginURL()
     }
     
+    /// Opens Safari with Login Page
     public func openLoginURL() {
-        let url = FCConsts.mountWebURL(withRedirectUri: URL(string: FCConsts.connectWebUrl)!, andID: "")
-        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        if let clientID = UserDefaults.standard.clientID {
+            let url = FCConsts.mountWebURL(withRedirectUri: URL(string: FCConsts.connectWebUrl)!, andID: clientID)
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    /// Handles redirect from login for token creation
+    public func handleRedirect(fromURL url: URL) throws {
+        try redirectHandler.handleURI(open: url)
+        guard let authCode = UserDefaults.standard.authorizationCode else {
+            return
+        }
+        FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectHandler.urlScheme) { resp, error in
+            guard error == nil else {
+                return
+            }
+            
+            guard let token = resp["accessToken"] as? String else {
+                return
+            }
+            
+            UserDefaults.standard.accessToken = token
+        }
     }
 }

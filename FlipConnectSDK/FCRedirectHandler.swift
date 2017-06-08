@@ -26,7 +26,7 @@ struct FCRedirectHandler {
     /// Scheme used for DeepLinking
     let urlScheme: String
     
-    init(jsonArray: JSON?) throws {
+    init(bundle jsonArray: JSON?) throws {
         
         guard let plist = jsonArray else {
             throw FCErrors.plistNotFound

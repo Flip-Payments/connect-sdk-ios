@@ -54,5 +54,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>FlipConnectSDK</key>
+    <dict>
+        <key>ClientID</key>
+        <string>F7F667C7-199F-4A10-B53A-4FADCDFADB53</string>
+    </dict>
 </dict>
 </plist>
