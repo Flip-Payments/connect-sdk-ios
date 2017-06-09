@@ -41,8 +41,8 @@ public class FCLogin {
     
     /// Opens Safari with Login Page
     public func openLoginURL() {
-        if let clientID = UserDefaults.standard.clientID {
-            let url = redirectHandler.mountWebURL(withRedirectUri: URL(string: FCConsts.connectWebUrl)!, andID: clientID)
+        if let clientID = UserDefaults.standard.clientID, let redirectURI = UserDefaults.standard.redirectURI {
+            let url = redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
