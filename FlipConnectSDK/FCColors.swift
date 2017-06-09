@@ -8,29 +8,25 @@
 
 import Foundation
 
-extension UIColor {
+public struct FCColors {
+    public enum Colors {
+        case green
+        case white
+        case darkGray
+    }
+    
     static var flipGreen = UIColor(red: 0.002, green: 0.604, blue: 0.417, alpha: 1.000)
     static var flipWhite = UIColor(red: 0.984, green: 0.984, blue: 0.984, alpha: 1.000)
     static var flipDarkGray = UIColor(red: 0.176, green: 0.176, blue: 0.176, alpha: 1.000)
-}
-
-public enum FCColors {
-    case green
-    case white
-    case darkGray
-}
-
-struct FCColorHelper {
-    static func getUIColor(color: FCColors) -> (fromButton: UIColor, fromText: UIColor) {
+    
+    public static func getUIColor(_ color: Colors) -> (fromButton: UIColor, fromText: UIColor) {
         switch color {
         case .darkGray:
-            return (UIColor.flipDarkGray, UIColor.flipWhite)
+            return (self.flipDarkGray, self.flipWhite)
         case .white:
-            return (UIColor.flipWhite, UIColor.flipDarkGray)
+            return (self.flipWhite, self.flipDarkGray)
         case .green:
-            return (UIColor.flipGreen, UIColor.flipWhite)
-        default:
-            return (UIColor.flipGreen, UIColor.flipWhite)
+            return (self.flipGreen, self.flipWhite)
         }
     }
 }

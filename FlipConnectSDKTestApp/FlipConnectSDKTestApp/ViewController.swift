@@ -14,41 +14,64 @@ class ViewController: UIViewController {
     //http://flipconnect-signin-staging.herokuapp.com/?clientId=F7F667C7-199F-4A10-B53A-4FADCDFADB53&redirectUri=ipirangaConnect://authorize&responseType=code
     
     var loginFlip: FCLogin!
+    
+    static let AuthorizationCode = "FCAuthorizationCode"
+    static let State = "FCState"
+    static let ClientID = "FCClientID"
+    static let ClientSecret = "FCClientSecret"
+    static let AccessToken = "FCAccessToken"
+    static let RefreshToken = "FCRefreshToken"
+    static let AccountKey = "FCAccountKey"
+
 
     @IBAction func printAllUserDefaults(_ sender: UIButton) {
-        print("accessToken: \(String(describing: UserDefaults.standard.accessToken))")
-        print("refreshToken: \(String(describing: UserDefaults.standard.refreshToken))")
-        print("clientID: \(String(describing: UserDefaults.standard.clientID))")
         print("authCode: \(String(describing: UserDefaults.standard.authorizationCode))")
         print("state: \(String(describing: UserDefaults.standard.state))")
+        print("clientID: \(String(describing: UserDefaults.standard.clientID))")
+        print("clientSecret: \(String(describing: UserDefaults.standard.clientSecret))")
+        print("accessToken: \(String(describing: UserDefaults.standard.accessToken))")
+        print("refreshToken: \(String(describing: UserDefaults.standard.refreshToken))")
+        print("accountKey: \(String(describing: UserDefaults.standard.accountKey))")
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        view.backgroundColor = UIColor(red: 0.862, green: 0.862, blue: 0.862, alpha: 1.000)
+        
         do {
             loginFlip = try FCLogin()
         } catch {
             print(error)
-        }        
+        }
         
-        loginFlip.loginButtonClicked()
+        let btn = loginFlip.loginWithButton(center: view.center)
+        
+        let btn2 = loginFlip.loginWithButton(center: CGPoint(x: view.center.x, y: view.center.y - 50), color: .darkGray)
+        
+        let btn3 = loginFlip.loginWithButton(center: CGPoint(x: view.center.x, y: view.center.y + 50), color: .white)
+        
+        view.addSubview(btn)
+        view.addSubview(btn2)
+        view.addSubview(btn3)
+        
+//        loginFlip.loginButtonClicked()
         
 //        loginFlip.openLoginURL()
         
         // Add a custom login button to your app
-        let myLoginButton = UIButton(type: .custom)
-        myLoginButton.backgroundColor = UIColor.darkGray
-        myLoginButton.setTitleColor(UIColor.white, for: UIControlState.normal)
-        myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40)
-        myLoginButton.center = view.center;
-        myLoginButton.setTitle("Login to FlipConnect", for: .normal)
-        
-        // Handle clicks on the button
-        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+//        let myLoginButton = UIButton(type: .custom)
+//        myLoginButton.backgroundColor = UIColor.darkGray
+//        myLoginButton.setTitleColor(UIColor.white, for: UIControlState.normal)
+//        myLoginButton.frame = CGRect(x: 0, y: 0, width: 180, height: 40)
+//        myLoginButton.center = view.center;
+//        myLoginButton.setTitle("Login to FlipConnect", for: .normal)
+//        
+//        // Handle clicks on the button
+//        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
 
         // Add the button to the view
-        view.addSubview(myLoginButton)
+//        view.addSubview(myLoginButton)
     }
 
     // Once the button is clicked, show the login dialog
