@@ -17,6 +17,7 @@ extension UserDefaults {
         static let AccessToken = "FCAccessToken"
         static let RefreshToken = "FCRefreshToken"
         static let AccountKey = "FCAccountKey"
+        static let RedirectURI = "FCRedirectURI"
     }
     
     public internal(set) var authorizationCode: String? {
@@ -72,6 +73,14 @@ extension UserDefaults {
             return UserDefaults.standard.string(forKey: Keys.AccountKey)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.AccountKey)
+        }
+    }
+    
+    public internal(set) var redirectURI: String? {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.RedirectURI)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.RedirectURI)
         }
     }
 }

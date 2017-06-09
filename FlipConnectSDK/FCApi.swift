@@ -10,11 +10,13 @@ import Foundation
 
 struct FCApi {
     
-    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, clientSecret secret: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         let parameters: Parameters = [
             "grantType": "authorization_code",
             "authorizationCode": "\(code)",
-            "redirectUri": "\(uri)"
+            "redirectUri": "\(uri)",
+            "clientSecret": "\(secret)",
+            "clientId": "\(id)"
         ]
         
         var resp = JSON()
@@ -23,12 +25,13 @@ struct FCApi {
         FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
             guard error == nil else {
                 err = error
+                completion(resp, err)
                 return
             }
             resp = response
+            
+            completion(resp, err)
         }
-        
-        completion(resp, err)
     }
     
     static func requestRefreshToken(tokenToRefresh token: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {

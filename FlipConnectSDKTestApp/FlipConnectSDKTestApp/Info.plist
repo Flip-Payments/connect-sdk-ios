@@ -33,6 +33,10 @@
 	<string>1</string>
 	<key>FlipConnectSDK</key>
 	<dict>
+		<key>RedirectURI</key>
+		<string>ipirangaConnect://ipiranga</string>
+		<key>ClientSecret</key>
+		<string>FC3E9D34-978B-483B-9CC0-462DFB82A75B</string>
 		<key>ClientID</key>
 		<string>F7F667C7-199F-4A10-B53A-4FADCDFADB53</string>
 	</dict>
@@ -59,5 +63,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

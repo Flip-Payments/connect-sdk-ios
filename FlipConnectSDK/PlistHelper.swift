@@ -9,7 +9,9 @@
 import Foundation
 
 struct PlistHelper {
-    private var clientID: String
+    private static let clientIDKey = "ClientID"
+    private static let clientSecretKey = "ClientSecret"
+    private static let redirectURIKey = "RedirectURI"
     
     init(bundle jsonArray: JSON?) throws {
         guard let plist = jsonArray else {
@@ -20,16 +22,16 @@ struct PlistHelper {
             throw FCErrors.configNotFound
         }
         
-        var idClient = ""
-        for item in config {
-            guard item.key == "ClientID", let clientID = item.value as? String else {
-                throw FCErrors.incorrectIdentifier
-            }
-            
-            idClient = clientID
+        let isClientID = config[PlistHelper.clientIDKey] as? String
+        let isClientSecret = config[PlistHelper.clientSecretKey] as? String
+        let isRedirectURI = config[PlistHelper.redirectURIKey] as? String
+        
+        guard let clientID = isClientID, let clientSecret = isClientSecret, let redirectURI = isRedirectURI else {
+            throw FCErrors.incorrectIdentifier
         }
         
-        self.clientID = idClient
-        UserDefaults.standard.clientID = self.clientID
+        UserDefaults.standard.clientID = clientID
+        UserDefaults.standard.clientSecret = clientSecret
+        UserDefaults.standard.redirectURI = redirectURI
     }
 }

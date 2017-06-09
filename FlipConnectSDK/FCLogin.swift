@@ -27,6 +27,7 @@ public class FCLogin {
         myLoginButton.frame = frame
         myLoginButton.center = center;
         myLoginButton.setTitle(title, for: .normal)
+        myLoginButton.layer.cornerRadius = 20
         
         // Handle clicks on the button
         myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
@@ -47,24 +48,52 @@ public class FCLogin {
     }
     
     /// Handles redirect from login for token creation
-    public func handleRedirect(fromURL url: URL) throws {
-        try redirectHandler.handleURI(open: url)
-        guard let authCode = UserDefaults.standard.authorizationCode else {
+    public func handleRedirect(fromURL url: URL, completion: @escaping (_ response: String, _ error: Error?) -> Void) {
+        var response = ""
+        var err: Error? = nil
+        
+        do {
+            try redirectHandler.handleURI(open: url)
+        } catch {
+            err = error
+            completion(response, err)
+        }
+        
+        guard let authCode = UserDefaults.standard.authorizationCode,
+              let clientSecret = UserDefaults.standard.clientSecret,
+              let clientID = UserDefaults.standard.clientID,
+              let redirectURI = UserDefaults.standard.redirectURI else {
+            err = FCErrors.invalidOperation
+            completion(response, err)
             return
         }
-        FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectHandler.urlScheme) { resp, error in
+        
+        FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectURI, clientSecret: clientSecret, clientID: clientID) { resp, error in
             guard error == nil else {
                 print("deu merda \(error.debugDescription)")
+                completion(response, error)
                 return
             }
             
-            //TODO ver porque essa porra tá zoada
-            guard let token = resp["accessToken"] as? String else {
-                print("não consegui pegar o token")
+            let isToken = resp["accessToken"] as? String
+            
+            guard let token = isToken else {
+                let operationReport = resp["operationReport"] as? [JSON]
+                var message = ""
+                if let or = operationReport {
+                    for operation in or {
+                        for item in operation {
+                            message += "\(item.key): \(item.value) "
+                        }
+                    }
+                }
+                completion(response, FCErrors.requestUnsuccessful(message: message))
                 return
             }
+            response = token
             
-            UserDefaults.standard.accessToken = token
+            UserDefaults.standard.accessToken = response
+            completion(response, err)
         }
     }
 }
