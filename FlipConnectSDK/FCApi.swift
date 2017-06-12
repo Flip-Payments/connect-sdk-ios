@@ -34,11 +34,13 @@ struct FCApi {
         }
     }
     
-    static func requestRefreshToken(tokenToRefresh token: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+    static func requestNewToken(refreshToken token: String, clientID id: String, clientSecret secret: String, redirectURI uri: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         let parameters: Parameters = [
             "grantType": "refresh_token",
             "refreshToken": "\(token)",
-            "clientId": "\(id)"
+            "clientId": "\(id)",
+            "clientSecret": "\(secret)",
+            "redirectUri": "\(uri)"
         ]
         
         var resp = JSON()

@@ -47,6 +47,49 @@ public class FCLogin {
         }
     }
     
+    public func refreshToken(completion: @escaping (_ error: Error?) -> Void) {
+        var err: Error? = nil
+        
+        guard let refreshToken = UserDefaults.standard.refreshToken,
+            let clientSecret = UserDefaults.standard.clientSecret,
+            let clientID = UserDefaults.standard.clientID,
+            let redirectURI = UserDefaults.standard.redirectURI else {
+                err = FCErrors.invalidOperation
+                completion(err)
+                return
+        }
+        
+        FCApi.requestNewToken(refreshToken: refreshToken, clientID: clientID, clientSecret: clientSecret, redirectURI: redirectURI) { resp, error in
+            guard error == nil else {
+                completion(error)
+                return
+            }
+            
+            let isToken = resp["accessToken"] as? String
+            let isRefreshToken = resp["refreshToken"] as? String
+            let isAccountKey = resp["accountKey"] as? String
+            
+            guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
+                let operationReport = resp["operationReport"] as? [JSON]
+                var message = ""
+                if let or = operationReport {
+                    for operation in or {
+                        for item in operation {
+                            message += "\(item.key): \(item.value) "
+                        }
+                    }
+                }
+                completion(FCErrors.requestUnsuccessful(message: message))
+                return
+            }
+            
+            UserDefaults.standard.accessToken = token
+            UserDefaults.standard.refreshToken = refreshToken
+            UserDefaults.standard.accountKey = accountKey
+            completion(err)
+        }
+    }
+    
     /// Handles redirect from login for token creation
     public func handleRedirect(fromURL url: URL, completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil

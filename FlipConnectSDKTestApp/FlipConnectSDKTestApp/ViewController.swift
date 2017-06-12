@@ -57,5 +57,18 @@ class ViewController: UIViewController {
         view.addSubview(btn3)
     }
 
+    @IBAction func refreshTokenBtn(_ sender: UIButton) {
+        loginFlip.refreshToken() { err in
+            guard err != nil else {
+                print("refresh with no success")
+                return
+            }
+            
+            print("Tokens Refreshed")
+            print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
+            print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
+            print("NewRefreshToken: \(String(describing: UserDefaults.standard.refreshToken))")
+        }
+    }
 }
 
