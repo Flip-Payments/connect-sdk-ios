@@ -25,7 +25,7 @@
 			<string>FlipConnectSDK</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>flipConnect</string>
+				<string>ipirangaConnect</string>
 			</array>
 		</dict>
 	</array>

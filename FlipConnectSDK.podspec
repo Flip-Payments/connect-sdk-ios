@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "FlipConnectSDK"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Login SDK to use Flip Connect"
   s.description  = <<-DESC
 It connects to Flip Connect API using OAuth
@@ -18,6 +18,5 @@ It connects to Flip Connect API using OAuth
   s.author    = "Munir Wanis"
   s.platform     = :ios, "10.0"
   s.source       = { :git => "https://github.com/Flip-Payments/connect-sdk-ios.git", :tag => "#{s.version}" }
-  s.source_files  = "Classes", "Classes/**/*.{h,swift}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "FlipConnectSDK", "FlipConnectSDK/**/*.{h,swift}"
 end
