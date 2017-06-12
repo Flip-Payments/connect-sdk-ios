@@ -23,6 +23,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print(error!)
                     return
                 }
+                
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSuccessViewController")
+                
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
             }
         } catch {
             print(error)
