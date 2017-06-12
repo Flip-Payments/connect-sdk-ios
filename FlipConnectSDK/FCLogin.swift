@@ -17,7 +17,8 @@ public class FCLogin {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
     }
-        
+    
+    /// Generates button with target on opening the web page for login
     public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login") -> UIButton {
         let buttonColor = FCColors.getUIColor(color)
         
@@ -47,6 +48,7 @@ public class FCLogin {
         }
     }
     
+    /// Refreshes token to access the API
     public func refreshToken(completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil
         
@@ -70,6 +72,49 @@ public class FCLogin {
             let isAccountKey = resp["accountKey"] as? String
             
             guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
+                let operationReport = resp["operationReport"] as? [JSON]
+                var message = ""
+                if let or = operationReport {
+                    for operation in or {
+                        for item in operation {
+                            message += "\(item.key): \(item.value) "
+                        }
+                    }
+                }
+                completion(FCErrors.requestUnsuccessful(message: message))
+                return
+            }
+            
+            UserDefaults.standard.accessToken = token
+            UserDefaults.standard.refreshToken = refreshToken
+            UserDefaults.standard.accountKey = accountKey
+            completion(err)
+        }
+    }
+    
+    /// Verify if the token is valid
+    public func verifyToken(completion: @escaping (_ error: Error?) -> Void) {
+        var err: Error? = nil
+        
+        guard let accessToken = UserDefaults.standard.accessToken,
+            let clientSecret = UserDefaults.standard.clientSecret,
+            let clientID = UserDefaults.standard.clientID else {
+                err = FCErrors.invalidOperation
+                completion(err)
+                return
+        }
+        
+        FCApi.requestVerifyToken(accessToken: accessToken, clientID: clientID, clientSecret: clientSecret) { resp, error in
+            guard error == nil else {
+                completion(error)
+                return
+            }
+            
+            let isToken = resp["accessToken"] as? String
+            let isAccessToken = resp["accessToken"] as? String
+            let isAccountKey = resp["accountKey"] as? String
+            
+            guard let token = isToken, let refreshToken = isAccessToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
                 var message = ""
                 if let or = operationReport {

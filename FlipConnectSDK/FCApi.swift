@@ -57,6 +57,28 @@ struct FCApi {
         completion(resp, err)
     }
     
+    static func requestVerifyToken(accessToken token: String, clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+        let parameters: Parameters = [
+            "grantType": "verify_token",
+            "accessToken": "\(token)",
+            "clientId": "\(id)",
+            "clientSecret": "\(secret)"
+        ]
+        
+        var resp = JSON()
+        var err: Error? = nil
+        
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            guard error == nil else {
+                err = error
+                return
+            }
+            resp = response
+        }
+        
+        completion(resp, err)
+    }
+    
     static func request(toURL url: URL, withVerb httpMethod: HTTPVerb = .get, withParameters parameters: Parameters? = nil, withHeaders headers: Headers? = nil, withBody body: JSON? = nil, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         var url = url
         var errorResponse: Error? = nil
