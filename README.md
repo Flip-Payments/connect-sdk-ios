@@ -108,6 +108,10 @@ The final result will be something like this:
 ```
 ### ViewController
 
+### Login With Button
+
+### Login with openLoginURL
+
 ### AppDelegate
 
 ## Contributing
