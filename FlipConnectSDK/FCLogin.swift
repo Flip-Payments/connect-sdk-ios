@@ -13,6 +13,8 @@ public class FCLogin {
     var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
     
+//    static let shared = try? FCLogin()
+    
     public init() throws {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
@@ -111,7 +113,7 @@ public class FCLogin {
             }
             
             let isToken = resp["accessToken"] as? String
-            let isAccessToken = resp["accessToken"] as? String
+            let isAccessToken = resp["refreshToken"] as? String
             let isAccountKey = resp["accountKey"] as? String
             
             guard let token = isToken, let refreshToken = isAccessToken, let accountKey = isAccountKey else {

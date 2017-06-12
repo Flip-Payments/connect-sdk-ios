@@ -52,9 +52,8 @@ struct FCApi {
                 return
             }
             resp = response
+            completion(resp, err)
         }
-        
-        completion(resp, err)
     }
     
     static func requestVerifyToken(accessToken token: String, clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
@@ -74,9 +73,8 @@ struct FCApi {
                 return
             }
             resp = response
+            completion(resp, err)
         }
-        
-        completion(resp, err)
     }
     
     static func request(toURL url: URL, withVerb httpMethod: HTTPVerb = .get, withParameters parameters: Parameters? = nil, withHeaders headers: Headers? = nil, withBody body: JSON? = nil, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {

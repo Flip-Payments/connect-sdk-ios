@@ -58,9 +58,22 @@ class ViewController: UIViewController {
     }
 
     @IBAction func refreshTokenBtn(_ sender: UIButton) {
+        loginFlip.verifyToken() { err in
+            guard err == nil else {
+                print("no success verifying")
+                print(err!)
+                return
+            }
+            print("Tokens verified")
+            print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
+            print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
+            print("NewRefreshToken: \(String(describing: UserDefaults.standard.refreshToken))")
+        }
+        
         loginFlip.refreshToken() { err in
-            guard err != nil else {
+            guard err == nil else {
                 print("refresh with no success")
+                print(err!)
                 return
             }
             
