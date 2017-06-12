@@ -1,0 +1,14 @@
+language: swift
+osx_image: xcode8.3
+xcode_project: FlipConnectSDK.xcodeproj
+xcode_scheme: FlipConnectSDK
+xcode_sdk: iphonesimulator10.0
+env:
+  global:
+    - FRAMEWORK_NAME=FlipConnectSDK
+before_install:
+  - brew update
+  - brew outdated carthage || brew upgrade carthage
+before_deploy:
+  - carthage build --no-skip-current
+  - carthage archive $FRAMEWORK_NAME
