@@ -18,7 +18,7 @@ public class FCLogin {
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
     }
         
-    public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "Login to FlipConnect") -> UIButton {
+    public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login") -> UIButton {
         let buttonColor = FCColors.getUIColor(color)
         
         let myLoginButton = UIButton(type: .custom)
@@ -48,15 +48,15 @@ public class FCLogin {
     }
     
     /// Handles redirect from login for token creation
-    public func handleRedirect(fromURL url: URL, completion: @escaping (_ response: String, _ error: Error?) -> Void) {
-        var response = ""
+    public func handleRedirect(fromURL url: URL, completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil
         
         do {
             try redirectHandler.handleURI(open: url)
         } catch {
             err = error
-            completion(response, err)
+            completion(err)
+            return
         }
         
         guard let authCode = UserDefaults.standard.authorizationCode,
@@ -64,20 +64,21 @@ public class FCLogin {
               let clientID = UserDefaults.standard.clientID,
               let redirectURI = UserDefaults.standard.redirectURI else {
             err = FCErrors.invalidOperation
-            completion(response, err)
+            completion(err)
             return
         }
         
         FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectURI, clientSecret: clientSecret, clientID: clientID) { resp, error in
             guard error == nil else {
-                print("deu merda \(error.debugDescription)")
-                completion(response, error)
+                completion(error)
                 return
             }
             
             let isToken = resp["accessToken"] as? String
+            let isRefreshToken = resp["refreshToken"] as? String
+            let isAccountKey = resp["accountKey"] as? String
             
-            guard let token = isToken else {
+            guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
                 var message = ""
                 if let or = operationReport {
@@ -87,13 +88,14 @@ public class FCLogin {
                         }
                     }
                 }
-                completion(response, FCErrors.requestUnsuccessful(message: message))
+                completion(FCErrors.requestUnsuccessful(message: message))
                 return
             }
-            response = token
             
-            UserDefaults.standard.accessToken = response
-            completion(response, err)
+            UserDefaults.standard.accessToken = token
+            UserDefaults.standard.refreshToken = refreshToken
+            UserDefaults.standard.accountKey = accountKey
+            completion(err)
         }
     }
 }

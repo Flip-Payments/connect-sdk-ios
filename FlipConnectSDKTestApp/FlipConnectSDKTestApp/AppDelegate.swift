@@ -18,12 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         do {
             let loginFlip = try FCLogin()
-            loginFlip.handleRedirect(fromURL: url) { token, error in
+            loginFlip.handleRedirect(fromURL: url) { error in
                 guard error == nil else {
                     print(error!)
                     return
                 }
-                print(token)
             }
         } catch {
             print(error)
