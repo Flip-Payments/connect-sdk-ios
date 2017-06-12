@@ -13,11 +13,23 @@ public class FCLogin {
     var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
     
-//    static let shared = try? FCLogin()
-    
-    public init() throws {
+    private init() throws {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
+    }
+    
+    private static var sharedVar: FCLogin?
+    
+    public static func shared() throws -> FCLogin {
+        if sharedVar == nil {
+            do {
+                sharedVar = try FCLogin()
+            } catch {
+                throw error
+            }
+        }
+        
+        return sharedVar!
     }
     
     /// Generates button with target on opening the web page for login

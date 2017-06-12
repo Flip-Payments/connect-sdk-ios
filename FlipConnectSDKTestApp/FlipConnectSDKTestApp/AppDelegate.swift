@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         do {
-            let loginFlip = try FCLogin()
+            let loginFlip = try FCLogin.shared()
             loginFlip.handleRedirect(fromURL: url) { error in
                 guard error == nil else {
                     print(error!)

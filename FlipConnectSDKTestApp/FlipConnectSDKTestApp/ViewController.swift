@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         view.backgroundColor = UIColor(red: 0.862, green: 0.862, blue: 0.862, alpha: 1.000)
         
         do {
-            loginFlip = try FCLogin()
+            loginFlip = try FCLogin.shared()
         } catch {
             print(error)
         }
