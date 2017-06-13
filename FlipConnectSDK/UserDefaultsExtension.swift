@@ -52,6 +52,7 @@ extension UserDefaults {
         }
     }
     
+    /// Token used to make requests to FlipConnect
     public internal(set) var accessToken: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.AccessToken)
@@ -68,6 +69,7 @@ extension UserDefaults {
         }
     }
     
+    /// AccountKey is the key of your Account
     public internal(set) var accountKey: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.AccountKey)
