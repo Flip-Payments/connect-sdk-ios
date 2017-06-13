@@ -25,14 +25,8 @@ class ViewController: UIViewController {
 
 
     @IBAction func printAllUserDefaults(_ sender: UIButton) {
-        print("authCode: \(String(describing: UserDefaults.standard.authorizationCode))")
-        print("state: \(String(describing: UserDefaults.standard.state))")
-        print("clientID: \(String(describing: UserDefaults.standard.clientID))")
-        print("clientSecret: \(String(describing: UserDefaults.standard.clientSecret))")
         print("accessToken: \(String(describing: UserDefaults.standard.accessToken))")
-        print("refreshToken: \(String(describing: UserDefaults.standard.refreshToken))")
         print("accountKey: \(String(describing: UserDefaults.standard.accountKey))")
-        print("redirectURI: \(String(describing: UserDefaults.standard.redirectURI))")
     }
     
     override func viewDidLoad() {
@@ -67,7 +61,6 @@ class ViewController: UIViewController {
             print("Tokens verified")
             print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
             print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
-            print("NewRefreshToken: \(String(describing: UserDefaults.standard.refreshToken))")
         }
         
         loginFlip.refreshToken() { err in
@@ -80,7 +73,6 @@ class ViewController: UIViewController {
             print("Tokens Refreshed")
             print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
             print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
-            print("NewRefreshToken: \(String(describing: UserDefaults.standard.refreshToken))")
         }
     }
 }

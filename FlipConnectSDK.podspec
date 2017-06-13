@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "FlipConnectSDK"
-  s.version      = "0.0.2"
+  s.version      = "0.0.4"
   s.summary      = "Login SDK to use Flip Connect"
   s.description  = <<-DESC
 It connects to Flip Connect API using OAuth

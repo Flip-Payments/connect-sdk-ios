@@ -32,7 +32,14 @@ public class FCLogin {
         return sharedVar!
     }
     
-    /// Generates button with target on opening the web page for login
+    /// Generates button targeting login web page on Safari
+    ///
+    /// - Parameters:
+    ///   - center: position of the button
+    ///   - frame: frame size of the butto
+    ///   - color: color of the button
+    ///   - title: title of the button
+    /// - Returns: A `UIButton` targeting a Safari web page to login
     public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login") -> UIButton {
         let buttonColor = FCColors.getUIColor(color)
         
@@ -50,6 +57,7 @@ public class FCLogin {
         return myLoginButton
     }
     
+    /// Calls login web page
     @objc public func loginButtonClicked() {
         openLoginURL()
     }
@@ -63,6 +71,9 @@ public class FCLogin {
     }
     
     /// Refreshes token to access the API
+    ///
+    /// - Parameters:
+    ///    - completion: error received from callback
     public func refreshToken(completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil
         
@@ -107,6 +118,9 @@ public class FCLogin {
     }
     
     /// Verify if the token is valid
+    ///
+    /// - Parameters:
+    ///    - completion: error received from callback
     public func verifyToken(completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil
         
@@ -150,6 +164,10 @@ public class FCLogin {
     }
     
     /// Handles redirect from login for token creation
+    ///
+    /// - Parameters:
+    ///    - fromURL: URL received from Redirect
+    ///    - completion: error received from callback
     public func handleRedirect(fromURL url: URL, completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil
         

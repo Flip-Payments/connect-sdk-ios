@@ -20,7 +20,7 @@ extension UserDefaults {
         static let RedirectURI = "FCRedirectURI"
     }
     
-    public internal(set) var authorizationCode: String? {
+    internal var authorizationCode: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.AuthorizationCode)
         } set {
@@ -28,7 +28,7 @@ extension UserDefaults {
         }
     }
     
-    public internal(set) var state: String? {
+    internal var state: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.State)
         } set {
@@ -36,7 +36,7 @@ extension UserDefaults {
         }
     }
     
-    public internal(set) var clientID: String? {
+    internal var clientID: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.ClientID)
         } set {
@@ -44,7 +44,7 @@ extension UserDefaults {
         }
     }
     
-    public internal(set) var clientSecret: String? {
+    internal var clientSecret: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.ClientSecret)
         } set {
@@ -60,7 +60,7 @@ extension UserDefaults {
         }
     }
     
-    public internal(set) var refreshToken: String? {
+    internal var refreshToken: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.RefreshToken)
         } set {
@@ -76,7 +76,7 @@ extension UserDefaults {
         }
     }
     
-    public internal(set) var redirectURI: String? {
+    internal var redirectURI: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.RedirectURI)
         } set {

@@ -37,11 +37,7 @@ class LoginSuccessViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
         
-        authorizationCodeLbl.text = UserDefaults.standard.authorizationCode
         accessTokenLbl.text = UserDefaults.standard.accessToken
-        refreshTokenLbl.text = UserDefaults.standard.refreshToken
-        clientIDLbl.text = UserDefaults.standard.clientID
-        clientSecretLbl.text = UserDefaults.standard.clientSecret
         accountKeyLbl.text = UserDefaults.standard.accountKey
     }
 
@@ -69,7 +65,6 @@ class LoginSuccessViewController: UIViewController {
                 return
             }
             self.accessTokenLbl.text = UserDefaults.standard.accessToken
-            self.refreshTokenLbl.text = UserDefaults.standard.refreshToken
             self.accountKeyLbl.text = UserDefaults.standard.accountKey
         }
     }
@@ -89,7 +84,6 @@ class LoginSuccessViewController: UIViewController {
                 return
             }
             self.accessTokenLbl.text = UserDefaults.standard.accessToken
-            self.refreshTokenLbl.text = UserDefaults.standard.refreshToken
             self.accountKeyLbl.text = UserDefaults.standard.accountKey
         }
     }

@@ -4,7 +4,28 @@
 
 ### Carthage
 
+Place this on your Cartfile:
+
+```yaml
+github "Flip-Payments/connect-sdk-ios" ~> 0.0.4
+```
+
+and then run:
+
+```sh
+carthage update
+```
+
 ### Cocoapods
+
+Add to your `Podfile`
+
+```ruby
+target 'MyApplication' do
+  use_frameworks!
+  pod 'FlipConnectSDK', '~> 0.0.4'
+end
+```
 
 ## Usability
 
@@ -108,12 +129,149 @@ The final result will be something like this:
 ```
 ### ViewController
 
+Login will start here, some action will trigger the login page, if everything works fine the web page will redirect back to the application.
+
+You can use your own button or use ours.
+
+On your ViewController import the SDK:
+
+```swift
+import FlipConnectSDK
+```
+
 ### Login With Button
+
+```swift
+class ViewController: UIViewController {
+
+    var flipLogin: FCLogin!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        do {
+            flipLogin = try FCLogin.shared()
+
+            let loginBtn = flipLogin.loginWithButton(center: view.center, frame: CGRect(x: 0, y: 0, width: 180, height: 40), color: .darkGray, title: "FlipConnect Login")
+            view.addSubview(loginBtn)
+
+        } catch {
+            print(error)
+        }
+    }
+}
+```
+The button will look like one of these:
+
+![Login Button](img/buttonLogin.png)
 
 ### Login with openLoginURL
 
+```swift
+class ViewController: UIViewController {
+
+    var flipLogin: FCLogin!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        do {
+            flipLogin = try FCLogin.shared()
+        } catch {
+            print(error)
+        }
+    }
+
+    @IBAction func printCookies(_ sender: UIButton) {
+        self.flipLogin.loginButtonClicked()
+    }
+}
+```
+
 ### AppDelegate
+
+With successful login the redirect will pass through here with some login information, but only after the `handleRedirect(fromURL: URL)` method runs smoothly that we'll be able to recover Token Data.
+
+```swift
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        do {
+            let loginFlip = try FCLogin.shared()
+            loginFlip.handleRedirect(fromURL: url) { error in
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+
+                // DO SOMETHING
+            }
+        } catch {
+            print(error)
+        }
+        
+        return true
+    }
+}
+```
+
+You should be able to use the Token and AccountKey by typing the following:
+
+```swift
+var accessToken: String? = UserDefaults.standard.accessToken
+var accountKey: String? = UserDefaults.standard.accountKey
+```
+
+### Refresh Token
+
+If the token gets expired, just do the following implementation. If some error return it's because the request was unsuccessful
+
+```swift
+do {
+	loginFlip = try FCLogin.shared()
+
+	loginFlip.refreshToken() { err in
+		guard err == nil else {
+			print("refresh with no success")
+			print(err!)
+			return
+		}
+		print("Tokens Refreshed")
+		print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
+		print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
+	}
+
+} catch {
+	print(error)
+}
+
+```
+
+### Verify Token
+
+If some error return it's because the token verified is invalid
+
+```swift
+do {
+	loginFlip = try FCLogin.shared()
+
+	loginFlip.verifyToken() { err in
+		guard err == nil else {
+			print("no success verifying")
+			print(err!)
+			return
+		}
+		print("Tokens successfully verified")
+	}
+
+} catch {
+	print(error)
+}
+```
 
 ## Contributing
 
+Pull Requests are very welcome!
+
 ## Issues
+
+Any problems, questions or suggestions? [Open a issue!](https://github.com/Flip-Payments/connect-sdk-ios/issues/new)
