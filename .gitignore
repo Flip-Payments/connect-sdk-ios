@@ -145,7 +145,7 @@ playground.xcworkspace
 Packages
 .build
 xcuserdata
-*.xcodeproj
+# *.xcodeproj
 
 ### SwiftPM ###
 
