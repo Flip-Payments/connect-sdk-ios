@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FCLogin Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/FCLogin" class="dashAnchor"></a>
+    <a title="FCLogin Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">FlipConnectSDK Docs</a> (70% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">FlipConnectSDK Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        FCLogin Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/FCLogin.html">FCLogin</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UserDefaults.html">UserDefaults</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/FCColors.html">FCColors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/FCColors/Colors.html">– Colors</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>FCLogin</h1>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFC14FlipConnectSDK7FCLogin6sharedFzT_S0_"></a>
+                    <a name="//apple_ref/swift/Method/shared()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFC14FlipConnectSDK7FCLogin6sharedFzT_S0_">shared()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Singleton instance of FCLogin</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">shared</span><span class="p">()</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">FCLogin</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14FlipConnectSDK7FCLogin15loginWithButtonFT6centerVSC7CGPoint5frameVSC6CGRect5colorOVS_8FCColors6Colors5titleSS_CSo8UIButton"></a>
+                    <a name="//apple_ref/swift/Method/loginWithButton(center:frame:color:title:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14FlipConnectSDK7FCLogin15loginWithButtonFT6centerVSC7CGPoint5frameVSC6CGRect5colorOVS_8FCColors6Colors5titleSS_CSo8UIButton">loginWithButton(center:frame:color:title:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Generates button targeting login web page on Safari</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">loginWithButton</span><span class="p">(</span><span class="nv">center</span><span class="p">:</span> <span class="kt">CGPoint</span><span class="p">,</span> <span class="nv">frame</span><span class="p">:</span> <span class="kt">CGRect</span> <span class="o">=</span> <span class="kt">CGRect</span><span class="p">(</span><span class="nv">x</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">y</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">width</span><span class="p">:</span> <span class="mi">180</span><span class="p">,</span> <span class="nv">height</span><span class="p">:</span> <span class="mi">40</span><span class="p">),</span> <span class="nv">color</span><span class="p">:</span> <span class="kt"><a href="../Structs/FCColors.html">FCColors</a></span><span class="o">.</span><span class="kt">Colors</span> <span class="o">=</span> <span class="o">.</span><span class="n">green</span><span class="p">,</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="s">"FlipConnect Login"</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">UIButton</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>center</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>position of the button</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>frame</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>frame size of the butto</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>color</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>color of the button</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>title</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>title of the button</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A <code>UIButton</code> targeting a Safari web page to login</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14FlipConnectSDK7FCLogin18loginButtonClickedFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/loginButtonClicked()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14FlipConnectSDK7FCLogin18loginButtonClickedFT_T_">loginButtonClicked()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Calls login web page</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@objc</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">loginButtonClicked</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14FlipConnectSDK7FCLogin12openLoginURLFT_T_"></a>
+                    <a name="//apple_ref/swift/Method/openLoginURL()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14FlipConnectSDK7FCLogin12openLoginURLFT_T_">openLoginURL()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Opens Safari with Login Page</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">openLoginURL</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14FlipConnectSDK7FCLogin12refreshTokenFT10completionFGSqPs5Error__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/refreshToken(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14FlipConnectSDK7FCLogin12refreshTokenFT10completionFGSqPs5Error__T__T_">refreshToken(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Refreshes token to access the API</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">refreshToken</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error received from callback</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14FlipConnectSDK7FCLogin11verifyTokenFT10completionFGSqPs5Error__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/verifyToken(completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14FlipConnectSDK7FCLogin11verifyTokenFT10completionFGSqPs5Error__T__T_">verifyToken(completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Verify if the token is valid</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">verifyToken</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error received from callback</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC14FlipConnectSDK7FCLogin14handleRedirectFT7fromURLV10Foundation3URL10completionFGSqPs5Error__T__T_"></a>
+                    <a name="//apple_ref/swift/Method/handleRedirect(fromURL:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC14FlipConnectSDK7FCLogin14handleRedirectFT7fromURLV10Foundation3URL10completionFGSqPs5Error__T__T_">handleRedirect(fromURL:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Handles redirect from login for token creation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">handleRedirect</span><span class="p">(</span><span class="n">fromURL</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="n">_</span> <span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fromURL</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>URL received from Redirect</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>error received from callback</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="http://flipconnect.io" target="_blank" rel="external">Munir Wanis</a>. All rights reserved. (Last updated: 2017-06-13)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.2</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

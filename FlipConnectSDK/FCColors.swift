@@ -9,6 +9,12 @@
 import Foundation
 
 public struct FCColors {
+    /**
+        Colors enumerator
+        - green: the default color of FlipConnect
+        - darkGray: dark neutral alternative
+        - white: white neutral alternative
+    */
     public enum Colors {
         case green
         case white
@@ -19,6 +25,9 @@ public struct FCColors {
     static var flipWhite = UIColor(red: 0.984, green: 0.984, blue: 0.984, alpha: 1.000)
     static var flipDarkGray = UIColor(red: 0.176, green: 0.176, blue: 0.176, alpha: 1.000)
     
+    /// Gets one of the default UIColors for button construction
+    /// - Parameter color: Color enumerator
+    /// - Returns: Two **UIColors**, one for the background color of the button and another for the text color
     public static func getUIColor(_ color: Colors) -> (fromButton: UIColor, fromText: UIColor) {
         switch color {
         case .darkGray:

@@ -20,6 +20,7 @@ public class FCLogin {
     
     private static var sharedVar: FCLogin?
     
+    /// Singleton instance of FCLogin
     public static func shared() throws -> FCLogin {
         if sharedVar == nil {
             do {
