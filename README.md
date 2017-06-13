@@ -1,5 +1,7 @@
 # FlipConnectSDK
 
+You can see more here: [FlipConnectSDK Reference](https://flip-payments.github.io/connect-sdk-ios/)
+
 ## Installation
 
 ### Carthage
