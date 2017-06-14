@@ -12,7 +12,7 @@ before_install:
   - brew outdated carthage || brew upgrade carthage
 script:
   - xctool -workspace $FRAMEWORK_WORKSPACE.xcworkspace -scheme $FRAMEWORK_NAME -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xctool test -workspace $FRAMEWORK_WORKSPACE.xcworkspace -scheme $FRAMEWORK_NAME -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+  - xctool run-tests -workspace $FRAMEWORK_WORKSPACE.xcworkspace -scheme $FRAMEWORK_NAME -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
 
