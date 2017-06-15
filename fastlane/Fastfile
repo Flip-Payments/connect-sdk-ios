@@ -6,6 +6,7 @@ end
 
 lane :travis do
   tests
+  push
 end
 
 lane :push do
