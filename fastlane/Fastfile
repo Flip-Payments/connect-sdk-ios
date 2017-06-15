@@ -1,0 +1,27 @@
+COMMIT_MESSAGE = "Bump podspec to"
+
+lane :tests do
+  scan(workspace: "FlipConnectSDKWorkspace.xcworkspace", scheme: "FlipConnectSDK", clean: true)
+end
+
+lane :travis do
+  tests
+end
+
+lane :push do
+  ensure_git_branch
+  version = version_bump_podspec(path: "FlipConnectSDK.podspec")
+  git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
+  changelog = changelog_from_git_commits
+  github_release = set_github_release(
+    repository_name: "Flip-Payments/connect-sdk-ios",
+    api_token: ENV['GITHUB_TOKEN'],
+    name: version,
+    tag_name: version,
+    description: changelog,
+    commitish: "master"
+  )
+  sh("git fetch --tags")
+  push_to_git_remote(remote_branch: 'master', force: false, tags: true)
+  pod_push(allow_warnings: true, verbose: true)
+end

@@ -2,16 +2,17 @@ language: swift
 osx_image: xcode8.3
 xcode_workspace: FlipConnectSDKWorkspace.xcworkspace
 xcode_scheme: FlipConnectSDK
-xcode_sdk: iphonesimulator10.0
 env:
   global:
     - FRAMEWORK_NAME=FlipConnectSDK
-    - FRAMEWORK_WORKSPACE=FlipConnectSDKWorkspace
 before_install:
   - brew update
   - brew outdated carthage || brew upgrade carthage
+  - gem install bundler
+  - bundle install
 script:
-  - xctool -workspace $FRAMEWORK_WORKSPACE.xcworkspace -scheme $FRAMEWORK_NAME -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-  - xctool run-tests -workspace $FRAMEWORK_WORKSPACE.xcworkspace -scheme $FRAMEWORK_NAME -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
+  - bundle exec fastlane travis
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
