@@ -1,6 +1,6 @@
 language: swift
 osx_image: xcode8.3
-xcode_project: FlipConnectSDK.xcodeproj
+xcode_workspace: FlipConnectSDKWorkspace.xcworkspace
 xcode_scheme: FlipConnectSDK
 xcode_sdk: iphonesimulator10.0
 env:
@@ -15,7 +15,3 @@ script:
   - xctool run-tests -workspace $FRAMEWORK_WORKSPACE.xcworkspace -scheme $FRAMEWORK_NAME -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
-
-
-
-
