@@ -9,7 +9,6 @@ lane :travis do
 end
 
 lane :push do
-  ensure_git_branch
   sh("git fetch --tags")
   version = last_git_tag
   git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
