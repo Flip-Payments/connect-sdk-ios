@@ -2,11 +2,6 @@ language: swift
 osx_image: xcode8.3
 xcode_workspace: FlipConnectSDKWorkspace.xcworkspace
 xcode_scheme: FlipConnectSDK
-branches:
-  only:
-  - /^hotfix\/.*$/
-  - /^fix\/.*$/
-  - /^release\/.*$/
 env:
   global:
     - FRAMEWORK_NAME=FlipConnectSDK
@@ -19,6 +14,11 @@ script:
   - carthage build --no-skip-current
   - carthage archive $FRAMEWORK_NAME
   - bundle exec fastlane travis
+deploy:
+  provider: script
+  script: bundle exec fastlane push
+  on:
+    tags: true
+    branch: master
 after_success:
-  - bundle exec fastlane push
   - bash <(curl -s https://codecov.io/bash)
