@@ -60,12 +60,13 @@ class FlipConnectSDKTests: XCTestCase {
         do {
             let redirectHandler = try FCRedirectHandler(bundle: bundle.infoDictionary)
             
-            let testURL = URL(string: "testing://test")!
+            let testRedirectUri = "testing://test"
+            let urlRequest = URL(string: FCConsts.connectWebUrl)!
             let clientID = UUID().uuidString
+
+            let url = redirectHandler.mountWebURL(url: urlRequest, withRedirectUri: testRedirectUri, andID: clientID)
             
-            let url = redirectHandler.mountWebURL(withRedirectUri: testURL, andID: clientID)
-            
-            let expected = "\(FCConsts.connectWebUrl)?clientId=\(clientID)&redirectUri=\(testURL)&state=\(UserDefaults.standard.state!)&responseType=code"
+            let expected = "\(FCConsts.connectWebUrl)?clientId=\(clientID)&redirectUri=\(testRedirectUri)&state=\(UserDefaults.standard.state!)&responseType=code"
             
             XCTAssertTrue(expected == url.absoluteString)
         } catch {
