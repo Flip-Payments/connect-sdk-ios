@@ -9,7 +9,7 @@ lane :travis do
 end
 
 lane :push do
-  ensure_git_branch(branch: '/^release\/.*$/')
+  ensure_git_branch(branch: '^release\/.*$')
   version = version_bump_podspec(path: "FlipConnectSDK.podspec")
   git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
   changelog = changelog_from_git_commits
