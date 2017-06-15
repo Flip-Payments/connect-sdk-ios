@@ -4,8 +4,6 @@ xcode_workspace: FlipConnectSDKWorkspace.xcworkspace
 xcode_scheme: FlipConnectSDK
 branches:
   only:
-  - /^hotfix\/.*$/
-  - /^fix\/.*$/
   - /^release\/.*$/
 env:
   global:
