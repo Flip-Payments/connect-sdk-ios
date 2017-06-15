@@ -15,4 +15,6 @@ script:
   - carthage archive $FRAMEWORK_NAME
   - bundle exec fastlane travis
 after_success:
+  - bundle exec fastlane push
+after_success:
   - bash <(curl -s https://codecov.io/bash)

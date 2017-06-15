@@ -1,4 +1,4 @@
-COMMIT_MESSAGE = "Bump podspec to"
+COMMIT_MESSAGE = "FlipConnectSDK"
 
 lane :tests do
   scan(workspace: "FlipConnectSDKWorkspace.xcworkspace", scheme: "FlipConnectSDK", clean: true)
