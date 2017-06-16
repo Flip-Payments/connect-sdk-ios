@@ -8,6 +8,11 @@ lane :travis do
   tests
 end
 
+lane :bitrise do
+  tests
+  push
+end
+
 lane :push do
   sh("git fetch --tags")
   version = last_git_tag
@@ -21,6 +26,6 @@ lane :push do
     description: changelog,
     commitish: "master"
   )
-  push_to_git_remote(remote_branch: 'master', force: false, tags: true)
+  # push_to_git_remote(remote_branch: 'master', force: false, tags: true)
   pod_push(allow_warnings: true, verbose: true)
 end
