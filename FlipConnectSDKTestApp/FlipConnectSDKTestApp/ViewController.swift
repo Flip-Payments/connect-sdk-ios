@@ -36,6 +36,9 @@ class ViewController: UIViewController {
         
         do {
             loginFlip = try FCLogin.shared()
+            let x = loginFlip.sdkPlist
+            print("PLIST")
+            print(x)
         } catch {
             print(error)
         }

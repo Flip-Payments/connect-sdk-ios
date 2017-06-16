@@ -39,6 +39,11 @@ fastlane tests
 fastlane travis
 ```
 
+### gtag
+```
+fastlane gtag
+```
+
 ### push
 ```
 fastlane push

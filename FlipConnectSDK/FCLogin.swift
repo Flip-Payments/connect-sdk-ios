@@ -12,10 +12,12 @@ import UIKit
 public class FCLogin {
     var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
+    public var sdkPlist: JSON
     
     private init() throws {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
+        sdkPlist = (Bundle.init(identifier: "com.FlipConnect.FlipConnectSDK")?.infoDictionary!)!
     }
     
     private static var sharedVar: FCLogin?
