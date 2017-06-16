@@ -1,4 +1,4 @@
-COMMIT_MESSAGE = "FlipConnectSDK"
+COMMIT_MESSAGE = "New version:"
 
 lane :tests do
   scan(workspace: "FlipConnectSDKWorkspace.xcworkspace", scheme: "FlipConnectSDK", clean: true)
@@ -16,7 +16,7 @@ end
 lane :push do
   sh("git fetch --tags")
   version = last_git_tag
-  # git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
+  git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
   changelog = changelog_from_git_commits
   github_release = set_github_release(
     repository_name: "Flip-Payments/connect-sdk-ios",
@@ -26,6 +26,6 @@ lane :push do
     description: changelog,
     commitish: "master"
   )
-  # push_to_git_remote(remote_branch: 'master', force: false, tags: true)
+  push_to_git_remote(remote_branch: 'master', force: false, tags: true)
   pod_push(path: "FlipConnectSDK.podspec" , allow_warnings: true, verbose: true)
 end
