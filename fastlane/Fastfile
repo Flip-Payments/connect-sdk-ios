@@ -26,16 +26,12 @@ lane :changelog do
   )
 end
 
-lane :jazzy do
-  jazzy
-end
-
 lane :push do
   sh("git fetch --tags")
   tag = last_git_tag
   version = version_bump_podspec(path: "FlipConnectSDK.podspec", version_number: tag)
   git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
-  git_commit(path: ["./docs/*"], message: "Updates documention for version #{version}")
+  git_commit(path: ["./docs/"], message: "Updates documention for version #{version}")
   git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version}")
   push_to_git_remote(remote_branch: 'master', force: false, tags: true)
   pod_push(path: "FlipConnectSDK.podspec" , allow_warnings: true, verbose: true)
