@@ -39,6 +39,16 @@ fastlane tests
 fastlane travis
 ```
 
+### bitrise
+```
+fastlane bitrise
+```
+
+### changelog
+```
+fastlane changelog
+```
+
 ### push
 ```
 fastlane push
