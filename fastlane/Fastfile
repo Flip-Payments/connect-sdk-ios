@@ -28,7 +28,6 @@ end
 lane :push do
   sh("git fetch --tags")
   tag = last_git_tag
-  jazzy
   version = version_bump_podspec(path: "FlipConnectSDK.podspec", version_number: tag)
   git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
   git_commit(path: ["./docs/"], message: "Updates documention for version #{version}")
