@@ -120,12 +120,6 @@ GEM
       domain_name (~> 0.5)
     httpclient (2.8.3)
     i18n (0.8.4)
-    jazzy (0.0.14)
-      activesupport (~> 4.1)
-      mustache (~> 0.99)
-      nokogiri (~> 1.6)
-      redcarpet (~> 3.2)
-      sass (~> 3.4)
     json (2.1.0)
     jwt (1.5.6)
     little-plugger (1.1.4)
@@ -137,24 +131,19 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
     mini_magick (4.5.1)
-    mini_portile2 (2.1.0)
     minitest (5.10.2)
     molinillo (0.5.7)
     multi_json (1.12.1)
     multi_xml (0.6.0)
     multipart-post (2.0.0)
-    mustache (0.99.8)
     nanaimo (0.2.3)
     nap (1.1.0)
     netrc (0.7.8)
-    nokogiri (1.6.8.1)
-      mini_portile2 (~> 2.1.0)
     octokit (4.7.0)
       sawyer (~> 0.8.0, >= 0.5.3)
     os (0.9.6)
     plist (3.3.0)
     public_suffix (2.0.5)
-    redcarpet (3.4.0)
     representable (3.0.4)
       declarative (< 0.1.0)
       declarative-option (< 0.2.0)
@@ -163,7 +152,6 @@ GEM
     rouge (2.0.7)
     ruby-macho (1.1.0)
     rubyzip (1.2.1)
-    sass (3.4.24)
     sawyer (0.8.1)
       addressable (>= 2.3.5, < 2.6)
       faraday (~> 0.8, < 1.0)
@@ -204,7 +192,6 @@ DEPENDENCIES
   cocoapods
   fastlane
   fastlane-plugin-changelog_generator
-  jazzy
 
 BUNDLED WITH
    1.15.1

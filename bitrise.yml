@@ -12,11 +12,9 @@ app:
       is_expand: false
     FASTLANE_LANE: bitrise
 trigger_map:
-- push_branch: "*"
-  workflow: primary
-- pull_request_source_branch: "*"
-  workflow: primary
 - tag: "*.*.*"
+  workflow: primary
+- push_branch: master
   workflow: primary
 workflows:
   primary:

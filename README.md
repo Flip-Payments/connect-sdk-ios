@@ -1,8 +1,8 @@
 # FlipConnectSDK
 
-[![Build Status](https://travis-ci.org/Flip-Payments/connect-sdk-ios.svg?branch=master)](https://travis-ci.org/Flip-Payments/connect-sdk-ios) [![codecov](https://codecov.io/gh/Flip-Payments/connect-sdk-ios/branch/master/graph/badge.svg)](https://codecov.io/gh/Flip-Payments/connect-sdk-ios) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Flip-Payments/connect-sdk-ios/master/LICENSE) [![Github Version](https://img.shields.io/github/release/Flip-Payments/connect-sdk-ios.svg)](https://github.com/Flip-Payments/connect-sdk-ios/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/FlipConnectSDK.svg)](http://cocoadocs.org/docsets/FlipConnectSDK/) ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
+[![Build Status](https://www.bitrise.io/app/e2ffa72d64f58e17/status.svg?token=qyJOAroLehBPTj5D4g7clA)](https://www.bitrise.io/app/e2ffa72d64f58e17) [![codecov](https://codecov.io/gh/Flip-Payments/connect-sdk-ios/branch/master/graph/badge.svg)](https://codecov.io/gh/Flip-Payments/connect-sdk-ios) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Flip-Payments/connect-sdk-ios/master/LICENSE) [![Github Version](https://img.shields.io/github/release/Flip-Payments/connect-sdk-ios.svg)](https://github.com/Flip-Payments/connect-sdk-ios/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/FlipConnectSDK.svg)](http://cocoadocs.org/docsets/FlipConnectSDK/) ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
-You can see more here: [FlipConnectSDK Reference](https://flip-payments.github.io/connect-sdk-ios/)
+You can see more here: [FlipConnectSDK Reference](http://cocoadocs.org/docsets/FlipConnectSDK/)
 
 ## Installation
 
