@@ -39,9 +39,19 @@ fastlane tests
 fastlane travis
 ```
 
-### gtag
+### bitrise
 ```
-fastlane gtag
+fastlane bitrise
+```
+
+### changelog
+```
+fastlane changelog
+```
+
+### commit_test
+```
+fastlane commit_test
 ```
 
 ### push
