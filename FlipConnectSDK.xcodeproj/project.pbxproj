@@ -20,6 +20,8 @@
 		A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD521EE936AB00B74705 /* PlistHelper.swift */; };
 		A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */; };
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
+		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
+		A15067AE1F01981300794F73 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AD1F01981300794F73 /* Address.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +52,8 @@
 		A117AD521EE936AB00B74705 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationEditionStoryboard.storyboard; sourceTree = "<group>"; };
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
+		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
+		A15067AD1F01981300794F73 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +79,7 @@
 		A117ACD11EE782FE00B74705 = {
 			isa = PBXGroup;
 			children = (
+				A15067AC1F0192CE00794F73 /* Entities */,
 				A117ACDD1EE782FE00B74705 /* FlipConnectSDK */,
 				A117ACE81EE782FE00B74705 /* FlipConnectSDKTests */,
 				A117ACDC1EE782FE00B74705 /* Products */,
@@ -141,6 +146,15 @@
 				A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		A15067AC1F0192CE00794F73 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A15067AA1F0192C300794F73 /* Response.swift */,
+				A15067AD1F01981300794F73 /* Address.swift */,
+			);
+			name = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +275,9 @@
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
+				A15067AE1F01981300794F73 /* Address.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
+				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
