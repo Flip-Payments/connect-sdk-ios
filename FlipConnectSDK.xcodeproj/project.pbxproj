@@ -24,6 +24,8 @@
 		A15067AE1F01981300794F73 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AD1F01981300794F73 /* Address.swift */; };
 		A15067B11F02A69300794F73 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B01F02A69300794F73 /* AddressesResponse.swift */; };
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
+		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
+		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,8 @@
 		A15067AD1F01981300794F73 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A15067B01F02A69300794F73 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesResponse.swift; sourceTree = "<group>"; };
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
+		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
+		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +106,7 @@
 		A117ACDD1EE782FE00B74705 /* FlipConnectSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A1DAC02A1F02D7090035E955 /* API */,
 				A15067A71EFDAA3D00794F73 /* Controllers */,
 				A15067A61EFDAA2200794F73 /* Views */,
 				A15067A31EFDA94500794F73 /* Helpers */,
@@ -111,7 +116,6 @@
 				A117ACF71EE7851D00B74705 /* FCErrors.swift */,
 				A117ACF91EE7885200B74705 /* FCRedirectHandler.swift */,
 				A117ACFB1EE7A43A00B74705 /* FCConsts.swift */,
-				A117AD4C1EE8BC6300B74705 /* FCApi.swift */,
 				A117AD501EE9289C00B74705 /* FCLogin.swift */,
 				A1E6D5BC1EE9E52400488490 /* FCColors.swift */,
 			);
@@ -169,6 +173,16 @@
 				A15067B01F02A69300794F73 /* AddressesResponse.swift */,
 			);
 			name = Responses;
+			sourceTree = "<group>";
+		};
+		A1DAC02A1F02D7090035E955 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A117AD4C1EE8BC6300B74705 /* FCApi.swift */,
+				A1DAC02B1F02D7520035E955 /* FCApiToken.swift */,
+				A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,6 +300,7 @@
 				A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */,
 				A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */,
 				A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */,
+				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
@@ -294,6 +309,7 @@
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
+				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
 			);
