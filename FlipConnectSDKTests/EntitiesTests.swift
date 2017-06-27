@@ -33,6 +33,17 @@ class EntitiesTests: XCTestCase {
         XCTAssertTrue(addresses.success)
     }
     
+    func testJSONtoTelephoneConversion() {
+        let telephoneJSON = "{\"id\":193,\"phoneType\":\"mobile\",\"phoneTypeFriendlyName\":\"Celular\",\"fullNumber\":\"+5521987654321\",\"IsValidated\":false,\"isPrimary\":false}"
+        
+        let data = telephoneJSON.data(using: String.Encoding.utf8)
+        let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! JSON
+        
+        let telephone = Telephone(json: json)
+        
+        XCTAssertTrue(telephone?.type == .mobile)
+    }
+    
     func testAPICallToCollectAddresses() {
         let requestExpectation = expectation(description: "Get addresses collection")
         
