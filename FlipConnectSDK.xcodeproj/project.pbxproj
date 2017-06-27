@@ -27,6 +27,7 @@
 		A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0321F02F7420035E955 /* PatchesRequest.swift */; };
 		A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0341F02F7580035E955 /* AddressesResponse.swift */; };
 		A1DAC0371F02F76A0035E955 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0361F02F76A0035E955 /* Address.swift */; };
+		A1DAC0391F02F9840035E955 /* Telephone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0381F02F9840035E955 /* Telephone.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		A1DAC0321F02F7420035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchesRequest.swift; path = FlipConnectSDK/PatchesRequest.swift; sourceTree = "<group>"; };
 		A1DAC0341F02F7580035E955 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressesResponse.swift; path = FlipConnectSDK/AddressesResponse.swift; sourceTree = "<group>"; };
 		A1DAC0361F02F76A0035E955 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = FlipConnectSDK/Address.swift; sourceTree = "<group>"; };
+		A1DAC0381F02F9840035E955 /* Telephone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Telephone.swift; path = FlipConnectSDK/Telephone.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,7 +91,6 @@
 		A117ACD11EE782FE00B74705 = {
 			isa = PBXGroup;
 			children = (
-				A15067AC1F0192CE00794F73 /* Entities */,
 				A117ACDD1EE782FE00B74705 /* FlipConnectSDK */,
 				A117ACE81EE782FE00B74705 /* FlipConnectSDKTests */,
 				A117ACDC1EE782FE00B74705 /* Products */,
@@ -112,6 +113,7 @@
 				A15067A71EFDAA3D00794F73 /* Controllers */,
 				A15067A61EFDAA2200794F73 /* Views */,
 				A15067A31EFDA94500794F73 /* Helpers */,
+				A15067AC1F0192CE00794F73 /* Entities */,
 				A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */,
 				A117ACDF1EE782FE00B74705 /* Info.plist */,
 				A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */,
@@ -165,8 +167,10 @@
 				A1DAC02F1F02F13C0035E955 /* Requests */,
 				A15067AF1F02A67300794F73 /* Responses */,
 				A1DAC0361F02F76A0035E955 /* Address.swift */,
+				A1DAC0381F02F9840035E955 /* Telephone.swift */,
 			);
 			name = Entities;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		A15067AF1F02A67300794F73 /* Responses */ = {
@@ -318,6 +322,7 @@
 				A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
+				A1DAC0391F02F9840035E955 /* Telephone.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
