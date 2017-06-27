@@ -26,6 +26,7 @@
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
+		A1DAC0311F02F17A0035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0301F02F17A0035E955 /* PatchesRequest.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
+		A1DAC0301F02F17A0035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchesRequest.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -160,6 +162,7 @@
 		A15067AC1F0192CE00794F73 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				A1DAC02F1F02F13C0035E955 /* Requests */,
 				A15067AF1F02A67300794F73 /* Responses */,
 				A15067AD1F01981300794F73 /* Address.swift */,
 			);
@@ -183,6 +186,14 @@
 				A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		A1DAC02F1F02F13C0035E955 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				A1DAC0301F02F17A0035E955 /* PatchesRequest.swift */,
+			);
+			name = Requests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1DAC0311F02F17A0035E955 /* PatchesRequest.swift in Sources */,
 				A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */,
 				A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */,
 				A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */,
