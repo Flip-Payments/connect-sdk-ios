@@ -22,7 +22,7 @@ class EntitiesTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
+    func testJSONtoAddressesConversion() {
         let addressesJSON = "{\"addresses\":[{\"id\":38,\"street\":\"Rua Balde Dagua\",\"number\":\"1200\",\"complement\":\"Apt 157\",\"addressType\":\"shipping\",\"addressTypeFriendlyName\":\"Shipping\",\"district\":\"Jigjoy\",\"city\":\"Rio de Janeiro\",\"state\":\"RJ\",\"zipCode\":\"12345-000\",\"addressReference\":null,\"country\":\"BR\"},{\"id\":63,\"street\":\"Rua do Catete\",\"number\":\"90\",\"complement\":\"Apt 171\",\"addressType\":\"home\",\"addressTypeFriendlyName\":\"Home\",\"district\":\"Ipanema\",\"city\":\"Rio de Janeiro\",\"state\":\"RJ\",\"zipCode\":\"22220-000\",\"addressReference\":null,\"country\":\"BR\"},{\"id\":64,\"street\":\"Rua Marquês de Abrantes\",\"number\":\"200\",\"complement\":\"Apt 157\",\"addressType\":\"work\",\"addressTypeFriendlyName\":\"Work\",\"district\":\"Ipanema\",\"city\":\"Rio de Janeiro\",\"state\":\"RJ\",\"zipCode\":\"22220-000\",\"addressReference\":null,\"country\":\"BR\"}],\"success\":true,\"operationReport\":[]}"
         
         let data = addressesJSON.data(using: String.Encoding.utf8)
@@ -31,6 +31,18 @@ class EntitiesTests: XCTestCase {
         let addresses = Addresses(json: json)
         
         XCTAssertTrue(addresses.success)
+    }
+    
+    func testAPICallToCollectAddresses() {
+        let requestExpectation = expectation(description: "Get addresses collection")
+        
+        FCApi.getAddresses(accessToken: "DF27C1F5237D3E1B9B3313C7543F04DD50642E87C560F7542498103A65981C16") { addresses, error in
+            XCTAssertTrue(addresses.success)
+            XCTAssertNil(error)
+            requestExpectation.fulfill()
+        }
+        
+        waitForExpectations(timeout: 60, handler: nil)
     }
     
     func testPerformanceExample() {
