@@ -28,6 +28,7 @@
 		A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0341F02F7580035E955 /* AddressesResponse.swift */; };
 		A1DAC0371F02F76A0035E955 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0361F02F76A0035E955 /* Address.swift */; };
 		A1DAC0391F02F9840035E955 /* Telephone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0381F02F9840035E955 /* Telephone.swift */; };
+		A1DAC03B1F0300150035E955 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC03A1F0300150035E955 /* Email.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 		A1DAC0341F02F7580035E955 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressesResponse.swift; path = FlipConnectSDK/AddressesResponse.swift; sourceTree = "<group>"; };
 		A1DAC0361F02F76A0035E955 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = FlipConnectSDK/Address.swift; sourceTree = "<group>"; };
 		A1DAC0381F02F9840035E955 /* Telephone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Telephone.swift; path = FlipConnectSDK/Telephone.swift; sourceTree = "<group>"; };
+		A1DAC03A1F0300150035E955 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Email.swift; path = FlipConnectSDK/Email.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				A15067AF1F02A67300794F73 /* Responses */,
 				A1DAC0361F02F76A0035E955 /* Address.swift */,
 				A1DAC0381F02F9840035E955 /* Telephone.swift */,
+				A1DAC03A1F0300150035E955 /* Email.swift */,
 			);
 			name = Entities;
 			path = ..;
@@ -326,6 +329,7 @@
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
+				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
 				A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
