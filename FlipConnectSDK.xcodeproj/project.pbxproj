@@ -21,12 +21,12 @@
 		A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */; };
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
-		A15067AE1F01981300794F73 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AD1F01981300794F73 /* Address.swift */; };
-		A15067B11F02A69300794F73 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B01F02A69300794F73 /* AddressesResponse.swift */; };
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
-		A1DAC0311F02F17A0035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0301F02F17A0035E955 /* PatchesRequest.swift */; };
+		A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0321F02F7420035E955 /* PatchesRequest.swift */; };
+		A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0341F02F7580035E955 /* AddressesResponse.swift */; };
+		A1DAC0371F02F76A0035E955 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0361F02F76A0035E955 /* Address.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,12 +58,12 @@
 		A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationEditionStoryboard.storyboard; sourceTree = "<group>"; };
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
-		A15067AD1F01981300794F73 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
-		A15067B01F02A69300794F73 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesResponse.swift; sourceTree = "<group>"; };
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
-		A1DAC0301F02F17A0035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatchesRequest.swift; sourceTree = "<group>"; };
+		A1DAC0321F02F7420035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchesRequest.swift; path = FlipConnectSDK/PatchesRequest.swift; sourceTree = "<group>"; };
+		A1DAC0341F02F7580035E955 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressesResponse.swift; path = FlipConnectSDK/AddressesResponse.swift; sourceTree = "<group>"; };
+		A1DAC0361F02F76A0035E955 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = FlipConnectSDK/Address.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,7 +164,7 @@
 			children = (
 				A1DAC02F1F02F13C0035E955 /* Requests */,
 				A15067AF1F02A67300794F73 /* Responses */,
-				A15067AD1F01981300794F73 /* Address.swift */,
+				A1DAC0361F02F76A0035E955 /* Address.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -172,8 +172,8 @@
 		A15067AF1F02A67300794F73 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				A1DAC0341F02F7580035E955 /* AddressesResponse.swift */,
 				A15067AA1F0192C300794F73 /* Response.swift */,
-				A15067B01F02A69300794F73 /* AddressesResponse.swift */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -191,7 +191,7 @@
 		A1DAC02F1F02F13C0035E955 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				A1DAC0301F02F17A0035E955 /* PatchesRequest.swift */,
+				A1DAC0321F02F7420035E955 /* PatchesRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -308,7 +308,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1DAC0311F02F17A0035E955 /* PatchesRequest.swift in Sources */,
 				A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */,
 				A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */,
 				A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */,
@@ -316,13 +315,14 @@
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
-				A15067AE1F01981300794F73 /* Address.swift in Sources */,
-				A15067B11F02A69300794F73 /* AddressesResponse.swift in Sources */,
+				A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
+				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
+				A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
