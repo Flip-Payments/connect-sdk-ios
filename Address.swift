@@ -22,7 +22,7 @@ struct Address {
     var addressReference: String?
     var country: String
     
-    init?(json: [String:Any]) {
+    init?(json: JSON) {
         guard let id = json["id"] as? Int,
         let street = json["street"] as? String,
         let number = json["number"] as? String,

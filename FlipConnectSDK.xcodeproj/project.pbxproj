@@ -22,6 +22,7 @@
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
 		A15067AE1F01981300794F73 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AD1F01981300794F73 /* Address.swift */; };
+		A15067B11F02A69300794F73 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B01F02A69300794F73 /* AddressesResponse.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
 		A15067AD1F01981300794F73 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		A15067B01F02A69300794F73 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesResponse.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,10 +153,19 @@
 		A15067AC1F0192CE00794F73 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				A15067AA1F0192C300794F73 /* Response.swift */,
+				A15067AF1F02A67300794F73 /* Responses */,
 				A15067AD1F01981300794F73 /* Address.swift */,
 			);
 			name = Entities;
+			sourceTree = "<group>";
+		};
+		A15067AF1F02A67300794F73 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				A15067AA1F0192C300794F73 /* Response.swift */,
+				A15067B01F02A69300794F73 /* AddressesResponse.swift */,
+			);
+			name = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
 				A15067AE1F01981300794F73 /* Address.swift in Sources */,
+				A15067B11F02A69300794F73 /* AddressesResponse.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
