@@ -23,6 +23,7 @@
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
 		A15067AE1F01981300794F73 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AD1F01981300794F73 /* Address.swift */; };
 		A15067B11F02A69300794F73 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B01F02A69300794F73 /* AddressesResponse.swift */; };
+		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
 		A15067AD1F01981300794F73 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		A15067B01F02A69300794F73 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesResponse.swift; sourceTree = "<group>"; };
+		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +123,7 @@
 			children = (
 				A117ACE91EE782FE00B74705 /* FlipConnectSDKTests.swift */,
 				A117ACEB1EE782FE00B74705 /* Info.plist */,
+				A15067B21F02C5F400794F73 /* EntitiesTests.swift */,
 			);
 			path = FlipConnectSDKTests;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */,
 				A117ACEA1EE782FE00B74705 /* FlipConnectSDKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

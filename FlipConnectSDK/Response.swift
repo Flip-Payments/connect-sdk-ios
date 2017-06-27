@@ -12,7 +12,7 @@ protocol Response {
     var success: Bool { get set }
     var operationReport: [Report] { get set }
     
-    init?(json: JSON)
+    init(json: JSON)
 }
 
 extension Response {

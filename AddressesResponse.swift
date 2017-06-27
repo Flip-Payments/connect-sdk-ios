@@ -15,7 +15,7 @@ struct Addresses: Response {
 
     var addresses: [Address] = []
     
-    init?(json: JSON) {
+    init(json: JSON) {
         self.initializeResponse(json: json)
         
         guard let addresses = json["addresses"] as? [JSON] else {
@@ -29,7 +29,5 @@ struct Addresses: Response {
         })
         
         self.addresses = address
-        
-        return nil
     }
 }
