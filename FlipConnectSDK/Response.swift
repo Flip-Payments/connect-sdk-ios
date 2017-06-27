@@ -10,10 +10,21 @@ import Foundation
 
 protocol Response {
     var success: Bool { get set }
-    var operationReport: [Report] { get set }
+    var operationReport: [Report]? { get set }
 }
 
 struct Report {
     var field: String
     var message: String
+    
+    init?(json: [String:Any]) {
+        guard let field = json["field"] as? String,
+        let message = json["message"] as? String
+            else {
+                return nil
+        }
+        
+        self.field = field
+        self.message = message
+    }
 }

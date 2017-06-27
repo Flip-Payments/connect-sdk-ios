@@ -27,7 +27,10 @@ struct Address {
         let street = json["street"] as? String,
         let number = json["number"] as? String,
         let addressType = json["addressType"] as? String,
-        let city = json["city"] as? String
+        let city = json["city"] as? String,
+        let state = json["state"] as? String,
+        let zipCode = json["zipCode"] as? String,
+        let country = json["country"] as? String
             else {
                 return nil
         }
@@ -40,9 +43,9 @@ struct Address {
         self.addressTypeFriendlyName = json["addressTypeFriendlyName"] as? String
         self.district = json["district"] as? String
         self.city = city
-        self.state = ""
-        self.zipCode = ""
-        self.addressReference = nil
-        self.country = ""
+        self.state = state
+        self.zipCode = zipCode
+        self.addressReference = json["addressReference"] as? String
+        self.country = country
     }
 }
