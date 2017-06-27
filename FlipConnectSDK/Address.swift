@@ -13,8 +13,8 @@ struct Address {
     var street: String
     var number: String
     var complement: String?
-    var addressType: String
-    var addressTypeFriendlyName: String?
+    var type: String
+    var typeFriendlyName: String?
     var district: String?
     var city: String
     var state: String
@@ -39,8 +39,8 @@ struct Address {
         self.street = street
         self.number = number
         self.complement = json["complement"] as? String
-        self.addressType = addressType
-        self.addressTypeFriendlyName = json["addressTypeFriendlyName"] as? String
+        self.type = addressType
+        self.typeFriendlyName = json["addressTypeFriendlyName"] as? String
         self.district = json["district"] as? String
         self.city = city
         self.state = state

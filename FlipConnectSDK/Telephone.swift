@@ -10,8 +10,8 @@ import Foundation
 
 struct Telephone {
     var id: Int
-    var phoneType: PhoneType
-    var phoneTypeFriendlyName: String
+    var type: PhoneType
+    var typeFriendlyName: String
     var fullNumber: String
     
     init?(json: JSON) {
@@ -24,8 +24,8 @@ struct Telephone {
         }
         
         self.id = id
-        self.phoneType = phoneType
-        self.phoneTypeFriendlyName = phoneTypeFriendlyName
+        self.type = phoneType
+        self.typeFriendlyName = phoneTypeFriendlyName
         self.fullNumber = fullNumber
         
     }
