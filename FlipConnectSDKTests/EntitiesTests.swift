@@ -44,16 +44,16 @@ class EntitiesTests: XCTestCase {
         XCTAssertTrue(telephone?.type == .mobile)
     }
     
-//    func testJSONtoDocumentConversion() {
-//        let documentJSON = "{\"id\":86,\"documentType\":\"cpf\",\"documentTypeFriendlyName\":\"CPF\",\"documentNumber\":\"37692802963\",\"documentData\":{}"
-//        
-//        let data = documentJSON.data(using: String.Encoding.utf8)!
-//        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
-//        
-//        let document = Document(json: json)
-//        
-//        XCTAssertTrue(document?.type == .cpf)
-//    }
+    func testJSONtoDocumentConversion() {
+        let documentJSON = "{\"id\":86,\"documentType\":\"cpf\",\"documentTypeFriendlyName\":\"CPF\",\"documentNumber\":\"37692802963\",\"documentData\":{}}"
+        
+        let data = documentJSON.data(using: String.Encoding.utf8)!
+        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
+        
+        let document = Document(json: json)
+        
+        XCTAssertTrue(document?.type == .cpf)
+    }
     
     func testAPICallToCollectAddresses() {
         let requestExpectation = expectation(description: "Get addresses collection")
