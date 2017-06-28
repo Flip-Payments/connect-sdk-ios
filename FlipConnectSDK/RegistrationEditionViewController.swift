@@ -24,8 +24,7 @@ class RegistrationEditionViewController: UIViewController {
     func dismiss() {
         self.dismiss(animated: true, completion: nil)
     }
-    
-    @IBAction func dismissModal(_ sender: UIButton) {
+    @IBAction func cancelEdit(_ sender: UIBarButtonItem) {
         dismiss()
     }
 
