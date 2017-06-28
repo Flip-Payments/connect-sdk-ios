@@ -21,6 +21,13 @@ class RegistrationEditionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func dismiss() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func dismissModal(_ sender: UIButton) {
+        dismiss()
+    }
 
     /*
     // MARK: - Navigation

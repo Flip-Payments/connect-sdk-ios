@@ -30,6 +30,7 @@
 		A1DAC0391F02F9840035E955 /* Telephone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0381F02F9840035E955 /* Telephone.swift */; };
 		A1DAC03B1F0300150035E955 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC03A1F0300150035E955 /* Email.swift */; };
 		A1DAC03D1F0301D50035E955 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC03C1F0301D50035E955 /* Document.swift */; };
+		A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC03E1F03F4EE0035E955 /* FCEditUser.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		A1DAC0381F02F9840035E955 /* Telephone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Telephone.swift; path = FlipConnectSDK/Telephone.swift; sourceTree = "<group>"; };
 		A1DAC03A1F0300150035E955 /* Email.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Email.swift; path = FlipConnectSDK/Email.swift; sourceTree = "<group>"; };
 		A1DAC03C1F0301D50035E955 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Document.swift; path = FlipConnectSDK/Document.swift; sourceTree = "<group>"; };
+		A1DAC03E1F03F4EE0035E955 /* FCEditUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditUser.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +128,7 @@
 				A117ACFB1EE7A43A00B74705 /* FCConsts.swift */,
 				A117AD501EE9289C00B74705 /* FCLogin.swift */,
 				A1E6D5BC1EE9E52400488490 /* FCColors.swift */,
+				A1DAC03E1F03F4EE0035E955 /* FCEditUser.swift */,
 			);
 			path = FlipConnectSDK;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				A1DAC0391F02F9840035E955 /* Telephone.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
+				A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
 				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,

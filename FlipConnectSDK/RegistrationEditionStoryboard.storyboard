@@ -12,7 +12,7 @@
         <!--Registration Edition View Controller-->
         <scene sceneID="wg2-qo-kgj">
             <objects>
-                <viewController id="2Jx-B5-eWm" customClass="RegistrationEditionViewController" customModule="FlipConnectSDK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegistrationEditionViewController" id="2Jx-B5-eWm" customClass="RegistrationEditionViewController" customModule="FlipConnectSDK" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zii-GH-gnC"/>
                         <viewControllerLayoutGuide type="bottom" id="QOC-Mg-Ik8"/>
@@ -20,6 +20,16 @@
                     <view key="view" contentMode="scaleToFill" id="b9b-3c-xAE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8Y-R9-qJt">
+                                <rect key="frame" x="169" y="28" width="37" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="dismissModal:" destination="2Jx-B5-eWm" eventType="touchUpInside" id="CRi-8z-yjh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

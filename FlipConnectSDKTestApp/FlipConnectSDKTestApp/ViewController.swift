@@ -22,8 +22,8 @@ class ViewController: UIViewController {
     static let AccessToken = "FCAccessToken"
     static let RefreshToken = "FCRefreshToken"
     static let AccountKey = "FCAccountKey"
-
-
+    
+    
     @IBAction func printAllUserDefaults(_ sender: UIButton) {
         print("accessToken: \(String(describing: UserDefaults.standard.accessToken))")
         print("accountKey: \(String(describing: UserDefaults.standard.accountKey))")
@@ -33,6 +33,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor(red: 0.862, green: 0.862, blue: 0.862, alpha: 1.000)
+        
+        let vc = FCEditUser()
         
         do {
             loginFlip = try FCLogin.shared()
@@ -49,8 +51,20 @@ class ViewController: UIViewController {
         view.addSubview(btn)
         view.addSubview(btn2)
         view.addSubview(btn3)
+        
+        //        let v = vc.loadView()
+        vc.loadView { viewController in
+            self.present(viewController, animated: true, completion: nil)
+        }
+        //        DispatchQueue.main.async {
+        //            self.present(v, animated: true, completion: nil)
+        //        }
+        
+        //        self.present(v, animated: true, completion: nil)
+        
+        //self.navigationController!.present(v, animated: true, completion: nil)
     }
-
+    
     @IBAction func refreshTokenBtn(_ sender: UIButton) {
         loginFlip.verifyToken() { err in
             guard err == nil else {
