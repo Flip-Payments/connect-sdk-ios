@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var initialViewController = UIViewController()
         
-        if (UserDefaults.standard.accessToken != nil) {
+        if (UserDefaults.standard.accessToken != nil) && (UserDefaults.standard.accountKey != nil) {
             do {
                 let flip = try FCLogin.shared()
                 flip.verifyToken { error in

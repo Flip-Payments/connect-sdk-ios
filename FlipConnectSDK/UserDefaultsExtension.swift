@@ -16,7 +16,7 @@ extension UserDefaults {
         static let ClientSecret = "FCClientSecret"
         static let AccessToken = "FCAccessToken"
         static let RefreshToken = "FCRefreshToken"
-        static let AccountKey = "FCAccountKey"
+        static let UserKey = "FCUserKey"
         static let RedirectURI = "FCRedirectURI"
     }
     
@@ -72,9 +72,9 @@ extension UserDefaults {
     /// AccountKey is the key of your Account
     public internal(set) var accountKey: String? {
         get {
-            return UserDefaults.standard.string(forKey: Keys.AccountKey)
+            return UserDefaults.standard.string(forKey: Keys.UserKey)
         } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.AccountKey)
+            UserDefaults.standard.set(newValue, forKey: Keys.UserKey)
         }
     }
     
