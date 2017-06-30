@@ -13,13 +13,6 @@ class LoginSuccessViewController: UIViewController {
     
     var loginFlip: FCLogin!
     
-    @IBOutlet weak var authorizationCodeLbl: UILabel!
-    @IBOutlet weak var accessTokenLbl: UILabel!
-    @IBOutlet weak var refreshTokenLbl: UILabel!
-    @IBOutlet weak var clientIDLbl: UILabel!
-    @IBOutlet weak var clientSecretLbl: UILabel!
-    @IBOutlet weak var accountKeyLbl: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,9 +29,6 @@ class LoginSuccessViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         }
-        
-        accessTokenLbl.text = UserDefaults.standard.accessToken
-        accountKeyLbl.text = UserDefaults.standard.accountKey
     }
 
     /*
@@ -50,7 +40,8 @@ class LoginSuccessViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func refreshToken(_ sender: UIButton) {
+    
+    func refreshToken() {
         loginFlip.refreshToken{ error in
             guard error == nil else {
                 let alertController = UIAlertController(title: "Erro", message: "\(String(describing: error))", preferredStyle: UIAlertControllerStyle.alert)
@@ -64,12 +55,10 @@ class LoginSuccessViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            self.accessTokenLbl.text = UserDefaults.standard.accessToken
-            self.accountKeyLbl.text = UserDefaults.standard.accountKey
         }
     }
 
-    @IBAction func verifyToken(_ sender: UIButton) {
+    func verifyToken() {
         loginFlip.verifyToken { error in
             guard error == nil else {
                 let alertController = UIAlertController(title: "Erro", message: "\(String(describing: error))", preferredStyle: UIAlertControllerStyle.alert)
@@ -83,8 +72,6 @@ class LoginSuccessViewController: UIViewController {
                 self.present(alertController, animated: true, completion: nil)
                 return
             }
-            self.accessTokenLbl.text = UserDefaults.standard.accessToken
-            self.accountKeyLbl.text = UserDefaults.standard.accountKey
         }
     }
 }
