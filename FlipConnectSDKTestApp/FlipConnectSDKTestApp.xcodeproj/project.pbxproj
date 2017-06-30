@@ -15,6 +15,7 @@
 		A117AD411EE8BA9B00B74705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A117AD3F1EE8BA9B00B74705 /* LaunchScreen.storyboard */; };
 		A117AD491EE8BAD000B74705 /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */; };
 		A117AD4A1EE8BAD000B74705 /* FlipConnectSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A1223DE51F06F2CC00755669 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE41F06F2CC00755669 /* LoginViewController.swift */; };
 		A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		A117AD401EE8BA9B00B74705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A117AD421EE8BA9B00B74705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FlipConnectSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1223DE41F06F2CC00755669 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +95,7 @@
 			children = (
 				A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */,
 				A117AD351EE8BA9B00B74705 /* ViewController.swift */,
+				A1223DE41F06F2CC00755669 /* LoginViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */,
 				A117AD361EE8BA9B00B74705 /* ViewController.swift in Sources */,
 				A117AD341EE8BA9B00B74705 /* AppDelegate.swift in Sources */,
+				A1223DE51F06F2CC00755669 /* LoginViewController.swift in Sources */,
 				A117AD3C1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
