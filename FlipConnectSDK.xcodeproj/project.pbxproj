@@ -32,6 +32,7 @@
 		A1DAC03D1F0301D50035E955 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC03C1F0301D50035E955 /* Document.swift */; };
 		A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC03E1F03F4EE0035E955 /* FCEditUser.swift */; };
 		A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DCC6961F0C50610072D964 /* DocumentsResponse.swift */; };
+		A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DCC6981F0C55670072D964 /* FCApiDocuments.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		A1DAC03C1F0301D50035E955 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Document.swift; path = FlipConnectSDK/Document.swift; sourceTree = "<group>"; };
 		A1DAC03E1F03F4EE0035E955 /* FCEditUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditUser.swift; sourceTree = "<group>"; };
 		A1DCC6961F0C50610072D964 /* DocumentsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentsResponse.swift; path = FlipConnectSDK/DocumentsResponse.swift; sourceTree = "<group>"; };
+		A1DCC6981F0C55670072D964 /* FCApiDocuments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiDocuments.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,6 +202,7 @@
 				A117AD4C1EE8BC6300B74705 /* FCApi.swift */,
 				A1DAC02B1F02D7520035E955 /* FCApiToken.swift */,
 				A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */,
+				A1DCC6981F0C55670072D964 /* FCApiDocuments.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */,
 				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
+				A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
 				A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */,
