@@ -55,6 +55,20 @@ class EntitiesTests: XCTestCase {
         XCTAssertTrue(document?.type == .cpf)
     }
     
+    func testJSONtoDocumentsConversion() {
+        let documentsJSON = "{\"documents\":[{\"id\":86,\"documentType\":\"cpf\",\"documentTypeFriendlyName\":\"CPF\",\"documentNumber\":\"37692802963\",\"documentData\":{}},{\"id\":115,\"documentType\":\"cnpj\",\"documentTypeFriendlyName\":\"CNPJ\",\"documentNumber\":\"23873167000162\",\"documentData\":{}},{\"id\":116,\"documentType\":\"cnh\",\"documentTypeFriendlyName\":\"CNH\",\"documentNumber\":\"1234567901\",\"documentData\":{}}],\"success\":true,\"operationReport\":[]}"
+        
+        let data = documentsJSON.data(using: String.Encoding.utf8)!
+        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
+        
+        let documents = Documents(json: json)
+        
+        XCTAssertTrue(documents.documents[0].id == 86)
+        XCTAssertTrue(documents.success)
+        XCTAssertTrue(documents.documents[0].type == .cpf)
+
+    }
+    
     func testAPICallToCollectAddresses() {
         let requestExpectation = expectation(description: "Get addresses collection")
         
