@@ -46,9 +46,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         var initialViewController = UIViewController()
         
-        if (UserDefaults.standard.accessToken != nil) && (UserDefaults.standard.accountKey != nil) {
-            do {
-                let flip = try FCLogin.shared()
+        do {
+            let flip = try FCLogin.shared()
+            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.accountKey {
+                print("Token: \(token)")
+                print("Account: \(accountKey)")
+                
                 flip.verifyToken { error in
                     self.window = UIWindow(frame: UIScreen.main.bounds)
                     if let error = error {
@@ -60,9 +63,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.window?.rootViewController = initialViewController
                     self.window?.makeKeyAndVisible()
                 }
-            } catch {
-                print(error)
+                
+            } else {
+                self.window = UIWindow(frame: UIScreen.main.bounds)
+                initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                self.window?.rootViewController = initialViewController
+                self.window?.makeKeyAndVisible()
             }
+        } catch {
+            print(error)
         }
         return true
     }
