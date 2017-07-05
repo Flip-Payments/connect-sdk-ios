@@ -48,9 +48,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         do {
             let flip = try FCLogin.shared()
-            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.accountKey {
+            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.accountKey, let publicToken = UserDefaults.standard.publicToken {
                 print("Token: \(token)")
                 print("Account: \(accountKey)")
+                print("Public Token: \(publicToken)")
                 
                 flip.verifyToken { error in
                     self.window = UIWindow(frame: UIScreen.main.bounds)

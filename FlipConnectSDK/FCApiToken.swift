@@ -75,4 +75,24 @@ extension FCApi {
             completion(resp, err)
         }
     }
+    
+    static func requestPublicToken(clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+        let parameters: Parameters = [
+            "grantType": "client_credentials",
+            "clientId": "\(id)",
+            "clientSecret": "\(secret)"
+        ]
+        
+        var resp = JSON()
+        var err: Error? = nil
+        
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            guard error == nil else {
+                err = error
+                return
+            }
+            resp = response
+            completion(resp, err)
+        }
+    }
 }

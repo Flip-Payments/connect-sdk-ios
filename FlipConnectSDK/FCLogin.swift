@@ -164,11 +164,58 @@ public class FCLogin {
         }
     }
     
-    /// Handles redirect from login for token creation
-    ///
-    /// - Parameters:
-    ///    - fromURL: URL received from Redirect
-    ///    - completion: error received from callback
+    /**
+     Get public token to use with public API
+     
+     - Parameters:
+        - completion: Callback
+        - error: Is not nil when the execution is unsuccessfull
+    */
+    public func publicToken(completion: @escaping (_ error: Error?) -> Void) {
+        var err: Error? = nil
+        
+        guard let clientSecret = UserDefaults.standard.clientSecret,
+            let clientID = UserDefaults.standard.clientID else {
+                err = FCErrors.invalidOperation
+                completion(err)
+                return
+        }
+        
+        FCApi.requestPublicToken(clientID: clientID , clientSecret: clientSecret) { res, err in
+            guard err == nil else {
+                completion(err)
+                return
+            }
+            
+            let isPublicToken = res["accessToken"] as? String
+            
+            guard let publicToken = isPublicToken else {
+                let operationReport = res["operationReport"] as? [JSON]
+                var message = ""
+                if let or = operationReport {
+                    for operation in or {
+                        for item in operation {
+                            message += "\(item.key): \(item.value) "
+                        }
+                    }
+                }
+                completion(FCErrors.requestUnsuccessful(message: message))
+                return
+            }
+            
+            UserDefaults.standard.publicToken = publicToken
+            completion(err)
+        }
+    }
+    
+    /**
+     Handles redirect from login for token creation
+    
+     - Parameters:
+        - fromURL: URL received from Redirect
+        - completion: Callback
+        - error: Is not nil when the execution is unsuccessfull
+    */
     public func handleRedirect(fromURL url: URL, completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil
         
@@ -216,7 +263,10 @@ public class FCLogin {
             UserDefaults.standard.accessToken = token
             UserDefaults.standard.refreshToken = refreshToken
             UserDefaults.standard.accountKey = accountKey
-            completion(err)
+            
+            self.publicToken() { err in
+                completion(err)
+            }
         }
     }
 }
