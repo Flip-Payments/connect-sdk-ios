@@ -19,7 +19,7 @@ struct User {
     
     init?(json: JSON) {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "M/DD/YYYY HH:mm:ss a"
+        dateFormatter.dateFormat = "MM/dd/yyyy h:mm:ss a"
         
         guard let accountKey = json["accountKey"] as? String,
             let isEnabled = json["isEnabled"] as? Bool,
