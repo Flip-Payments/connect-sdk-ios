@@ -18,6 +18,8 @@
 		A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */; };
 		A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD501EE9289C00B74705 /* FCLogin.swift */; };
 		A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD521EE936AB00B74705 /* PlistHelper.swift */; };
+		A1223DE71F0D71D700755669 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE61F0D71D700755669 /* User.swift */; };
+		A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE81F0D729D00755669 /* PublicProfile.swift */; };
 		A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */; };
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
@@ -61,6 +63,8 @@
 		A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHelper.swift; sourceTree = "<group>"; };
 		A117AD501EE9289C00B74705 /* FCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCLogin.swift; sourceTree = "<group>"; };
 		A117AD521EE936AB00B74705 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
+		A1223DE61F0D71D700755669 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FlipConnectSDK/User.swift; sourceTree = "<group>"; };
+		A1223DE81F0D729D00755669 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfile.swift; path = FlipConnectSDK/PublicProfile.swift; sourceTree = "<group>"; };
 		A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationEditionStoryboard.storyboard; sourceTree = "<group>"; };
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
@@ -181,6 +185,8 @@
 				A1DAC0381F02F9840035E955 /* Telephone.swift */,
 				A1DAC03A1F0300150035E955 /* Email.swift */,
 				A1DAC03C1F0301D50035E955 /* Document.swift */,
+				A1223DE61F0D71D700755669 /* User.swift */,
+				A1223DE81F0D729D00755669 /* PublicProfile.swift */,
 			);
 			name = Entities;
 			path = ..;
@@ -333,6 +339,7 @@
 				A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */,
 				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
+				A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */,
 				A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
@@ -349,6 +356,7 @@
 				A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
 				A1DAC03D1F0301D50035E955 /* Document.swift in Sources */,
+				A1223DE71F0D71D700755669 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
