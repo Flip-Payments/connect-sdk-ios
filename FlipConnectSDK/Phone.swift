@@ -8,17 +8,21 @@
 
 import Foundation
 
-struct Telephone {
-    var id: Int
+struct Phone {
+    var id: String
     var type: PhoneType
     var typeFriendlyName: String
     var fullNumber: String
+    var isValidated: Bool
+    var isPrimary: Bool
     
     init?(json: JSON) {
-        guard let id = json["id"] as? Int,
+        guard let id = (json["id"] as? String ?? json["key"] as? String),
             let phoneType = PhoneType(rawValue: (json["phoneType"] as? String)!),
             let phoneTypeFriendlyName = json["phoneTypeFriendlyName"] as? String,
-            let fullNumber = json["fullNumber"] as? String
+            let fullNumber = json["fullNumber"] as? String,
+            let isValidated = json["isValidated"] as? Bool,
+            let isPrimary = json["isPrimary"] as? Bool
             else {
                 return nil
         }
@@ -27,7 +31,8 @@ struct Telephone {
         self.type = phoneType
         self.typeFriendlyName = phoneTypeFriendlyName
         self.fullNumber = fullNumber
-        
+        self.isPrimary = isPrimary
+        self.isValidated = isValidated        
     }
 }
 

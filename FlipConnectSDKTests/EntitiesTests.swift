@@ -34,12 +34,12 @@ class EntitiesTests: XCTestCase {
     }
     
     func testJSONtoTelephoneConversion() {
-        let telephoneJSON = "{\"id\":193,\"phoneType\":\"mobile\",\"phoneTypeFriendlyName\":\"Celular\",\"fullNumber\":\"+5521987654321\",\"IsValidated\":false,\"isPrimary\":false}"
+        let telephoneJSON = "{\"id\":193,\"phoneType\":\"mobile\",\"phoneTypeFriendlyName\":\"Celular\",\"fullNumber\":\"+5521987654321\",\"isValidated\":false,\"isPrimary\":false}"
         
         let data = telephoneJSON.data(using: String.Encoding.utf8)
         let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! JSON
         
-        let telephone = Telephone(json: json)
+        let telephone = Phone(json: json)
         
         XCTAssertTrue(telephone?.type == .mobile)
     }
@@ -88,6 +88,17 @@ class EntitiesTests: XCTestCase {
         let ppNil = PublicProfile(json: jsonNilPP)
         
         XCTAssertNil(ppNil)
+    }
+    
+    func testJSONtoPublicTelephoneConversion() {
+        let telephoneJSON = "{\"key\":\"8e6dc241-2f5c-711-80c2-0003ff345086\",\"phoneType\":\"home\",\"phoneTypeFriendlyName\":\"Residencial\",\"fullNumber\":\"+5521123456789\",\"isValidated\":false,\"isPrimary\":false}"
+        
+        let data = telephoneJSON.data(using: String.Encoding.utf8)!
+        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
+        
+        let telephone = Phone(json: json)
+        
+        XCTAssert(telephone?.type == .home)
     }
 
     func testAPICallToCollectAddresses() {
