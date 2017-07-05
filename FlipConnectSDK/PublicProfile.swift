@@ -7,3 +7,18 @@
 //
 
 import Foundation
+
+struct PublicProfile {
+    var name: String?
+    var pictureURL: String?
+    
+    init?(json: JSON) {
+        self.name = json["name"] as? String
+        self.pictureURL = json["pictureUrl"] as? String
+        
+        if self.name == nil && self.pictureURL == nil {
+            return nil
+        }
+    }
+
+}
