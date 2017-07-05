@@ -69,6 +69,27 @@ class EntitiesTests: XCTestCase {
 
     }
     
+    func testJSONtoPublicProfileConversion() {
+        let ppJSON = "{\"name\": \"Cesar Maia\",\"pictureUrl\": null }"
+        
+        let dataPP = ppJSON.data(using: String.Encoding.utf8)!
+        let jsonPP = try! JSONSerialization.jsonObject(with: dataPP, options: []) as! JSON
+        
+        let pp = PublicProfile(json: jsonPP)
+        
+        XCTAssertNil(pp?.pictureURL)
+        XCTAssert(pp?.name == "Cesar Maia")
+        
+        let ppNilJSON = "{\"name\": null,\"pictureUrl\": null }"
+        
+        let dataNilPP = ppNilJSON.data(using: String.Encoding.utf8)!
+        let jsonNilPP = try! JSONSerialization.jsonObject(with: dataNilPP, options: []) as! JSON
+        
+        let ppNil = PublicProfile(json: jsonNilPP)
+        
+        XCTAssertNil(ppNil)
+    }
+
     func testAPICallToCollectAddresses() {
         let requestExpectation = expectation(description: "Get addresses collection")
         
