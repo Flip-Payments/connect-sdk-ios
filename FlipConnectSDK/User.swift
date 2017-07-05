@@ -15,5 +15,5 @@ struct User {
     var isNewsLetterllowed: Bool
     var publicProfile: PublicProfile?
     var emails: [Email]
-    var telephones: [Telephone]
+    var phones: [Phone]
 }

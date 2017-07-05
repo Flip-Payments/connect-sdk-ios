@@ -9,7 +9,7 @@
 import Foundation
 
 struct Phone {
-    var id: String
+    var key: String
     var type: PhoneType
     var typeFriendlyName: String
     var fullNumber: String
@@ -27,7 +27,7 @@ struct Phone {
                 return nil
         }
         
-        self.id = id
+        self.key = id
         self.type = phoneType
         self.typeFriendlyName = phoneTypeFriendlyName
         self.fullNumber = fullNumber
