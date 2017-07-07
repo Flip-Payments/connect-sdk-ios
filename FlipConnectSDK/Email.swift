@@ -9,7 +9,7 @@
 import Foundation
 
 struct Email {
-    var id: String
+    var key: String
     var address: String
     var isValidated: Bool
     var isPrimary: Bool
@@ -23,7 +23,7 @@ struct Email {
                 return nil
         }
         
-        self.id = id
+        self.key = id
         self.address = address
         self.isValidated = isValidated
         self.isPrimary = isPrimary
