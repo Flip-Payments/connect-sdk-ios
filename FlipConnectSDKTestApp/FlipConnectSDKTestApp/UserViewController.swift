@@ -7,9 +7,30 @@
 //
 
 import UIKit
+import FlipConnectSDK
 
 class UserViewController: UIViewController {
+    @IBOutlet weak var publicProfileNameLbl: UILabel!
+    
+    @IBAction func backButton(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let publicToken = UserDefaults.standard.publicToken, let accountKey = UserDefaults.standard.accountKey else {
+            return
+        }
+        
+        FCApi.getUser(publicToken: publicToken, accountKey: accountKey) { user, error in
+            DispatchQueue.main.async {
+                self.publicProfileNameLbl.text = user.user?.publicProfile?.name
+            }
+            print(user.user?.publicProfile?.name ?? "oops")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

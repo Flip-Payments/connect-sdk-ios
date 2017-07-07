@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,12 +68,75 @@
                     <view key="view" contentMode="scaleToFill" id="4lO-gA-OF8">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2k-ys-zQU">
+                                <rect key="frame" x="144" y="20" width="33" height="30"/>
+                                <state key="normal" title="User"/>
+                                <connections>
+                                    <segue destination="Bvf-IT-Psa" kind="show" id="KBJ-h7-yEl"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="J2k-ys-zQU" firstAttribute="top" secondItem="ZNu-nR-m0y" secondAttribute="bottom" id="Btj-wa-1HP"/>
+                            <constraint firstItem="J2k-ys-zQU" firstAttribute="centerX" secondItem="4lO-gA-OF8" secondAttribute="centerX" id="fRz-1W-bLa"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlo-pg-5m7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="851"/>
+        </scene>
+        <!--User View Controller-->
+        <scene sceneID="R4g-PP-8qj">
+            <objects>
+                <viewController id="Bvf-IT-Psa" customClass="UserViewController" customModule="FlipConnectSDKTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dlD-C9-7rv"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Cc-Q4-PcN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0zX-PG-W9S">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dej-Mb-ymt">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="User" id="htq-7K-34e">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="lqS-2b-Yy4">
+                                            <connections>
+                                                <action selector="backButton:" destination="Bvf-IT-Psa" id="B8c-Nf-A4T"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="EMr-KN-Ajh"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHw-bw-QQS">
+                                <rect key="frame" x="16" y="81" width="288" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dej-Mb-ymt" firstAttribute="leading" secondItem="0zX-PG-W9S" secondAttribute="leading" id="1z9-BF-EaJ"/>
+                            <constraint firstItem="dej-Mb-ymt" firstAttribute="top" secondItem="dlD-C9-7rv" secondAttribute="bottom" id="6uX-hO-Sam"/>
+                            <constraint firstItem="ZHw-bw-QQS" firstAttribute="trailing" secondItem="0zX-PG-W9S" secondAttribute="trailingMargin" id="NiH-TB-jWt"/>
+                            <constraint firstAttribute="trailing" secondItem="dej-Mb-ymt" secondAttribute="trailing" id="s3j-GI-X3q"/>
+                            <constraint firstItem="ZHw-bw-QQS" firstAttribute="leading" secondItem="0zX-PG-W9S" secondAttribute="leadingMargin" id="ueY-Yo-q7h"/>
+                            <constraint firstItem="ZHw-bw-QQS" firstAttribute="top" secondItem="dej-Mb-ymt" secondAttribute="bottom" constant="17" id="w6Y-QC-cxL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="publicProfileNameLbl" destination="ZHw-bw-QQS" id="neI-ds-MYH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rm8-7i-GIM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1029.375" y="851.4084507042254"/>
         </scene>
     </scenes>
 </document>
