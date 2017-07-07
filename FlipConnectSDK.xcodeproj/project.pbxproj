@@ -20,6 +20,7 @@
 		A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD521EE936AB00B74705 /* PlistHelper.swift */; };
 		A1223DE71F0D71D700755669 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE61F0D71D700755669 /* User.swift */; };
 		A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE81F0D729D00755669 /* PublicProfile.swift */; };
+		A1223DEB1F0FD53000755669 /* FCApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEA1F0FD53000755669 /* FCApiUser.swift */; };
 		A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */; };
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
@@ -66,6 +67,7 @@
 		A117AD521EE936AB00B74705 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		A1223DE61F0D71D700755669 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FlipConnectSDK/User.swift; sourceTree = "<group>"; };
 		A1223DE81F0D729D00755669 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfile.swift; path = FlipConnectSDK/PublicProfile.swift; sourceTree = "<group>"; };
+		A1223DEA1F0FD53000755669 /* FCApiUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiUser.swift; sourceTree = "<group>"; };
 		A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationEditionStoryboard.storyboard; sourceTree = "<group>"; };
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				A1DAC02B1F02D7520035E955 /* FCApiToken.swift */,
 				A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */,
 				A1DCC6981F0C55670072D964 /* FCApiDocuments.swift */,
+				A1223DEA1F0FD53000755669 /* FCApiUser.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
 				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
+				A1223DEB1F0FD53000755669 /* FCApiUser.swift in Sources */,
 				A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */,
 				A1DCC69B1F0ED6F90072D964 /* UserResponse.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
