@@ -8,13 +8,13 @@
 
 import Foundation
 
-struct Phone {
-    var key: String
-    var type: PhoneType
-    var typeFriendlyName: String
-    var fullNumber: String
-    var isValidated: Bool
-    var isPrimary: Bool
+public struct Phone {
+    public private(set) var key: String
+    public private(set) var type: PhoneType
+    public private(set) var typeFriendlyName: String
+    public private(set) var fullNumber: String
+    public private(set) var isValidated: Bool
+    public private(set) var isPrimary: Bool
     
     init?(json: JSON) {
         guard let id = (json["id"] as? String ?? json["key"] as? String),
@@ -36,7 +36,7 @@ struct Phone {
     }
 }
 
-enum PhoneType: String {
+public enum PhoneType: String {
     case home
     case mobile
     case work

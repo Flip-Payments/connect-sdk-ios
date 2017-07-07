@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FCApi {
+public struct FCApi {
        
     static func request(toURL url: URL, withVerb httpMethod: HTTPVerb = .get, withParameters parameters: Parameters? = nil, withHeaders headers: Headers? = nil, withBody body: JSON? = nil, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         var url = url

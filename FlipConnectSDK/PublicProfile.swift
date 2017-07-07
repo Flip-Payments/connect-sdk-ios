@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct PublicProfile {
-    var name: String?
-    var pictureURL: String?
+public struct PublicProfile {
+    public private(set) var name: String?
+    public private(set) var pictureURL: String?
     
     init?(json: JSON) {
         self.name = json["name"] as? String

@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct UserResponse: Response {
-    var operationReport: [Report] = []
+public struct UserResponse: Response {
+    public var operationReport: [Report] = []
     
-    var success: Bool = false
+    public var success: Bool = false
     
-    var user: User?
+    public private(set) var user: User?
     
-    init(json: JSON) {
+    public init(json: JSON) {
         self.initializeResponse(json: json)
         
         guard let user = json["user"] as? JSON else {

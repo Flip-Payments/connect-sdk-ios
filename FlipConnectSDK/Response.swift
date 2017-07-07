@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Response {
+public protocol Response {
     var success: Bool { get set }
     var operationReport: [Report] { get set }
     
@@ -39,9 +39,9 @@ extension Response {
     }
 }
 
-struct Report {
-    var field: String
-    var message: String
+public struct Report {
+    public private(set) var field: String
+    public private(set) var message: String
     
     init?(json: JSON) {
         guard let field = json["field"] as? String,

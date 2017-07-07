@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct User {
-    var accountKey: String
-    var isEnabled: Bool
-    var membershipCreateDate: Date
-    var isNewsLetterAllowed: Bool
-    var publicProfile: PublicProfile?
-    var emails: [Email] = []
-    var phones: [Phone] = []
+public struct User {
+    public private(set) var accountKey: String
+    public private(set) var isEnabled: Bool
+    public private(set) var membershipCreateDate: Date
+    public private(set) var isNewsLetterAllowed: Bool
+    public private(set) var publicProfile: PublicProfile?
+    public private(set) var emails: [Email] = []
+    public private(set) var phones: [Phone] = []
     
     init?(json: JSON) {
         let dateFormatter = DateFormatter()

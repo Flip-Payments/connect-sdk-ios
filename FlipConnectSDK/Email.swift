@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Email {
-    var key: String
-    var address: String
-    var isValidated: Bool
-    var isPrimary: Bool
+public struct Email {
+    public private(set) var key: String
+    public private(set) var address: String
+    public private(set) var isValidated: Bool
+    public private(set) var isPrimary: Bool
     
     init?(json: JSON) {
         guard let id = (json["id"] as? String ?? json["key"] as? String),
