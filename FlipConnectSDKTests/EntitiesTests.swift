@@ -61,7 +61,7 @@ class EntitiesTests: XCTestCase {
         let data = documentsJSON.data(using: String.Encoding.utf8)!
         let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
         
-        let documents = Documents(json: json)
+        let documents = DocumentsResponse(json: json)
         
         XCTAssertTrue(documents.documents[0].id == 86)
         XCTAssertTrue(documents.success)

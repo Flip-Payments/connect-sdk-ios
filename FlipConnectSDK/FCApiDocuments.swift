@@ -9,7 +9,7 @@
 import Foundation
 
 extension FCApi {
-    static func getDocuments(accessToken token: String, completion: @escaping (_ documents: Documents, _ error: Error?) -> Void) {
+    static func getDocuments(accessToken token: String, completion: @escaping (_ documents: DocumentsResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
             "Accept-Language": "en-US",
             "Accept": "application/json",
@@ -19,7 +19,7 @@ extension FCApi {
         
         var err: Error? = nil
         FCApi.request(toURL: URL(string: "\(FCConsts.connectUserManagementUrl)user/account/documents")!, withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
-            let documents = Documents(json: response)
+            let documents = DocumentsResponse(json: response)
             guard error == nil else {
                 err = error
                 completion(documents, err)
