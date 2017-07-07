@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Addresses: Response {
+struct AddressesResponse: Response {
     var operationReport: [Report] = []
 
     var success: Bool = false

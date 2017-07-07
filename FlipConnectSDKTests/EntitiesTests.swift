@@ -28,7 +28,7 @@ class EntitiesTests: XCTestCase {
         let data = addressesJSON.data(using: String.Encoding.utf8)
         let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! JSON
         
-        let addresses = Addresses(json: json)
+        let addresses = AddressesResponse(json: json)
         
         XCTAssertTrue(addresses.success)
     }
