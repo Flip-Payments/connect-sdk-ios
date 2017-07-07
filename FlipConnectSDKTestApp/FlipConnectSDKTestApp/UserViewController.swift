@@ -11,6 +11,7 @@ import FlipConnectSDK
 
 class UserViewController: UIViewController {
     @IBOutlet weak var publicProfileNameLbl: UILabel!
+    @IBOutlet weak var emailAddress: UILabel!
     
     @IBAction func backButton(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
@@ -26,6 +27,7 @@ class UserViewController: UIViewController {
         FCApi.getUser(publicToken: publicToken, accountKey: accountKey) { user, error in
             DispatchQueue.main.async {
                 self.publicProfileNameLbl.text = user.user?.publicProfile?.name
+                self.emailAddress.text = user.user?.emails.first?.address
             }
             print(user.user?.publicProfile?.name ?? "oops")
         }

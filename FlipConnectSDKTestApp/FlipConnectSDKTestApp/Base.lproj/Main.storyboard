@@ -119,18 +119,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="tzD-9Z-qJp">
+                                <rect key="frame" x="16" y="107" width="288" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.082133672670036684" green="0.21842036100801576" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="tzD-9Z-qJp" firstAttribute="top" secondItem="ZHw-bw-QQS" secondAttribute="bottom" id="1mk-uB-49h"/>
                             <constraint firstItem="dej-Mb-ymt" firstAttribute="leading" secondItem="0zX-PG-W9S" secondAttribute="leading" id="1z9-BF-EaJ"/>
                             <constraint firstItem="dej-Mb-ymt" firstAttribute="top" secondItem="dlD-C9-7rv" secondAttribute="bottom" id="6uX-hO-Sam"/>
                             <constraint firstItem="ZHw-bw-QQS" firstAttribute="trailing" secondItem="0zX-PG-W9S" secondAttribute="trailingMargin" id="NiH-TB-jWt"/>
+                            <constraint firstItem="tzD-9Z-qJp" firstAttribute="trailing" secondItem="0zX-PG-W9S" secondAttribute="trailingMargin" id="WKx-OP-Lpd"/>
                             <constraint firstAttribute="trailing" secondItem="dej-Mb-ymt" secondAttribute="trailing" id="s3j-GI-X3q"/>
+                            <constraint firstItem="tzD-9Z-qJp" firstAttribute="leading" secondItem="0zX-PG-W9S" secondAttribute="leadingMargin" id="tmI-mi-aS9"/>
                             <constraint firstItem="ZHw-bw-QQS" firstAttribute="leading" secondItem="0zX-PG-W9S" secondAttribute="leadingMargin" id="ueY-Yo-q7h"/>
                             <constraint firstItem="ZHw-bw-QQS" firstAttribute="top" secondItem="dej-Mb-ymt" secondAttribute="bottom" constant="17" id="w6Y-QC-cxL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailAddress" destination="tzD-9Z-qJp" id="gQe-07-rn4"/>
                         <outlet property="publicProfileNameLbl" destination="ZHw-bw-QQS" id="neI-ds-MYH"/>
                     </connections>
                 </viewController>
