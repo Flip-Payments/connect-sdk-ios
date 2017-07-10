@@ -11,11 +11,11 @@ import Foundation
 extension FCApi {
     static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, clientSecret secret: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         let parameters: Parameters = [
-            "grantType": "authorization_code",
-            "authorizationCode": "\(code)",
-            "redirectUri": "\(uri)",
-            "clientSecret": "\(secret)",
-            "clientId": "\(id)"
+            "grant_type": "authorization_code",
+            "authorization_code": "\(code)",
+            "redirect_uri": "\(uri)",
+            "client_secret": "\(secret)",
+            "client_id": "\(id)"
         ]
         
         var resp = JSON()
@@ -35,11 +35,11 @@ extension FCApi {
     
     static func requestNewToken(refreshToken token: String, clientID id: String, clientSecret secret: String, redirectURI uri: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         let parameters: Parameters = [
-            "grantType": "refresh_token",
-            "refreshToken": "\(token)",
-            "clientId": "\(id)",
-            "clientSecret": "\(secret)",
-            "redirectUri": "\(uri)"
+            "grant_type": "refresh_token",
+            "refresh_token": "\(token)",
+            "client_id": "\(id)",
+            "client_secret": "\(secret)",
+            "redirect_uri": "\(uri)"
         ]
         
         var resp = JSON()
@@ -57,10 +57,10 @@ extension FCApi {
     
     static func requestVerifyToken(accessToken token: String, clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         let parameters: Parameters = [
-            "grantType": "verify_token",
-            "accessToken": "\(token)",
-            "clientId": "\(id)",
-            "clientSecret": "\(secret)"
+            "grant_type": "verify_token",
+            "access_token": "\(token)",
+            "client_id": "\(id)",
+            "client_secret": "\(secret)"
         ]
         
         var resp = JSON()
@@ -78,9 +78,9 @@ extension FCApi {
     
     static func requestPublicToken(clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         let parameters: Parameters = [
-            "grantType": "client_credentials",
-            "clientId": "\(id)",
-            "clientSecret": "\(secret)"
+            "grant_type": "client_credentials",
+            "client_id": "\(id)",
+            "client_secret": "\(secret)"
         ]
         
         var resp = JSON()
