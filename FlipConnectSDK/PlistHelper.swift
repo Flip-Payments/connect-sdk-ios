@@ -12,6 +12,7 @@ struct PlistHelper {
     private static let clientIDKey = "ClientID"
     private static let clientSecretKey = "ClientSecret"
     private static let redirectURIKey = "RedirectURI"
+    private static let publicTokenAPIKey = "PublicTokenAPI"
     
     init(bundle jsonArray: JSON?) throws {
         guard let plist = jsonArray else {
@@ -25,13 +26,18 @@ struct PlistHelper {
         let isClientID = config[PlistHelper.clientIDKey] as? String
         let isClientSecret = config[PlistHelper.clientSecretKey] as? String
         let isRedirectURI = config[PlistHelper.redirectURIKey] as? String
+        let isPublicTokenAPI = config[PlistHelper.publicTokenAPIKey] as? String
         
-        guard let clientID = isClientID, let clientSecret = isClientSecret, let redirectURI = isRedirectURI else {
-            throw FCErrors.incorrectIdentifier
+        guard let clientID = isClientID,
+            let clientSecret = isClientSecret,
+            let redirectURI = isRedirectURI,
+            let publicTokenAPI = isPublicTokenAPI else {
+            throw FCErrors.plistItemNotFilled
         }
         
         UserDefaults.standard.clientID = clientID
         UserDefaults.standard.clientSecret = clientSecret
         UserDefaults.standard.redirectURI = redirectURI
+        UserDefaults.standard.publicToken = publicTokenAPI
     }
 }
