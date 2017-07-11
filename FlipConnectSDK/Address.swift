@@ -8,22 +8,22 @@
 
 import Foundation
 
-struct Address {
-    var id: Int
-    var street: String
-    var number: String
-    var complement: String?
-    var type: String
-    var typeFriendlyName: String?
-    var district: String?
-    var city: String
-    var state: String
-    var zipCode: String
-    var addressReference: String?
-    var country: String
+public struct Address {
+    public private (set) var key: String
+    public private (set) var street: String
+    public private (set) var number: String
+    public private (set) var complement: String?
+    public private (set) var type: String
+    public private (set) var typeFriendlyName: String?
+    public private (set) var district: String?
+    public private (set) var city: String
+    public private (set) var state: String
+    public private (set) var zipCode: String
+    public private (set) var addressReference: String?
+    public private (set) var country: String
     
-    init?(json: JSON) {
-        guard let id = json["id"] as? Int,
+    public init?(json: JSON) {
+        guard let key = json["key"] as? String,
         let street = json["street"] as? String,
         let number = json["number"] as? String,
         let addressType = json["addressType"] as? String,
@@ -35,7 +35,7 @@ struct Address {
                 return nil
         }
         
-        self.id = id
+        self.key = key
         self.street = street
         self.number = number
         self.complement = json["complement"] as? String
