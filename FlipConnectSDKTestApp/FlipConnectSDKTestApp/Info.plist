@@ -33,6 +33,8 @@
 	<string>1</string>
 	<key>FlipConnectSDK</key>
 	<dict>
+		<key>PublicTokenAPI</key>
+		<string>5DDA35B940DFFBBFDB1899CDC97EB8A6</string>
 		<key>ClientID</key>
 		<string>F7F667C7-199F-4A10-B53A-4FADCDFADB53</string>
 		<key>ClientSecret</key>
