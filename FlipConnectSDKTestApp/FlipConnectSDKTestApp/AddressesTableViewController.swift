@@ -45,12 +45,12 @@ class AddressesTableViewController: UIViewController, UITableViewDataSource, UIT
         let cell: AddressTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         
         // Configure the cell...
-//        cell.cityStateLbl.text = "Rio de Janeiro-RJ"
-//        cell.complementLbl.text = "Apto 303"
-//        cell.countryFlagLbl.text = "🇧🇷"
-//        cell.districtLbl.text = "Tijuca"
-//        cell.streetLbl.text = "Rua Conde de Bonfim, 803"
-//        cell.zipCodeLbl.text = "20270-101"
+        cell.cityStateLbl.text = "Rio de Janeiro-RJ"
+        cell.complementLbl.text = "Apto 303"
+        cell.countryFlagLbl.text = "🇧🇷"
+        cell.districtLbl.text = "Tijuca"
+        cell.streetLbl.text = "Rua Conde de Bonfim, 803"
+        cell.zipCodeLbl.text = "20270-101"
         
 
         return cell
