@@ -41,7 +41,7 @@ If the registered Merchant URI is `flipConnect://application` your Url Schemes m
 
 ![Url Schema Creation](img/urlTypes.png)
 
-On your `Info.plist` you must add your **ClientID**, **ClientSecret** and **RedirectURI** registered on our API, it'll be used by the SDK to handle redirect from our login page:
+On your `Info.plist` you must add your **ClientID**, **ClientSecret**, **PublicTokenAPI** and **RedirectURI** registered on our API, it'll be used by the SDK to handle redirect from our login page:
 
 ```xml
 <key>FlipConnectSDK</key>
@@ -52,6 +52,8 @@ On your `Info.plist` you must add your **ClientID**, **ClientSecret** and **Redi
   <string>FD5A0D34-878D-483B-9CC0-573DFB82A75B</string>
   <key>ClientID</key>
   <string>D7F667C8-199F-6B10-B53A-0BCDDEFADB31</string>
+  <key>PublicTokenAPI</key>
+  <string>5FFZ67B941DAACCDCB1888CDC97FA8F7</string>
 </dict>
 ```
 The final result will be something like this:
@@ -92,12 +94,14 @@ The final result will be something like this:
 	<string>1</string>
 	<key>FlipConnectSDK</key>
 	<dict>
-		<key>RedirectURI</key>
-		<string>flipConnect://application</string>
-		<key>ClientSecret</key>
-		<string>FD5A0D34-878D-483B-9CC0-573DFB82A75B</string>
-		<key>ClientID</key>
-		<string>D7F667C8-199F-6B10-B53A-0BCDDEFADB31</string>
+	<key>RedirectURI</key>
+	<string>flipConnect://application</string>
+	<key>ClientSecret</key>
+	<string>FD5A0D34-878D-483B-9CC0-573DFB82A75B</string>
+	<key>ClientID</key>
+	<string>D7F667C8-199F-6B10-B53A-0BCDDEFADB31</string>
+	<key>PublicTokenAPI</key>
+	<string>5FFZ67B941DAACCDCB1888CDC97FA8F7</string>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
