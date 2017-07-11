@@ -12,6 +12,7 @@ enum FCErrors: Error {
     case malformedURI
     case wrongParameters(message: String)
     case plistNotFound
+    case plistItemNotFilled
     case configNotFound
     case urlNameDifferentFromIdentifier
     case urlSchemeDoesNotExist
