@@ -10,6 +10,9 @@ import UIKit
 
 class PersonalDataCell: UITableViewCell {
 
+    var expandedHeight: CGFloat { get { return 1000 } }
+    var defaultHeight: CGFloat { get { return 180 } }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
