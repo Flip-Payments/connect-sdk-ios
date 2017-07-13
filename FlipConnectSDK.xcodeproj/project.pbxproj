@@ -23,6 +23,8 @@
 		A1223DEB1F0FD53000755669 /* FCApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEA1F0FD53000755669 /* FCApiUser.swift */; };
 		A14FFA2F1F17B70E0011D409 /* PublicProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FFA2D1F17B70E0011D409 /* PublicProfileCell.swift */; };
 		A14FFA301F17B70E0011D409 /* PublicProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */; };
+		A14FFA331F17BCEF0011D409 /* PersonalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FFA311F17BCEF0011D409 /* PersonalDataCell.swift */; };
+		A14FFA341F17BCEF0011D409 /* PersonalDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FFA321F17BCEF0011D409 /* PersonalDataCell.xib */; };
 		A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */; };
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
@@ -72,6 +74,8 @@
 		A1223DEA1F0FD53000755669 /* FCApiUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiUser.swift; sourceTree = "<group>"; };
 		A14FFA2D1F17B70E0011D409 /* PublicProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfileCell.swift; sourceTree = "<group>"; };
 		A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicProfileCell.xib; sourceTree = "<group>"; };
+		A14FFA311F17BCEF0011D409 /* PersonalDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataCell.swift; sourceTree = "<group>"; };
+		A14FFA321F17BCEF0011D409 /* PersonalDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalDataCell.xib; sourceTree = "<group>"; };
 		A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationEditionStoryboard.storyboard; sourceTree = "<group>"; };
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
@@ -172,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */,
+				A14FFA321F17BCEF0011D409 /* PersonalDataCell.xib */,
 				A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */,
 			);
 			name = Views;
@@ -182,6 +187,7 @@
 			children = (
 				A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */,
 				A14FFA2D1F17B70E0011D409 /* PublicProfileCell.swift */,
+				A14FFA311F17BCEF0011D409 /* PersonalDataCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -328,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14FFA301F17B70E0011D409 /* PublicProfileCell.xib in Resources */,
+				A14FFA341F17BCEF0011D409 /* PersonalDataCell.xib in Resources */,
 				A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,6 +380,7 @@
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
 				A1DAC03D1F0301D50035E955 /* Document.swift in Sources */,
 				A1223DE71F0D71D700755669 /* User.swift in Sources */,
+				A14FFA331F17BCEF0011D409 /* PersonalDataCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
