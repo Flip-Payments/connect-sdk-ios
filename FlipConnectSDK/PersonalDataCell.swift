@@ -9,13 +9,34 @@
 import UIKit
 
 class PersonalDataCell: UITableViewCell {
+    @IBAction func updateBirthdate(_ sender: UITextField) {
+        if datePicker.isHidden {
+            datePicker.isHidden = false
+        } else {
+            datePicker.isHidden = true
+        }
+    }
+    
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBOutlet weak var birthdate: UITextField!
 
-    var expandedHeight: CGFloat { get { return 1000 } }
+    @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        
+        let dateString = formatter.string(from: sender.date)
+        
+        self.birthdate.text = dateString
+    }
+    
+    var expandedHeight: CGFloat { get { return 350 } }
     var defaultHeight: CGFloat { get { return 180 } }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
