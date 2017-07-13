@@ -26,12 +26,12 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="FlipConnect" id="um7-1K-bTE">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ALE-p8-p1g">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ALE-p8-p1g">
                                             <connections>
                                                 <action selector="cancelEdit:" destination="f3d-2n-0Ul" id="KzC-fL-BLM"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Done" id="Rfg-bG-6nX"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rfg-bG-6nX"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

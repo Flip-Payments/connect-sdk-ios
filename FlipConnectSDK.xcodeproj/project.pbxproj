@@ -21,6 +21,8 @@
 		A1223DE71F0D71D700755669 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE61F0D71D700755669 /* User.swift */; };
 		A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE81F0D729D00755669 /* PublicProfile.swift */; };
 		A1223DEB1F0FD53000755669 /* FCApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEA1F0FD53000755669 /* FCApiUser.swift */; };
+		A14FFA2F1F17B70E0011D409 /* PublicProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FFA2D1F17B70E0011D409 /* PublicProfileCell.swift */; };
+		A14FFA301F17B70E0011D409 /* PublicProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */; };
 		A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */; };
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
@@ -68,6 +70,8 @@
 		A1223DE61F0D71D700755669 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FlipConnectSDK/User.swift; sourceTree = "<group>"; };
 		A1223DE81F0D729D00755669 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfile.swift; path = FlipConnectSDK/PublicProfile.swift; sourceTree = "<group>"; };
 		A1223DEA1F0FD53000755669 /* FCApiUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiUser.swift; sourceTree = "<group>"; };
+		A14FFA2D1F17B70E0011D409 /* PublicProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PublicProfileCell.swift; sourceTree = "<group>"; };
+		A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicProfileCell.xib; sourceTree = "<group>"; };
 		A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationEditionStoryboard.storyboard; sourceTree = "<group>"; };
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
@@ -167,6 +171,7 @@
 		A15067A61EFDAA2200794F73 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */,
 				A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */,
 			);
 			name = Views;
@@ -176,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */,
+				A14FFA2D1F17B70E0011D409 /* PublicProfileCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14FFA301F17B70E0011D409 /* PublicProfileCell.xib in Resources */,
 				A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +361,7 @@
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
 				A1DAC0391F02F9840035E955 /* Phone.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
+				A14FFA2F1F17B70E0011D409 /* PublicProfileCell.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
 				A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
