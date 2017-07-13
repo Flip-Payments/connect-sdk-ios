@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
         
         view.backgroundColor = UIColor(red: 0.862, green: 0.862, blue: 0.862, alpha: 1.000)
         
-        let vc = FCEditUser()
+//        let vc = FCEditUser()
         
         do {
             loginFlip = try FCLogin.shared()
@@ -37,9 +37,9 @@ class LoginViewController: UIViewController {
             print(error)
         }
         
-        vc.loadView { viewController in
-            self.present(viewController, animated: true, completion: nil)
-        }
+//        vc.loadView { viewController in
+//            self.present(viewController, animated: true, completion: nil)
+//        }
     }
 
 }

@@ -95,7 +95,7 @@ public class FCLogin {
             
             let isToken = resp["accessToken"] as? String
             let isRefreshToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["accountKey"] as? String
+            let isAccountKey = resp["userKey"] as? String
             
             guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
@@ -141,7 +141,7 @@ public class FCLogin {
             
             let isToken = resp["accessToken"] as? String
             let isAccessToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["accountKey"] as? String
+            let isAccountKey = resp["userKey"] as? String
             
             guard let token = isToken, let refreshToken = isAccessToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
@@ -244,7 +244,7 @@ public class FCLogin {
             
             let isToken = resp["accessToken"] as? String
             let isRefreshToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["accountKey"] as? String
+            let isAccountKey = resp["userKey"] as? String
             
             guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]

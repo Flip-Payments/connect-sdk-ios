@@ -9,15 +9,13 @@
 import UIKit
 
 class PersonalDataCell: UITableViewCell {
+    
+    var delegate: PersonalDataCellDelegate?
+    
     @IBAction func updateBirthdate(_ sender: UITextField) {
-        if datePicker.isHidden {
-            datePicker.isHidden = false
-        } else {
-            datePicker.isHidden = true
-        }
+        delegate?.runCommand()
     }
     
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var birthdate: UITextField!
 
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
@@ -35,8 +33,12 @@ class PersonalDataCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+        delegate?.runCommand()
 
+    }
+    
+    func test() {
+        delegate?.runCommand()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -44,5 +46,11 @@ class PersonalDataCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+}
+
+protocol PersonalDataCellDelegate {
+    
+    func runCommand()
     
 }

@@ -10,10 +10,19 @@ import UIKit
 
 class RegistrationEditionViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 100.0
+        
+        let nib = UINib(nibName: "PersonalDataCell", bundle: Bundle(for: PersonalDataCell.self))
+        self.tableView.register(nib, forCellReuseIdentifier: "PersonalDataCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,4 +47,35 @@ class RegistrationEditionViewController: UIViewController {
     }
     */
 
+}
+
+extension RegistrationEditionViewController: UITableViewDataSource, UITableViewDelegate, PersonalDataCellDelegate {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ""
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonalDataCell") as! PersonalDataCell
+        cell.delegate = self
+        
+        cell.test()
+        
+        return cell
+    }
+    
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 200.0
+//    }
+    
+    func runCommand() {
+        print("ghy")
+    }
 }

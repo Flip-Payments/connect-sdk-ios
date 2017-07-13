@@ -119,7 +119,11 @@
                                                 <action selector="backButton:" destination="Bvf-IT-Psa" id="B8c-Nf-A4T"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="EMr-KN-Ajh"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Edit" id="EMr-KN-Ajh">
+                                            <connections>
+                                                <action selector="editAction:" destination="Bvf-IT-Psa" id="aC8-Pr-qX5"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

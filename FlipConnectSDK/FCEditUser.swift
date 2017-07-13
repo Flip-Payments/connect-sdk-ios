@@ -11,7 +11,7 @@ import Foundation
 public class FCEditUser {
     public init() {}
     
-    public func loadView(completion: @escaping (_ viewController: UIViewController) -> Void) {
+    public static func loadView(completion: @escaping (_ viewController: UIViewController) -> Void) {
         var viewController: UIViewController = UIViewController()
         DispatchQueue.main.async {
             let s = UIStoryboard (
