@@ -29,6 +29,7 @@
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
+		A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779AB81F18925F0055B80C /* PersonalData.swift */; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
@@ -81,6 +82,7 @@
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
+		A1779AB81F18925F0055B80C /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalData.swift; path = FlipConnectSDK/PersonalData.swift; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				A1DAC03C1F0301D50035E955 /* Document.swift */,
 				A1223DE61F0D71D700755669 /* User.swift */,
 				A1223DE81F0D729D00755669 /* PublicProfile.swift */,
+				A1779AB81F18925F0055B80C /* PersonalData.swift */,
 			);
 			name = Entities;
 			path = ..;
@@ -385,6 +388,7 @@
 				A1DAC03D1F0301D50035E955 /* Document.swift in Sources */,
 				A1223DE71F0D71D700755669 /* User.swift in Sources */,
 				A14FFA331F17BCEF0011D409 /* PersonalDataCell.swift in Sources */,
+				A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

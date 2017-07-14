@@ -14,6 +14,7 @@ public struct User {
     public private(set) var membershipCreateDate: Date?
     public private(set) var isNewsLetterAllowed: Bool?
     public private(set) var publicProfile: PublicProfile?
+    public private(set) var personalData: PersonalData?
     public private(set) var emails: [Email] = []
     public private(set) var phones: [Phone] = []
     
@@ -32,6 +33,9 @@ public struct User {
         self.publicProfile = nil
         if let publicProfileJSON = json["publicProfile"] as? JSON {
             self.publicProfile = PublicProfile(json: publicProfileJSON)
+        }
+        if let personalDataJSON = json["personalData"] as? JSON {
+            self.personalData = PersonalData(json: personalDataJSON)
         }
         if let membershipCreateDateString = json["membershipCreateDate"] as? String {
             let membershipCreateDate = dateFormatter.date(from: membershipCreateDateString)

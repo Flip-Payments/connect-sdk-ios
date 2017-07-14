@@ -115,6 +115,14 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             return cell
         case .PersonalData:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PersonalDataCell") as! PersonalDataCell
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd/MM/yyyy"
+            
+            if let birthdate = user.user?.personalData?.birthdate {
+                cell.birthdate.text = dateFormatter.string(from: birthdate)
+            }
+            
             cell.delegate = self
             cell.test()
             return cell
