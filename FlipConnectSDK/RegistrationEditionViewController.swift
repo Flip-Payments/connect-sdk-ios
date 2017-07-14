@@ -14,6 +14,24 @@ class RegistrationEditionViewController: UIViewController {
     
     var sections: [FCEditCategoriesEnum] = []
     
+    var user: UserResponse = UserResponse(json: [:])
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        guard let accessToken = UserDefaults.standard.accessToken else {
+            return
+        }
+        
+        FCApi.getUser(accessToken: accessToken) { user, error in
+            self.user = user
+            DispatchQueue.main.async {
+                self.user = user
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -93,6 +111,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
         switch sections[indexPath.section] {
         case .PublicProfile:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PublicProfileCell") as! PublicProfileCell
+            cell.nameField.text = user.user?.publicProfile?.name
             return cell
         case .PersonalData:
             let cell = tableView.dequeueReusableCell(withIdentifier: "PersonalDataCell") as! PersonalDataCell
