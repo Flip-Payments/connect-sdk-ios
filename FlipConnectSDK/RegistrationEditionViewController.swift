@@ -123,6 +123,14 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
                 cell.birthdate.text = dateFormatter.string(from: birthdate)
             }
             
+            cell.country.text = user.user?.personalData?.country
+            
+            if let dependents = user.user?.personalData?.dependentCount {
+                cell.dependentsQty.text = "\(dependents)"
+            }
+            
+            cell.gender.text = user.user?.personalData?.genderType?.rawValue
+            
             cell.delegate = self
             cell.test()
             return cell
