@@ -12,6 +12,8 @@ class RegistrationEditionViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    var sections: [FCEditCategoriesEnum] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,15 +23,13 @@ class RegistrationEditionViewController: UIViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 100.0
         
-        let nib = UINib(nibName: "PersonalDataCell", bundle: Bundle(for: PersonalDataCell.self))
-        self.tableView.register(nib, forCellReuseIdentifier: "PersonalDataCell")
+        let personalDataCellNib = UINib(nibName: "PersonalDataCell", bundle: Bundle(for: PersonalDataCell.self))
+        self.tableView.register(personalDataCellNib, forCellReuseIdentifier: "PersonalDataCell")
+        
+        let publicProfileCellNib = UINib(nibName: "PublicProfileCell", bundle: Bundle(for: PublicProfileCell.self))
+        self.tableView.register(publicProfileCellNib, forCellReuseIdentifier: "PublicProfileCell")
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+   
     func dismiss() {
         self.dismiss(animated: true, completion: nil)
     }
@@ -51,24 +51,63 @@ class RegistrationEditionViewController: UIViewController {
 
 extension RegistrationEditionViewController: UITableViewDataSource, UITableViewDelegate, PersonalDataCellDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return ""
+        switch sections[section] {
+        case .PublicProfile:
+            return "Public Profile"
+        case .PersonalData:
+            return "Personal Data"
+        case .Emails:
+            return "Emails"
+        case .Phones:
+            return "Phones"
+        case .Addresses:
+            return "Addresses"
+        case .Documents:
+            return "Documents"
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sections.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        switch sections[section] {
+        case .PublicProfile:
+            return 1
+        case .PersonalData:
+            return 1
+        case .Emails:
+            return 100
+        case .Phones:
+            return 100
+        case .Addresses:
+            return 100
+        case .Documents:
+            return 100
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PersonalDataCell") as! PersonalDataCell
-        cell.delegate = self
         
-        cell.test()
-        
-        return cell
+        switch sections[indexPath.section] {
+        case .PublicProfile:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PublicProfileCell") as! PublicProfileCell
+            return cell
+        case .PersonalData:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "PersonalDataCell") as! PersonalDataCell
+            cell.delegate = self
+            cell.test()
+            return cell
+        case .Emails:
+            return tableView.dequeueReusableCell(withIdentifier: "")!
+        case .Phones:
+            return tableView.dequeueReusableCell(withIdentifier: "")!
+        case .Addresses:
+            return tableView.dequeueReusableCell(withIdentifier: "")!
+        case .Documents:
+            return tableView.dequeueReusableCell(withIdentifier: "")!
+        }
     }
     
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

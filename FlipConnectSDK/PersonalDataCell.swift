@@ -17,6 +17,9 @@ class PersonalDataCell: UITableViewCell {
     }
     
     @IBOutlet weak var birthdate: UITextField!
+    @IBOutlet weak var gender: UITextField!
+    @IBOutlet weak var dependentsQty: UITextField!
+    @IBOutlet weak var country: UITextField!
 
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
