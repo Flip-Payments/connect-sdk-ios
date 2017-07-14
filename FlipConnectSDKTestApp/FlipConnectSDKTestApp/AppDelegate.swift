@@ -16,63 +16,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        do {
-            let loginFlip = try FCLogin.shared()
-            loginFlip.handleRedirect(fromURL: url) { error in
-                guard error == nil else {
-                    print(error!)
-                    return
-                }
-                
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSuccessViewController")
-                
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
-        } catch {
-            print(error)
-        }
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        
+        initialViewController.url = url
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
         
         return true
     }
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        var initialViewController = UIViewController()
-        
-        do {
-            let flip = try FCLogin.shared()
-            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.accountKey, let publicToken = UserDefaults.standard.publicToken {
-                print("Token: \(token)")
-                print("Account: \(accountKey)")
-                print("Public Token: \(publicToken)")
-                
-                flip.verifyToken { error in
-                    self.window = UIWindow(frame: UIScreen.main.bounds)
-                    if let error = error {
-                        print(error)
-                        initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-                    } else {
-                        initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSuccessViewController")
-                    }
-                    self.window?.rootViewController = initialViewController
-                    self.window?.makeKeyAndVisible()
-                }
-            } else {
-                self.window = UIWindow(frame: UIScreen.main.bounds)
-                initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
-        } catch {
-            print(error)
-        }
         return true
     }
     
