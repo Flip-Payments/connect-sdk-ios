@@ -22,7 +22,7 @@ class PersonalDataCell: UITableViewCell {
     @IBOutlet weak var country: UITextField!
     
     @IBAction func genderWasTapped(_ sender: UIButton) {
-        let actionSheetController = UIAlertController(title: "Gender", message: "Option to select", preferredStyle: .actionSheet)
+        let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
             print("Cancel")
