@@ -34,6 +34,7 @@ class RegistrationEditionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -83,7 +84,7 @@ class RegistrationEditionViewController: UIViewController {
 
 }
 
-extension RegistrationEditionViewController: UITableViewDataSource, UITableViewDelegate, PersonalDataCellDelegate {
+extension RegistrationEditionViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch sections[section] {
         case .PublicProfile:
@@ -145,7 +146,9 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
                 cell.dependentsQty.text = "\(dependents)"
             }
             
-            cell.gender.text = user.user?.personalData?.genderType?.rawValue
+            if let gender = user.user?.personalData?.genderTypeFriendlyName {
+                cell.genderBtn.setTitle(gender, for: .normal)
+            }
             
             cell.delegate = self
             cell.test()
@@ -165,7 +168,14 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
 //        return 200.0
 //    }
     
+}
+
+extension RegistrationEditionViewController: PersonalDataCellDelegate {
     func runCommand() {
         print("ghy")
+    }
+    
+    func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController) {
+        self.present(actionSheetController, animated: true, completion: nil)
     }
 }

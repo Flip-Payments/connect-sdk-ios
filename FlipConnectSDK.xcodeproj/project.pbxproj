@@ -25,6 +25,7 @@
 		A14FFA301F17B70E0011D409 /* PublicProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */; };
 		A14FFA331F17BCEF0011D409 /* PersonalDataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FFA311F17BCEF0011D409 /* PersonalDataCell.swift */; };
 		A14FFA341F17BCEF0011D409 /* PersonalDataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A14FFA321F17BCEF0011D409 /* PersonalDataCell.xib */; };
+		A14FFA361F1D59A30011D409 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FFA351F1D59A30011D409 /* UIViewControllerExtension.swift */; };
 		A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */; };
 		A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
@@ -78,6 +79,7 @@
 		A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicProfileCell.xib; sourceTree = "<group>"; };
 		A14FFA311F17BCEF0011D409 /* PersonalDataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalDataCell.swift; sourceTree = "<group>"; };
 		A14FFA321F17BCEF0011D409 /* PersonalDataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalDataCell.xib; sourceTree = "<group>"; };
+		A14FFA351F1D59A30011D409 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RegistrationEditionStoryboard.storyboard; sourceTree = "<group>"; };
 		A15067A81EFDAA6B00794F73 /* RegistrationEditionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationEditionViewController.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				A1E6D5BC1EE9E52400488490 /* FCColors.swift */,
 				A1DAC03E1F03F4EE0035E955 /* FCEditUser.swift */,
 				A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */,
+				A14FFA351F1D59A30011D409 /* UIViewControllerExtension.swift */,
 			);
 			path = FlipConnectSDK;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A14FFA2F1F17B70E0011D409 /* PublicProfileCell.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
+				A14FFA361F1D59A30011D409 /* UIViewControllerExtension.swift in Sources */,
 				A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
 				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,

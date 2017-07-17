@@ -17,10 +17,36 @@ class PersonalDataCell: UITableViewCell {
     }
     
     @IBOutlet weak var birthdate: UITextField!
-    @IBOutlet weak var gender: UITextField!
+    @IBOutlet weak var genderBtn: UIButton!
     @IBOutlet weak var dependentsQty: UITextField!
     @IBOutlet weak var country: UITextField!
-
+    
+    @IBAction func genderWasTapped(_ sender: UIButton) {
+        let actionSheetController = UIAlertController(title: "Gender", message: "Option to select", preferredStyle: .actionSheet)
+        
+        let cancelActionButton = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+            print("Cancel")
+        }
+        actionSheetController.addAction(cancelActionButton)
+        
+        let feminineActionButton = UIAlertAction(title: GenderType.feminine.rawValue, style: .default) { action -> Void in
+            sender.setTitle(GenderType.feminine.rawValue, for: .normal)
+        }
+        actionSheetController.addAction(feminineActionButton)
+        
+        let masculineActionButton = UIAlertAction(title: GenderType.masculine.rawValue, style: .default) { action -> Void in
+            sender.setTitle(GenderType.masculine.rawValue, for: .normal)
+        }
+        actionSheetController.addAction(masculineActionButton)
+        
+        let unmentionedActionButton = UIAlertAction(title: GenderType.unmentioned.rawValue, style: .default) { action -> Void in
+            sender.setTitle(GenderType.unmentioned.rawValue, for: .normal)
+        }
+        actionSheetController.addAction(unmentionedActionButton)
+        
+        delegate?.getActionSheetControllerToPresent(actionSheetController)
+    }
+    
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -56,4 +82,5 @@ protocol PersonalDataCellDelegate {
     
     func runCommand()
     
+    func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController)
 }
