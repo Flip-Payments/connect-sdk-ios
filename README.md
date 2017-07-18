@@ -4,6 +4,14 @@
 
 You can see more here: [FlipConnectSDK Reference](http://cocoadocs.org/docsets/FlipConnectSDK/)
 
+## How It Works
+
+The FlipConnectSDK works by receiving **ClientId** and **ClientSecret** to open a Web Page to login just like Facebook and Google authentication does, the user will login in our ambient and if it is successful the user will be redirected to the application using the previously configured **RedirectURI**.
+
+When the application opens, the SDK will search for valid parameters on the URI so it can made requests to rescue the access token, refresh token and account key.
+
+With those informations you're now able to access the user data!
+
 ## Installation
 
 ### Carthage
