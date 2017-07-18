@@ -92,6 +92,16 @@ class FlipConnectSDKTests: XCTestCase {
         waitForExpectations(timeout: 60, handler: nil)
     }
     
+    func testNSLocaleExtenstion() {
+        let locales = NSLocale.locales()
+        for locale in locales {
+            print("\(locale.countryCode) - \(locale.countryName)")
+        }
+        
+        let isBrazil = locales.contains(where: { $0.countryName == "Brazil" })
+        XCTAssertTrue(isBrazil)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
