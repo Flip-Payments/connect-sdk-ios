@@ -64,9 +64,34 @@ class PersonalDataCell: UITableViewCell {
         super.awakeFromNib()
         
         let countryPickerView = UIPickerView()
+        countryPickerView.showsSelectionIndicator = true
         countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        
+        let pickerToolbarView = UIToolbar()
+        pickerToolbarView.barStyle = UIBarStyle.default
+        pickerToolbarView.isTranslucent = true
+        pickerToolbarView.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PersonalDataCell.hidePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(PersonalDataCell.cancelPicker))
+        
+        pickerToolbarView.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        pickerToolbarView.isUserInteractionEnabled = true
+        
         countryTextField.inputView = countryPickerView
+        countryTextField.inputAccessoryView = pickerToolbarView
 
+    }
+    
+    func cancelPicker() {
+        self.countryTextField.text = nil
+        self.delegate?.dismissPicker()
+    }
+    
+    func hidePicker() {
+        self.delegate?.dismissPicker()
     }
     
     func test() {
@@ -86,6 +111,8 @@ protocol PersonalDataCellDelegate {
     func runCommand()
     
     func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController)
+    
+    func dismissPicker()
 }
 
 extension PersonalDataCell: UIPickerViewDataSource, UIPickerViewDelegate {

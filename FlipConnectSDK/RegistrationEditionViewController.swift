@@ -178,4 +178,8 @@ extension RegistrationEditionViewController: PersonalDataCellDelegate {
     func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController) {
         self.present(actionSheetController, animated: true, completion: nil)
     }
+    
+    func dismissPicker() {
+        self.dismissKeyboard()
+    }
 }
