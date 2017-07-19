@@ -140,7 +140,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
                 cell.birthdate.text = dateFormatter.string(from: birthdate)
             }
             
-            cell.country.text = user.user?.personalData?.country
+            cell.countryTextField.text = user.user?.personalData?.country
             
             if let dependents = user.user?.personalData?.dependentCount {
                 cell.dependentsQty.text = "\(dependents)"

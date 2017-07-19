@@ -11,6 +11,7 @@ import UIKit
 class PersonalDataCell: UITableViewCell {
     
     var delegate: PersonalDataCellDelegate?
+    let locales = NSLocale.locales()
     
     @IBAction func updateBirthdate(_ sender: UITextField) {
         delegate?.runCommand()
@@ -19,7 +20,7 @@ class PersonalDataCell: UITableViewCell {
     @IBOutlet weak var birthdate: UITextField!
     @IBOutlet weak var genderBtn: UIButton!
     @IBOutlet weak var dependentsQty: UITextField!
-    @IBOutlet weak var country: UITextField!
+    @IBOutlet weak var countryTextField: UITextField!
     
     @IBAction func genderWasTapped(_ sender: UIButton) {
         let actionSheetController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -62,7 +63,9 @@ class PersonalDataCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        delegate?.runCommand()
+        let countryPickerView = UIPickerView()
+        countryPickerView.delegate = self
+        countryTextField.inputView = countryPickerView
 
     }
     
@@ -83,4 +86,23 @@ protocol PersonalDataCellDelegate {
     func runCommand()
     
     func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController)
+}
+
+extension PersonalDataCell: UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return locales.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return locales[row].countryName
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.countryTextField.text = locales[row].countryName
+    }
 }

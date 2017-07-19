@@ -137,7 +137,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="birthdate" destination="Jp7-38-maB" id="mKF-8Y-Amh"/>
-                <outlet property="country" destination="jx2-zF-Qw0" id="DuI-LV-AQl"/>
+                <outlet property="countryTextField" destination="jx2-zF-Qw0" id="0Jb-Qz-ZQa"/>
                 <outlet property="dependentsQty" destination="ElT-qR-dMB" id="N1h-Ma-w21"/>
                 <outlet property="genderBtn" destination="65F-AB-oig" id="eG2-6d-l4l"/>
             </connections>

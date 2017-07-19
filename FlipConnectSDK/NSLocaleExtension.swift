@@ -25,7 +25,7 @@ extension NSLocale {
             locales.append(locale)
         }
         
-        return locales
+        return locales.sorted(by: { $0.countryName < $1.countryName })
     }
     
     func counrtyNames() -> NSArray{
