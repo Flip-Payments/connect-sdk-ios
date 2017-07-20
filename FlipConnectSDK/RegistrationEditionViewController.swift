@@ -47,12 +47,6 @@ class RegistrationEditionViewController: UIViewController {
         
         self.tableView.register(cellNib: PersonalDataCell.self)
         self.tableView.register(cellNib: PublicProfileCell.self)
-        
-//        let personalDataCellNib = UINib(nibName: "PersonalDataCell", bundle: Bundle(for: PersonalDataCell.self))
-//        self.tableView.register(personalDataCellNib, forCellReuseIdentifier: "PersonalDataCell")
-//        
-//        let publicProfileCellNib = UINib(nibName: "PublicProfileCell", bundle: Bundle(for: PublicProfileCell.self))
-//        self.tableView.register(publicProfileCellNib, forCellReuseIdentifier: "PublicProfileCell")
     }
    
     func dismiss() {
@@ -130,12 +124,10 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
         
         switch sections[indexPath.section] {
         case .PublicProfile:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "PublicProfileCell") as! PublicProfileCell
             let cell: PublicProfileCell = self.tableView.dequeueReusableCell(for: indexPath)
             cell.nameField.text = user.user?.publicProfile?.name
             return cell
         case .PersonalData:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "PersonalDataCell") as! PersonalDataCell
             let cell: PersonalDataCell = self.tableView.dequeueReusableCell(for: indexPath)
             
             let dateFormatter = DateFormatter()
