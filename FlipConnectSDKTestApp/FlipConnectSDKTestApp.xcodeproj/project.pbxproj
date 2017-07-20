@@ -20,10 +20,6 @@
 		A1B8DE791F143A10005D9D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */; };
 		A1B8DE7A1F143A10005D9D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE771F143A10005D9D83 /* Main.storyboard */; };
 		A1B8DE7B1F143A10005D9D83 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */; };
-		A1B8DE7F1F143A35005D9D83 /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DE7D1F143A35005D9D83 /* CollectionViewReusable.swift */; };
-		A1B8DE831F143B89005D9D83 /* NibCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DE801F143B89005D9D83 /* NibCreatable.swift */; };
-		A1B8DE841F143B89005D9D83 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DE811F143B89005D9D83 /* Reusable.swift */; };
-		A1B8DE851F143B89005D9D83 /* TableViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DE821F143B89005D9D83 /* TableViewReusable.swift */; };
 		A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,10 +52,6 @@
 		A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1B8DE771F143A10005D9D83 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
-		A1B8DE7D1F143A35005D9D83 /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewReusable.swift; path = FlipConnectSDKTestApp/CollectionViewReusable.swift; sourceTree = "<group>"; };
-		A1B8DE801F143B89005D9D83 /* NibCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibCreatable.swift; path = FlipConnectSDKTestApp/NibCreatable.swift; sourceTree = "<group>"; };
-		A1B8DE811F143B89005D9D83 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reusable.swift; path = FlipConnectSDKTestApp/Reusable.swift; sourceTree = "<group>"; };
-		A1B8DE821F143B89005D9D83 /* TableViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewReusable.swift; path = FlipConnectSDKTestApp/TableViewReusable.swift; sourceTree = "<group>"; };
 		A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,7 +87,6 @@
 		A117AD321EE8BA9B00B74705 /* FlipConnectSDKTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				A1B8DE441F1438BB005D9D83 /* Reusable */,
 				A1B8DE3F1F140FF6005D9D83 /* Views */,
 				A1CD56211EEEFF6700B531ED /* Controllers */,
 				A117AD331EE8BA9B00B74705 /* AppDelegate.swift */,
@@ -114,18 +105,6 @@
 				A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		A1B8DE441F1438BB005D9D83 /* Reusable */ = {
-			isa = PBXGroup;
-			children = (
-				A1B8DE801F143B89005D9D83 /* NibCreatable.swift */,
-				A1B8DE811F143B89005D9D83 /* Reusable.swift */,
-				A1B8DE821F143B89005D9D83 /* TableViewReusable.swift */,
-				A1B8DE7D1F143A35005D9D83 /* CollectionViewReusable.swift */,
-			);
-			name = Reusable;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		A1CD56211EEEFF6700B531ED /* Controllers */ = {
@@ -216,15 +195,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */,
-				A1B8DE841F143B89005D9D83 /* Reusable.swift in Sources */,
 				A1223DED1F0FDA6300755669 /* UserViewController.swift in Sources */,
 				A117AD361EE8BA9B00B74705 /* ViewController.swift in Sources */,
-				A1B8DE851F143B89005D9D83 /* TableViewReusable.swift in Sources */,
-				A1B8DE831F143B89005D9D83 /* NibCreatable.swift in Sources */,
 				A117AD341EE8BA9B00B74705 /* AppDelegate.swift in Sources */,
 				A1223DE51F06F2CC00755669 /* LoginViewController.swift in Sources */,
 				A1223DEF1F13F49100755669 /* AddressesTableViewController.swift in Sources */,
-				A1B8DE7F1F143A35005D9D83 /* CollectionViewReusable.swift in Sources */,
 				A1B8DE431F14298A005D9D83 /* AddressTableViewCell.swift in Sources */,
 				A117AD3C1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodeld in Sources */,
 			);

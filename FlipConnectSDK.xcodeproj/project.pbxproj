@@ -33,6 +33,12 @@
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
 		A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779AB81F18925F0055B80C /* PersonalData.swift */; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
+		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
+		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
+		A1C4F9361F20F97100DCD3BF /* NibCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F9301F20F97100DCD3BF /* NibCreatable.swift */; };
+		A1C4F9371F20F97100DCD3BF /* Reusable.h in Headers */ = {isa = PBXBuildFile; fileRef = A1C4F9311F20F97100DCD3BF /* Reusable.h */; };
+		A1C4F9381F20F97100DCD3BF /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F9321F20F97100DCD3BF /* Reusable.swift */; };
+		A1C4F9391F20F97100DCD3BF /* TableViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
 		A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0321F02F7420035E955 /* PatchesRequest.swift */; };
@@ -88,6 +94,12 @@
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		A1779AB81F18925F0055B80C /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalData.swift; path = FlipConnectSDK/PersonalData.swift; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
+		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
+		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A1C4F9301F20F97100DCD3BF /* NibCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibCreatable.swift; sourceTree = "<group>"; };
+		A1C4F9311F20F97100DCD3BF /* Reusable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reusable.h; sourceTree = "<group>"; };
+		A1C4F9321F20F97100DCD3BF /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReusable.swift; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
 		A1DAC0321F02F7420035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchesRequest.swift; path = FlipConnectSDK/PatchesRequest.swift; sourceTree = "<group>"; };
@@ -143,6 +155,7 @@
 		A117ACDD1EE782FE00B74705 /* FlipConnectSDK */ = {
 			isa = PBXGroup;
 			children = (
+				A1C4F92D1F20F97100DCD3BF /* Reusable */,
 				A1DAC02A1F02D7090035E955 /* API */,
 				A15067A71EFDAA3D00794F73 /* Controllers */,
 				A15067A61EFDAA2200794F73 /* Views */,
@@ -239,6 +252,19 @@
 			name = Responses;
 			sourceTree = "<group>";
 		};
+		A1C4F92D1F20F97100DCD3BF /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */,
+				A1C4F92F1F20F97100DCD3BF /* Info.plist */,
+				A1C4F9301F20F97100DCD3BF /* NibCreatable.swift */,
+				A1C4F9311F20F97100DCD3BF /* Reusable.h */,
+				A1C4F9321F20F97100DCD3BF /* Reusable.swift */,
+				A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
 		A1DAC02A1F02D7090035E955 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A117ACEC1EE782FE00B74705 /* FlipConnectSDK.h in Headers */,
+				A1C4F9371F20F97100DCD3BF /* Reusable.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */,
 				A14FFA301F17B70E0011D409 /* PublicProfileCell.xib in Resources */,
 				A14FFA341F17BCEF0011D409 /* PersonalDataCell.xib in Resources */,
 				A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */,
@@ -382,6 +410,7 @@
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
 				A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */,
 				A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */,
+				A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */,
 				A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
@@ -395,16 +424,19 @@
 				A14FFA361F1D59A30011D409 /* UIViewControllerExtension.swift in Sources */,
 				A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
+				A1C4F9361F20F97100DCD3BF /* NibCreatable.swift in Sources */,
 				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
 				A1223DEB1F0FD53000755669 /* FCApiUser.swift in Sources */,
 				A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */,
+				A1C4F9391F20F97100DCD3BF /* TableViewReusable.swift in Sources */,
 				A1DCC69B1F0ED6F90072D964 /* UserResponse.swift in Sources */,
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
 				A1DAC03D1F0301D50035E955 /* Document.swift in Sources */,
 				A1223DE71F0D71D700755669 /* User.swift in Sources */,
 				A14FFA331F17BCEF0011D409 /* PersonalDataCell.swift in Sources */,
 				A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */,
+				A1C4F9381F20F97100DCD3BF /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
