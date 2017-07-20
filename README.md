@@ -2,27 +2,27 @@
 
 [![Build Status](https://www.bitrise.io/app/e2ffa72d64f58e17/status.svg?token=qyJOAroLehBPTj5D4g7clA)](https://www.bitrise.io/app/e2ffa72d64f58e17) [![codecov](https://codecov.io/gh/Flip-Payments/connect-sdk-ios/branch/master/graph/badge.svg)](https://codecov.io/gh/Flip-Payments/connect-sdk-ios) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Flip-Payments/connect-sdk-ios/master/LICENSE) [![Github Version](https://img.shields.io/github/release/Flip-Payments/connect-sdk-ios.svg)](https://github.com/Flip-Payments/connect-sdk-ios/releases) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/FlipConnectSDK.svg)](http://cocoadocs.org/docsets/FlipConnectSDK/) ![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg)
 
-You can see more here: [FlipConnectSDK Reference](http://cocoadocs.org/docsets/FlipConnectSDK/)
+Veja mais aqui: [FlipConnectSDK Reference](http://cocoadocs.org/docsets/FlipConnectSDK/)
 
-## How It Works
+## Como funciona
 
-The FlipConnectSDK works by receiving **ClientId** and **ClientSecret** to open a Web Page to login just like Facebook and Google authentication does, the user will login in our ambient and if it is successful the user will be redirected to the application using the previously configured **RedirectURI**.
+A FlipConnectSDK funciona recebendo **ClientId** e **ClientSecret** para abrir uma página web para logar exatamente como na autenticação do Facebook e do Google. O usuário irá logar no nosso ambiente e, caso seja bem sucedido, o usuário será redirecionado para a aplicação usando a previamente configurada **RedirectURI**.
 
-When the application opens, the SDK will search for valid parameters on the URI so it can made requests to rescue the access token, refresh token and account key.
+Quando a aplicação abre, a SDK irá procurar por parâmetros válidos na URI, para que então possa fazer requisições para recuperar o **access token**, o **refresh token** e a **account key**.
 
-With those informations you're now able to access the user data!
+Com essas informações você será capaz de acessar as informações do usuário!
 
-## Installation
+## Instalação
 
 ### Carthage
 
-Place this on your Cartfile:
+Coloque isto no seu Cartfile:
 
 ```yaml
 github "Flip-Payments/connect-sdk-ios" ~> 0.0.4
 ```
 
-and then run:
+e então rode o seguinte comando:
 
 ```sh
 carthage update
@@ -30,7 +30,7 @@ carthage update
 
 ### Cocoapods
 
-Add to your `Podfile`
+Acrescente ao seu  `Podfile`
 
 ```ruby
 target 'MyApplication' do
@@ -39,17 +39,17 @@ target 'MyApplication' do
 end
 ```
 
-## Usability
+## Usabilidade
 
-### Configuration
+### Configuração
 
-On your project, click on 'Info' tab and select Url Types. On `identifier` field it's mandatory that the name is **FlipConnectSDK** and on URL Schemes you must put the scheme that was set for your Merchant URI, for example:
+No seu projeto, clique na aba "informação" e selecione Url Types. No campo `identifier`, é obrigatório que o nome seja **FlipConnectSDK**, e na URL Schemes você deve colocar o esquema que foi configurado para seu Merchant URI, por exemplo:
 
-If the registered Merchant URI is `flipConnect://application` your Url Schemes must be **flipConnect**, in other words everything **before** `://` is your Url Scheme.
+Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve ser **flipConnect**; em outras palavras, tudo **antes de** `://` é sua Url Scheme.
 
 ![Url Schema Creation](img/urlTypes.png)
 
-On your `Info.plist` you must add your **ClientID**, **ClientSecret** and **RedirectURI** registered on our API, it'll be used by the SDK to handle redirect from our login page:
+No seu `Info.plist` você deve acrescentar os **ClientID**, **ClientSecret** e **RedirectURI** registrados em nossa API. Eles serão usados pela SDK para o redirecionamento de nossa página de login:
 
 ```xml
 <key>FlipConnectSDK</key>
@@ -62,7 +62,7 @@ On your `Info.plist` you must add your **ClientID**, **ClientSecret** and **Redi
   <string>D7F667C8-199F-6B10-B53A-0BCDDEFADB31</string>
 </dict>
 ```
-The final result will be something like this:
+O resultado final será algo parecido com isto:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -141,17 +141,17 @@ The final result will be something like this:
 ```
 ### ViewController
 
-Login will start here, some action will trigger the login page, if everything works fine the web page will redirect back to the application.
+O login terá início aqui. Alguma ação irá ativar a página de login; se tudo funcionar corretamente, a página web irá redirecionar de volta para a aplicação.
 
-You can use your own button or use ours.
+Você pode usar seu próprio botão ou usar o nosso.
 
-On your ViewController import the SDK:
+No seu ViewController importe a SDK:
 
 ```swift
 import FlipConnectSDK
 ```
 
-### Login With Button
+### Logar com o botão
 
 ```swift
 class ViewController: UIViewController {
@@ -173,11 +173,11 @@ class ViewController: UIViewController {
     }
 }
 ```
-The button will look like one of these:
+O botão parecerá com algum destes:
 
 ![Login Button](img/buttonLogin.png)
 
-### Login with openLoginURL
+### Logar com openLoginURL
 
 ```swift
 class ViewController: UIViewController {
@@ -202,7 +202,7 @@ class ViewController: UIViewController {
 
 ### AppDelegate
 
-With successful login the redirect will pass through here with some login information, but only after the `handleRedirect(fromURL: URL)` method runs smoothly that we'll be able to recover Token Data.
+Após um login bem sucedido, o redirecionamento passará por aqui com alguma informação de login, porém apenas depois do método `handleRedirect(fromURL: URL)` funcionar sem problemas é que nós seremos capazes de recuperar o **Token Data**.
 
 ```swift
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -226,7 +226,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-You should be able to use the Token and AccountKey by typing the following:
+Você deverá ser capaz de usar o **Token** e a **AccountKey** se digitar o seguinte:
 
 ```swift
 var accessToken: String? = UserDefaults.standard.accessToken
@@ -235,7 +235,7 @@ var accountKey: String? = UserDefaults.standard.accountKey
 
 ### Refresh Token
 
-If the token gets expired, just do the following implementation. If some error return it's because the request was unsuccessful
+Se o token expirar, basta fazer a implemntação que segue. Se algum erro retornar, é porque a requisição foi mal-sucedida
 
 ```swift
 do {
@@ -258,9 +258,9 @@ do {
 
 ```
 
-### Verify Token
+### Verificar o Token
 
-If some error return it's because the token verified is invalid
+Se algum erro retornar, será porque o token verificado é inválido
 
 ```swift
 do {
@@ -280,10 +280,10 @@ do {
 }
 ```
 
-## Contributing
+## Contribuições
 
-Pull Requests are very welcome!
+Pull Requests serão muito bem-vindos!
 
-## Issues
+## Problemas
 
-Any problems, questions or suggestions? [Open a issue!](https://github.com/Flip-Payments/connect-sdk-ios/issues/new)
+Algum problema, dúvida ou sugestão? [Abra uma issue!](https://github.com/Flip-Payments/connect-sdk-ios/issues/new)
