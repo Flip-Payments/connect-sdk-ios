@@ -134,7 +134,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             dateFormatter.dateFormat = "dd/MM/yyyy"
             
             if let birthdate = user.user?.personalData?.birthdate {
-                cell.birthdate.text = dateFormatter.string(from: birthdate)
+                cell.birthdateTextField.text = dateFormatter.string(from: birthdate)
             }
             
             cell.countryTextField.text = user.user?.personalData?.country

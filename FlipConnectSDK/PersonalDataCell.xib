@@ -42,9 +42,6 @@
                                         <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad"/>
-                                        <connections>
-                                            <action selector="updateBirthdate:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="dE0-xf-uX9"/>
-                                        </connections>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -136,7 +133,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="birthdate" destination="Jp7-38-maB" id="mKF-8Y-Amh"/>
+                <outlet property="birthdateTextField" destination="Jp7-38-maB" id="Wrc-Ff-YSv"/>
                 <outlet property="countryTextField" destination="jx2-zF-Qw0" id="0Jb-Qz-ZQa"/>
                 <outlet property="dependentsQty" destination="ElT-qR-dMB" id="N1h-Ma-w21"/>
                 <outlet property="genderBtn" destination="65F-AB-oig" id="eG2-6d-l4l"/>

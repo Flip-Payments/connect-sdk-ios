@@ -17,7 +17,7 @@ class PersonalDataCell: UITableViewCell {
         delegate?.runCommand()
     }
     
-    @IBOutlet weak var birthdate: UITextField!
+    @IBOutlet weak var birthdateTextField: UITextField!
     @IBOutlet weak var genderBtn: UIButton!
     @IBOutlet weak var dependentsQty: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
@@ -48,13 +48,13 @@ class PersonalDataCell: UITableViewCell {
         delegate?.getActionSheetControllerToPresent(actionSheetController)
     }
     
-    @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
+    func datePickerValueChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
         let dateString = formatter.string(from: sender.date)
         
-        self.birthdate.text = dateString
+        self.birthdateTextField.text = dateString
     }
     
     var expandedHeight: CGFloat { get { return 350 } }
@@ -63,10 +63,7 @@ class PersonalDataCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let countryPickerView = UIPickerView()
-        countryPickerView.showsSelectionIndicator = true
-        countryPickerView.delegate = self
-        countryPickerView.dataSource = self
+        // MARK: Setting pickerToolbarView to pickers
         
         let pickerToolbarView = UIToolbar()
         pickerToolbarView.barStyle = UIBarStyle.default
@@ -80,9 +77,24 @@ class PersonalDataCell: UITableViewCell {
         pickerToolbarView.setItems([cancelButton, spaceButton, doneButton], animated: false)
         pickerToolbarView.isUserInteractionEnabled = true
         
-        countryTextField.inputView = countryPickerView
-        countryTextField.inputAccessoryView = pickerToolbarView
-
+        // MARK: Setting pickerView to countryTextField
+        
+        let countryPickerView = UIPickerView()
+        countryPickerView.showsSelectionIndicator = true
+        countryPickerView.delegate = self
+        countryPickerView.dataSource = self
+        
+        self.countryTextField.inputView = countryPickerView
+        self.countryTextField.inputAccessoryView = pickerToolbarView
+        
+        // MARK: Setting datePickerView to birthdateTextField
+        
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(self.datePickerValueChanged(_:)), for: .valueChanged)
+        
+        self.birthdateTextField.inputView = datePicker
+        self.birthdateTextField.inputAccessoryView = pickerToolbarView
     }
     
     func cancelPicker() {
