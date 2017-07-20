@@ -14,7 +14,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var emailAddress: UILabel!
     
     @IBAction func editAction(_ sender: Any) {
-        let categories: [FCEditCategoriesEnum] = [.PublicProfile, .PersonalData]
+        let categories: [FCEditCategoriesEnum] = [.Emails, .PublicProfile, .PersonalData]
         
         FCEditUser.loadView(categories: categories) { viewController in
             self.present(viewController, animated: true, completion: nil)

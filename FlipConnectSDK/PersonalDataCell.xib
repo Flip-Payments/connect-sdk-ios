@@ -135,8 +135,8 @@
             <connections>
                 <outlet property="birthdateTextField" destination="Jp7-38-maB" id="Wrc-Ff-YSv"/>
                 <outlet property="countryTextField" destination="jx2-zF-Qw0" id="0Jb-Qz-ZQa"/>
-                <outlet property="dependentsQty" destination="ElT-qR-dMB" id="N1h-Ma-w21"/>
-                <outlet property="genderBtn" destination="65F-AB-oig" id="eG2-6d-l4l"/>
+                <outlet property="dependentsQtyTextField" destination="ElT-qR-dMB" id="GSg-R6-fyw"/>
+                <outlet property="genderBtn" destination="65F-AB-oig" id="asQ-Wa-R6v"/>
             </connections>
             <point key="canvasLocation" x="96" y="44"/>
         </tableViewCell>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="EmailCell" customModule="FlipConnectSDK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="362" height="128"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="362" height="127.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUj-fu-itT">
+                        <rect key="frame" x="18" y="49" width="59" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="77T-jl-kQU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <state key="normal" title="Primary"/>
+                    </button>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1tW-3A-YTh">
+                        <rect key="frame" x="268" y="49" width="84" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="5gx-gs-AYc"/>
+                        </constraints>
+                        <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="1tW-3A-YTh" secondAttribute="trailing" constant="10" id="Bf8-p8-Cba"/>
+                    <constraint firstItem="cUj-fu-itT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JMd-u2-R7A"/>
+                    <constraint firstItem="1tW-3A-YTh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="a2R-bD-zkk"/>
+                    <constraint firstItem="cUj-fu-itT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="oYz-me-VU0"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="emailTextField" destination="1tW-3A-YTh" id="QhB-BV-n8N"/>
+            </connections>
+            <point key="canvasLocation" x="-115" y="96"/>
+        </tableViewCell>
+    </objects>
+</document>

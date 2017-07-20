@@ -47,6 +47,9 @@ class RegistrationEditionViewController: UIViewController {
         
         self.tableView.register(cellNib: PersonalDataCell.self)
         self.tableView.register(cellNib: PublicProfileCell.self)
+        self.tableView.register(cellNib: EmailCell.self)
+        
+        self.tableView.setEditing(true, animated: true)
     }
    
     func dismiss() {
@@ -110,7 +113,10 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
         case .PersonalData:
             return 1
         case .Emails:
-            return 100
+            if let emailCount = user.user?.emails.count {
+                return emailCount
+            }
+            return 0
         case .Phones:
             return 100
         case .Addresses:
@@ -140,7 +146,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             cell.countryTextField.text = user.user?.personalData?.country
             
             if let dependents = user.user?.personalData?.dependentCount {
-                cell.dependentsQty.text = "\(dependents)"
+                cell.dependentsQtyTextField.text = "\(dependents)"
             }
             
             if let gender = user.user?.personalData?.genderTypeFriendlyName {
@@ -151,7 +157,9 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             cell.test()
             return cell
         case .Emails:
-            return tableView.dequeueReusableCell(withIdentifier: "")!
+            let cell: EmailCell = self.tableView.dequeueReusableCell(for: indexPath)
+            cell.emailTextField.text = user.user?.emails[indexPath.row].address
+            return cell
         case .Phones:
             return tableView.dequeueReusableCell(withIdentifier: "")!
         case .Addresses:

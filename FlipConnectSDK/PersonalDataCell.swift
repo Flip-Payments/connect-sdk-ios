@@ -19,7 +19,7 @@ class PersonalDataCell: UITableViewCell {
     
     @IBOutlet weak var birthdateTextField: UITextField!
     @IBOutlet weak var genderBtn: UIButton!
-    @IBOutlet weak var dependentsQty: UITextField!
+    @IBOutlet weak var dependentsQtyTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     
     @IBAction func genderWasTapped(_ sender: UIButton) {
