@@ -169,6 +169,15 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
         }
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        switch sections[indexPath.section] {
+        case .PublicProfile, .PersonalData:
+            return false
+        case .Emails, .Phones, .Addresses, .Documents:
+            return true
+        }
+    }
+    
 //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 //        return 200.0
 //    }
