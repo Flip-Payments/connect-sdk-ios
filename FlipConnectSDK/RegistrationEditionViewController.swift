@@ -50,6 +50,7 @@ class RegistrationEditionViewController: UIViewController {
         self.tableView.register(cellNib: EmailCell.self)
         
         self.tableView.setEditing(true, animated: true)
+        self.tableView.tableFooterView = UIView()
     }
    
     func dismiss() {
