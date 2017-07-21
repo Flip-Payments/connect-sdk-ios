@@ -12,42 +12,49 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="128" id="KGk-i7-Jjw" customClass="EmailCell" customModule="FlipConnectSDK" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="362" height="128"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="EmailCell" customModule="FlipConnectSDK" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="70"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="362" height="127.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="409" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUj-fu-itT">
-                        <rect key="frame" x="18" y="49" width="59" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="77T-jl-kQU"/>
-                        </constraints>
+                        <rect key="frame" x="8" y="18.5" width="59" height="33"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <state key="normal" title="Primary"/>
                     </button>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1tW-3A-YTh">
-                        <rect key="frame" x="268" y="49" width="84" height="30"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="30" id="5gx-gs-AYc"/>
-                        </constraints>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Email" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1tW-3A-YTh">
+                        <rect key="frame" x="88" y="18.5" width="303" height="33"/>
                         <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                     </textField>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Azs-CY-n3b">
+                        <rect key="frame" x="77" y="0.0" width="1" height="69.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="1" id="CSA-cV-9SA"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="1tW-3A-YTh" secondAttribute="trailing" constant="10" id="Bf8-p8-Cba"/>
-                    <constraint firstItem="cUj-fu-itT" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="JMd-u2-R7A"/>
-                    <constraint firstItem="1tW-3A-YTh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="a2R-bD-zkk"/>
-                    <constraint firstItem="cUj-fu-itT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="10" id="oYz-me-VU0"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1tW-3A-YTh" secondAttribute="bottom" constant="10" id="0GG-YU-mHb"/>
+                    <constraint firstAttribute="bottom" secondItem="Azs-CY-n3b" secondAttribute="bottom" id="1x3-CQ-veq"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="cUj-fu-itT" secondAttribute="bottom" constant="10" id="5Rz-Th-T4A"/>
+                    <constraint firstItem="Azs-CY-n3b" firstAttribute="leading" secondItem="cUj-fu-itT" secondAttribute="trailing" constant="10" id="5v7-p6-gbU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1tW-3A-YTh" secondAttribute="trailing" constant="10" id="8HD-rB-4pO"/>
+                    <constraint firstItem="1tW-3A-YTh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="PP2-uT-WQt"/>
+                    <constraint firstItem="cUj-fu-itT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="10" id="TLl-35-QkA"/>
+                    <constraint firstItem="1tW-3A-YTh" firstAttribute="leading" secondItem="Azs-CY-n3b" secondAttribute="trailing" constant="10" id="TkM-rR-PIJ"/>
+                    <constraint firstItem="cUj-fu-itT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="bAu-IK-N4p"/>
+                    <constraint firstItem="Azs-CY-n3b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="f5x-oa-QPb"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="emailTextField" destination="1tW-3A-YTh" id="QhB-BV-n8N"/>
             </connections>
-            <point key="canvasLocation" x="-115" y="96"/>
+            <point key="canvasLocation" x="-226" y="15"/>
         </tableViewCell>
     </objects>
 </document>
