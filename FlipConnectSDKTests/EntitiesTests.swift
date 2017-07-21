@@ -34,7 +34,7 @@ class EntitiesTests: XCTestCase {
     }
     
     func testJSONtoTelephoneConversion() {
-        let telephoneJSON = "{\"id\":193,\"phoneType\":\"mobile\",\"phoneTypeFriendlyName\":\"Celular\",\"fullNumber\":\"+5521987654321\",\"isValidated\":false,\"isPrimary\":false}"
+        let telephoneJSON = "{\"key\":\"8d6dc241-2f5c-e711-80c2-0003ff345086\",\"phoneType\":\"mobile\",\"phoneTypeFriendlyName\":\"Celular\",\"fullNumber\":\"+5521987654321\",\"isValidated\":false,\"isPrimary\":false}"
         
         let data = telephoneJSON.data(using: String.Encoding.utf8)
         let json = try! JSONSerialization.jsonObject(with: data!, options: []) as! JSON
