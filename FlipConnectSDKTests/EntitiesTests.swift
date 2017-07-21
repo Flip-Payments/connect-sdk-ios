@@ -42,7 +42,6 @@ class EntitiesTests: XCTestCase {
         let telephone = Phone(json: json)
         
         XCTAssertTrue(telephone?.type == .mobile)
-        XCTFail()
     }
     
     func testJSONtoDocumentConversion() {
