@@ -123,24 +123,5 @@ class EntitiesTests: XCTestCase {
         XCTAssert(user.user?.accountKey == "5e2e42ce-0985-4d0c-88d3-0a02aed397b1")
         XCTAssertTrue(user.success)
     }
-
-    func testAPICallToCollectAddresses() {
-        let requestExpectation = expectation(description: "Get addresses collection")
-        
-        FCApi.getAddresses(accessToken: "DF27C1F5237D3E1B9B3313C7543F04DD50642E87C560F7542498103A65981C16") { addresses, error in
-            XCTAssertTrue(addresses.success)
-            XCTAssertNil(error)
-            requestExpectation.fulfill()
-        }
-        
-        waitForExpectations(timeout: 60, handler: nil)
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
     
 }
