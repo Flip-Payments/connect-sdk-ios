@@ -33,6 +33,8 @@
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
 		A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779AB81F18925F0055B80C /* PersonalData.swift */; };
 		A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C461F2678A900AE84EF /* DataCellDelegate.swift */; };
+		A1783C4A1F267F0900AE84EF /* PhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C481F267F0900AE84EF /* PhoneCell.swift */; };
+		A1783C4B1F267F0900AE84EF /* PhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1783C491F267F0900AE84EF /* PhoneCell.xib */; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
 		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
 		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
@@ -97,6 +99,8 @@
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		A1779AB81F18925F0055B80C /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalData.swift; path = FlipConnectSDK/PersonalData.swift; sourceTree = "<group>"; };
 		A1783C461F2678A900AE84EF /* DataCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCellDelegate.swift; sourceTree = "<group>"; };
+		A1783C481F267F0900AE84EF /* PhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCell.swift; sourceTree = "<group>"; };
+		A1783C491F267F0900AE84EF /* PhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneCell.xib; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				A14FFA2E1F17B70E0011D409 /* PublicProfileCell.xib */,
 				A14FFA321F17BCEF0011D409 /* PersonalDataCell.xib */,
 				A1C4F93B1F21228100DCD3BF /* EmailCell.xib */,
+				A1783C491F267F0900AE84EF /* PhoneCell.xib */,
 				A15067A41EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard */,
 			);
 			name = Views;
@@ -229,6 +234,7 @@
 				A14FFA311F17BCEF0011D409 /* PersonalDataCell.swift */,
 				A1C4F93A1F21228100DCD3BF /* EmailCell.swift */,
 				A1783C461F2678A900AE84EF /* DataCellDelegate.swift */,
+				A1783C481F267F0900AE84EF /* PhoneCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -393,6 +399,7 @@
 				A1C4F93D1F21228100DCD3BF /* EmailCell.xib in Resources */,
 				A14FFA301F17B70E0011D409 /* PublicProfileCell.xib in Resources */,
 				A14FFA341F17BCEF0011D409 /* PersonalDataCell.xib in Resources */,
+				A1783C4B1F267F0900AE84EF /* PhoneCell.xib in Resources */,
 				A15067A51EFDAA1400794F73 /* RegistrationEditionStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +456,7 @@
 				A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */,
 				A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */,
 				A1C4F9381F20F97100DCD3BF /* Reusable.swift in Sources */,
+				A1783C4A1F267F0900AE84EF /* PhoneCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

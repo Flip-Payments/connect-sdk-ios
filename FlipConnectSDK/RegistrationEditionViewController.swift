@@ -48,6 +48,7 @@ class RegistrationEditionViewController: UIViewController {
         self.tableView.register(cellNib: PersonalDataCell.self)
         self.tableView.register(cellNib: PublicProfileCell.self)
         self.tableView.register(cellNib: EmailCell.self)
+        self.tableView.register(cellNib: PhoneCell.self)
         
         self.tableView.setEditing(true, animated: true)
         self.tableView.tableFooterView = UIView()
@@ -119,7 +120,10 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             }
             return 0
         case .Phones:
-            return 100
+            if let phoneCount = user.user?.phones.count {
+                return phoneCount
+            }
+            return 0
         case .Addresses:
             return 100
         case .Documents:
@@ -169,7 +173,14 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             
             return cell
         case .Phones:
-            return tableView.dequeueReusableCell(withIdentifier: "")!
+            let cell: PhoneCell = self.tableView.dequeueReusableCell(for: indexPath)
+            let phone = user.user?.phones[indexPath.row]
+            
+            cell.delegate = self
+            cell.phoneTypeBtn.setTitle(phone?.typeFriendlyName, for: .normal)
+            cell.fullNumberTextField.text = phone?.fullNumber
+            
+            return cell
         case .Addresses:
             return tableView.dequeueReusableCell(withIdentifier: "")!
         case .Documents:
