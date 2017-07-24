@@ -10,12 +10,8 @@ import UIKit
 
 class PersonalDataCell: UITableViewCell {
     
-    var delegate: PersonalDataCellDelegate?
+    var delegate: DataCellDelegate!
     let locales = NSLocale.locales()
-    
-    @IBAction func updateBirthdate(_ sender: UITextField) {
-        delegate?.runCommand()
-    }
     
     @IBOutlet weak var birthdateTextField: UITextField!
     @IBOutlet weak var genderBtn: UIButton!
@@ -45,7 +41,7 @@ class PersonalDataCell: UITableViewCell {
         }
         actionSheetController.addAction(unmentionedActionButton)
         
-        delegate?.getActionSheetControllerToPresent(actionSheetController)
+        delegate.getActionSheetControllerToPresent(actionSheetController)
     }
     
     func datePickerValueChanged(_ sender: UIDatePicker) {
@@ -99,15 +95,11 @@ class PersonalDataCell: UITableViewCell {
     
     func cancelPicker() {
         self.countryTextField.text = nil
-        self.delegate?.dismissPicker()
+        self.delegate.dismissPicker()
     }
     
     func hidePicker() {
-        self.delegate?.dismissPicker()
-    }
-    
-    func test() {
-        delegate?.runCommand()
+        self.delegate.dismissPicker()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -116,15 +108,6 @@ class PersonalDataCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-}
-
-protocol PersonalDataCellDelegate {
-    
-    func runCommand()
-    
-    func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController)
-    
-    func dismissPicker()
 }
 
 extension PersonalDataCell: UIPickerViewDataSource, UIPickerViewDelegate {

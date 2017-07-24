@@ -155,11 +155,18 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             }
             
             cell.delegate = self
-            cell.test()
             return cell
         case .Emails:
             let cell: EmailCell = self.tableView.dequeueReusableCell(for: indexPath)
-            cell.emailTextField.text = user.user?.emails[indexPath.row].address
+            let email = user.user?.emails[indexPath.row]
+            cell.delegate = self
+            cell.emailTextField.text = email?.address
+            
+            if let isPrimary = email?.isPrimary {
+                let primaryText = isPrimary ? "Primary" : "Not Primary"
+                cell.primaryBtn.setTitle(primaryText, for: .normal)
+            }
+            
             return cell
         case .Phones:
             return tableView.dequeueReusableCell(withIdentifier: "")!
@@ -185,10 +192,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
     
 }
 
-extension RegistrationEditionViewController: PersonalDataCellDelegate {
-    func runCommand() {
-        print("ghy")
-    }
+extension RegistrationEditionViewController: DataCellDelegate {
     
     func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController) {
         self.present(actionSheetController, animated: true, completion: nil)

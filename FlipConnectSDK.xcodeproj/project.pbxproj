@@ -32,6 +32,7 @@
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
 		A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779AB81F18925F0055B80C /* PersonalData.swift */; };
+		A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C461F2678A900AE84EF /* DataCellDelegate.swift */; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
 		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
 		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
@@ -95,6 +96,7 @@
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		A1779AB81F18925F0055B80C /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalData.swift; path = FlipConnectSDK/PersonalData.swift; sourceTree = "<group>"; };
+		A1783C461F2678A900AE84EF /* DataCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCellDelegate.swift; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				A14FFA2D1F17B70E0011D409 /* PublicProfileCell.swift */,
 				A14FFA311F17BCEF0011D409 /* PersonalDataCell.swift */,
 				A1C4F93A1F21228100DCD3BF /* EmailCell.swift */,
+				A1783C461F2678A900AE84EF /* DataCellDelegate.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				A1223DE71F0D71D700755669 /* User.swift in Sources */,
 				A14FFA331F17BCEF0011D409 /* PersonalDataCell.swift in Sources */,
 				A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */,
+				A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */,
 				A1C4F9381F20F97100DCD3BF /* Reusable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

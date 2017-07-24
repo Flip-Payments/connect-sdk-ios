@@ -23,6 +23,9 @@
                         <rect key="frame" x="8" y="13" width="50" height="15.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <state key="normal" title="Primary"/>
+                        <connections>
+                            <action selector="primaryBtnWasTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="V5o-Yn-eKN"/>
+                        </connections>
                     </button>
                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your Email" minimumFontSize="11" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="1tW-3A-YTh">
                         <rect key="frame" x="79" y="13" width="317" height="15.5"/>
@@ -53,6 +56,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="emailTextField" destination="1tW-3A-YTh" id="QhB-BV-n8N"/>
+                <outlet property="primaryBtn" destination="cUj-fu-itT" id="8OW-iM-oL7"/>
             </connections>
             <point key="canvasLocation" x="-226.5" y="1"/>
         </tableViewCell>
