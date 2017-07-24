@@ -94,7 +94,6 @@ class PersonalDataCell: UITableViewCell {
     }
     
     func cancelPicker() {
-        self.countryTextField.text = nil
         self.delegate.dismissPicker()
     }
     
