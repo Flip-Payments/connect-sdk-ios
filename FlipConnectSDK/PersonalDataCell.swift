@@ -26,18 +26,18 @@ class PersonalDataCell: UITableViewCell {
         }
         actionSheetController.addAction(cancelActionButton)
         
-        let feminineActionButton = UIAlertAction(title: GenderType.feminine.rawValue, style: .default) { action -> Void in
-            sender.setTitle(GenderType.feminine.rawValue, for: .normal)
+        let feminineActionButton = UIAlertAction(title: GenderType.feminine.rawValue.capitalized, style: .default) { action -> Void in
+            sender.setTitle(GenderType.feminine.rawValue.capitalized, for: .normal)
         }
         actionSheetController.addAction(feminineActionButton)
         
-        let masculineActionButton = UIAlertAction(title: GenderType.masculine.rawValue, style: .default) { action -> Void in
-            sender.setTitle(GenderType.masculine.rawValue, for: .normal)
+        let masculineActionButton = UIAlertAction(title: GenderType.masculine.rawValue.capitalized, style: .default) { action -> Void in
+            sender.setTitle(GenderType.masculine.rawValue.capitalized, for: .normal)
         }
         actionSheetController.addAction(masculineActionButton)
         
-        let unmentionedActionButton = UIAlertAction(title: GenderType.unmentioned.rawValue, style: .default) { action -> Void in
-            sender.setTitle(GenderType.unmentioned.rawValue, for: .normal)
+        let unmentionedActionButton = UIAlertAction(title: GenderType.unmentioned.rawValue.capitalized, style: .default) { action -> Void in
+            sender.setTitle(GenderType.unmentioned.rawValue.capitalized, for: .normal)
         }
         actionSheetController.addAction(unmentionedActionButton)
         
@@ -46,7 +46,7 @@ class PersonalDataCell: UITableViewCell {
     
     func datePickerValueChanged(_ sender: UIDatePicker) {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.dateFormat = "dd/MM/yyyy" // yyyy-MM-dd
         
         let dateString = formatter.string(from: sender.date)
         
