@@ -8,8 +8,7 @@
 
 import Foundation
 
-class PublicProfilePatchRequest: PatchRequestProtocol {
-    var patches: [Patch]? = nil
+class PublicProfilePatchRequest: BasePatchRequest, PatchRequestProtocol {
     
     func add(operation: Operation, path: PublicProfilePathEnum, value: String? = nil) {
         if patches == nil {
@@ -18,20 +17,6 @@ class PublicProfilePatchRequest: PatchRequestProtocol {
         
         let patch = Patch(operation, path.rawValue, value)
         patches!.append(patch)
-    }
-    
-    func createDictionary() -> JSON {
-        if let patches = patches {
-            var patchesDicts: [JSON] = []
-            
-            for patch in patches {
-                patchesDicts.append(patch.createDictionary())
-            }
-            return [
-                "patches": patchesDicts
-            ]
-        }
-        return [:]
     }
 }
 

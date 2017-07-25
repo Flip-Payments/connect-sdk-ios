@@ -8,9 +8,7 @@
 
 import Foundation
 
-class PersonalDataPatchRequest: PatchRequestProtocol {
-    var patches: [Patch]? = nil    
-    
+class PersonalDataPatchRequest: BasePatchRequest, PatchRequestProtocol {
     func add(operation: Operation, path: PersonalDataPathEnum, value: String?) {
         if patches == nil {
             patches = []
@@ -18,20 +16,6 @@ class PersonalDataPatchRequest: PatchRequestProtocol {
         
         let patch = Patch(operation, path.rawValue, value)
         patches!.append(patch)
-    }
-    
-    func createDictionary() -> JSON {
-        if let patches = patches {
-            var patchesDicts: [JSON] = []
-            
-            for patch in patches {
-                patchesDicts.append(patch.createDictionary())
-            }
-            return [
-                "patches": patchesDicts
-            ]
-        }
-        return [:]
     }
 }
 
