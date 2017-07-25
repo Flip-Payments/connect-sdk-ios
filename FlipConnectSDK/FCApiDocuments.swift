@@ -11,9 +11,6 @@ import Foundation
 extension FCApi {
     static func getDocuments(accessToken token: String, completion: @escaping (_ documents: DocumentsResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
-            "Accept-Language": "en-US",
-            "Accept": "application/json",
-            "Content-Type": "application/json",
             "Authorization": "bearer \(token)"
         ]
         

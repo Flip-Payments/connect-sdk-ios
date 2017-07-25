@@ -37,6 +37,7 @@
 		A1783C4B1F267F0900AE84EF /* PhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1783C491F267F0900AE84EF /* PhoneCell.xib */; };
 		A1783C4F1F26CC7C00AE84EF /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */; };
 		A1783C511F26CE2B00AE84EF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C501F26CE2B00AE84EF /* Account.swift */; };
+		A1783C531F26DED600AE84EF /* FCApiAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C521F26DED600AE84EF /* FCApiAccount.swift */; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
 		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
 		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
@@ -105,6 +106,7 @@
 		A1783C491F267F0900AE84EF /* PhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneCell.xib; sourceTree = "<group>"; };
 		A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountResponse.swift; path = FlipConnectSDK/AccountResponse.swift; sourceTree = "<group>"; };
 		A1783C501F26CE2B00AE84EF /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = FlipConnectSDK/Account.swift; sourceTree = "<group>"; };
+		A1783C521F26DED600AE84EF /* FCApiAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAccount.swift; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -294,6 +296,7 @@
 				A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */,
 				A1DCC6981F0C55670072D964 /* FCApiDocuments.swift */,
 				A1223DEA1F0FD53000755669 /* FCApiUser.swift */,
+				A1783C521F26DED600AE84EF /* FCApiAccount.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -437,6 +440,7 @@
 				A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
+				A1783C531F26DED600AE84EF /* FCApiAccount.swift in Sources */,
 				A1783C511F26CE2B00AE84EF /* Account.swift in Sources */,
 				A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,

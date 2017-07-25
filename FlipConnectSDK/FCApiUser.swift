@@ -11,9 +11,6 @@ import Foundation
 extension FCApi {
     static func getUser(accessToken token: String, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
-            "Accept-Language": "en-US",
-            "Accept": "application/json",
-            "Content-Type": "application/json",
             "Authorization": "bearer \(token)"
         ]
         
@@ -32,9 +29,6 @@ extension FCApi {
     
     public static func getUser(publicToken token: String, accountKey key: String, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
-            "Accept-Language": "en-US",
-            "Accept": "application/json",
-            "Content-Type": "application/json",
             "Authorization": "bearer \(token)"
         ]
         

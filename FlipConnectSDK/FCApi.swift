@@ -21,6 +21,20 @@ public struct FCApi {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         
+        let langCode = Locale.current.languageCode ?? "en"
+        let regionCode = Locale.current.regionCode ?? "US"
+        let lang = "\(langCode)-\(regionCode)"
+        
+        let internalHeaders: Headers = [
+            "Accept-Language": lang,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        ]
+        
+        for (key, value) in internalHeaders {
+            request.addValue(value, forHTTPHeaderField: key)
+        }
+        
         if let headers = headers {
             for (key, value) in headers {
                 request.addValue(value, forHTTPHeaderField: key)
