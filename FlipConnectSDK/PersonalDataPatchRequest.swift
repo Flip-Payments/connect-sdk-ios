@@ -1,5 +1,5 @@
 //
-//  PublicProfilePatchRequest.swift
+//  PersonalDataPatchRequest.swift
 //  FlipConnectSDK
 //
 //  Created by Munir Wanis on 25/07/17.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class PublicProfilePatchRequest: PatchRequestProtocol {
-    var patches: [Patch]? = nil
+class PersonalDataPatchRequest: PatchRequestProtocol {
+    var patches: [Patch]? = nil    
     
-    func add(operation: Operation, path: PublicProfilePathEnum, value: String? = nil) {
+    func add(operation: Operation, path: PersonalDataPathEnum, value: String?) {
         if patches == nil {
             patches = []
         }
@@ -35,7 +35,9 @@ class PublicProfilePatchRequest: PatchRequestProtocol {
     }
 }
 
-enum PublicProfilePathEnum: String {
-    case name = "/name"
-    case pictureUrl = "/pictureUrl"
+enum PersonalDataPathEnum: String {
+    case birthdate = "/birthdate"
+    case genderType = "/type"
+    case dependentCount = "/dependentCount"
+    case country = "/country"
 }

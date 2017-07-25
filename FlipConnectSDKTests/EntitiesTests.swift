@@ -137,10 +137,13 @@ class EntitiesTests: XCTestCase {
     }
     
     func testPatchesToJSONConversion() {
-        var patches = Patches()
-        patches.publicProfile.add(operation: .replace, path: .name, value: "John")
-        patches.publicProfile.add(operation: .remove, path: .pictureUrl, value: "")
-        let json = JSONSerializer.toJson(patches)
-        XCTAssertTrue(json.contains("/name"))
+        let patches = Patches()
+        patches.publicProfile = PublicProfilePatchRequest()
+        patches.publicProfile?.add(operation: .replace, path: .name, value: "John")
+        patches.publicProfile?.add(operation: .remove, path: .pictureUrl, value: "")
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: patches.createDictionary())
+        print(json ?? "f o d e u")
+        XCTAssertNotNil(json)
+        XCTAssertTrue(json!.contains("/name"))
     }
 }

@@ -11,7 +11,7 @@ import Foundation
 class Patch {
     var op: Operation
     
-    private var path: String
+    var path: String
     
     var value: String?
     
@@ -20,13 +20,30 @@ class Patch {
         self.path = path
         self.value = value
     }
+    
+    func createDictionary() -> JSON {
+        return [
+            "op": self.op.rawValue,
+            "path": self.path,
+            "value": self.value as Any
+        ]
+    }
 }
 
 class Patches {
-    var publicProfile: PublicProfilePatchRequest = PublicProfilePatchRequest()
+    var publicProfile: PublicProfilePatchRequest? = nil
+    var personalData: PersonalDataPatchRequest? = nil
+    
+    
+    func createDictionary() -> JSON {
+        return [
+            "publicProfile": self.publicProfile?.createDictionary() as Any,
+            "personalData": self.personalData?.createDictionary() as Any
+        ]
+    }
 }
 
-enum Operation {
+enum Operation: String {
     case replace
     case remove
 }
