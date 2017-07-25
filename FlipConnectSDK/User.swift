@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class User: NSObject {
+public struct User {
     public private(set) var accountKey: String
     public private(set) var isEnabled: Bool
     public private(set) var membershipCreateDate: Date?

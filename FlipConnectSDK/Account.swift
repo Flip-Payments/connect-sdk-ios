@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Account: NSObject {
+public struct Account {
     public internal(set) var accountKey: String
     public internal(set) var isEnabled: Bool
     public internal(set) var publicProfile: PublicProfile?

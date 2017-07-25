@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct DocumentsResponse: Response {
-    var operationReport: [Report] = []
+public struct DocumentsResponse: Response {
+    public var operationReport: [Report] = []
     
-    var success: Bool = false
+    public var success: Bool = false
     
-    var documents: [Document] = []
+    public var documents: [Document] = []
     
-    init(json: JSON) {
+    public init(json: JSON) {
         self.initializeResponse(json: json)
         
         guard let documents = json["documents"] as? [JSON] else {

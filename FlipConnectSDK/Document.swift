@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Document {
+public struct Document {
     var id: Int
     var type: DocumentType
     var typeFriendlyName: String
