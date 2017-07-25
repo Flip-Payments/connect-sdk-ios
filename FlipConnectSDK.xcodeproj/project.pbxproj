@@ -35,6 +35,8 @@
 		A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C461F2678A900AE84EF /* DataCellDelegate.swift */; };
 		A1783C4A1F267F0900AE84EF /* PhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C481F267F0900AE84EF /* PhoneCell.swift */; };
 		A1783C4B1F267F0900AE84EF /* PhoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1783C491F267F0900AE84EF /* PhoneCell.xib */; };
+		A1783C4F1F26CC7C00AE84EF /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */; };
+		A1783C511F26CE2B00AE84EF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C501F26CE2B00AE84EF /* Account.swift */; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
 		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
 		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
@@ -101,6 +103,8 @@
 		A1783C461F2678A900AE84EF /* DataCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCellDelegate.swift; sourceTree = "<group>"; };
 		A1783C481F267F0900AE84EF /* PhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCell.swift; sourceTree = "<group>"; };
 		A1783C491F267F0900AE84EF /* PhoneCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhoneCell.xib; sourceTree = "<group>"; };
+		A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountResponse.swift; path = FlipConnectSDK/AccountResponse.swift; sourceTree = "<group>"; };
+		A1783C501F26CE2B00AE84EF /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = FlipConnectSDK/Account.swift; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -247,10 +251,11 @@
 				A1DAC0361F02F76A0035E955 /* Address.swift */,
 				A1DAC0381F02F9840035E955 /* Phone.swift */,
 				A1DAC03A1F0300150035E955 /* Email.swift */,
-				A1DAC03C1F0301D50035E955 /* Document.swift */,
 				A1223DE61F0D71D700755669 /* User.swift */,
+				A1DAC03C1F0301D50035E955 /* Document.swift */,
 				A1223DE81F0D729D00755669 /* PublicProfile.swift */,
 				A1779AB81F18925F0055B80C /* PersonalData.swift */,
+				A1783C501F26CE2B00AE84EF /* Account.swift */,
 			);
 			name = Entities;
 			path = ..;
@@ -263,6 +268,7 @@
 				A1DAC0341F02F7580035E955 /* AddressesResponse.swift */,
 				A15067AA1F0192C300794F73 /* Response.swift */,
 				A1DCC69A1F0ED6F90072D964 /* UserResponse.swift */,
+				A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -431,6 +437,7 @@
 				A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
+				A1783C511F26CE2B00AE84EF /* Account.swift in Sources */,
 				A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
@@ -438,6 +445,7 @@
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A14FFA2F1F17B70E0011D409 /* PublicProfileCell.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
+				A1783C4F1F26CC7C00AE84EF /* AccountResponse.swift in Sources */,
 				A14FFA361F1D59A30011D409 /* UIViewControllerExtension.swift in Sources */,
 				A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,

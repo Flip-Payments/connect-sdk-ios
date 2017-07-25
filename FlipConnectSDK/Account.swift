@@ -1,27 +1,23 @@
 //
-//  User.swift
+//  Account.swift
 //  FlipConnectSDK
 //
-//  Created by Munir Wanis on 05/07/17.
+//  Created by Munir Wanis on 24/07/17.
 //  Copyright © 2017 Flip Connect. All rights reserved.
 //
 
 import Foundation
 
-public class User: NSObject {
-    public private(set) var accountKey: String
-    public private(set) var isEnabled: Bool
-    public private(set) var membershipCreateDate: Date?
-    public private(set) var isNewsLetterAllowed: Bool?
-    public private(set) var publicProfile: PublicProfile?
-    public private(set) var personalData: PersonalData?
-    public private(set) var emails: [Email] = []
-    public private(set) var phones: [Phone] = []
+public class Account: NSObject {
+    public internal(set) var accountKey: String
+    public internal(set) var isEnabled: Bool
+    public internal(set) var publicProfile: PublicProfile?
+    public internal(set) var personalData: PersonalData?
+    public internal(set) var emails: [Email] = []
+    public internal(set) var phones: [Phone] = []
     
     init?(json: JSON) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yyyy h:mm:ss a"
-        
+       
         guard let accountKey = json["accountKey"] as? String,
             let isEnabled = json["isEnabled"] as? Bool
             else {
@@ -36,13 +32,6 @@ public class User: NSObject {
         }
         if let personalDataJSON = json["personalData"] as? JSON {
             self.personalData = PersonalData(json: personalDataJSON)
-        }
-        if let membershipCreateDateString = json["membershipCreateDate"] as? String {
-            let membershipCreateDate = dateFormatter.date(from: membershipCreateDateString)
-            self.membershipCreateDate = membershipCreateDate
-        }
-        if let isNewsLetterAllowed = json["isNewsLetterAllowed"] as? Bool {
-            self.isNewsLetterAllowed = isNewsLetterAllowed
         }
         if let emailsJSON = json["emails"] as? [JSON] {
             let emails = emailsJSON.flatMap{ Email(json: $0) }
