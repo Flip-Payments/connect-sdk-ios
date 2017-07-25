@@ -8,29 +8,23 @@
 
 import Foundation
 
-struct Patch {
+class Patch {
     var op: Operation
     
-    private var _path: String
-    var path: String {
-        get {
-            return "/\(_path)"
-        }
-        set {
-            _path = newValue
-        }
-    }
+    private var path: String
     
-    var value: String
+    var value: String?
     
-    init(_ operation: Operation, _ path: String, _ value: String) {
+    init(_ operation: Operation, _ path: String, _ value: String? = nil) {
         self.op = operation
-        self._path = path
+        self.path = path
         self.value = value
     }
 }
 
-typealias Patches = [Patch]
+class Patches {
+    var publicProfile: PublicProfilePatchRequest = PublicProfilePatchRequest()
+}
 
 enum Operation {
     case replace

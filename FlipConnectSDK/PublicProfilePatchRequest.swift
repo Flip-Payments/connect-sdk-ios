@@ -8,16 +8,20 @@
 
 import Foundation
 
-struct PublicProfilePatchRequest {
-    var patches: Patches = []
+class PublicProfilePatchRequest {
+    var patches: [Patch]? = nil
     
-    mutating func add(operation: Operation, path: PublicProfilePathEnum, value: String) {
-//        let patch = Patch(operation, path.rawValue, value)
-//        patches.append(patch)
+    func add(operation: Operation, path: PublicProfilePathEnum, value: String? = nil) {
+        if patches == nil {
+            patches = []
+        }
+        
+        let patch = Patch(operation, path.rawValue, value)
+        patches!.append(patch)
     }
 }
 
 enum PublicProfilePathEnum: String {
-    case name
-    case pictureUrl
+    case name = "/name"
+    case pictureUrl = "/pictureUrl"
 }
