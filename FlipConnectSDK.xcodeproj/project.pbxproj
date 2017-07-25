@@ -39,7 +39,6 @@
 		A1783C511F26CE2B00AE84EF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C501F26CE2B00AE84EF /* Account.swift */; };
 		A1783C531F26DED600AE84EF /* FCApiAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C521F26DED600AE84EF /* FCApiAccount.swift */; };
 		A1783C551F26EFBD00AE84EF /* PublicProfilePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */; };
-		A1783C571F27B53D00AE84EF /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C561F27B53D00AE84EF /* JsonSerializer.swift */; };
 		A1783C5B1F27C21500AE84EF /* PersonalDataPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */; };
 		A1783C5D1F27C25500AE84EF /* PatchRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */; };
 		A1783C5F1F27CCF700AE84EF /* SerializationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5E1F27CCF700AE84EF /* SerializationHelper.swift */; };
@@ -113,7 +112,6 @@
 		A1783C501F26CE2B00AE84EF /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = FlipConnectSDK/Account.swift; sourceTree = "<group>"; };
 		A1783C521F26DED600AE84EF /* FCApiAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAccount.swift; sourceTree = "<group>"; };
 		A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfilePatchRequest.swift; path = FlipConnectSDK/PublicProfilePatchRequest.swift; sourceTree = "<group>"; };
-		A1783C561F27B53D00AE84EF /* JsonSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonSerializer.swift; sourceTree = "<group>"; };
 		A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalDataPatchRequest.swift; path = FlipConnectSDK/PersonalDataPatchRequest.swift; sourceTree = "<group>"; };
 		A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchRequestProtocol.swift; path = FlipConnectSDK/PatchRequestProtocol.swift; sourceTree = "<group>"; };
 		A1783C5E1F27CCF700AE84EF /* SerializationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationHelper.swift; sourceTree = "<group>"; };
@@ -214,7 +212,6 @@
 		A14FFA371F1D6E2F0011D409 /* Extenstions */ = {
 			isa = PBXGroup;
 			children = (
-				A1783C561F27B53D00AE84EF /* JsonSerializer.swift */,
 				A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */,
 				A14FFA351F1D59A30011D409 /* UIViewControllerExtension.swift */,
 				A14FFA381F1D6EA90011D409 /* NSLocaleExtension.swift */,
@@ -470,7 +467,6 @@
 				A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
 				A1C4F9361F20F97100DCD3BF /* NibCreatable.swift in Sources */,
-				A1783C571F27B53D00AE84EF /* JsonSerializer.swift in Sources */,
 				A1783C5D1F27C25500AE84EF /* PatchRequestProtocol.swift in Sources */,
 				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
