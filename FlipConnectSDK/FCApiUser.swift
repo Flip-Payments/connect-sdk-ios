@@ -8,25 +8,7 @@
 
 import Foundation
 
-extension FCApi {
-    static func getUser(accessToken token: String, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
-        let headers: Headers = [
-            "Authorization": "bearer \(token)"
-        ]
-        
-        var err: Error? = nil
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectUserManagementUrl)user/account")!, withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
-            let user = UserResponse(json: response)
-            guard error == nil else {
-                err = error
-                completion(user, err)
-                return
-            }
-            
-            completion(user, err)
-        }
-    }
-    
+extension FCApi {    
     public static func getUser(publicToken token: String, accountKey key: String, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
             "Authorization": "bearer \(token)"

@@ -14,7 +14,7 @@ class RegistrationEditionViewController: UIViewController {
     
     var sections: [FCEditCategoriesEnum] = []
     
-    var user: UserResponse = UserResponse(json: [:])
+    var accountResponse: AccountResponse = AccountResponse(json: [:])
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -23,10 +23,10 @@ class RegistrationEditionViewController: UIViewController {
             return
         }
         
-        FCApi.getUser(accessToken: accessToken) { user, error in
-            self.user = user
+        FCApi.getAccount(accessToken: accessToken) { account, error in
+            self.accountResponse = account
             DispatchQueue.main.async {
-                self.user = user
+                self.accountResponse = account
                 self.tableView.reloadData()
             }
         }
@@ -115,12 +115,12 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
         case .PersonalData:
             return 1
         case .Emails:
-            if let emailCount = user.user?.emails.count {
+            if let emailCount = accountResponse.account?.emails.count {
                 return emailCount
             }
             return 0
         case .Phones:
-            if let phoneCount = user.user?.phones.count {
+            if let phoneCount = accountResponse.account?.phones.count {
                 return phoneCount
             }
             return 0
@@ -136,7 +136,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
         switch sections[indexPath.section] {
         case .PublicProfile:
             let cell: PublicProfileCell = self.tableView.dequeueReusableCell(for: indexPath)
-            cell.nameField.text = user.user?.publicProfile?.name
+            cell.nameField.text = accountResponse.account?.publicProfile?.name
             return cell
         case .PersonalData:
             let cell: PersonalDataCell = self.tableView.dequeueReusableCell(for: indexPath)
@@ -144,17 +144,17 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "dd/MM/yyyy"
             
-            if let birthdate = user.user?.personalData?.birthdate {
+            if let birthdate = accountResponse.account?.personalData?.birthdate {
                 cell.birthdateTextField.text = dateFormatter.string(from: birthdate)
             }
             
-            cell.countryTextField.text = user.user?.personalData?.country
+            cell.countryTextField.text = accountResponse.account?.personalData?.country
             
-            if let dependents = user.user?.personalData?.dependentCount {
+            if let dependents = accountResponse.account?.personalData?.dependentCount {
                 cell.dependentsQtyTextField.text = "\(dependents)"
             }
             
-            if let gender = user.user?.personalData?.genderTypeFriendlyName {
+            if let gender = accountResponse.account?.personalData?.genderTypeFriendlyName {
                 cell.genderBtn.setTitle(gender, for: .normal)
             }
             
@@ -162,7 +162,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             return cell
         case .Emails:
             let cell: EmailCell = self.tableView.dequeueReusableCell(for: indexPath)
-            let email = user.user?.emails[indexPath.row]
+            let email = accountResponse.account?.emails[indexPath.row]
             cell.delegate = self
             cell.emailTextField.text = email?.address
             
@@ -174,7 +174,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             return cell
         case .Phones:
             let cell: PhoneCell = self.tableView.dequeueReusableCell(for: indexPath)
-            let phone = user.user?.phones[indexPath.row]
+            let phone = accountResponse.account?.phones[indexPath.row]
             
             cell.delegate = self
             cell.phoneTypeBtn.setTitle(phone?.typeFriendlyName, for: .normal)

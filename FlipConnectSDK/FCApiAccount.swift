@@ -9,7 +9,7 @@
 import Foundation
 
 extension FCApi {
-    static func getAcount(accessToken token: String, completion: @escaping (_ user: AccountResponse, _ error: Error?) -> Void) {
+    static func getAccount(accessToken token: String, completion: @escaping (_ user: AccountResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
             "Authorization": "bearer \(token)"
         ]
