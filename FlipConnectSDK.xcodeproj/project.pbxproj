@@ -38,6 +38,7 @@
 		A1783C4F1F26CC7C00AE84EF /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */; };
 		A1783C511F26CE2B00AE84EF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C501F26CE2B00AE84EF /* Account.swift */; };
 		A1783C531F26DED600AE84EF /* FCApiAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C521F26DED600AE84EF /* FCApiAccount.swift */; };
+		A1783C551F26EFBD00AE84EF /* PublicProfilePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
 		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
 		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
@@ -107,6 +108,7 @@
 		A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountResponse.swift; path = FlipConnectSDK/AccountResponse.swift; sourceTree = "<group>"; };
 		A1783C501F26CE2B00AE84EF /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = FlipConnectSDK/Account.swift; sourceTree = "<group>"; };
 		A1783C521F26DED600AE84EF /* FCApiAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAccount.swift; sourceTree = "<group>"; };
+		A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfilePatchRequest.swift; path = FlipConnectSDK/PublicProfilePatchRequest.swift; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				A1DAC0321F02F7420035E955 /* PatchesRequest.swift */,
+				A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				A1DAC03D1F0301D50035E955 /* Document.swift in Sources */,
 				A1223DE71F0D71D700755669 /* User.swift in Sources */,
 				A14FFA331F17BCEF0011D409 /* PersonalDataCell.swift in Sources */,
+				A1783C551F26EFBD00AE84EF /* PublicProfilePatchRequest.swift in Sources */,
 				A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */,
 				A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */,
 				A1C4F9381F20F97100DCD3BF /* Reusable.swift in Sources */,

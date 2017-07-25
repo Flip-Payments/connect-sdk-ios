@@ -14,19 +14,23 @@ struct Patch {
     private var _path: String
     var path: String {
         get {
-            return _path
+            return "/\(_path)"
         }
         set {
-            _path = "/\(newValue)"
+            _path = newValue
         }
     }
     
-    var value: Any
+    var value: String
+    
+    init(_ operation: Operation, _ path: String, _ value: String) {
+        self.op = operation
+        self._path = path
+        self.value = value
+    }
 }
 
-struct Patches {
-    var patches: [Patch]
-}
+typealias Patches = [Patch]
 
 enum Operation {
     case replace
