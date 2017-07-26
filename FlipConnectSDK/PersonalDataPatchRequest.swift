@@ -9,7 +9,7 @@
 import Foundation
 
 class PersonalDataPatchRequest: BasePatchRequest, PatchRequestProtocol {
-    func add(operation: Operation, path: PersonalDataPathEnum, value: String?) {
+    func add(operation: Operation, path: PersonalDataPathEnum, value: String? = nil) {
         if patches == nil {
             patches = []
         }

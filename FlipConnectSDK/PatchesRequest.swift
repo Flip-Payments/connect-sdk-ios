@@ -33,12 +33,23 @@ class Patch {
 class Patches {
     var publicProfile: PublicProfilePatchRequest? = nil
     var personalData: PersonalDataPatchRequest? = nil
+    var emails: [EmailPatchRequest]? = nil
     
     
     func createDictionary() -> JSON {
+        var emailsDictionary: [JSON]? = nil
+        
+        if let emails = emails {
+            emailsDictionary = []
+            for email in emails {
+                emailsDictionary!.append(email.createDictionary())
+            }
+        }
+        
         return [
             "publicProfile": self.publicProfile?.createDictionary() as Any,
-            "personalData": self.personalData?.createDictionary() as Any
+            "personalData": self.personalData?.createDictionary() as Any,
+            "emails": emailsDictionary as Any
         ]
     }
 }
