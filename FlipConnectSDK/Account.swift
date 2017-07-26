@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Account {
+struct Account {
     public private(set) var accountKey: String
     public private(set) var isEnabled: Bool
     public private(set) var publicProfile: PublicProfile?
