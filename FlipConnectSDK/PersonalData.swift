@@ -34,6 +34,12 @@ public struct PersonalData {
             return nil
         }
     }
+    
+    static func getCountryName(countryCode: String?) -> String? {
+        let countries = NSLocale.locales()
+        let country = countries.first { $0.countryCode.uppercased() == countryCode?.uppercased() }
+        return country?.countryName
+    }
 }
 
 public enum GenderType: String {
