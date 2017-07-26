@@ -21,7 +21,7 @@ class PersonalDataPatchRequest: BasePatchRequest, PatchRequestProtocol {
 
 enum PersonalDataPathEnum: String {
     case birthdate = "/birthdate"
-    case genderType = "/type"
+    case genderType = "/genderType"
     case dependentCount = "/dependentCount"
     case country = "/country"
 }

@@ -23,7 +23,7 @@ enum AddressPathEnum: String {
     case street = "/street"
     case number = "/number"
     case complement = "/complement"
-    case addressType = "/type"
+    case addressType = "/addressType"
     case district = "/district"
     case city = "/city"
     case state = "/state"

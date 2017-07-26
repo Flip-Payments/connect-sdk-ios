@@ -20,7 +20,7 @@ class PhonePatchRequest: BasePatchRequest, PatchRequestProtocol {
 }
 
 enum PhonePathEnum: String {
-    case phoneType = "/type"
-    case fullNumber = "/number"
+    case phoneType = "/phoneType"
+    case fullNumber = "/fullNumber"
     case isPrimary = "/isPrimary"
 }
