@@ -33,6 +33,7 @@
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
 		A16D93F21F28D485005228E1 /* BasePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F11F28D485005228E1 /* BasePatchRequest.swift */; };
 		A16D93F61F28D98C005228E1 /* EmailPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F51F28D98C005228E1 /* EmailPatchRequest.swift */; };
+		A16D93F81F28DA43005228E1 /* PhonePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F71F28DA43005228E1 /* PhonePatchRequest.swift */; };
 		A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779AB81F18925F0055B80C /* PersonalData.swift */; };
 		A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C461F2678A900AE84EF /* DataCellDelegate.swift */; };
 		A1783C4A1F267F0900AE84EF /* PhoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C481F267F0900AE84EF /* PhoneCell.swift */; };
@@ -108,6 +109,7 @@
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
 		A16D93F11F28D485005228E1 /* BasePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePatchRequest.swift; path = FlipConnectSDK/BasePatchRequest.swift; sourceTree = "<group>"; };
 		A16D93F51F28D98C005228E1 /* EmailPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailPatchRequest.swift; path = FlipConnectSDK/EmailPatchRequest.swift; sourceTree = "<group>"; };
+		A16D93F71F28DA43005228E1 /* PhonePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhonePatchRequest.swift; path = FlipConnectSDK/PhonePatchRequest.swift; sourceTree = "<group>"; };
 		A1779AB81F18925F0055B80C /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalData.swift; path = FlipConnectSDK/PersonalData.swift; sourceTree = "<group>"; };
 		A1783C461F2678A900AE84EF /* DataCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCellDelegate.swift; sourceTree = "<group>"; };
 		A1783C481F267F0900AE84EF /* PhoneCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneCell.swift; sourceTree = "<group>"; };
@@ -323,6 +325,7 @@
 				A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */,
 				A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */,
 				A16D93F51F28D98C005228E1 /* EmailPatchRequest.swift */,
+				A16D93F71F28DA43005228E1 /* PhonePatchRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				A14FFA361F1D59A30011D409 /* UIViewControllerExtension.swift in Sources */,
 				A1DAC03F1F03F4EE0035E955 /* FCEditUser.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
+				A16D93F81F28DA43005228E1 /* PhonePatchRequest.swift in Sources */,
 				A1C4F9361F20F97100DCD3BF /* NibCreatable.swift in Sources */,
 				A1783C5D1F27C25500AE84EF /* PatchRequestProtocol.swift in Sources */,
 				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,
