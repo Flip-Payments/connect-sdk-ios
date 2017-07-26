@@ -32,7 +32,7 @@ class UserViewController: UIViewController {
             return
         }
         
-        FCApi.getUser(publicToken: publicToken, accountKey: accountKey) { user, error in
+        FCApi.getUser(publicToken: publicToken, accountKey: accountKey, categories: [.Emails]) { user, error in
             DispatchQueue.main.async {
                 self.publicProfileNameLbl.text = user.user?.publicProfile?.name
                 self.emailAddress.text = user.user?.emails.first?.address
