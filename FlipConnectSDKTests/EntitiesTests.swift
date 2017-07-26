@@ -45,7 +45,7 @@ class EntitiesTests: XCTestCase {
     }
     
     func testJSONtoDocumentConversion() {
-        let documentJSON = "{\"id\":86,\"documentType\":\"cpf\",\"documentTypeFriendlyName\":\"CPF\",\"documentNumber\":\"37692802963\",\"documentData\":{}}"
+        let documentJSON = "{\"key\":\"ea6dc241-2f5c-e711-80c2-0003ff345086\",\"documentType\":\"cpf\",\"documentTypeFriendlyName\":\"CPF\",\"documentNumber\":\"10916033759\",\"documentData\":{}}"
         
         let data = documentJSON.data(using: String.Encoding.utf8)!
         let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
@@ -56,14 +56,14 @@ class EntitiesTests: XCTestCase {
     }
     
     func testJSONtoDocumentsConversion() {
-        let documentsJSON = "{\"documents\":[{\"id\":86,\"documentType\":\"cpf\",\"documentTypeFriendlyName\":\"CPF\",\"documentNumber\":\"37692802963\",\"documentData\":{}},{\"id\":115,\"documentType\":\"cnpj\",\"documentTypeFriendlyName\":\"CNPJ\",\"documentNumber\":\"23873167000162\",\"documentData\":{}},{\"id\":116,\"documentType\":\"cnh\",\"documentTypeFriendlyName\":\"CNH\",\"documentNumber\":\"1234567901\",\"documentData\":{}}],\"success\":true,\"operationReport\":[]}"
+        let documentsJSON = "{\"documents\":[{\"key\":\"ea6dc241-2f5c-e711-80c2-0003ff345086\",\"documentType\":\"cpf\",\"documentTypeFriendlyName\":\"CPF\",\"documentNumber\":\"10916033759\",\"documentData\":{}}],\"success\":true,\"operationReport\":[]}"
         
         let data = documentsJSON.data(using: String.Encoding.utf8)!
         let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
         
         let documents = DocumentsResponse(json: json)
         
-        XCTAssertTrue(documents.documents[0].id == 86)
+        XCTAssertTrue(documents.documents[0].key == "ea6dc241-2f5c-e711-80c2-0003ff345086")
         XCTAssertTrue(documents.success)
         XCTAssertTrue(documents.documents[0].type == .cpf)
 
