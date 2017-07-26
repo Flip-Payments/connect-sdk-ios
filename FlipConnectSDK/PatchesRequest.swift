@@ -51,7 +51,7 @@ class Patches {
         if let phones = phones {
             phonesDictionary = []
             for phone in phones {
-                emailsDictionary!.append(phone.createDictionary())
+                phonesDictionary!.append(phone.createDictionary())
             }
         }
         
