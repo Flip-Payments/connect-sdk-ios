@@ -213,4 +213,10 @@ class EntitiesTests: XCTestCase {
         XCTAssertNotNil(json)
         XCTAssertTrue(json!.contains("/documentType"))
     }
+    
+    func testGetCountryName() {
+        let countryName = PersonalData.getCountryName(countryCode: "BR")
+        
+        XCTAssert(countryName == "Brazil")
+    }
 }
