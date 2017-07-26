@@ -9,12 +9,14 @@
 import Foundation
 
 public struct Account {
-    public internal(set) var accountKey: String
-    public internal(set) var isEnabled: Bool
-    public internal(set) var publicProfile: PublicProfile?
-    public internal(set) var personalData: PersonalData?
-    public internal(set) var emails: [Email] = []
-    public internal(set) var phones: [Phone] = []
+    public private(set) var accountKey: String
+    public private(set) var isEnabled: Bool
+    public private(set) var publicProfile: PublicProfile?
+    public private(set) var personalData: PersonalData?
+    public private(set) var emails: [Email] = []
+    public private(set) var phones: [Phone] = []
+    public private(set) var addresses: [Address] = []
+    public private(set) var documents: [Document] = []
     
     init?(json: JSON) {
        
@@ -40,6 +42,14 @@ public struct Account {
         if let phonesJSON = json["phones"] as? [JSON] {
             let phones = phonesJSON.flatMap{ Phone(json: $0) }
             self.phones = phones
+        }
+        if let addressesJSON = json["addresses"] as? [JSON] {
+            let addresses = addressesJSON.flatMap { Address(json: $0) }
+            self.addresses = addresses
+        }
+        if let documentsJSON = json["documents"] as? [JSON] {
+            let documents = documentsJSON.flatMap { Document(json: $0) }
+            self.documents = documents
         }
     }
 }
