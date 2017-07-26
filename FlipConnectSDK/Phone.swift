@@ -17,7 +17,7 @@ public struct Phone {
     public private(set) var isPrimary: Bool
     
     init?(json: JSON) {
-        guard let id = (json["id"] as? String ?? json["key"] as? String),
+        guard let key = json["key"] as? String,
             let phoneType = PhoneType(rawValue: (json["phoneType"] as? String)!),
             let phoneTypeFriendlyName = json["phoneTypeFriendlyName"] as? String,
             let fullNumber = json["fullNumber"] as? String,
@@ -27,7 +27,7 @@ public struct Phone {
                 return nil
         }
         
-        self.key = id
+        self.key = key
         self.type = phoneType
         self.typeFriendlyName = phoneTypeFriendlyName
         self.fullNumber = fullNumber

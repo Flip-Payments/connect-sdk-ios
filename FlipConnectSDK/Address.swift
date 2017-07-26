@@ -9,18 +9,18 @@
 import Foundation
 
 public struct Address {
-    public private (set) var key: String
-    public private (set) var street: String
-    public private (set) var number: String
-    public private (set) var complement: String?
-    public private (set) var type: String
-    public private (set) var typeFriendlyName: String?
-    public private (set) var district: String?
-    public private (set) var city: String
-    public private (set) var state: String
-    public private (set) var zipCode: String
-    public private (set) var addressReference: String?
-    public private (set) var country: String
+    public private(set) var key: String
+    public private(set) var street: String
+    public private(set) var number: String
+    public private(set) var complement: String?
+    public private(set) var type: String
+    public private(set) var typeFriendlyName: String?
+    public private(set) var district: String?
+    public private(set) var city: String
+    public private(set) var state: String
+    public private(set) var zipCode: String
+    public private(set) var addressReference: String?
+    public private(set) var country: String
     
     public init?(json: JSON) {
         guard let key = json["key"] as? String,

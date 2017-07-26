@@ -9,14 +9,14 @@
 import Foundation
 
 public struct Document {
-    var id: Int
-    var type: DocumentType
-    var typeFriendlyName: String
-    var number: String
-    var data: JSON?
+    public private(set) var key: String
+    public private(set) var type: DocumentType
+    public private(set) var typeFriendlyName: String
+    public private(set) var number: String
+    public private(set) var data: JSON?
     
     init?(json: JSON) {
-        guard let id = json["id"] as? Int,
+        guard let key = json["key"] as? String,
             let type = DocumentType(rawValue: (json["documentType"] as? String)!),
             let typeFriendlyName = json["documentTypeFriendlyName"] as? String,
             let number = json["documentNumber"] as? String
@@ -24,7 +24,7 @@ public struct Document {
                 return nil
         }
         
-        self.id = id
+        self.key = key
         self.type = type
         self.typeFriendlyName = typeFriendlyName
         self.number = number
@@ -32,7 +32,7 @@ public struct Document {
     }
 }
 
-enum DocumentType: String {
+public enum DocumentType: String {
     case cpf
     case cnpj
     case cnh

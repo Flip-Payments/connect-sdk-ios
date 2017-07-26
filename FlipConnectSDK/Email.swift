@@ -15,7 +15,7 @@ public struct Email {
     public private(set) var isPrimary: Bool
     
     init?(json: JSON) {
-        guard let id = (json["id"] as? String ?? json["key"] as? String),
+        guard let key = json["key"] as? String,
             let address = json["address"] as? String,
             let isValidated = json["isValidated"] as? Bool,
             let isPrimary = json["isPrimary"] as? Bool
@@ -23,7 +23,7 @@ public struct Email {
                 return nil
         }
         
-        self.key = id
+        self.key = key
         self.address = address
         self.isValidated = isValidated
         self.isPrimary = isPrimary
