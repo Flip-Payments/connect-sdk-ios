@@ -141,6 +141,18 @@ class EntitiesTests: XCTestCase {
         patches.publicProfile = PublicProfilePatchRequest()
         patches.publicProfile?.add(operation: .replace, path: .name, value: "John")
         patches.publicProfile?.add(operation: .remove, path: .pictureUrl, value: "")
+        
+        patches.emails = []
+        let email1 = EmailPatchRequest()
+        email1.key = "1234556677"
+        email1.add(operation: .replace, path: .address, value: "some@email.com")
+        email1.add(operation: .remove, path: .isPrimary)
+        patches.emails?.append(email1)
+        let email2 = EmailPatchRequest()
+        email2.key = "29034krjkglsd"
+        email2.add(operation: .remove, path: .address)
+        patches.emails?.append(email2)
+        
         let json = SerializationHelper.composeJSONStringFrom(dictionary: patches.createDictionary())
         print(json ?? "f o d e u")
         XCTAssertNotNil(json)
