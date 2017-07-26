@@ -23,7 +23,7 @@ class RegistrationEditionViewController: UIViewController {
             return
         }
         
-        FCApi.getAccount(accessToken: accessToken) { account, error in
+        FCApi.getAccount(accessToken: accessToken, categories: sections) { account, error in
             self.accountResponse = account
             DispatchQueue.main.async {
                 self.accountResponse = account
