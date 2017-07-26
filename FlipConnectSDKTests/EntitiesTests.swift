@@ -158,4 +158,22 @@ class EntitiesTests: XCTestCase {
         XCTAssertNotNil(json)
         XCTAssertTrue(json!.contains("/name"))
     }
+    
+    func testPhonePatchToJSONConversion() {
+        let patches = Patches()
+        patches.phones = []
+        
+        let phone1 = PhonePatchRequest()
+        phone1.key = "1209389090sdsfsdf"
+        phone1.add(operation: .remove, path: .fullNumber)
+        phone1.add(operation: .replace, path: .phoneType, value: "home")
+        
+        patches.phones?.append(phone1)
+        
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: patches.createDictionary(), prettify: true)
+        print(json ?? "nil phone")
+        
+        XCTAssertNotNil(json)
+        XCTAssertTrue(json!.contains("/type"))
+    }
 }
