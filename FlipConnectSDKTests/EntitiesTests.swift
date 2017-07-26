@@ -194,4 +194,22 @@ class EntitiesTests: XCTestCase {
         XCTAssertNotNil(json)
         XCTAssertTrue(json!.contains("/country"))
     }
+    
+    func testDocumentPatchToJSONConversion() {
+        let patches = Patches()
+        patches.documents = []
+        
+        let document1 = DocumentPatchRequest()
+        document1.key = "1209389090sdsfsdf"
+        document1.add(operation: .remove, path: .documentNumber)
+        document1.add(operation: .replace, path: .documentType, value: "CNPJ")
+        
+        patches.documents?.append(document1)
+        
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: patches.createDictionary(), prettify: true)
+        print(json ?? "nil document")
+        
+        XCTAssertNotNil(json)
+        XCTAssertTrue(json!.contains("/documentType"))
+    }
 }
