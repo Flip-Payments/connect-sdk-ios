@@ -175,7 +175,7 @@ class EntitiesTests: XCTestCase {
         print(json ?? "nil phone")
         
         XCTAssertNotNil(json)
-        XCTAssertTrue(json!.contains("/type"))
+        XCTAssertTrue(json!.contains("/phoneType"))
     }
     
     func testAddressPatchToJSONConversion() {
