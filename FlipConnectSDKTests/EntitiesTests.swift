@@ -176,4 +176,22 @@ class EntitiesTests: XCTestCase {
         XCTAssertNotNil(json)
         XCTAssertTrue(json!.contains("/type"))
     }
+    
+    func testAddressPatchToJSONConversion() {
+        let patches = Patches()
+        patches.addresses = []
+        
+        let address1 = AddressPatchRequest()
+        address1.key = "1209389090sdsfsdf"
+        address1.add(operation: .remove, path: .complement)
+        address1.add(operation: .replace, path: .country, value: "BR")
+        
+        patches.addresses?.append(address1)
+        
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: patches.createDictionary(), prettify: true)
+        print(json ?? "nil address")
+        
+        XCTAssertNotNil(json)
+        XCTAssertTrue(json!.contains("/country"))
+    }
 }
