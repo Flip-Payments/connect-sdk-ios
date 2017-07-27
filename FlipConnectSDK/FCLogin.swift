@@ -263,6 +263,7 @@ public class FCLogin {
             UserDefaults.standard.accessToken = token
             UserDefaults.standard.refreshToken = refreshToken
             UserDefaults.standard.accountKey = accountKey
+            completion(err)
         }
     }
 }
