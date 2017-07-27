@@ -24,8 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         initialViewController.url = url
         
-        self.window?.rootViewController = initialViewController
-        self.window?.makeKeyAndVisible()
+        DispatchQueue.main.async {
+            self.window?.rootViewController = initialViewController
+            self.window?.makeKeyAndVisible()
+        }
         
         return true
     }

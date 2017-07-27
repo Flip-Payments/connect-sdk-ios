@@ -37,9 +37,10 @@ class ViewController: UIViewController {
                     } else {
                         initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSuccessViewController")
                     }
-                    
-                    self.window?.rootViewController = initialViewController
-                    self.window?.makeKeyAndVisible()
+                    DispatchQueue.main.async {
+                        self.window?.rootViewController = initialViewController
+                        self.window?.makeKeyAndVisible()
+                    }
                 }
             } else {
                 
@@ -56,14 +57,18 @@ class ViewController: UIViewController {
                         } else {
                             initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSuccessViewController")
                         }
-                        self.window?.rootViewController = initialViewController
-                        self.window?.makeKeyAndVisible()
+                        DispatchQueue.main.async {
+                            self.window?.rootViewController = initialViewController
+                            self.window?.makeKeyAndVisible()
+                        }
                     }
                 } else {
                     self.window = UIWindow(frame: UIScreen.main.bounds)
                     initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
-                    self.window?.rootViewController = initialViewController
-                    self.window?.makeKeyAndVisible()
+                    DispatchQueue.main.async {
+                        self.window?.rootViewController = initialViewController
+                        self.window?.makeKeyAndVisible()
+                    }
                 }
             }
             

@@ -84,7 +84,9 @@ class RegistrationEditionViewController: UIViewController {
     @IBAction func saveWasPressed(_ sender: UIBarButtonItem) {
         FCApi.updateAccount(accessToken: self.accessToken, self.patches) { response, error in
             guard error == nil else {
-                self.presentAlert(withTitle: "Error", andMessage: "An error occurred!")
+                DispatchQueue.main.async {
+                    self.presentAlert(withTitle: "Error", andMessage: "An error occurred!")
+                }
                 return
             }
             
@@ -93,7 +95,9 @@ class RegistrationEditionViewController: UIViewController {
                 for report in response.operationReport {
                     message.append("\(report.message)\n")
                 }
-                self.presentAlert(withTitle: "Error", andMessage: message)
+                DispatchQueue.main.async {
+                    self.presentAlert(withTitle: "Error", andMessage: message)
+                }
                 return
             }
             DispatchQueue.main.async {

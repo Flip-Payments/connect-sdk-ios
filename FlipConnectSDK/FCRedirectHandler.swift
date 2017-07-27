@@ -60,7 +60,7 @@ struct FCRedirectHandler {
     
     func mountWebURL(url: URL, withRedirectUri uri: String, andID clientID: String) -> URL {
         UserDefaults.standard.state = UUID().uuidString
-        return URL(string: "\(url.absoluteString)?clientId=\(clientID)&redirectUri=\(uri)&state=\(UserDefaults.standard.state!)&responseType=code")!
+        return URL(string: "\(url.absoluteString)?client_id=\(clientID)&redirect_uri=\(uri)&state=\(UserDefaults.standard.state!)&response_type=code")!
     }
     
     func handleURI(open url: URL) throws {
