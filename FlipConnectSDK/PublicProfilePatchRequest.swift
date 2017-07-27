@@ -16,7 +16,15 @@ class PublicProfilePatchRequest: BasePatchRequest, PatchRequestProtocol {
         }
         
         let patch = Patch(operation, path.rawValue, value)
-        patches!.append(patch)
+        if patches!.count > 0 {
+            patches!.forEach { patch in
+                if patch.path == path.rawValue, patch.op == operation {
+                    patch.value = value
+                }
+            }
+        } else {
+            patches!.append(patch)
+        }
     }
 }
 
