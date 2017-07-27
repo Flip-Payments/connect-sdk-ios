@@ -25,6 +25,9 @@
                         <color key="textColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                        <connections>
+                            <action selector="nameDidEndEditing:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="aKh-cN-Qg2"/>
+                        </connections>
                     </textField>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qeb-We-Huv">
                         <rect key="frame" x="82.5" y="13" width="135.5" height="135.5"/>

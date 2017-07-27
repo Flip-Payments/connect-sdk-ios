@@ -68,6 +68,7 @@
 		A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DCC6961F0C50610072D964 /* DocumentsResponse.swift */; };
 		A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DCC6981F0C55670072D964 /* FCApiDocuments.swift */; };
 		A1DCC69B1F0ED6F90072D964 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DCC69A1F0ED6F90072D964 /* UserResponse.swift */; };
+		A1E309701F2A65C6006616BD /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3096F1F2A65C6006616BD /* GenericResponse.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
 /* End PBXBuildFile section */
 
@@ -146,6 +147,7 @@
 		A1DCC6961F0C50610072D964 /* DocumentsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentsResponse.swift; path = FlipConnectSDK/DocumentsResponse.swift; sourceTree = "<group>"; };
 		A1DCC6981F0C55670072D964 /* FCApiDocuments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiDocuments.swift; sourceTree = "<group>"; };
 		A1DCC69A1F0ED6F90072D964 /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserResponse.swift; path = FlipConnectSDK/UserResponse.swift; sourceTree = "<group>"; };
+		A1E3096F1F2A65C6006616BD /* GenericResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponse.swift; path = FlipConnectSDK/GenericResponse.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -290,6 +292,7 @@
 				A15067AA1F0192C300794F73 /* Response.swift */,
 				A1DCC69A1F0ED6F90072D964 /* UserResponse.swift */,
 				A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */,
+				A1E3096F1F2A65C6006616BD /* GenericResponse.swift */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */,
 				A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */,
 				A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */,
+				A1E309701F2A65C6006616BD /* GenericResponse.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A16D93FC1F28F81C005228E1 /* DocumentPatchRequest.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,

@@ -30,7 +30,11 @@
                                                 <action selector="cancelEdit:" destination="f3d-2n-0Ul" id="KzC-fL-BLM"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rfg-bG-6nX"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rfg-bG-6nX">
+                                            <connections>
+                                                <action selector="saveWasPressed:" destination="f3d-2n-0Ul" id="lX0-AD-UWU"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

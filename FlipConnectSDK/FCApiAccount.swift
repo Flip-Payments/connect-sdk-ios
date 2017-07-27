@@ -9,19 +9,23 @@
 import Foundation
 
 extension FCApi {
-    static func updateAccount(accessToken token: String, body json: JSON, completion: @escaping (_ error: Error?) -> Void) {
+    static func updateAccount(accessToken token: String, _ patches: Patches, completion: @escaping (_ response: GenericResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
             "Authorization": "bearer \(token)"
         ]
         
         var err: Error? = nil
         
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectUserManagementUrl)user/account")!, withVerb: .patch, withHeaders: headers, withBody: json) { response, error in
+        let json = patches.createDictionary()
+        
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectUserManagementUrl)user/account")!, withVerb: .patch, withHeaders: headers, withBody: json) { res, error in
+            let genericResponse = GenericResponse(json: res)
             guard error == nil else {
                 err = error
-                completion(err)
+                completion(genericResponse, err)
                 return
             }
+            completion(genericResponse, err)
         }
     }
     

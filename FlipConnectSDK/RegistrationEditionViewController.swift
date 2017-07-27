@@ -16,6 +16,10 @@ class RegistrationEditionViewController: UIViewController {
     
     var accountResponse: AccountResponse = AccountResponse(json: [:])
     
+    var patches: Patches = Patches()
+    
+    var accessToken: String!
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -23,7 +27,9 @@ class RegistrationEditionViewController: UIViewController {
             return
         }
         
-        FCApi.getAccount(accessToken: accessToken, categories: sections) { account, error in
+        self.accessToken = accessToken
+        
+        FCApi.getAccount(accessToken: self.accessToken, categories: sections) { account, error in
             self.accountResponse = account
             DispatchQueue.main.async {
                 self.accountResponse = account
@@ -74,6 +80,40 @@ class RegistrationEditionViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func saveWasPressed(_ sender: UIBarButtonItem) {
+        FCApi.updateAccount(accessToken: self.accessToken, self.patches) { response, error in
+            guard error == nil else {
+                self.presentAlert(withTitle: "Error", andMessage: "An error occurred!")
+                return
+            }
+            
+            guard response.success else {
+                var message = ""
+                for report in response.operationReport {
+                    message.append("\(report.message)\n")
+                }
+                self.presentAlert(withTitle: "Error", andMessage: message)
+                return
+            }
+            DispatchQueue.main.async {
+                self.dismiss()
+            }
+        }
+    }
+    
+    func presentAlert(withTitle title: String, andMessage message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("OK")
+        }
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -137,6 +177,9 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
         case .PublicProfile:
             let cell: PublicProfileCell = self.tableView.dequeueReusableCell(for: indexPath)
             cell.nameField.text = accountResponse.account?.publicProfile?.name
+            
+            cell.delegate = self
+            
             return cell
         case .PersonalData:
             let cell: PersonalDataCell = self.tableView.dequeueReusableCell(for: indexPath)
@@ -211,5 +254,9 @@ extension RegistrationEditionViewController: DataCellDelegate {
     
     func dismissPicker() {
         self.dismissKeyboard()
+    }
+    
+    func addPublicProfileToPatch(_ publicProfilePatchRequest: PublicProfilePatchRequest) {
+        self.patches.publicProfile = publicProfilePatchRequest
     }
 }

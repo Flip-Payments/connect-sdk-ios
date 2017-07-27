@@ -12,4 +12,6 @@ protocol DataCellDelegate {
     func getActionSheetControllerToPresent(_ actionSheetController: UIAlertController)
     
     func dismissPicker()
+    
+    func addPublicProfileToPatch(_ publicProfilePatchRequest: PublicProfilePatchRequest)
 }
