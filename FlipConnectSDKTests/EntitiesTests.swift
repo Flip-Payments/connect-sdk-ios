@@ -219,4 +219,11 @@ class EntitiesTests: XCTestCase {
         
         XCTAssert(countryName == "Brazil")
     }
+    
+    func testVehicleToJSONString() {
+        let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: vehicle.toDictionary(), prettify: true)
+        print(json ?? "nil vehicle")
+        XCTAssertNotNil(json)
+    }
 }
