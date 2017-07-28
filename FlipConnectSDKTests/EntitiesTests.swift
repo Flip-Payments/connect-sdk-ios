@@ -221,9 +221,16 @@ class EntitiesTests: XCTestCase {
     }
     
     func testVehicleToJSONString() {
-        let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")
+        let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")!
         let json = SerializationHelper.composeJSONStringFrom(dictionary: vehicle.toDictionary(), prettify: true)
         print(json ?? "nil vehicle")
+        XCTAssertNotNil(json)
+    }
+    
+    func testPersonalDataToJSONSring() {
+        let personalData = PersonalData(genderType: .masculine, country: "BR", dependentCount: 3)!
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: personalData.toDictionary(), prettify: true)
+        print(json ?? "nil personal data")
         XCTAssertNotNil(json)
     }
 }
