@@ -9,10 +9,10 @@
 import Foundation
 
 public struct Document {
-    public private(set) var key: String
-    public private(set) var type: DocumentType
-    public private(set) var typeFriendlyName: String
-    public private(set) var number: String
+    public private(set) var key: String?
+    public private(set) var documentType: DocumentType?
+    public private(set) var documentTypeFriendlyName: String?
+    public private(set) var documentNumber: String?
     public private(set) var data: JSON?
     
     init?(json: JSON) {
@@ -25,10 +25,36 @@ public struct Document {
         }
         
         self.key = key
-        self.type = type
-        self.typeFriendlyName = typeFriendlyName
-        self.number = number
+        self.documentType = type
+        self.documentTypeFriendlyName = typeFriendlyName
+        self.documentNumber = number
         self.data = json["documentData"] as? JSON
+        
+        if isEntityNull() { return nil }
+    }
+    
+    public init?(documentType: DocumentType? = nil, documentNumber: String? = nil) {
+        self.documentType = documentType
+        self.documentNumber = documentNumber
+        if isEntityNull() { return nil }
+    }
+    
+    private func isEntityNull() -> Bool {
+        if key == nil,
+            documentType == nil,
+            documentTypeFriendlyName == nil,
+            documentNumber == nil,
+            data == nil{
+            return true
+        }
+        return false
+    }
+    
+    func toDictionary() -> JSON {
+        return [
+            "documentType": self.documentType?.rawValue as Any,
+            "documentNumber": self.documentNumber as Any
+        ]
     }
 }
 

@@ -45,7 +45,7 @@ public struct Phone {
         if isEntityNull() { return nil }
     }
     
-    func isEntityNull() -> Bool {
+    private func isEntityNull() -> Bool {
         if key == nil,
             phoneType == nil,
             phoneTypeFriendlyName == nil,

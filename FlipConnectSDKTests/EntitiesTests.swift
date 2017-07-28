@@ -53,7 +53,7 @@ class EntitiesTests: XCTestCase {
         
         let document = Document(json: json)
         
-        XCTAssertTrue(document?.type == .cpf)
+        XCTAssertTrue(document?.documentType == .cpf)
     }
     
     func testJSONtoDocumentsConversion() {
@@ -66,7 +66,7 @@ class EntitiesTests: XCTestCase {
         
         XCTAssertTrue(documents.documents[0].key == "ea6dc241-2f5c-e711-80c2-0003ff345086")
         XCTAssertTrue(documents.success)
-        XCTAssertTrue(documents.documents[0].type == .cpf)
+        XCTAssertTrue(documents.documents[0].documentType == .cpf)
 
     }
     
@@ -245,6 +245,13 @@ class EntitiesTests: XCTestCase {
         let phone = Phone(fullNumber: "26113328")!
         let json = SerializationHelper.composeJSONStringFrom(dictionary: phone.toDictionary(), prettify: true)
         print(json ?? "nil phone")
+        XCTAssertNotNil(json)
+    }
+    
+    func testDocumentToJSONString() {
+        let document = Document(documentType: .cpf, documentNumber: "12345678901")!
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: document.toDictionary(), prettify: true)
+        print(json ?? "nil document")
         XCTAssertNotNil(json)
     }
 }
