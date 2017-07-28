@@ -83,6 +83,7 @@ class RegistrationEditionViewController: UIViewController {
     
     @IBAction func saveWasPressed(_ sender: UIBarButtonItem) {
         FCApi.updateAccount(accessToken: self.accessToken, self.patches) { response, error in
+            self.patches = Patches()
             guard error == nil else {
                 DispatchQueue.main.async {
                     self.presentAlert(withTitle: "Error", andMessage: "An error occurred!")

@@ -16,7 +16,7 @@ class PublicProfilePatchRequest: BasePatchRequest, PatchRequestProtocol {
         }
         
         let patch = Patch(operation, path.rawValue, value)
-        if patches!.count > 0 {
+        if patches!.contains(where: { $0.path == path.rawValue && $0.op == operation }) {
             patches!.forEach { patch in
                 if patch.path == path.rawValue, patch.op == operation {
                     patch.value = value

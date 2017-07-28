@@ -24,7 +24,7 @@ class PublicProfileCell: UITableViewCell {
         if sender.text == nil || sender.text!.isEmpty {
             self.publicProfilePatchRequest!.add(operation: .remove, path: .name)
         } else {
-            self.publicProfilePatchRequest?.add(operation: .replace, path: .name, value: sender.text)
+            self.publicProfilePatchRequest!.add(operation: .replace, path: .name, value: sender.text)
         }
         self.delegate.addPublicProfileToPatch(self.publicProfilePatchRequest!)
     }
