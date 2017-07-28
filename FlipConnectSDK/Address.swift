@@ -9,24 +9,25 @@
 import Foundation
 
 public struct Address {
-    public private(set) var key: String
-    public private(set) var street: String
-    public private(set) var number: String
+    public private(set) var key: String?
+    public private(set) var street: String?
+    public private(set) var number: String?
     public private(set) var complement: String?
-    public private(set) var type: String
-    public private(set) var typeFriendlyName: String?
+    public private(set) var addressType: AddressType?
+    public private(set) var addressTypeFriendlyName: String?
     public private(set) var district: String?
-    public private(set) var city: String
-    public private(set) var state: String
-    public private(set) var zipCode: String
+    public private(set) var city: String?
+    public private(set) var state: String?
+    public private(set) var zipCode: String?
     public private(set) var addressReference: String?
-    public private(set) var country: String
+    public private(set) var country: String?
     
-    public init?(json: JSON) {
+    init?(json: JSON) {
         guard let key = json["key"] as? String,
         let street = json["street"] as? String,
         let number = json["number"] as? String,
-        let addressType = json["addressType"] as? String,
+        let addressTypeString = json["addressType"] as? String,
+        let addressType = AddressType(rawValue: addressTypeString),
         let city = json["city"] as? String,
         let state = json["state"] as? String,
         let zipCode = json["zipCode"] as? String,
@@ -39,13 +40,78 @@ public struct Address {
         self.street = street
         self.number = number
         self.complement = json["complement"] as? String
-        self.type = addressType
-        self.typeFriendlyName = json["addressTypeFriendlyName"] as? String
+        self.addressType = addressType
+        self.addressTypeFriendlyName = json["addressTypeFriendlyName"] as? String
         self.district = json["district"] as? String
         self.city = city
         self.state = state
         self.zipCode = zipCode
         self.addressReference = json["addressReference"] as? String
         self.country = country
+        
+        if isEntityNull() { return nil }
     }
+    
+    public init?(street: String? = nil,
+                 number: String? = nil,
+                 complement: String? = nil,
+                 addressType: AddressType? = nil,
+                 district: String? = nil,
+                 city: String? = nil,
+                 state: String? = nil,
+                 zipCode: String? = nil,
+                 addressReference: String? = nil,
+                 country: String? = nil) {
+        
+        self.street = street
+        self.number = number
+        self.complement = complement
+        self.addressType = addressType
+        self.district = district
+        self.city = city
+        self.state = state
+        self.zipCode = zipCode
+        self.addressReference = addressReference
+        self.country = country
+        
+        if isEntityNull() { return nil }
+    }
+    
+    func isEntityNull() -> Bool {
+        if street == nil,
+            number == nil,
+            complement == nil,
+            addressType == nil,
+            district == nil,
+            city == nil,
+            state == nil,
+            zipCode == nil,
+            addressReference == nil,
+            country == nil{
+            
+            return true
+        }
+        return false
+    }
+    
+    func toDictionary() -> JSON {
+        return [
+            "street": self.street as Any,
+            "number": self.number as Any,
+            "complement": self.complement as Any,
+            "addressType": self.addressType?.rawValue as Any,
+            "district": self.district as Any,
+            "city": self.city as Any,
+            "state": self.state as Any,
+            "addressReference": self.addressReference as Any,
+            "country": self.country as Any
+        ]
+    }
+}
+
+public enum AddressType: String {
+    case home
+    case work
+    case billing
+    case shipping
 }
