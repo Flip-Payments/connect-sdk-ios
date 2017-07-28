@@ -9,10 +9,10 @@
 import Foundation
 
 public struct Email {
-    public private(set) var key: String
-    public private(set) var address: String
-    public private(set) var isValidated: Bool
-    public private(set) var isPrimary: Bool
+    public private(set) var key: String?
+    public private(set) var address: String?
+    public private(set) var isValidated: Bool?
+    public private(set) var isPrimary: Bool?
     
     init?(json: JSON) {
         guard let key = json["key"] as? String,
@@ -27,5 +27,29 @@ public struct Email {
         self.address = address
         self.isValidated = isValidated
         self.isPrimary = isPrimary
+        
+        if isEntityNull() { return nil }
+    }
+    
+    public init?(address: String? = nil) {
+        self.address = address
+        
+        if isEntityNull() { return nil }
+    }
+    
+    func isEntityNull() -> Bool {
+        if key == nil,
+            address == nil,
+            isValidated == nil,
+            isPrimary == nil {
+            return true
+        }
+        return false
+    }
+    
+    func toDictionary() -> JSON {
+        return [
+            "address": self.address as Any
+        ]
     }
 }

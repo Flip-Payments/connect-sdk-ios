@@ -254,4 +254,11 @@ class EntitiesTests: XCTestCase {
         print(json ?? "nil document")
         XCTAssertNotNil(json)
     }
+    
+    func testEmailToJSONString() {
+        let email = Email(address: "some@email.com")!
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: email.toDictionary(), prettify: true)
+        print(json ?? "nil email")
+        XCTAssertNotNil(json)
+    }
 }
