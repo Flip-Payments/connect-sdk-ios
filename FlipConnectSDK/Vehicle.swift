@@ -20,15 +20,10 @@ public struct Vehicle {
         self.licensePlateState = json["licensePlateState"] as? String
         self.licensePlateCountry = json["licensePlateCountry"] as? String
         
-        if licensePlate == nil,
-            licensePlateCity == nil,
-            licensePlateState == nil,
-            licensePlateCountry == nil {
-            return nil
-        }
+        if self.isEntityNull() { return nil }
     }
     
-    init(licensePlate: String? = nil,
+    init?(licensePlate: String? = nil,
         licensePlateCity: String? = nil,
         licensePlateState: String? = nil,
         licensePlateCountry: String? = nil) {
@@ -37,6 +32,18 @@ public struct Vehicle {
         self.licensePlateCity = licensePlateCity
         self.licensePlateState = licensePlateState
         self.licensePlateCountry = licensePlateCountry
+        
+        if self.isEntityNull() { return nil }
+    }
+    
+    private func isEntityNull() -> Bool {
+        if licensePlate == nil,
+            licensePlateCity == nil,
+            licensePlateState == nil,
+            licensePlateCountry == nil {
+            return true
+        }
+        return false
     }
     
     func toDictionary() -> JSON {
