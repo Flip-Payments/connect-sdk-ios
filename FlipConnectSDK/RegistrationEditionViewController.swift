@@ -225,7 +225,7 @@ extension RegistrationEditionViewController: UITableViewDataSource, UITableViewD
             let phone = accountResponse.account?.phones[indexPath.row]
             
             cell.delegate = self
-            cell.phoneTypeBtn.setTitle(phone?.typeFriendlyName, for: .normal)
+            cell.phoneTypeBtn.setTitle(phone?.phoneTypeFriendlyName, for: .normal)
             cell.fullNumberTextField.text = phone?.fullNumber
             
             return cell

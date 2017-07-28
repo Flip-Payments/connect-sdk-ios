@@ -42,7 +42,7 @@ class EntitiesTests: XCTestCase {
         
         let telephone = Phone(json: json)
         
-        XCTAssertTrue(telephone?.type == .mobile)
+        XCTAssertTrue(telephone?.phoneType == .mobile)
     }
     
     func testJSONtoDocumentConversion() {
@@ -99,7 +99,7 @@ class EntitiesTests: XCTestCase {
         
         let telephone = Phone(json: json)
         
-        XCTAssert(telephone?.type == .home)
+        XCTAssert(telephone?.phoneType == .home)
     }
     
     func testJSONtoUserEntityConversion() {
@@ -238,6 +238,13 @@ class EntitiesTests: XCTestCase {
         let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "Brazil")!
         let json = SerializationHelper.composeJSONStringFrom(dictionary: address.toDictionary(), prettify: true)
         print(json ?? "nil address")
+        XCTAssertNotNil(json)
+    }
+    
+    func testPhoneToJSONString() {
+        let phone = Phone(fullNumber: "26113328")!
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: phone.toDictionary(), prettify: true)
+        print(json ?? "nil phone")
         XCTAssertNotNil(json)
     }
 }

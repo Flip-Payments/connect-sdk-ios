@@ -9,12 +9,12 @@
 import Foundation
 
 public struct Phone {
-    public private(set) var key: String
-    public private(set) var type: PhoneType
-    public private(set) var typeFriendlyName: String
-    public private(set) var fullNumber: String
-    public private(set) var isValidated: Bool
-    public private(set) var isPrimary: Bool
+    public private(set) var key: String?
+    public private(set) var phoneType: PhoneType?
+    public private(set) var phoneTypeFriendlyName: String?
+    public private(set) var fullNumber: String?
+    public private(set) var isValidated: Bool?
+    public private(set) var isPrimary: Bool?
     
     init?(json: JSON) {
         guard let key = json["key"] as? String,
@@ -28,11 +28,40 @@ public struct Phone {
         }
         
         self.key = key
-        self.type = phoneType
-        self.typeFriendlyName = phoneTypeFriendlyName
+        self.phoneType = phoneType
+        self.phoneTypeFriendlyName = phoneTypeFriendlyName
         self.fullNumber = fullNumber
         self.isPrimary = isPrimary
-        self.isValidated = isValidated        
+        self.isValidated = isValidated
+        
+        if isEntityNull() { return nil }
+    }
+    
+    public init?(phoneType: PhoneType? = nil,
+          fullNumber: String? = nil) {
+        self.fullNumber = fullNumber
+        self.phoneType = phoneType
+        
+        if isEntityNull() { return nil }
+    }
+    
+    func isEntityNull() -> Bool {
+        if key == nil,
+            phoneType == nil,
+            phoneTypeFriendlyName == nil,
+            fullNumber == nil,
+            isValidated == nil,
+            isPrimary == nil {
+            return true
+        }
+        return false
+    }
+    
+    func toDictionary() -> JSON {
+        return [
+            "phoneType": self.phoneType?.rawValue as Any,
+            "fullNumber": self.fullNumber as Any
+        ]
     }
 }
 
