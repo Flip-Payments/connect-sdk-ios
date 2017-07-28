@@ -233,4 +233,11 @@ class EntitiesTests: XCTestCase {
         print(json ?? "nil personal data")
         XCTAssertNotNil(json)
     }
+    
+    func testAddressToJSONString() {
+        let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "Brazil")!
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: address.toDictionary(), prettify: true)
+        print(json ?? "nil address")
+        XCTAssertNotNil(json)
+    }
 }
