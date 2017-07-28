@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1052D131F2BB71100EEA361 /* Vehicle.swift */; };
+		A1052D161F2BE99E00EEA361 /* TemporaryProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1052D151F2BE99D00EEA361 /* TemporaryProfileRequest.swift */; };
 		A117ACE51EE782FE00B74705 /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A117ACDB1EE782FE00B74705 /* FlipConnectSDK.framework */; };
 		A117ACEA1EE782FE00B74705 /* FlipConnectSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACE91EE782FE00B74705 /* FlipConnectSDKTests.swift */; };
 		A117ACEC1EE782FE00B74705 /* FlipConnectSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		A1052D131F2BB71100EEA361 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vehicle.swift; path = FlipConnectSDK/Vehicle.swift; sourceTree = "<group>"; };
+		A1052D151F2BE99D00EEA361 /* TemporaryProfileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemporaryProfileRequest.swift; path = FlipConnectSDK/TemporaryProfileRequest.swift; sourceTree = "<group>"; };
 		A117ACDB1EE782FE00B74705 /* FlipConnectSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlipConnectSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipConnectSDK.h; sourceTree = "<group>"; };
 		A117ACDF1EE782FE00B74705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				A16D93F71F28DA43005228E1 /* PhonePatchRequest.swift */,
 				A16D93F91F28DE29005228E1 /* AddressPatchRequest.swift */,
 				A16D93FB1F28F81C005228E1 /* DocumentPatchRequest.swift */,
+				A1052D151F2BE99D00EEA361 /* TemporaryProfileRequest.swift */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				A1783C551F26EFBD00AE84EF /* PublicProfilePatchRequest.swift in Sources */,
 				A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */,
 				A16D93FA1F28DE29005228E1 /* AddressPatchRequest.swift in Sources */,
+				A1052D161F2BE99E00EEA361 /* TemporaryProfileRequest.swift in Sources */,
 				A1783C471F2678A900AE84EF /* DataCellDelegate.swift in Sources */,
 				A1783C5F1F27CCF700AE84EF /* SerializationHelper.swift in Sources */,
 				A1C4F9381F20F97100DCD3BF /* Reusable.swift in Sources */,

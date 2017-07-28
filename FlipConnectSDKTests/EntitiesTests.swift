@@ -261,4 +261,28 @@ class EntitiesTests: XCTestCase {
         print(json ?? "nil email")
         XCTAssertNotNil(json)
     }
+    
+    func testTemporaryProfileRequestToJSONString() {
+        let personalData = PersonalData(genderType: .masculine, country: "BR", dependentCount: 3)!
+        let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")!
+        let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")!
+        let email = Email(address: "some@email.com")!
+        let document = Document(documentType: .cpf, documentNumber: "12345678901")!
+        let phone = Phone(fullNumber: "26113328")!
+        let phone2 = Phone(fullNumber: "26113328")!
+        let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "Brazil")!
+        let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "Brazil")!
+        
+        var temporaryProfileRequest = TemporaryProfileRequest()
+        temporaryProfileRequest.addresses = [address, address2]
+        temporaryProfileRequest.documents = [document]
+        temporaryProfileRequest.emails = [email]
+        temporaryProfileRequest.personalData = personalData
+        temporaryProfileRequest.phones = [phone, phone2]
+        temporaryProfileRequest.vehicles = [vehicle, vehicle2]
+        
+        let json = SerializationHelper.composeJSONStringFrom(dictionary: temporaryProfileRequest.toDictionary(), prettify: true)
+        print(json ?? "nil temporaryProfileData")
+        XCTAssertNotNil(json)
+    }
 }
