@@ -23,7 +23,7 @@ public struct Vehicle {
         if self.isEntityNull() { return nil }
     }
     
-    init?(licensePlate: String? = nil,
+    public init?(licensePlate: String? = nil,
         licensePlateCity: String? = nil,
         licensePlateState: String? = nil,
         licensePlateCountry: String? = nil) {

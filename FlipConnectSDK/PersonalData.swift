@@ -35,7 +35,7 @@ public struct PersonalData {
         if self.isEntityNull() { return nil }
     }
     
-    init?(birthdate: Date? = nil,
+    public init?(birthdate: Date? = nil,
          genderType: GenderType? = nil,
          country: String? = nil,
          dependentCount: Int? = nil) {
