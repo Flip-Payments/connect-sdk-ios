@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1052D131F2BB71100EEA361 /* Vehicle.swift */; };
 		A117ACE51EE782FE00B74705 /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A117ACDB1EE782FE00B74705 /* FlipConnectSDK.framework */; };
 		A117ACEA1EE782FE00B74705 /* FlipConnectSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACE91EE782FE00B74705 /* FlipConnectSDKTests.swift */; };
 		A117ACEC1EE782FE00B74705 /* FlipConnectSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -83,6 +84,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A1052D131F2BB71100EEA361 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vehicle.swift; path = FlipConnectSDK/Vehicle.swift; sourceTree = "<group>"; };
 		A117ACDB1EE782FE00B74705 /* FlipConnectSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlipConnectSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipConnectSDK.h; sourceTree = "<group>"; };
 		A117ACDF1EE782FE00B74705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				A1223DE81F0D729D00755669 /* PublicProfile.swift */,
 				A1779AB81F18925F0055B80C /* PersonalData.swift */,
 				A1783C501F26CE2B00AE84EF /* Account.swift */,
+				A1052D131F2BB71100EEA361 /* Vehicle.swift */,
 			);
 			name = Entities;
 			path = ..;
@@ -463,6 +466,7 @@
 				A16D93F61F28D98C005228E1 /* EmailPatchRequest.swift in Sources */,
 				A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */,
 				A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */,
+				A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */,
 				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
 				A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */,
