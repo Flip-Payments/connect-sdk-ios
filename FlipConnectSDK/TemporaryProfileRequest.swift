@@ -8,8 +8,7 @@
 
 import Foundation
 
-@objc
-class TemporaryProfileRequest: NSObject {
+struct TemporaryProfileRequest {
     var clientID: String? = nil
     
     var data: TemporaryProfile? = nil
