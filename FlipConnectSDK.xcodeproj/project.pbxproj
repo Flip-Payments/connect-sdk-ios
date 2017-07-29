@@ -10,6 +10,7 @@
 		A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1052D131F2BB71100EEA361 /* Vehicle.swift */; };
 		A1052D161F2BE99E00EEA361 /* TemporaryProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1052D151F2BE99D00EEA361 /* TemporaryProfileRequest.swift */; };
 		A1052D181F2BF1B500EEA361 /* TemporaryProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1052D171F2BF1B500EEA361 /* TemporaryProfileResponse.swift */; };
+		A1052D1A1F2C126B00EEA361 /* TemporaryProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1052D191F2C126B00EEA361 /* TemporaryProfile.swift */; };
 		A117ACE51EE782FE00B74705 /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A117ACDB1EE782FE00B74705 /* FlipConnectSDK.framework */; };
 		A117ACEA1EE782FE00B74705 /* FlipConnectSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACE91EE782FE00B74705 /* FlipConnectSDKTests.swift */; };
 		A117ACEC1EE782FE00B74705 /* FlipConnectSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -89,6 +90,7 @@
 		A1052D131F2BB71100EEA361 /* Vehicle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vehicle.swift; path = FlipConnectSDK/Vehicle.swift; sourceTree = "<group>"; };
 		A1052D151F2BE99D00EEA361 /* TemporaryProfileRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemporaryProfileRequest.swift; path = FlipConnectSDK/TemporaryProfileRequest.swift; sourceTree = "<group>"; };
 		A1052D171F2BF1B500EEA361 /* TemporaryProfileResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemporaryProfileResponse.swift; path = FlipConnectSDK/TemporaryProfileResponse.swift; sourceTree = "<group>"; };
+		A1052D191F2C126B00EEA361 /* TemporaryProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TemporaryProfile.swift; path = FlipConnectSDK/TemporaryProfile.swift; sourceTree = "<group>"; };
 		A117ACDB1EE782FE00B74705 /* FlipConnectSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlipConnectSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A117ACDE1EE782FE00B74705 /* FlipConnectSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipConnectSDK.h; sourceTree = "<group>"; };
 		A117ACDF1EE782FE00B74705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -286,6 +288,7 @@
 				A1779AB81F18925F0055B80C /* PersonalData.swift */,
 				A1783C501F26CE2B00AE84EF /* Account.swift */,
 				A1052D131F2BB71100EEA361 /* Vehicle.swift */,
+				A1052D191F2C126B00EEA361 /* TemporaryProfile.swift */,
 			);
 			name = Entities;
 			path = ..;
@@ -479,6 +482,7 @@
 				A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */,
 				A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */,
 				A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */,
+				A1052D1A1F2C126B00EEA361 /* TemporaryProfile.swift in Sources */,
 				A1E309701F2A65C6006616BD /* GenericResponse.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A16D93FC1F28F81C005228E1 /* DocumentPatchRequest.swift in Sources */,

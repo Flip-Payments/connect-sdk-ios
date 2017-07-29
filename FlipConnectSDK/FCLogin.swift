@@ -12,6 +12,7 @@ import UIKit
 public class FCLogin {
     var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
+    var temporaryProfile: TemporaryProfileRequest? = nil
     
     private init() throws {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
@@ -41,7 +42,7 @@ public class FCLogin {
     ///   - color: color of the button
     ///   - title: title of the button
     /// - Returns: A `UIButton` targeting a Safari web page to login
-    public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login") -> UIButton {
+    public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login", temporaryProfile: TemporaryProfile? = nil) -> UIButton {
         let buttonColor = FCColors.getUIColor(color)
         
         let myLoginButton = UIButton(type: .custom)
@@ -53,19 +54,27 @@ public class FCLogin {
         myLoginButton.layer.cornerRadius = 20
         
         // Handle clicks on the button
-        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+        myLoginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+        
         
         return myLoginButton
     }
     
     /// Calls login web page
-    @objc public func loginButtonClicked() {
-        openLoginURL()
+    @objc public func loginButtonClicked(temporaryProfileRequest: TemporaryProfile? = nil) {
+        openLoginURL(temporaryProfileRequest: temporaryProfileRequest)
     }
     
     /// Opens Safari with Login Page
-    public func openLoginURL() {
+    public func openLoginURL(temporaryProfileRequest: TemporaryProfile? = nil) {
         if let clientID = UserDefaults.standard.clientID, let redirectURI = UserDefaults.standard.redirectURI {
+            
+            if let temporaryProfileRequest = temporaryProfileRequest {
+                FCApi.createTemporaryProfile(temporaryProfileRequest, clientID: clientID) { response, error in
+                    
+                }
+            }
+            
             let url = redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }

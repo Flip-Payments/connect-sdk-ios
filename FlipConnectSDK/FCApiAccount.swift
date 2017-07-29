@@ -29,7 +29,7 @@ extension FCApi {
         }
     }
     
-    static func createTemporaryProfile(_ temporaryProfile: TemporaryProfileRequest, clientID: String, completion: @escaping (_ response: TemporaryProfileResponse, _ error: Error?) -> Void) {
+    static func createTemporaryProfile(_ temporaryProfile: TemporaryProfile, clientID: String, completion: @escaping (_ response: TemporaryProfileResponse, _ error: Error?) -> Void) {
         var err: Error? = nil
         
         let json = temporaryProfile.toDictionary()
