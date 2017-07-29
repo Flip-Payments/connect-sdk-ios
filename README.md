@@ -204,6 +204,104 @@ class ViewController: UIViewController {
 }
 ```
 
+### Transferência de Dados para Perfil temporário
+
+Se desejar transferir os dados de cadastro que já tem em sua base para facilitar o cadastro e a transição do usuário para o nosso sistema, você pode usar a variável `temporaryProfile` para preencher os dados cadastrais do usuário.
+
+Para utilizar basta atribuir um valor do tipo `TemporaryProfile` a variável `temporaryProfile` da classe `FCLogin`:
+
+```swift
+class ViewController: UIViewController {
+
+    var flipLogin: FCLogin!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        do {
+            flipLogin = try FCLogin.shared()
+
+			let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let birthdate = formatter.date(from: "1997/12/17")
+            
+            let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
+            let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let document = Document(documentType: .cpf, documentNumber: "12345678901")!
+            let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
+            let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
+            let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            
+            let temporaryProfile = TemporaryProfile()
+            temporaryProfile.addresses = [address, address2]
+            temporaryProfile.documents = [document]
+            temporaryProfile.personalData = personalData
+            temporaryProfile.phones = [phone, phone2]
+            temporaryProfile.vehicles = [vehicle, vehicle2]
+
+			flipLogin.temporaryProfile = temporaryProfile
+        } catch {
+            print(error)
+        }
+    }
+
+    @IBAction func printCookies(_ sender: UIButton) {
+        self.flipLogin.loginButtonClicked()
+    }
+}
+```
+
+Ou na chamada do método `loginWithButton()`:
+
+```swift
+class ViewController: UIViewController {
+
+    var flipLogin: FCLogin!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        do {
+            flipLogin = try FCLogin.shared()
+
+			let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let birthdate = formatter.date(from: "1997/12/17")
+            
+            let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
+            let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let document = Document(documentType: .cpf, documentNumber: "12345678901")!
+            let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
+            let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
+            let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            
+            let temporaryProfile = TemporaryProfile()
+            temporaryProfile.addresses = [address, address2]
+            temporaryProfile.documents = [document]
+            temporaryProfile.personalData = personalData
+            temporaryProfile.phones = [phone, phone2]
+            temporaryProfile.vehicles = [vehicle, vehicle2]
+
+			let btn = flipLogin.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
+
+			view.addSubview(btn)
+        } catch {
+            print(error)
+        }
+    }
+
+    @IBAction func printCookies(_ sender: UIButton) {
+        self.flipLogin.loginButtonClicked()
+    }
+}
+```
+
+Com isso a tela de cadastro irá se abrir com os dados já preenchidos no ato do cadastro do usuário.
+
 ### AppDelegate
 
 Após um login bem sucedido, o redirecionamento passará por aqui com alguma informação de login, porém apenas depois do método `handleRedirect(fromURL: URL)` funcionar sem problemas é que nós seremos capazes de recuperar o **Token Data**.
