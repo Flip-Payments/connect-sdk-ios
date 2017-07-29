@@ -12,6 +12,8 @@ import UIKit
 public class FCLogin {
     var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
+    
+    /// entity used to load registration data on login web form
     public var temporaryProfile: TemporaryProfile? = nil
     
     private init() throws {
@@ -41,6 +43,7 @@ public class FCLogin {
     ///   - frame: frame size of the butto
     ///   - color: color of the button
     ///   - title: title of the button
+    ///   - temporaryProfile: used to load registration data on login web form
     /// - Returns: A `UIButton` targeting a Safari web page to login
     public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login", temporaryProfile: TemporaryProfile? = nil) -> UIButton {
         if self.temporaryProfile == nil {
