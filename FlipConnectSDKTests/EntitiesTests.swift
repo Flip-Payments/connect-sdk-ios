@@ -266,7 +266,6 @@ class EntitiesTests: XCTestCase {
         let personalData = PersonalData(genderType: .masculine, country: "BR", dependentCount: 3)!
         let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")!
         let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")!
-        let email = Email(address: "some@email.com")!
         let document = Document(documentType: .cpf, documentNumber: "12345678901")!
         let phone = Phone(fullNumber: "26113328")!
         let phone2 = Phone(fullNumber: "26113328")!
@@ -276,7 +275,6 @@ class EntitiesTests: XCTestCase {
         let temporaryProfileRequest = TemporaryProfile()
         temporaryProfileRequest.addresses = [address, address2]
         temporaryProfileRequest.documents = [document]
-        temporaryProfileRequest.emails = [email]
         temporaryProfileRequest.personalData = personalData
         temporaryProfileRequest.phones = [phone, phone2]
         temporaryProfileRequest.vehicles = [vehicle, vehicle2]
@@ -290,7 +288,6 @@ class EntitiesTests: XCTestCase {
         let personalData = PersonalData(genderType: .masculine, country: "BR", dependentCount: 3)!
         let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")!
         let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ")!
-        let email = Email(address: "some@email.com")!
         let document = Document(documentType: .cpf, documentNumber: "12345678901")!
         let phone = Phone(fullNumber: "26113328")!
         let phone2 = Phone(fullNumber: "26113328")!
@@ -300,7 +297,6 @@ class EntitiesTests: XCTestCase {
         let temporaryProfile = TemporaryProfile()
         temporaryProfile.addresses = [address, address2]
         temporaryProfile.documents = [document]
-        temporaryProfile.emails = [email]
         temporaryProfile.personalData = personalData
         temporaryProfile.phones = [phone, phone2]
         temporaryProfile.vehicles = [vehicle, vehicle2]

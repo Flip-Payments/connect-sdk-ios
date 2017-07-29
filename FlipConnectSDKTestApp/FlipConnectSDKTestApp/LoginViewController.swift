@@ -32,7 +32,6 @@ class LoginViewController: UIViewController {
             let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
             let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
             let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
-            let email = Email(address: "some@email.com")!
             let document = Document(documentType: .cpf, documentNumber: "12345678901")!
             let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
             let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
@@ -42,7 +41,6 @@ class LoginViewController: UIViewController {
             let temporaryProfile = TemporaryProfile()
             temporaryProfile.addresses = [address, address2]
             temporaryProfile.documents = [document]
-            temporaryProfile.emails = [email]
             temporaryProfile.personalData = personalData
             temporaryProfile.phones = [phone, phone2]
             temporaryProfile.vehicles = [vehicle, vehicle2]

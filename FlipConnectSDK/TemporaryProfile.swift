@@ -14,7 +14,6 @@ public class TemporaryProfile: NSObject {
     public var vehicles: [Vehicle]? = nil
     public var addresses: [Address]? = nil
     public var phones: [Phone]? = nil
-    public var emails: [Email]? = nil
     public var documents: [Document]? = nil
     
     func toDictionary() -> JSON {
@@ -42,14 +41,6 @@ public class TemporaryProfile: NSObject {
             }
         }
         
-        var emailsJSON: [JSON]? = nil
-        if let emails = self.emails {
-            emailsJSON = []
-            emails.forEach { email in
-                emailsJSON!.append(email.toDictionary())
-            }
-        }
-        
         var documentsJSON: [JSON]? = nil
         if let documents = self.documents {
             documentsJSON = []
@@ -63,7 +54,6 @@ public class TemporaryProfile: NSObject {
             "vehicles": vehiclesJSON as Any,
             "addresses": addressesJSON as Any,
             "phones": phonesJSON as Any,
-            "emails": emailsJSON as Any,
             "documents": documentsJSON as Any
         ]
     }
