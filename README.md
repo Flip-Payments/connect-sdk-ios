@@ -221,7 +221,7 @@ class ViewController: UIViewController {
         do {
             flipLogin = try FCLogin.shared()
 
-			let formatter = DateFormatter()
+	    let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
             let birthdate = formatter.date(from: "1997/12/17")
             
@@ -241,7 +241,7 @@ class ViewController: UIViewController {
             temporaryProfile.phones = [phone, phone2]
             temporaryProfile.vehicles = [vehicle, vehicle2]
 
-			flipLogin.temporaryProfile = temporaryProfile
+	    flipLogin.temporaryProfile = temporaryProfile
         } catch {
             print(error)
         }
@@ -266,7 +266,7 @@ class ViewController: UIViewController {
         do {
             flipLogin = try FCLogin.shared()
 
-			let formatter = DateFormatter()
+	    let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
             let birthdate = formatter.date(from: "1997/12/17")
             
@@ -286,9 +286,9 @@ class ViewController: UIViewController {
             temporaryProfile.phones = [phone, phone2]
             temporaryProfile.vehicles = [vehicle, vehicle2]
 
-			let btn = flipLogin.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
+	    let btn = flipLogin.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
 
-			view.addSubview(btn)
+	    view.addSubview(btn)
         } catch {
             print(error)
         }
