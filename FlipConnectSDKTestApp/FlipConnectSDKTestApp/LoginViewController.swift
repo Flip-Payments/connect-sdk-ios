@@ -24,11 +24,36 @@ class LoginViewController: UIViewController {
         
         do {
             loginFlip = try FCLogin.shared()
-            let btn = loginFlip.loginWithButton(center: view.center)
+            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let birthdate = formatter.date(from: "1997/12/17")
+            
+            let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
+            let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let email = Email(address: "some@email.com")!
+            let document = Document(documentType: .cpf, documentNumber: "12345678901")!
+            let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
+            let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
+            let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            
+            let temporaryProfile = TemporaryProfile()
+            temporaryProfile.addresses = [address, address2]
+            temporaryProfile.documents = [document]
+            temporaryProfile.emails = [email]
+            temporaryProfile.personalData = personalData
+            temporaryProfile.phones = [phone, phone2]
+            temporaryProfile.vehicles = [vehicle, vehicle2]
+            
+            let btn = loginFlip.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
             
             let btn2 = loginFlip.loginWithButton(center: CGPoint(x: view.center.x, y: view.center.y - 50), color: .darkGray)
             
             let btn3 = loginFlip.loginWithButton(center: CGPoint(x: view.center.x, y: view.center.y + 50), color: .white)
+            
+            btn3.addTarget(self, action:  #selector(btn3Pressed), for: .touchUpInside)
             
             view.addSubview(btn)
             view.addSubview(btn2)
@@ -36,10 +61,10 @@ class LoginViewController: UIViewController {
         } catch {
             print(error)
         }
-        
-//        vc.loadView { viewController in
-//            self.present(viewController, animated: true, completion: nil)
-//        }
     }
-
+    
+    func btn3Pressed() {
+        self.loginFlip.temporaryProfile = nil
+        self.loginFlip.loginButtonClicked()
+    }
 }

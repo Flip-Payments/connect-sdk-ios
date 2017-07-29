@@ -12,7 +12,7 @@ import UIKit
 public class FCLogin {
     var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
-    var temporaryProfile: TemporaryProfileRequest? = nil
+    public var temporaryProfile: TemporaryProfile? = nil
     
     private init() throws {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
@@ -43,6 +43,10 @@ public class FCLogin {
     ///   - title: title of the button
     /// - Returns: A `UIButton` targeting a Safari web page to login
     public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login", temporaryProfile: TemporaryProfile? = nil) -> UIButton {
+        if self.temporaryProfile == nil {
+            self.temporaryProfile = temporaryProfile
+        }
+        
         let buttonColor = FCColors.getUIColor(color)
         
         let myLoginButton = UIButton(type: .custom)
@@ -61,22 +65,27 @@ public class FCLogin {
     }
     
     /// Calls login web page
-    @objc public func loginButtonClicked(temporaryProfileRequest: TemporaryProfile? = nil) {
-        openLoginURL(temporaryProfileRequest: temporaryProfileRequest)
+    @objc public func loginButtonClicked() {
+        openLoginURL()
     }
     
     /// Opens Safari with Login Page
-    public func openLoginURL(temporaryProfileRequest: TemporaryProfile? = nil) {
+    public func openLoginURL() {
         if let clientID = UserDefaults.standard.clientID, let redirectURI = UserDefaults.standard.redirectURI {
             
-            if let temporaryProfileRequest = temporaryProfileRequest {
-                FCApi.createTemporaryProfile(temporaryProfileRequest, clientID: clientID) { response, error in
-                    
+            if let temporaryProfile = self.temporaryProfile {
+                FCApi.createTemporaryProfile(temporaryProfile, clientID: clientID) { response, error in
+                    let url = self.redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID, dataKey: response.dataKey)
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+            } else {
+                let url = self.redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
+                DispatchQueue.main.async {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
             }
-            
-            let url = redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
     

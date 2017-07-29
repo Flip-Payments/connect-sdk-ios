@@ -8,7 +8,27 @@
 
 import Foundation
 
-extension FCApi {    
+extension FCApi {
+    static func createTemporaryProfile(_ temporaryProfile: TemporaryProfile, clientID: String, completion: @escaping (_ response: TemporaryProfileResponse, _ error: Error?) -> Void) {
+        var err: Error? = nil
+        
+        var request = TemporaryProfileRequest()
+        request.clientID = clientID
+        request.data = temporaryProfile
+        
+        let json = request.toDictionary()
+        
+        FCApi.request(toURL: URL(string: "\(FCConsts.connectUserManagementUrl)user/temporaryProfile")!, withVerb: .post, withBody: json) { res, error in
+            let temporaryProfileResponse = TemporaryProfileResponse(json: res)
+            guard error == nil else {
+                err = error
+                completion(temporaryProfileResponse, err)
+                return
+            }
+            completion(temporaryProfileResponse, err)
+        }
+    }
+    
     public static func getUser(publicToken token: String, accountKey key: String, categories: [FCEditCategoriesEnum]? = nil, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
         let headers: Headers = [
             "Authorization": "bearer \(token)"

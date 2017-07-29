@@ -59,11 +59,11 @@ class AddressesTableViewController: UIViewController, UITableViewDataSource, UIT
         let address = self.addresses.addresses[indexPath.row]
         
         // Configure the cell...
-        cell.cityStateLbl.text = "\(address.city) - \(address.state)"
+        cell.cityStateLbl.text = "\(address.city!) - \(address.state!)"
         cell.complementLbl.text = address.complement
         cell.countryFlagLbl.text = address.country == "BR" ? "🇧🇷" : address.country
         cell.districtLbl.text = address.district
-        cell.streetLbl.text = "\(address.street), \(address.number)"
+        cell.streetLbl.text = "\(address.street!), \(address.number!)"
         cell.zipCodeLbl.text = address.zipCode
         
 
