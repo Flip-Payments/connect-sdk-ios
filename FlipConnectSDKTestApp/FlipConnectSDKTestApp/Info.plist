@@ -33,8 +33,10 @@
 	<string>1</string>
 	<key>FlipConnectSDK</key>
 	<dict>
+		<key>PublicTokenAPI</key>
+		<string>EE3AD9FD402E920C51625B494ECB39D1</string>
 		<key>ClientID</key>
-		<string>F7F667C7-199F-4A10-B53A-4FADCDFADB53</string>
+		<string>5149B5B2-0463-4752-A8A0-C37D639A1FE4</string>
 		<key>ClientSecret</key>
 		<string>FC3E9D34-978B-483B-9CC0-462DFB82A75B</string>
 		<key>RedirectURI</key>
@@ -58,8 +60,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

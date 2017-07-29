@@ -66,7 +66,7 @@ class FlipConnectSDKTests: XCTestCase {
 
             let url = redirectHandler.mountWebURL(url: urlRequest, withRedirectUri: testRedirectUri, andID: clientID)
             
-            let expected = "\(FCConsts.connectWebUrl)?clientId=\(clientID)&redirectUri=\(testRedirectUri)&state=\(UserDefaults.standard.state!)&responseType=code"
+            let expected = "\(FCConsts.connectWebUrl)?client_id=\(clientID)&redirect_uri=\(testRedirectUri)&state=\(UserDefaults.standard.state!)&response_type=code"
             
             XCTAssertTrue(expected == url.absoluteString)
         } catch {
@@ -90,6 +90,16 @@ class FlipConnectSDKTests: XCTestCase {
             requestExpectation.fulfill()
         }
         waitForExpectations(timeout: 60, handler: nil)
+    }
+    
+    func testNSLocaleExtenstion() {
+        let locales = NSLocale.locales()
+        for locale in locales {
+            print("\(locale.countryCode) - \(locale.countryName)")
+        }
+        
+        let isBrazil = locales.contains(where: { $0.countryName == "Brazil" })
+        XCTAssertTrue(isBrazil)
     }
     
     func testPerformanceExample() {

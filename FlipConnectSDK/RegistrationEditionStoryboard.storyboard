@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Registration Edition View Controller-->
+        <scene sceneID="jBP-kB-pag">
+            <objects>
+                <viewController storyboardIdentifier="RegistrationEditionViewController" id="f3d-2n-0Ul" customClass="RegistrationEditionViewController" customModule="FlipConnectSDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="a0F-Jf-Rjq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tak-Z0-fGf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cP7-v2-cyI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6s1-eo-VG5">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="FlipConnect" id="um7-1K-bTE">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ALE-p8-p1g">
+                                            <connections>
+                                                <action selector="cancelEdit:" destination="f3d-2n-0Ul" id="KzC-fL-BLM"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Rfg-bG-6nX">
+                                            <connections>
+                                                <action selector="saveWasPressed:" destination="f3d-2n-0Ul" id="lX0-AD-UWU"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h4f-8n-OEe">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h4f-8n-OEe" firstAttribute="leading" secondItem="cP7-v2-cyI" secondAttribute="leading" id="7II-Rr-U9g"/>
+                            <constraint firstItem="6s1-eo-VG5" firstAttribute="leading" secondItem="cP7-v2-cyI" secondAttribute="leading" id="Hft-SQ-1dc"/>
+                            <constraint firstItem="6s1-eo-VG5" firstAttribute="top" secondItem="a0F-Jf-Rjq" secondAttribute="bottom" id="J8B-LN-9t1"/>
+                            <constraint firstAttribute="trailing" secondItem="h4f-8n-OEe" secondAttribute="trailing" id="Lo9-wS-3KK"/>
+                            <constraint firstItem="Tak-Z0-fGf" firstAttribute="top" secondItem="h4f-8n-OEe" secondAttribute="bottom" id="OPK-wA-eeW"/>
+                            <constraint firstAttribute="trailing" secondItem="6s1-eo-VG5" secondAttribute="trailing" id="Sav-e8-BHN"/>
+                            <constraint firstItem="h4f-8n-OEe" firstAttribute="top" secondItem="6s1-eo-VG5" secondAttribute="bottom" id="ls3-oM-EE5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="h4f-8n-OEe" id="ec9-lw-IPy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zcF-G9-43t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="421.73913043478262" y="714.94565217391312"/>
+        </scene>
+    </scenes>
+</document>

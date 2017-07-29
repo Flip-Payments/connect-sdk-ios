@@ -58,9 +58,13 @@ struct FCRedirectHandler {
         self.urlScheme = urlScheme.lowercased()
     }
     
-    func mountWebURL(url: URL, withRedirectUri uri: String, andID clientID: String) -> URL {
+    func mountWebURL(url: URL, withRedirectUri uri: String, andID clientID: String, dataKey: String? = nil) -> URL {
         UserDefaults.standard.state = UUID().uuidString
-        return URL(string: "\(url.absoluteString)?clientId=\(clientID)&redirectUri=\(uri)&state=\(UserDefaults.standard.state!)&responseType=code")!
+        var dataKeyURL: String = ""
+        if let dataKey = dataKey {
+            dataKeyURL = "&data_key=\(dataKey)"
+        }
+        return URL(string: "\(url.absoluteString)?client_id=\(clientID)&redirect_uri=\(uri)&state=\(UserDefaults.standard.state!)&response_type=code\(dataKeyURL)")!
     }
     
     func handleURI(open url: URL) throws {

@@ -8,75 +8,8 @@
 
 import Foundation
 
-struct FCApi {
-    
-    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, clientSecret secret: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
-        let parameters: Parameters = [
-            "grantType": "authorization_code",
-            "authorizationCode": "\(code)",
-            "redirectUri": "\(uri)",
-            "clientSecret": "\(secret)",
-            "clientId": "\(id)"
-        ]
-        
-        var resp = JSON()
-        var err: Error? = nil
-        
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
-            guard error == nil else {
-                err = error
-                completion(resp, err)
-                return
-            }
-            resp = response
-            
-            completion(resp, err)
-        }
-    }
-    
-    static func requestNewToken(refreshToken token: String, clientID id: String, clientSecret secret: String, redirectURI uri: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
-        let parameters: Parameters = [
-            "grantType": "refresh_token",
-            "refreshToken": "\(token)",
-            "clientId": "\(id)",
-            "clientSecret": "\(secret)",
-            "redirectUri": "\(uri)"
-        ]
-        
-        var resp = JSON()
-        var err: Error? = nil
-        
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
-            guard error == nil else {
-                err = error
-                return
-            }
-            resp = response
-            completion(resp, err)
-        }
-    }
-    
-    static func requestVerifyToken(accessToken token: String, clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
-        let parameters: Parameters = [
-            "grantType": "verify_token",
-            "accessToken": "\(token)",
-            "clientId": "\(id)",
-            "clientSecret": "\(secret)"
-        ]
-        
-        var resp = JSON()
-        var err: Error? = nil
-        
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
-            guard error == nil else {
-                err = error
-                return
-            }
-            resp = response
-            completion(resp, err)
-        }
-    }
-    
+public struct FCApi {
+       
     static func request(toURL url: URL, withVerb httpMethod: HTTPVerb = .get, withParameters parameters: Parameters? = nil, withHeaders headers: Headers? = nil, withBody body: JSON? = nil, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
         var url = url
         var errorResponse: Error? = nil
@@ -87,6 +20,20 @@ struct FCApi {
         
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
+        
+        let langCode = Locale.current.languageCode ?? "en"
+        let regionCode = Locale.current.regionCode ?? "US"
+        let lang = "\(langCode)-\(regionCode)"
+        
+        let internalHeaders: Headers = [
+            "Accept-Language": lang,
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        ]
+        
+        for (key, value) in internalHeaders {
+            request.addValue(value, forHTTPHeaderField: key)
+        }
         
         if let headers = headers {
             for (key, value) in headers {

@@ -13,6 +13,9 @@ public class FCLogin {
     var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
     
+    /// entity used to load registration data on login web form
+    public var temporaryProfile: TemporaryProfile? = nil
+    
     private init() throws {
         plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
@@ -40,8 +43,13 @@ public class FCLogin {
     ///   - frame: frame size of the butto
     ///   - color: color of the button
     ///   - title: title of the button
+    ///   - temporaryProfile: used to load registration data on login web form
     /// - Returns: A `UIButton` targeting a Safari web page to login
-    public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login") -> UIButton {
+    public func loginWithButton(center: CGPoint, frame: CGRect = CGRect(x: 0, y: 0, width: 180, height: 40), color: FCColors.Colors = .green, title: String = "FlipConnect Login", temporaryProfile: TemporaryProfile? = nil) -> UIButton {
+        if self.temporaryProfile == nil {
+            self.temporaryProfile = temporaryProfile
+        }
+        
         let buttonColor = FCColors.getUIColor(color)
         
         let myLoginButton = UIButton(type: .custom)
@@ -53,7 +61,8 @@ public class FCLogin {
         myLoginButton.layer.cornerRadius = 20
         
         // Handle clicks on the button
-        myLoginButton.addTarget(self, action: #selector(self.loginButtonClicked), for: .touchUpInside)
+        myLoginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+        
         
         return myLoginButton
     }
@@ -66,8 +75,20 @@ public class FCLogin {
     /// Opens Safari with Login Page
     public func openLoginURL() {
         if let clientID = UserDefaults.standard.clientID, let redirectURI = UserDefaults.standard.redirectURI {
-            let url = redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            
+            if let temporaryProfile = self.temporaryProfile {
+                FCApi.createTemporaryProfile(temporaryProfile, clientID: clientID) { response, error in
+                    let url = self.redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID, dataKey: response.dataKey)
+                    DispatchQueue.main.async {
+                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                    }
+                }
+            } else {
+                let url = self.redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
+                DispatchQueue.main.async {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }
         }
     }
     
@@ -95,7 +116,7 @@ public class FCLogin {
             
             let isToken = resp["accessToken"] as? String
             let isRefreshToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["accountKey"] as? String
+            let isAccountKey = resp["userKey"] as? String
             
             guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
@@ -141,7 +162,7 @@ public class FCLogin {
             
             let isToken = resp["accessToken"] as? String
             let isAccessToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["accountKey"] as? String
+            let isAccountKey = resp["userKey"] as? String
             
             guard let token = isToken, let refreshToken = isAccessToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
@@ -164,11 +185,58 @@ public class FCLogin {
         }
     }
     
-    /// Handles redirect from login for token creation
-    ///
-    /// - Parameters:
-    ///    - fromURL: URL received from Redirect
-    ///    - completion: error received from callback
+    /**
+     Get public token to use with public API
+     
+     - Parameters:
+        - completion: Callback
+        - error: Is not nil when the execution is unsuccessfull
+    */
+    public func publicToken(completion: @escaping (_ error: Error?) -> Void) {
+        var err: Error? = nil
+        
+        guard let clientSecret = UserDefaults.standard.clientSecret,
+            let clientID = UserDefaults.standard.clientID else {
+                err = FCErrors.invalidOperation
+                completion(err)
+                return
+        }
+        
+        FCApi.requestPublicToken(clientID: clientID , clientSecret: clientSecret) { res, err in
+            guard err == nil else {
+                completion(err)
+                return
+            }
+            
+            let isPublicToken = res["accessToken"] as? String
+            
+            guard let publicToken = isPublicToken else {
+                let operationReport = res["operationReport"] as? [JSON]
+                var message = ""
+                if let or = operationReport {
+                    for operation in or {
+                        for item in operation {
+                            message += "\(item.key): \(item.value) "
+                        }
+                    }
+                }
+                completion(FCErrors.requestUnsuccessful(message: message))
+                return
+            }
+            
+            UserDefaults.standard.publicToken = publicToken
+            completion(err)
+        }
+    }
+    
+    /**
+     Handles redirect from login for token creation
+    
+     - Parameters:
+        - fromURL: URL received from Redirect
+        - completion: Callback
+        - error: Is not nil when the execution is unsuccessfull
+    */
     public func handleRedirect(fromURL url: URL, completion: @escaping (_ error: Error?) -> Void) {
         var err: Error? = nil
         
@@ -197,7 +265,7 @@ public class FCLogin {
             
             let isToken = resp["accessToken"] as? String
             let isRefreshToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["accountKey"] as? String
+            let isAccountKey = resp["userKey"] as? String
             
             guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]

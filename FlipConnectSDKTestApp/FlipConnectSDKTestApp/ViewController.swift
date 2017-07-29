@@ -11,68 +11,69 @@ import FlipConnectSDK
 
 class ViewController: UIViewController {
     
-    //http://flipconnect-signin-staging.herokuapp.com/?clientId=F7F667C7-199F-4A10-B53A-4FADCDFADB53&redirectUri=ipirangaConnect://authorize&responseType=code
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     
-    var loginFlip: FCLogin!
-    
-    static let AuthorizationCode = "FCAuthorizationCode"
-    static let State = "FCState"
-    static let ClientID = "FCClientID"
-    static let ClientSecret = "FCClientSecret"
-    static let AccessToken = "FCAccessToken"
-    static let RefreshToken = "FCRefreshToken"
-    static let AccountKey = "FCAccountKey"
-
-
-    @IBAction func printAllUserDefaults(_ sender: UIButton) {
-        print("accessToken: \(String(describing: UserDefaults.standard.accessToken))")
-        print("accountKey: \(String(describing: UserDefaults.standard.accountKey))")
-    }
+    var url: URL? = nil
+    var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loading.startAnimating()
         
-        view.backgroundColor = UIColor(red: 0.862, green: 0.862, blue: 0.862, alpha: 1.000)
+        var initialViewController = UIViewController()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         do {
-            loginFlip = try FCLogin.shared()
-        } catch {
-            print(error)
-        }
-        
-        let btn = loginFlip.loginWithButton(center: view.center)
-        
-        let btn2 = loginFlip.loginWithButton(center: CGPoint(x: view.center.x, y: view.center.y - 50), color: .darkGray)
-        
-        let btn3 = loginFlip.loginWithButton(center: CGPoint(x: view.center.x, y: view.center.y + 50), color: .white)
-        
-        view.addSubview(btn)
-        view.addSubview(btn2)
-        view.addSubview(btn3)
-    }
-
-    @IBAction func refreshTokenBtn(_ sender: UIButton) {
-        loginFlip.verifyToken() { err in
-            guard err == nil else {
-                print("no success verifying")
-                print(err!)
-                return
-            }
-            print("Tokens verified")
-            print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
-            print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
-        }
-        
-        loginFlip.refreshToken() { err in
-            guard err == nil else {
-                print("refresh with no success")
-                print(err!)
-                return
+            let loginFlip = try FCLogin.shared()
+            
+            if let url = self.url {
+                loginFlip.handleRedirect(fromURL: url) { error in
+                    
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    
+                    if let error = error {
+                        print(error)
+                        initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                    } else {
+                        initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSuccessViewController")
+                    }
+                    DispatchQueue.main.async {
+                        self.window?.rootViewController = initialViewController
+                        self.window?.makeKeyAndVisible()
+                    }
+                }
+            } else {
+                
+                if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.accountKey, let publicToken = UserDefaults.standard.publicToken {
+                    print("Token: \(token)")
+                    print("Account: \(accountKey)")
+                    print("Public Token: \(publicToken)")
+                    
+                    loginFlip.verifyToken { error in
+                        self.window = UIWindow(frame: UIScreen.main.bounds)
+                        if let error = error {
+                            print(error)
+                            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                        } else {
+                            initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginSuccessViewController")
+                        }
+                        DispatchQueue.main.async {
+                            self.window?.rootViewController = initialViewController
+                            self.window?.makeKeyAndVisible()
+                        }
+                    }
+                } else {
+                    self.window = UIWindow(frame: UIScreen.main.bounds)
+                    initialViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+                    DispatchQueue.main.async {
+                        self.window?.rootViewController = initialViewController
+                        self.window?.makeKeyAndVisible()
+                    }
+                }
             }
             
-            print("Tokens Refreshed")
-            print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
-            print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
+        } catch {
+            print(error)
         }
     }
 }

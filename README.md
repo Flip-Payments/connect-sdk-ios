@@ -49,7 +49,7 @@ Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve
 
 ![Url Schema Creation](img/urlTypes.png)
 
-No seu `Info.plist` você deve acrescentar os **ClientID**, **ClientSecret** e **RedirectURI** registrados em nossa API. Eles serão usados pela SDK para o redirecionamento de nossa página de login:
+No seu `Info.plist` você deve acrescentar os **ClientID**, **ClientSecret**, **PublicTokenAPI** e **RedirectURI** registrados em nossa API. Eles serão usados pela SDK para o redirecionamento de nossa página de login:
 
 ```xml
 <key>FlipConnectSDK</key>
@@ -60,6 +60,8 @@ No seu `Info.plist` você deve acrescentar os **ClientID**, **ClientSecret** e *
   <string>FD5A0D34-878D-483B-9CC0-573DFB82A75B</string>
   <key>ClientID</key>
   <string>D7F667C8-199F-6B10-B53A-0BCDDEFADB31</string>
+  <key>PublicTokenAPI</key>
+  <string>5FFZ67B941DAACCDCB1888CDC97FA8F7</string>
 </dict>
 ```
 O resultado final será algo parecido com isto:
@@ -100,12 +102,14 @@ O resultado final será algo parecido com isto:
 	<string>1</string>
 	<key>FlipConnectSDK</key>
 	<dict>
-		<key>RedirectURI</key>
-		<string>flipConnect://application</string>
-		<key>ClientSecret</key>
-		<string>FD5A0D34-878D-483B-9CC0-573DFB82A75B</string>
-		<key>ClientID</key>
-		<string>D7F667C8-199F-6B10-B53A-0BCDDEFADB31</string>
+	<key>RedirectURI</key>
+	<string>flipConnect://application</string>
+	<key>ClientSecret</key>
+	<string>FD5A0D34-878D-483B-9CC0-573DFB82A75B</string>
+	<key>ClientID</key>
+	<string>D7F667C8-199F-6B10-B53A-0BCDDEFADB31</string>
+	<key>PublicTokenAPI</key>
+	<string>5FFZ67B941DAACCDCB1888CDC97FA8F7</string>
 	</dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
@@ -199,6 +203,104 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+### Transferência de Dados para Perfil temporário
+
+Se desejar transferir os dados de cadastro que já tem em sua base para facilitar o cadastro e a transição do usuário para o nosso sistema, você pode usar a variável `temporaryProfile` para preencher os dados cadastrais do usuário.
+
+Para utilizar basta atribuir um valor do tipo `TemporaryProfile` a variável `temporaryProfile` da classe `FCLogin`:
+
+```swift
+class ViewController: UIViewController {
+
+    var flipLogin: FCLogin!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        do {
+            flipLogin = try FCLogin.shared()
+
+	    let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let birthdate = formatter.date(from: "1997/12/17")
+            
+            let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
+            let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let document = Document(documentType: .cpf, documentNumber: "12345678901")!
+            let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
+            let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
+            let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            
+            let temporaryProfile = TemporaryProfile()
+            temporaryProfile.addresses = [address, address2]
+            temporaryProfile.documents = [document]
+            temporaryProfile.personalData = personalData
+            temporaryProfile.phones = [phone, phone2]
+            temporaryProfile.vehicles = [vehicle, vehicle2]
+
+	    flipLogin.temporaryProfile = temporaryProfile
+        } catch {
+            print(error)
+        }
+    }
+
+    @IBAction func printCookies(_ sender: UIButton) {
+        self.flipLogin.loginButtonClicked()
+    }
+}
+```
+
+Ou na chamada do método `loginWithButton()`:
+
+```swift
+class ViewController: UIViewController {
+
+    var flipLogin: FCLogin!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        do {
+            flipLogin = try FCLogin.shared()
+
+	    let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let birthdate = formatter.date(from: "1997/12/17")
+            
+            let personalData = PersonalData(birthdate: birthdate, genderType: .masculine, country: "br", dependentCount: 3)!
+            let vehicle = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let vehicle2 = Vehicle(licensePlate: "LNY-4266", licensePlateCity: "Rio de Janeiro", licensePlateState: "RJ", licensePlateCountry: "br")!
+            let document = Document(documentType: .cpf, documentNumber: "12345678901")!
+            let phone = Phone(phoneType: .mobile, fullNumber: "26113328")!
+            let phone2 = Phone(phoneType: .home, fullNumber: "26113328")!
+            let address = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            let address2 = Address(street: "Conde de Bonfim", number: "800", addressType: .work, city: "Rio de Janeiro", state: "RJ", country: "br")!
+            
+            let temporaryProfile = TemporaryProfile()
+            temporaryProfile.addresses = [address, address2]
+            temporaryProfile.documents = [document]
+            temporaryProfile.personalData = personalData
+            temporaryProfile.phones = [phone, phone2]
+            temporaryProfile.vehicles = [vehicle, vehicle2]
+
+	    let btn = flipLogin.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
+
+	    view.addSubview(btn)
+        } catch {
+            print(error)
+        }
+    }
+
+    @IBAction func printCookies(_ sender: UIButton) {
+        self.flipLogin.loginButtonClicked()
+    }
+}
+```
+
+Com isso a tela de cadastro irá se abrir com os dados já preenchidos no ato do cadastro do usuário.
 
 ### AppDelegate
 

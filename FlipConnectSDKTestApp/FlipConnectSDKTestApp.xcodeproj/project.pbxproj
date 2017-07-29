@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		A117AD341EE8BA9B00B74705 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD331EE8BA9B00B74705 /* AppDelegate.swift */; };
 		A117AD361EE8BA9B00B74705 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD351EE8BA9B00B74705 /* ViewController.swift */; };
-		A117AD391EE8BA9B00B74705 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A117AD371EE8BA9B00B74705 /* Main.storyboard */; };
 		A117AD3C1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A117AD3A1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodeld */; };
 		A117AD3E1EE8BA9B00B74705 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A117AD3D1EE8BA9B00B74705 /* Assets.xcassets */; };
-		A117AD411EE8BA9B00B74705 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A117AD3F1EE8BA9B00B74705 /* LaunchScreen.storyboard */; };
 		A117AD491EE8BAD000B74705 /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */; };
 		A117AD4A1EE8BAD000B74705 /* FlipConnectSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A1223DE51F06F2CC00755669 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE41F06F2CC00755669 /* LoginViewController.swift */; };
+		A1223DED1F0FDA6300755669 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEC1F0FDA6300755669 /* UserViewController.swift */; };
+		A1223DEF1F13F49100755669 /* AddressesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEE1F13F49000755669 /* AddressesTableViewController.swift */; };
+		A1B8DE431F14298A005D9D83 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DE421F14298A005D9D83 /* AddressTableViewCell.swift */; };
+		A1B8DE791F143A10005D9D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */; };
+		A1B8DE7A1F143A10005D9D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE771F143A10005D9D83 /* Main.storyboard */; };
+		A1B8DE7B1F143A10005D9D83 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */; };
 		A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,12 +41,17 @@
 		A117AD301EE8BA9B00B74705 /* FlipConnectSDKTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlipConnectSDKTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A117AD331EE8BA9B00B74705 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A117AD351EE8BA9B00B74705 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A117AD381EE8BA9B00B74705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A117AD3B1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FlipConnectSDKTestApp.xcdatamodel; sourceTree = "<group>"; };
 		A117AD3D1EE8BA9B00B74705 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A117AD401EE8BA9B00B74705 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A117AD421EE8BA9B00B74705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FlipConnectSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1223DE41F06F2CC00755669 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A1223DEC1F0FDA6300755669 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		A1223DEE1F13F49000755669 /* AddressesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesTableViewController.swift; sourceTree = "<group>"; };
+		A1B8DE421F14298A005D9D83 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
+		A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A1B8DE771F143A10005D9D83 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,8 +70,8 @@
 		A117AD271EE8BA9B00B74705 = {
 			isa = PBXGroup;
 			children = (
-				A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */,
 				A117AD321EE8BA9B00B74705 /* FlipConnectSDKTestApp */,
+				A117AD481EE8BAD000B74705 /* FlipConnectSDK.framework */,
 				A117AD311EE8BA9B00B74705 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -77,15 +87,24 @@
 		A117AD321EE8BA9B00B74705 /* FlipConnectSDKTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				A1B8DE3F1F140FF6005D9D83 /* Views */,
 				A1CD56211EEEFF6700B531ED /* Controllers */,
 				A117AD331EE8BA9B00B74705 /* AppDelegate.swift */,
-				A117AD371EE8BA9B00B74705 /* Main.storyboard */,
 				A117AD3D1EE8BA9B00B74705 /* Assets.xcassets */,
-				A117AD3F1EE8BA9B00B74705 /* LaunchScreen.storyboard */,
 				A117AD421EE8BA9B00B74705 /* Info.plist */,
 				A117AD3A1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodeld */,
 			);
 			path = FlipConnectSDKTestApp;
+			sourceTree = "<group>";
+		};
+		A1B8DE3F1F140FF6005D9D83 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */,
+				A1B8DE771F143A10005D9D83 /* Main.storyboard */,
+				A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		A1CD56211EEEFF6700B531ED /* Controllers */ = {
@@ -93,6 +112,10 @@
 			children = (
 				A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */,
 				A117AD351EE8BA9B00B74705 /* ViewController.swift */,
+				A1223DE41F06F2CC00755669 /* LoginViewController.swift */,
+				A1223DEC1F0FDA6300755669 /* UserViewController.swift */,
+				A1223DEE1F13F49000755669 /* AddressesTableViewController.swift */,
+				A1B8DE421F14298A005D9D83 /* AddressTableViewCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -130,6 +153,7 @@
 				TargetAttributes = {
 					A117AD2F1EE8BA9B00B74705 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 8Q54VRJ624;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -157,9 +181,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A117AD411EE8BA9B00B74705 /* LaunchScreen.storyboard in Resources */,
 				A117AD3E1EE8BA9B00B74705 /* Assets.xcassets in Resources */,
-				A117AD391EE8BA9B00B74705 /* Main.storyboard in Resources */,
+				A1B8DE7A1F143A10005D9D83 /* Main.storyboard in Resources */,
+				A1B8DE791F143A10005D9D83 /* LaunchScreen.storyboard in Resources */,
+				A1B8DE7B1F143A10005D9D83 /* AddressTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,32 +196,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */,
+				A1223DED1F0FDA6300755669 /* UserViewController.swift in Sources */,
 				A117AD361EE8BA9B00B74705 /* ViewController.swift in Sources */,
 				A117AD341EE8BA9B00B74705 /* AppDelegate.swift in Sources */,
+				A1223DE51F06F2CC00755669 /* LoginViewController.swift in Sources */,
+				A1223DEF1F13F49100755669 /* AddressesTableViewController.swift in Sources */,
+				A1B8DE431F14298A005D9D83 /* AddressTableViewCell.swift in Sources */,
 				A117AD3C1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A117AD371EE8BA9B00B74705 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A117AD381EE8BA9B00B74705 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A117AD3F1EE8BA9B00B74705 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A117AD401EE8BA9B00B74705 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A117AD431EE8BA9B00B74705 /* Debug */ = {
@@ -298,6 +308,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Q54VRJ624;
 				INFOPLIST_FILE = FlipConnectSDKTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlipConnect.FlipConnectSDKTestApp;
@@ -310,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8Q54VRJ624;
 				INFOPLIST_FILE = FlipConnectSDKTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlipConnect.FlipConnectSDKTestApp;

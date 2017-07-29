@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressTableViewCell" rowHeight="140" id="BFa-U9-bFW" customClass="AddressTableViewCell" customModule="FlipConnectSDKTestApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BFa-U9-bFW" id="B82-vb-olq">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rua hue BR FESTA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xmd-ds-Keg">
+                        <rect key="frame" x="8" y="8" width="359" height="29"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apertamento 9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hho-A1-XO6">
+                        <rect key="frame" x="8" y="45" width="359" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bairrin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="1mP-Xz-LKT">
+                        <rect key="frame" x="8" y="67" width="49.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cidade-Estado" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="d4M-ho-Ss9">
+                        <rect key="frame" x="260.5" y="67" width="114.5" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20520-051" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voc-vo-3av">
+                        <rect key="frame" x="8" y="96" width="87" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🇨🇦" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oIH-qS-g12">
+                        <rect key="frame" x="327" y="96" width="40" height="42"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="1mP-Xz-LKT" firstAttribute="top" secondItem="hho-A1-XO6" secondAttribute="bottom" constant="1" id="4hF-fz-Cai"/>
+                    <constraint firstItem="Xmd-ds-Keg" firstAttribute="trailing" secondItem="B82-vb-olq" secondAttribute="trailingMargin" id="4x2-4Y-Oez"/>
+                    <constraint firstAttribute="trailing" secondItem="d4M-ho-Ss9" secondAttribute="trailing" id="8uQ-jt-aT9"/>
+                    <constraint firstItem="1mP-Xz-LKT" firstAttribute="leading" secondItem="B82-vb-olq" secondAttribute="leadingMargin" id="AwM-1j-SS0"/>
+                    <constraint firstItem="Xmd-ds-Keg" firstAttribute="leading" secondItem="B82-vb-olq" secondAttribute="leadingMargin" id="Bh2-xD-zAm"/>
+                    <constraint firstItem="voc-vo-3av" firstAttribute="leading" secondItem="B82-vb-olq" secondAttribute="leadingMargin" id="LWn-IP-Wri"/>
+                    <constraint firstItem="hho-A1-XO6" firstAttribute="trailing" secondItem="B82-vb-olq" secondAttribute="trailingMargin" id="Q02-8d-wTG"/>
+                    <constraint firstAttribute="bottom" secondItem="oIH-qS-g12" secondAttribute="bottom" constant="2" id="RLd-RN-k28"/>
+                    <constraint firstItem="hho-A1-XO6" firstAttribute="leading" secondItem="B82-vb-olq" secondAttribute="leadingMargin" id="Rh8-r8-CUQ"/>
+                    <constraint firstItem="Xmd-ds-Keg" firstAttribute="top" secondItem="B82-vb-olq" secondAttribute="topMargin" id="S0g-Ur-tu7"/>
+                    <constraint firstItem="oIH-qS-g12" firstAttribute="trailing" secondItem="B82-vb-olq" secondAttribute="trailingMargin" id="Ubo-OQ-Ykb"/>
+                    <constraint firstItem="Xmd-ds-Keg" firstAttribute="top" secondItem="B82-vb-olq" secondAttribute="topMargin" id="YhP-Os-xjp"/>
+                    <constraint firstItem="hho-A1-XO6" firstAttribute="top" secondItem="Xmd-ds-Keg" secondAttribute="bottom" constant="8" id="cmQ-uI-zLh"/>
+                    <constraint firstItem="d4M-ho-Ss9" firstAttribute="top" secondItem="hho-A1-XO6" secondAttribute="bottom" constant="1" id="fqL-2T-pG1"/>
+                    <constraint firstItem="voc-vo-3av" firstAttribute="top" secondItem="1mP-Xz-LKT" secondAttribute="bottom" constant="8" id="h1Q-iv-JyW"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="voc-vo-3av" secondAttribute="bottom" constant="15" id="hav-Hg-7is"/>
+                    <constraint firstItem="oIH-qS-g12" firstAttribute="top" secondItem="d4M-ho-Ss9" secondAttribute="bottom" constant="8" id="mk4-oY-T9Y"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cityStateLbl" destination="d4M-ho-Ss9" id="1Bg-ld-8SJ"/>
+                <outlet property="complementLbl" destination="hho-A1-XO6" id="VDB-rh-gfu"/>
+                <outlet property="countryFlagLbl" destination="oIH-qS-g12" id="DCa-LS-gb6"/>
+                <outlet property="districtLbl" destination="1mP-Xz-LKT" id="TPk-DK-x0H"/>
+                <outlet property="streetLbl" destination="Xmd-ds-Keg" id="Nuf-Re-7Ef"/>
+                <outlet property="zipCodeLbl" destination="voc-vo-3av" id="hkJ-xX-Elj"/>
+            </connections>
+            <point key="canvasLocation" x="-117.5" y="118"/>
+        </tableViewCell>
+    </objects>
+</document>
