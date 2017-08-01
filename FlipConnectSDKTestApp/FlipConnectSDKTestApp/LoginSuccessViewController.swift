@@ -17,7 +17,7 @@ class LoginSuccessViewController: UIViewController {
         super.viewDidLoad()
         
         do {
-            try loginFlip = FCLogin.shared()
+            try loginFlip = FCLogin.shared(configuration: Configuration.shared)
         } catch {
             let alertController = UIAlertController(title: "Erro", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
             

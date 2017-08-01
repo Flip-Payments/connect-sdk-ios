@@ -23,7 +23,7 @@ class LoginViewController: UIViewController {
 //        let vc = FCEditUser()
         
         do {
-            loginFlip = try FCLogin.shared()
+            loginFlip = try FCLogin.shared(configuration: Configuration.shared)
             
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"

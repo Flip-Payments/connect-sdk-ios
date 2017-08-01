@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 import FlipConnectSDK
 
+public class Configuration {
+    public static let shared = FCConfiguration(fingerPrintID: "c470458e-7845-4380-a5db-e7e28548c243", apiToken: "EE3AD9FD402E920C51625B494ECB39D1", clientID: "5149B5B2-0463-4752-A8A0-C37D639A1FE4", clientSecret: "FC3E9D34-978B-483B-9CC0-462DFB82A75B", redirectURI: "ipirangaConnect://ipiranga")
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     

@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         do {
-            let loginFlip = try FCLogin.shared()
+            let loginFlip = try FCLogin.shared(configuration: Configuration.shared)
             
             if let url = self.url {
                 loginFlip.handleRedirect(fromURL: url) { error in
