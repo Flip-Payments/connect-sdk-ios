@@ -9,7 +9,7 @@
 import Foundation
 
 public class FCConfiguration {
-    public init(fingerPrintID: String, apiToken: String, clientID: String, clientSecret: String, redirectURI: String) {
+    public init(apiToken: String, clientID: String, clientSecret: String, redirectURI: String, fingerPrintID: String? = nil) {
         self.fingerPrintID = fingerPrintID
         self.apiToken = apiToken
         self.clientID = clientID
@@ -17,7 +17,7 @@ public class FCConfiguration {
         self.redirectURI = redirectURI
     }
     
-    public var fingerPrintID: String
+    public var fingerPrintID: String?
     
     public var apiToken: String
     

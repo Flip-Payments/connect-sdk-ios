@@ -88,7 +88,7 @@ extension UserDefaults {
         }
     }
     
-    /// AccountKey is the key of your Account
+    /// UserKey is the key of the User
     public internal(set) var accountKey: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.UserKey)
