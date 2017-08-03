@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need to use your location to kill you</string>
-	<key>NSContactsUsageDescription</key>
-	<string>We need to use your contacts to dominate the world</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -37,12 +33,12 @@
 	<string>1</string>
 	<key>FlipConnectSDK</key>
 	<dict>
-		<key>PublicTokenAPI</key>
-		<string>EE3AD9FD402E920C51625B494ECB39D1</string>
 		<key>ClientID</key>
 		<string>5149B5B2-0463-4752-A8A0-C37D639A1FE4</string>
 		<key>ClientSecret</key>
 		<string>FC3E9D34-978B-483B-9CC0-462DFB82A75B</string>
+		<key>PublicTokenAPI</key>
+		<string>EE3AD9FD402E920C51625B494ECB39D1</string>
 		<key>RedirectURI</key>
 		<string>ipirangaConnect://ipiranga</string>
 	</dict>
@@ -53,6 +49,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSContactsUsageDescription</key>
+	<string>We need to use your contacts to dominate the world</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We need to use your location to kill you</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

@@ -51,8 +51,8 @@
 		A1783C5B1F27C21500AE84EF /* PersonalDataPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */; };
 		A1783C5D1F27C25500AE84EF /* PatchRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */; };
 		A1783C5F1F27CCF700AE84EF /* SerializationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5E1F27CCF700AE84EF /* SerializationHelper.swift */; };
-		A1783E911F30EC340066F601 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1783E901F30EC340066F601 /* FingerPrint_iOS.framework */; };
 		A1783E941F30FBC80066F601 /* FCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783E931F30FBC80066F601 /* FCConfiguration.swift */; };
+		A1783E9A1F33AB8B0066F601 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1783E991F33AB8B0066F601 /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A19CBC501F18705E00E3CD45 /* FCEditCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */; };
 		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
 		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
@@ -136,8 +136,8 @@
 		A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalDataPatchRequest.swift; path = FlipConnectSDK/PersonalDataPatchRequest.swift; sourceTree = "<group>"; };
 		A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchRequestProtocol.swift; path = FlipConnectSDK/PatchRequestProtocol.swift; sourceTree = "<group>"; };
 		A1783C5E1F27CCF700AE84EF /* SerializationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationHelper.swift; sourceTree = "<group>"; };
-		A1783E901F30EC340066F601 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A1783E931F30FBC80066F601 /* FCConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCConfiguration.swift; sourceTree = "<group>"; };
+		A1783E991F33AB8B0066F601 /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A19CBC4F1F18705E00E3CD45 /* FCEditCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEditCategoriesEnum.swift; sourceTree = "<group>"; };
 		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1783E911F30EC340066F601 /* FingerPrint_iOS.framework in Frameworks */,
+				A1783E9A1F33AB8B0066F601 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +318,7 @@
 		A1783E8B1F30EB880066F601 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1783E901F30EC340066F601 /* FingerPrint_iOS.framework */,
+				A1783E991F33AB8B0066F601 /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
