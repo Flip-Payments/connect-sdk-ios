@@ -15,8 +15,6 @@
 		A1223DED1F0FDA6300755669 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEC1F0FDA6300755669 /* UserViewController.swift */; };
 		A1223DEF1F13F49100755669 /* AddressesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEE1F13F49000755669 /* AddressesTableViewController.swift */; };
 		A1ADD93F1F33B43E00FFE83E /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1783EAD1F33B1780066F601 /* FlipConnectSDK.framework */; };
-		A1ADD9481F33B5A900FFE83E /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1ADD93B1F33B3E800FFE83E /* FingerPrint_iOS.framework */; };
-		A1ADD9491F33B5A900FFE83E /* FingerPrint_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1ADD93B1F33B3E800FFE83E /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1B8DE431F14298A005D9D83 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DE421F14298A005D9D83 /* AddressTableViewCell.swift */; };
 		A1B8DE791F143A10005D9D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */; };
 		A1B8DE7A1F143A10005D9D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE771F143A10005D9D83 /* Main.storyboard */; };
@@ -31,7 +29,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A1ADD9491F33B5A900FFE83E /* FingerPrint_iOS.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,9 +46,6 @@
 		A1223DEC1F0FDA6300755669 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A1223DEE1F13F49000755669 /* AddressesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesTableViewController.swift; sourceTree = "<group>"; };
 		A1783EAD1F33B1780066F601 /* FlipConnectSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlipConnectSDK.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FlipConnectSDKWorkspace-fvuflcmqedlkqlctrzuuhprpbrza/Build/Products/Debug-iphonesimulator/FlipConnectSDK.framework"; sourceTree = "<group>"; };
-		A1ADD93B1F33B3E800FFE83E /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FingerPrint_iOS.framework; sourceTree = "<group>"; };
-		A1ADD9441F33B53C00FFE83E /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
-		A1ADD9451F33B53C00FFE83E /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		A1B8DE421F14298A005D9D83 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1B8DE771F143A10005D9D83 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -65,7 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1ADD93F1F33B43E00FFE83E /* FlipConnectSDK.framework in Frameworks */,
-				A1ADD9481F33B5A900FFE83E /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,9 +98,6 @@
 		A1783E9B1F33ACBF0066F601 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1ADD9441F33B53C00FFE83E /* AddressBook.framework */,
-				A1ADD9451F33B53C00FFE83E /* Contacts.framework */,
-				A1ADD93B1F33B3E800FFE83E /* FingerPrint_iOS.framework */,
 				A1783EAD1F33B1780066F601 /* FlipConnectSDK.framework */,
 			);
 			name = Frameworks;
