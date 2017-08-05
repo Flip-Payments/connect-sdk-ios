@@ -20,4 +20,5 @@ enum FCErrors: Error {
     case stateIsInvalid
     case invalidOperation
     case requestUnsuccessful(message: String)
+    case classNotInstatiated
 }

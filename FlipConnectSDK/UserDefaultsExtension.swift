@@ -19,6 +19,7 @@ extension UserDefaults {
         static let PublicToken = "FCPublicToken"
         static let UserKey = "FCUserKey"
         static let RedirectURI = "FCRedirectURI"
+        static let FingerPrintID = "FCFingerPrintID"
     }
     
     internal var authorizationCode: String? {
@@ -26,6 +27,14 @@ extension UserDefaults {
             return UserDefaults.standard.string(forKey: Keys.AuthorizationCode)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.AuthorizationCode)
+        }
+    }
+    
+    internal var fingerPrintID: String? {
+        get {
+            return UserDefaults.standard.string(forKey: Keys.FingerPrintID)
+        } set {
+            UserDefaults.standard.set(newValue, forKey: Keys.FingerPrintID)
         }
     }
     
@@ -79,7 +88,7 @@ extension UserDefaults {
         }
     }
     
-    /// AccountKey is the key of your Account
+    /// UserKey is the key of the User
     public internal(set) var accountKey: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.UserKey)

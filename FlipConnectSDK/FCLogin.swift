@@ -8,32 +8,61 @@
 
 import Foundation
 import UIKit
+import FingerPrint_iOS
 
 public class FCLogin {
-    var plistHelper: PlistHelper
     var redirectHandler: FCRedirectHandler
     
     /// entity used to load registration data on login web form
     public var temporaryProfile: TemporaryProfile? = nil
     
-    private init() throws {
-        plistHelper = try PlistHelper(bundle: Bundle.main.infoDictionary)
+    private init(_ configuration: FCConfiguration) throws {
+        UserDefaults.standard.clientID = configuration.clientID
+        UserDefaults.standard.clientSecret = configuration.clientSecret
+        UserDefaults.standard.publicToken = configuration.apiToken
+        UserDefaults.standard.redirectURI = configuration.redirectURI
+        UserDefaults.standard.fingerPrintID = configuration.fingerPrintID
+        
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
+        
+        if let fingerprintID = configuration.fingerPrintID {
+            let uuid = UUID().uuidString
+            FingerPrintLibrary.initFingerprint(role: "sandbox", key: fingerprintID, registerId: configuration.apiToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
+            FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
+            FingerPrintLibrary.getFingerprint()
+        }
     }
     
     private static var sharedVar: FCLogin?
     
-    /// Singleton instance of FCLogin
-    public static func shared() throws -> FCLogin {
+    /**
+     - Parameters:
+        - configuration: it should contain the necessary information to use on the API
+     - Returns: Singleton instance of FCLogin
+ 
+    */
+    public static func shared(configuration: FCConfiguration) throws -> FCLogin {
         if sharedVar == nil {
             do {
-                sharedVar = try FCLogin()
+                sharedVar = try FCLogin(configuration)
             } catch {
                 throw error
             }
         }
         
         return sharedVar!
+    }
+    
+    /**
+     - Returns: Singleton instance of FCLogin if it was already instantiated
+     
+     */
+    public static func shared() throws -> FCLogin {
+        guard let login = sharedVar else {
+            throw FCErrors.classNotInstatiated
+        }
+        
+        return login
     }
     
     /// Generates button targeting login web page on Safari

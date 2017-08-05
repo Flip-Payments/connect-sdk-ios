@@ -11,24 +11,28 @@ import FlipConnectSDK
 
 class LoginSuccessViewController: UIViewController {
     
-    var loginFlip: FCLogin!
+    var fcLogin: FCLogin!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        do {
-            try loginFlip = FCLogin.shared()
-        } catch {
-            let alertController = UIAlertController(title: "Erro", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
-            
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-                (result : UIAlertAction) -> Void in
-                print("OK")
-            }
-
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
+        guard let fcLogin = Configuration.fcLogin else {
+            return
         }
+        
+        self.fcLogin = fcLogin
+    }
+    
+    func showErrorDialog(_ error: Error) {
+        let alertController = UIAlertController(title: "Erro", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            (result : UIAlertAction) -> Void in
+            print("OK")
+        }
+        
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 
     /*
@@ -42,34 +46,18 @@ class LoginSuccessViewController: UIViewController {
     */
     
     func refreshToken() {
-        loginFlip.refreshToken{ error in
+        fcLogin.refreshToken{ error in
             guard error == nil else {
-                let alertController = UIAlertController(title: "Erro", message: "\(String(describing: error))", preferredStyle: UIAlertControllerStyle.alert)
-                
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-                    (result : UIAlertAction) -> Void in
-                    print("OK")
-                }
-                
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
+                self.showErrorDialog(error!)
                 return
             }
         }
     }
 
     func verifyToken() {
-        loginFlip.verifyToken { error in
+        fcLogin.verifyToken { error in
             guard error == nil else {
-                let alertController = UIAlertController(title: "Erro", message: "\(String(describing: error))", preferredStyle: UIAlertControllerStyle.alert)
-                
-                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-                    (result : UIAlertAction) -> Void in
-                    print("OK")
-                }
-                
-                alertController.addAction(okAction)
-                self.present(alertController, animated: true, completion: nil)
+                self.showErrorDialog(error!)
                 return
             }
         }
