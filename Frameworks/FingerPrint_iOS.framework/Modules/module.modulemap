@@ -1,0 +1,10 @@
+framework module FingerPrint_iOS {
+  umbrella header "FingerPrint_iOS.h"
+
+  export *
+  module * { export * }
+}
+
+module FingerPrint_iOS.Swift {
+    header "FingerPrint_iOS-Swift.h"
+}

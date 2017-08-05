@@ -61,8 +61,6 @@
 		A1C4F9391F20F97100DCD3BF /* TableViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */; };
 		A1C4F93C1F21228100DCD3BF /* EmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F93A1F21228100DCD3BF /* EmailCell.swift */; };
 		A1C4F93D1F21228100DCD3BF /* EmailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F93B1F21228100DCD3BF /* EmailCell.xib */; };
-		A1CBEF5A1F35192200C105EC /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CBEF591F35192200C105EC /* FingerPrint_iOS.framework */; };
-		A1CBEF5C1F35194F00C105EC /* FingerPrint_iOS.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A1CBEF591F35192200C105EC /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
 		A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0321F02F7420035E955 /* PatchesRequest.swift */; };
@@ -77,6 +75,7 @@
 		A1DCC69B1F0ED6F90072D964 /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DCC69A1F0ED6F90072D964 /* UserResponse.swift */; };
 		A1E309701F2A65C6006616BD /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E3096F1F2A65C6006616BD /* GenericResponse.swift */; };
 		A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E6D5BC1EE9E52400488490 /* FCColors.swift */; };
+		A1F8C8031F361E77001358BE /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C8021F361E77001358BE /* FingerPrint_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +95,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A1CBEF5C1F35194F00C105EC /* FingerPrint_iOS.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +158,6 @@
 		A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F93A1F21228100DCD3BF /* EmailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCell.swift; sourceTree = "<group>"; };
 		A1C4F93B1F21228100DCD3BF /* EmailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailCell.xib; sourceTree = "<group>"; };
-		A1CBEF591F35192200C105EC /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = FlipConnectSDK/vendor/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
 		A1DAC0321F02F7420035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchesRequest.swift; path = FlipConnectSDK/PatchesRequest.swift; sourceTree = "<group>"; };
@@ -175,6 +172,7 @@
 		A1DCC69A1F0ED6F90072D964 /* UserResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserResponse.swift; path = FlipConnectSDK/UserResponse.swift; sourceTree = "<group>"; };
 		A1E3096F1F2A65C6006616BD /* GenericResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericResponse.swift; path = FlipConnectSDK/GenericResponse.swift; sourceTree = "<group>"; };
 		A1E6D5BC1EE9E52400488490 /* FCColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCColors.swift; sourceTree = "<group>"; };
+		A1F8C8021F361E77001358BE /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,7 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1CBEF5A1F35192200C105EC /* FingerPrint_iOS.framework in Frameworks */,
+				A1F8C8031F361E77001358BE /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,7 +330,7 @@
 		A1783E8B1F30EB880066F601 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1CBEF591F35192200C105EC /* FingerPrint_iOS.framework */,
+				A1F8C8021F361E77001358BE /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -709,7 +707,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/FlipConnectSDK/vendor",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = FlipConnectSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -735,7 +733,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/FlipConnectSDK/vendor",
+					"$(PROJECT_DIR)/Frameworks",
 				);
 				INFOPLIST_FILE = FlipConnectSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";

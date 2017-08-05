@@ -14,21 +14,26 @@
 		A1223DE51F06F2CC00755669 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE41F06F2CC00755669 /* LoginViewController.swift */; };
 		A1223DED1F0FDA6300755669 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEC1F0FDA6300755669 /* UserViewController.swift */; };
 		A1223DEF1F13F49100755669 /* AddressesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEE1F13F49000755669 /* AddressesTableViewController.swift */; };
-		A1ADD93F1F33B43E00FFE83E /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1783EAD1F33B1780066F601 /* FlipConnectSDK.framework */; };
 		A1B8DE431F14298A005D9D83 /* AddressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8DE421F14298A005D9D83 /* AddressTableViewCell.swift */; };
 		A1B8DE791F143A10005D9D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */; };
 		A1B8DE7A1F143A10005D9D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE771F143A10005D9D83 /* Main.storyboard */; };
 		A1B8DE7B1F143A10005D9D83 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */; };
 		A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */; };
+		A1F8C80D1F362092001358BE /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C80C1F362092001358BE /* FingerPrint_iOS.framework */; };
+		A1F8C80E1F362092001358BE /* FingerPrint_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C80C1F362092001358BE /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A1F8C8111F3620C5001358BE /* FlipConnectSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C8101F3620C5001358BE /* FlipConnectSDK.framework */; };
+		A1F8C8121F3620C5001358BE /* FlipConnectSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C8101F3620C5001358BE /* FlipConnectSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		A1ADD94A1F33B5A900FFE83E /* Embed Frameworks */ = {
+		A1F8C80F1F362092001358BE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A1F8C80E1F362092001358BE /* FingerPrint_iOS.framework in Embed Frameworks */,
+				A1F8C8121F3620C5001358BE /* FlipConnectSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -45,12 +50,13 @@
 		A1223DE41F06F2CC00755669 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A1223DEC1F0FDA6300755669 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		A1223DEE1F13F49000755669 /* AddressesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressesTableViewController.swift; sourceTree = "<group>"; };
-		A1783EAD1F33B1780066F601 /* FlipConnectSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlipConnectSDK.framework; path = "../../../../Library/Developer/Xcode/DerivedData/FlipConnectSDKWorkspace-fvuflcmqedlkqlctrzuuhprpbrza/Build/Products/Debug-iphonesimulator/FlipConnectSDK.framework"; sourceTree = "<group>"; };
 		A1B8DE421F14298A005D9D83 /* AddressTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTableViewCell.swift; sourceTree = "<group>"; };
 		A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1B8DE771F143A10005D9D83 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
 		A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessViewController.swift; sourceTree = "<group>"; };
+		A1F8C80C1F362092001358BE /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = ../Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
+		A1F8C8101F3620C5001358BE /* FlipConnectSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FlipConnectSDK.framework; path = ../Frameworks/FlipConnectSDK.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1ADD93F1F33B43E00FFE83E /* FlipConnectSDK.framework in Frameworks */,
+				A1F8C80D1F362092001358BE /* FingerPrint_iOS.framework in Frameworks */,
+				A1F8C8111F3620C5001358BE /* FlipConnectSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,7 +105,8 @@
 		A1783E9B1F33ACBF0066F601 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1783EAD1F33B1780066F601 /* FlipConnectSDK.framework */,
+				A1F8C8101F3620C5001358BE /* FlipConnectSDK.framework */,
+				A1F8C80C1F362092001358BE /* FingerPrint_iOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -136,7 +144,7 @@
 				A117AD2C1EE8BA9B00B74705 /* Sources */,
 				A117AD2D1EE8BA9B00B74705 /* Frameworks */,
 				A117AD2E1EE8BA9B00B74705 /* Resources */,
-				A1ADD94A1F33B5A900FFE83E /* Embed Frameworks */,
+				A1F8C80F1F362092001358BE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +326,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../Frameworks",
 				);
 				INFOPLIST_FILE = FlipConnectSDKTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -335,6 +344,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/../Frameworks",
 				);
 				INFOPLIST_FILE = FlipConnectSDKTestApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
