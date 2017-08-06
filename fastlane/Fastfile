@@ -22,7 +22,7 @@ lane :release do
   tag = last_git_tag
 
   github_release = set_github_release(
-    repository_name: "master",
+    repository_name: "Flip-Payments/connect-sdk-ios",
     api_token: ENV["GITHUB_API_TOKEN"],
     name: "#{COMMIT_MESSAGE} v#{tag}",
     tag_name: tag,
@@ -35,7 +35,7 @@ lane :carthage_build do
   carthage(
     command: "build",       # One of: build, bootstrap, update, archive. (default: bootstrap)
     no_skip_current: true,     # Don't skip building the current project (only for frameworks)
-    verbose: true,   # Print xcodebuild output inline
+    verbose: false,   # Print xcodebuild output inline
     platform: "iOS",  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
     configuration: "Release",   # Build configuration to use when building
     cache_builds: true         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
@@ -69,6 +69,7 @@ lane :push do
     version_number: "#{tag}",      # specify specific version number (optional, omitting it increments patch version number)
     xcodeproj: "./FlipConnectSDK.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
   )
+  git_commit(path: ["./FlipConnectSDK.xcodeproj", "./FlipConnectSDK/Info.plist", "./FlipConnectSDKTests/Info.plist"], message: "Update to #{version} on plists")
   git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
   git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version}")
   push_to_git_remote(remote_branch: 'master', force: false, tags: true)

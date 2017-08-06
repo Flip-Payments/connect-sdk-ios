@@ -49,11 +49,6 @@ fastlane bitrise
 fastlane release
 ```
 
-### set_project_version
-```
-fastlane set_project_version
-```
-
 ### carthage_build
 ```
 fastlane carthage_build
