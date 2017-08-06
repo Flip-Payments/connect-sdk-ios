@@ -49,11 +49,6 @@ fastlane bitrise
 fastlane changelog
 ```
 
-### commit_test
-```
-fastlane commit_test
-```
-
 ### push
 ```
 fastlane push

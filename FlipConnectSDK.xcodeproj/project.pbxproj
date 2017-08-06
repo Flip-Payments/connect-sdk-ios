@@ -22,6 +22,7 @@
 		A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */; };
 		A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD501EE9289C00B74705 /* FCLogin.swift */; };
 		A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD521EE936AB00B74705 /* PlistHelper.swift */; };
+		A120FC7E1F37A2BC009B7CD6 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C8021F361E77001358BE /* FingerPrint_iOS.framework */; };
 		A1223DE71F0D71D700755669 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE61F0D71D700755669 /* User.swift */; };
 		A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE81F0D729D00755669 /* PublicProfile.swift */; };
 		A1223DEB1F0FD53000755669 /* FCApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DEA1F0FD53000755669 /* FCApiUser.swift */; };
@@ -189,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A117ACE51EE782FE00B74705 /* FlipConnectSDK.framework in Frameworks */,
+				A120FC7E1F37A2BC009B7CD6 /* FingerPrint_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,7 +714,7 @@
 				INFOPLIST_FILE = FlipConnectSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks $(inherited) @executable_path/Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlipConnect.FlipConnectSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -738,7 +740,7 @@
 				INFOPLIST_FILE = FlipConnectSDK/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(PROJECT_DIR)/Frameworks $(inherited) @executable_path/Frameworks @loader_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlipConnect.FlipConnectSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -750,8 +752,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = FlipConnectSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlipConnect.FlipConnectSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -762,8 +768,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = FlipConnectSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks $(PROJECT_DIR)/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.FlipConnect.FlipConnectSDKTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
