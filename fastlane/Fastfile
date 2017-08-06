@@ -2,6 +2,7 @@ COMMIT_MESSAGE = "New version:"
 
 lane :tests do
   scan(workspace: "FlipConnectSDKWorkspace.xcworkspace", scheme: "FlipConnectSDK", clean: true)
+  carthage_build
 end
 
 lane :travis do
@@ -11,7 +12,42 @@ end
 lane :bitrise do
   tests
   changelog
+  carthage_archive
+  release
   push
+end
+
+lane :release do
+  sh("git fetch --tags")
+  tag = last_git_tag
+
+  github_release = set_github_release(
+    repository_name: "master",
+    api_token: ENV["GITHUB_API_TOKEN"],
+    name: "#{COMMIT_MESSAGE} v#{tag}",
+    tag_name: tag,
+    description: (File.read("CHANGELOG.md") rescue "New release"),
+    upload_assets: ["FlipConnectSDK.framework.zip"]
+  )
+end
+
+lane :carthage_build do
+  carthage(
+    command: "build",       # One of: build, bootstrap, update, archive. (default: bootstrap)
+    no_skip_current: true,     # Don't skip building the current project (only for frameworks)
+    verbose: true,   # Print xcodebuild output inline
+    platform: "iOS",  # Define which platform to build for (one of ‘all’, ‘Mac’, ‘iOS’, ‘watchOS’, ‘tvOS‘, or comma-separated values of the formers except for ‘all’)
+    configuration: "Release",   # Build configuration to use when building
+    cache_builds: true         # By default Carthage will rebuild a dependency regardless of whether its the same resolved version as before.
+  )
+end
+
+lane :carthage_archive do
+  carthage(
+    frameworks: ["FlipConnectSDK", "FingerPrint_iOS"],   # Specify which frameworks to archive (only for the archive command)
+    output: "FlipConnectSDK.framework.zip",      # Specify the output archive name (only for the archive command)
+    command: "archive"       # One of: build, bootstrap, update, archive. (default: bootstrap)
+  )
 end
 
 lane :changelog do
@@ -29,6 +65,10 @@ lane :push do
   sh("git fetch --tags")
   tag = last_git_tag
   version = version_bump_podspec(path: "FlipConnectSDK.podspec", version_number: tag)
+  increment_version_number(
+    version_number: "#{tag}",      # specify specific version number (optional, omitting it increments patch version number)
+    xcodeproj: "./FlipConnectSDK.xcodeproj"  # (optional, you must specify the path to your main Xcode project if it is not in the project root directory)
+  )
   git_commit(path: ["./FlipConnectSDK.podspec"], message: "#{COMMIT_MESSAGE} #{version}")
   git_commit(path: ["./CHANGELOG.md"], message: "Updates changelog for version #{version}")
   push_to_git_remote(remote_branch: 'master', force: false, tags: true)

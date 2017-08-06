@@ -44,6 +44,26 @@ fastlane travis
 fastlane bitrise
 ```
 
+### release
+```
+fastlane release
+```
+
+### set_project_version
+```
+fastlane set_project_version
+```
+
+### carthage_build
+```
+fastlane carthage_build
+```
+
+### carthage_archive
+```
+fastlane carthage_archive
+```
+
 ### changelog
 ```
 fastlane changelog

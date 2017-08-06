@@ -19,4 +19,5 @@ It connects to Flip Connect API using OAuth
   s.platform     = :ios, "10.0"
   s.source       = { :git => "https://github.com/Flip-Payments/connect-sdk-ios.git", :tag => "#{s.version}" }
   s.source_files  = "FlipConnectSDK", "FlipConnectSDK/**/*.{h,swift}"
+  s.vendored_frameworks = "Frameworks/FingerPrint_iOS.framework"
 end

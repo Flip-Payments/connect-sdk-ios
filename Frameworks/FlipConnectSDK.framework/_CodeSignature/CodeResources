@@ -6,7 +6,7 @@
 	<dict>
 		<key>EmailCell.nib</key>
 		<data>
-		Vsf7/hO3PVLXxVJJc2A0LNVMgz8=
+		NsT3ujynSzrKGYZzSksqcGFO2q0=
 		</data>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		k6qH7Gfwl6JDHnh3PZSgripHzuQ=
+		K0JrgtCElHsTmVgabBGN26NeZ8k=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -42,15 +42,15 @@
 		</data>
 		<key>PersonalDataCell.nib</key>
 		<data>
-		3ssJ6dI/QF7YdoKk5lwWfQi3E7I=
+		P7ZtZYkXt90MYNShnna08kNpK4w=
 		</data>
 		<key>PhoneCell.nib</key>
 		<data>
-		SfWbST90/z+Lvg0kOgc7QgNIxxk=
+		htnXVRpgHcbxthButiwrowPsj/U=
 		</data>
 		<key>PublicProfileCell.nib</key>
 		<data>
-		74215UlBTJXajzFCQZYFbmpyb18=
+		9+hybfB342N+3Gryd+Yoftq2Hp0=
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/Info.plist</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/RegistrationEditionViewController.nib</key>
 		<data>
-		vRcQKkzsgxz6TqbSe4EXaDd9EZs=
+		4D36EaOUuDX/DjS5pDaj3hSlQy4=
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/f3d-2n-0Ul-view-cP7-v2-cyI.nib</key>
 		<data>
-		12SYLp66tH2EP6Sf9VhbhDba1Io=
+		oAkRZfUiQnomnxxH8BU4k11SrFI=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -71,11 +71,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Vsf7/hO3PVLXxVJJc2A0LNVMgz8=
+			NsT3ujynSzrKGYZzSksqcGFO2q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			rybJNN/UGh5YW3ulnV9Cfr44VbAx/kDdDjcDvtMT62k=
+			wQUDN0U22tB4Zbt8N+A4d591ohpOUBY1P9JOzrggG5I=
 			</data>
 		</dict>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
@@ -159,33 +159,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3ssJ6dI/QF7YdoKk5lwWfQi3E7I=
+			P7ZtZYkXt90MYNShnna08kNpK4w=
 			</data>
 			<key>hash2</key>
 			<data>
-			Il1h9xGJ9PYix20dTHhB/xScwA8qSGacggUqvOEuRsE=
+			hHf1YigE8maG+16FDLJIZVwIxPgUERxAvFmqpoOZA04=
 			</data>
 		</dict>
 		<key>PhoneCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SfWbST90/z+Lvg0kOgc7QgNIxxk=
+			htnXVRpgHcbxthButiwrowPsj/U=
 			</data>
 			<key>hash2</key>
 			<data>
-			oDYkfpR5I95QuOVTODycuiaXwQvzPohOnjjCi+/m+D0=
+			wB6dZAXiJAphHKzA8rRI0tKPD4McJB6d+tVSt6s9sHM=
 			</data>
 		</dict>
 		<key>PublicProfileCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			74215UlBTJXajzFCQZYFbmpyb18=
+			9+hybfB342N+3Gryd+Yoftq2Hp0=
 			</data>
 			<key>hash2</key>
 			<data>
-			v5NE728ifA0F9MRIAu2LFeLWmm0euo/4xM+SMTxLhnU=
+			nx/yQv99MHPk6xZeNMQUDbORTTd/y75e1CoeU1WvBJk=
 			</data>
 		</dict>
 		<key>RegistrationEditionStoryboard.storyboardc/Info.plist</key>
@@ -203,22 +203,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			vRcQKkzsgxz6TqbSe4EXaDd9EZs=
+			4D36EaOUuDX/DjS5pDaj3hSlQy4=
 			</data>
 			<key>hash2</key>
 			<data>
-			2I4OXH06o590WuRfT1OlRnh9EXV2X9FQSRHtBTzFX3M=
+			+Ofi8d2/6GMLxBgyQNWS0Wn/EyEWNk9nxoQNB3j7vgk=
 			</data>
 		</dict>
 		<key>RegistrationEditionStoryboard.storyboardc/f3d-2n-0Ul-view-cP7-v2-cyI.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			12SYLp66tH2EP6Sf9VhbhDba1Io=
+			oAkRZfUiQnomnxxH8BU4k11SrFI=
 			</data>
 			<key>hash2</key>
 			<data>
-			V/lxb8tfF1IZ5/3hWpQBgYprytB44J2g8ild8SwkGzU=
+			Hw1SRm+EJ5OGh9VCUn69xit2ozAg1sdL8WwLhfO3n/c=
 			</data>
 		</dict>
 	</dict>
