@@ -44,16 +44,6 @@ fastlane travis
 fastlane bitrise
 ```
 
-### zip_release
-```
-fastlane zip_release
-```
-
-### clog
-```
-fastlane clog
-```
-
 ### release
 ```
 fastlane release
