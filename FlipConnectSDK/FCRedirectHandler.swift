@@ -47,10 +47,13 @@ struct FCRedirectHandler {
             }
             
             guard urlID == identifier else {
-                throw FCErrors.incorrectIdentifier
+                continue
             }
             
             urlScheme = schemeUrl
+        }
+        if urlScheme.isEmpty {
+            throw FCErrors.incorrectIdentifier
         }
         
         self.plist = plist
