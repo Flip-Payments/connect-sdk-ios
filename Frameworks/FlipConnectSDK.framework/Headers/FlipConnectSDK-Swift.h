@@ -173,6 +173,8 @@ SWIFT_CLASS("_TtC14FlipConnectSDK16TemporaryProfile")
 @property (nonatomic, readonly, copy) NSString * _Nullable publicToken;
 /// UserKey is the key of the User
 @property (nonatomic, readonly, copy) NSString * _Nullable accountKey;
+/// fingerPrintSessionID is the ID generated for the session of the user
+@property (nonatomic, readonly, copy) NSString * _Nullable fingerPrintSessionID;
 @end
 
 #pragma clang diagnostic pop
