@@ -6,7 +6,7 @@
 	<dict>
 		<key>EmailCell.nib</key>
 		<data>
-		NsT3ujynSzrKGYZzSksqcGFO2q0=
+		it2Y9Pfqn3P2B7Devh32wNSOvFs=
 		</data>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<data>
@@ -26,7 +26,7 @@
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		8SSsHvo2x5U12Xi8r3YH5WJp3Y0=
+		Ny3xPjzIBZyae17T2qfQfpbM3zc=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
@@ -34,7 +34,7 @@
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		zuQjMS8rvcZiwZrRK7Y750JjlBc=
+		4j7AyQa2R/5Obq+gywmsBkiTsJk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -42,15 +42,15 @@
 		</data>
 		<key>PersonalDataCell.nib</key>
 		<data>
-		P7ZtZYkXt90MYNShnna08kNpK4w=
+		xMrIw0dTgrz6PggWlJNb4TAT/Fw=
 		</data>
 		<key>PhoneCell.nib</key>
 		<data>
-		htnXVRpgHcbxthButiwrowPsj/U=
+		OqFtMf+yJO5tgjM49SrIRlrlMp0=
 		</data>
 		<key>PublicProfileCell.nib</key>
 		<data>
-		9+hybfB342N+3Gryd+Yoftq2Hp0=
+		JuzkIKApymVmUCtc4aHmm21K+gU=
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/Info.plist</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/RegistrationEditionViewController.nib</key>
 		<data>
-		4D36EaOUuDX/DjS5pDaj3hSlQy4=
+		zbEk+hoPMT6R0e2yscmMQ5FTHys=
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/f3d-2n-0Ul-view-cP7-v2-cyI.nib</key>
 		<data>
-		oAkRZfUiQnomnxxH8BU4k11SrFI=
+		AcF42id2yQWOmcrGx3RJKPz2N24=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -71,11 +71,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			NsT3ujynSzrKGYZzSksqcGFO2q0=
+			it2Y9Pfqn3P2B7Devh32wNSOvFs=
 			</data>
 			<key>hash2</key>
 			<data>
-			wQUDN0U22tB4Zbt8N+A4d591ohpOUBY1P9JOzrggG5I=
+			x6eanjx1Vv7tvUA7T5q5RlhZHkyMUE+4581ZvZbWU40=
 			</data>
 		</dict>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
@@ -115,11 +115,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8SSsHvo2x5U12Xi8r3YH5WJp3Y0=
+			Ny3xPjzIBZyae17T2qfQfpbM3zc=
 			</data>
 			<key>hash2</key>
 			<data>
-			0lXItMGwbTsUSKTwvoy+DWgCSphaRLrMQ43vvemgdhA=
+			GvrkkRBsFnY/xXFk9OiTHIOfsc9sRIIpGTNPqvZpANQ=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
@@ -137,11 +137,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			zuQjMS8rvcZiwZrRK7Y750JjlBc=
+			4j7AyQa2R/5Obq+gywmsBkiTsJk=
 			</data>
 			<key>hash2</key>
 			<data>
-			eaCz/aCbxchMK3uxA9cxnzpFLyZTnkAXlN6+xEiMxzo=
+			yXrsLRZ/Wz+ROaLg3b6PbUjzHq23u6ma+J9vh7SYbFM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -159,33 +159,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			P7ZtZYkXt90MYNShnna08kNpK4w=
+			xMrIw0dTgrz6PggWlJNb4TAT/Fw=
 			</data>
 			<key>hash2</key>
 			<data>
-			hHf1YigE8maG+16FDLJIZVwIxPgUERxAvFmqpoOZA04=
+			43CnCHujG0j+YbQEur/WcVX4VeglfSjv+FXb84ZLAqE=
 			</data>
 		</dict>
 		<key>PhoneCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			htnXVRpgHcbxthButiwrowPsj/U=
+			OqFtMf+yJO5tgjM49SrIRlrlMp0=
 			</data>
 			<key>hash2</key>
 			<data>
-			wB6dZAXiJAphHKzA8rRI0tKPD4McJB6d+tVSt6s9sHM=
+			2kcx33ue8ZIZQfZzoVVO9zS7iXMHQO9UJOU3fwtWYcI=
 			</data>
 		</dict>
 		<key>PublicProfileCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9+hybfB342N+3Gryd+Yoftq2Hp0=
+			JuzkIKApymVmUCtc4aHmm21K+gU=
 			</data>
 			<key>hash2</key>
 			<data>
-			nx/yQv99MHPk6xZeNMQUDbORTTd/y75e1CoeU1WvBJk=
+			GtJ6HE0onl0EdGFTc3viigcM+l5kiKPqLvNcvV0s4rE=
 			</data>
 		</dict>
 		<key>RegistrationEditionStoryboard.storyboardc/Info.plist</key>
@@ -203,22 +203,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4D36EaOUuDX/DjS5pDaj3hSlQy4=
+			zbEk+hoPMT6R0e2yscmMQ5FTHys=
 			</data>
 			<key>hash2</key>
 			<data>
-			+Ofi8d2/6GMLxBgyQNWS0Wn/EyEWNk9nxoQNB3j7vgk=
+			jZq99twpDz0VSYzKhgP4oDj173VfqmQtEop8c3uRVQU=
 			</data>
 		</dict>
 		<key>RegistrationEditionStoryboard.storyboardc/f3d-2n-0Ul-view-cP7-v2-cyI.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			oAkRZfUiQnomnxxH8BU4k11SrFI=
+			AcF42id2yQWOmcrGx3RJKPz2N24=
 			</data>
 			<key>hash2</key>
 			<data>
-			Hw1SRm+EJ5OGh9VCUn69xit2ozAg1sdL8WwLhfO3n/c=
+			HipHtDamOLsKIZlshAf/3y3wHw1OSxp20VbK+aqIhDY=
 			</data>
 		</dict>
 	</dict>
