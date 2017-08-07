@@ -42,7 +42,7 @@ end
 
 ### Instalação manual
 
-Para instalar manualmente a SDK é necessário baixar ambos os Frameworks [desta pasta](https://github.com/Flip-Payments/connect-sdk-ios/tree/master/Frameworks) e colocar em Embedded Binaries como na imagem abaixo:
+Para instalar manualmente a SDK é necessário baixar o `.zip` [FlipConnectSDK_Manual.framework.zip](https://github.com/Flip-Payments/connect-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
 
 ![Manual Installation](./img/installManual.png)
 
