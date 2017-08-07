@@ -52,7 +52,7 @@
 	<key>NSContactsUsageDescription</key>
 	<string>We need to use your contacts to dominate the world</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>We need to use your location to kill you</string>
+	<string>We need to use your location to find you and kill you ;)</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
