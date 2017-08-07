@@ -42,7 +42,7 @@ end
 
 ### Instalação manual
 
-Para instalar manualmente a SDK é necessário baixar ambos os Frameworks [desta pasta](https://github.com/Flip-Payments/connect-sdk-ios/tree/master/Frameworks) e colocar em Embedded Binaries como na imagem abaixo:
+Para instalar manualmente a SDK é necessário baixar o `.zip` [FlipConnectSDK_Manual.framework.zip](https://github.com/Flip-Payments/connect-sdk-ios/releases) e colocar em **Embedded Binaries** como na imagem abaixo:
 
 ![Manual Installation](./img/installManual.png)
 
@@ -64,7 +64,7 @@ Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve
 
 ### Inicialização
 
-É necessário inicialiar a classe de login na abertura do app, para isso é necessário colar o código abaixo. O parâmetro fingerPrintID é opcional, deve ser passado apenas se quiser passar dados para o anti-fraude.
+É necessário inicializar a classe de login na abertura do app no `AppDelegate.swift`, e colar o código abaixo. O parâmetro fingerPrintID é opcional, deve ser passado apenas se quiser utilizar o anti-fraude.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -82,6 +82,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         }
         return true
     }
+```
+
+Após esta inicialização, se for passado o `fingerPrintID`, o `fingerPrintSessionID` será *setado* e você poderá acessá-lo chamando o `UserDefaults` como no exemplo abaixo:
+
+```swift
+if let fingerPrintSessionID = UserDefaults.standard.fingerPrintSessionID {
+    print(fingerPrintSessionID)
+}
 ```
 
 ### ViewController
@@ -145,7 +153,7 @@ class ViewController: UIViewController {
 }
 ```
 
-### Enviando dados de FingerPrint para o anti-fraude
+### Enviando dados de FingerPrint para o anti-fraude (opcional)
 
 Com o FingerPrintID sendo enviado na inicialização da classe `FCLogin`, enviar dados para o anti-fraude é muito simples, basta colocar permissões no seu app para o usuário liberar acesso aos contatos e o mesmo para localização.
 

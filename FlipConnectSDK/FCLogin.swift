@@ -27,6 +27,7 @@ public class FCLogin {
         
         if let fingerprintID = configuration.fingerPrintID {
             let uuid = UUID().uuidString
+            UserDefaults.standard.fingerPrintSessionID = uuid
             FingerPrintLibrary.initFingerprint(role: "sandbox", key: fingerprintID, registerId: configuration.apiToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
             FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
             FingerPrintLibrary.getFingerprint()
