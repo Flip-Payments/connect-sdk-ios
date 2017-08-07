@@ -64,7 +64,7 @@ Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve
 
 ### Inicialização
 
-É necessário inicialiar a classe de login na abertura do app, para isso é necessário colar o código abaixo. O parâmetro fingerPrintID é opcional, deve ser passado apenas se quiser passar dados para o anti-fraude.
+É necessário inicialiar a classe de login na abertura do app no `AppDelegate.swift`, para isso é necessário colar o código abaixo. O parâmetro fingerPrintID é opcional, deve ser passado apenas se quiser passar dados para o anti-fraude.
 
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -82,6 +82,14 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
         }
         return true
     }
+```
+
+Após esta inicialização, se for passado o `fingerPrintID`, o `fingerPrintSessionID` será *setado* e você poderá acessá-lo chamando o `UserDefaults` como no exemplo abaixo:
+
+```swift
+if let fingerPrintSessionID = UserDefaults.standard.fingerPrintSessionID {
+    print(fingerPrintSessionID)
+}
 ```
 
 ### ViewController
