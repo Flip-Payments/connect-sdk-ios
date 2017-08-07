@@ -27,6 +27,7 @@ e então rode o seguinte comando:
 ```sh
 carthage update
 ```
+**OBS:** O Carthage irá baixar dois frameworks o `FlipConnectSDK.framework` e `FingerPrint_iOS.framework`, ambos devem ser colocados no seu app para que funcione corretamente.
 
 ### Cocoapods
 
@@ -38,6 +39,18 @@ target 'MyApplication' do
   pod 'FlipConnectSDK', '~> 0.2'
 end
 ```
+
+### Instalação manual
+
+Para instalar manualmente a SDK é necessário baixar ambos os Frameworks [desta pasta](https://github.com/Flip-Payments/connect-sdk-ios/tree/master/Frameworks) e colocar em Embedded Binaries como na imagem abaixo:
+
+![Manual Installation](./img/installManual.png)
+
+Depois é necessário baixar o script [remove_unused_archs.sh](https://raw.githubusercontent.com/Flip-Payments/connect-sdk-ios/master/scripts/remove_unused_archs.sh) e adicionar em `Build Phases > Run Script` o seguinte comando: `bash "${SRCROOT}/remove_unused_archs.sh"` (lembrando que neste caso o script está no root do projeto, se o seu script estiver em outra pasta é necessário informar o caminho desta pasta) como na imagem abaixo:
+
+![Run Script](./img/runManualScript.png)
+
+Estes passos são necessários para rodar o script manual porque ambos os frameworks contém todos as arquiteturas dentro dele, mas a loja da Apple não permite publicar o app com as arquiteturas de simulador, por isso este post script garante a remoção destas arquiteturas para que a publicação ocorra sem problemas.
 
 ## Usabilidade
 
@@ -131,6 +144,16 @@ class ViewController: UIViewController {
     }
 }
 ```
+
+### Enviando dados de FingerPrint para o anti-fraude
+
+Com o FingerPrintID sendo enviado na inicialização da classe `FCLogin`, enviar dados para o anti-fraude é muito simples, basta colocar permissões no seu app para o usuário liberar acesso aos contatos e o mesmo para localização.
+
+**OBS:** Lembre-se que a Apple pode encrencar com a publicação do seu app se ele pedir permissão ao usuário de dados que são desnecessários para o app, não vale pedir acesso aos contatos do seu usuário se o seu app não faz nada com os contatos dele, não é mesmo?
+
+Para pedir as permissões de acesso para o usuário basta acrescentar estas linhas no `Info.plist`:
+
+![Privacy Access](./img/privacyAccess.png)
 
 ### Transferência de Dados para Perfil temporário
 
