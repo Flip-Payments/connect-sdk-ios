@@ -18,10 +18,6 @@ lane :bitrise do
   push
 end
 
-lane :zip_release do
-  sh('zip -r FlipConnectSDK_Manual.zip Frameworks/*')
-end
-
 lane :release do
   sh("git fetch --tags")
   tag = last_git_tag
