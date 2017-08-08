@@ -13,7 +13,6 @@ lane :bitrise do
   tests
   changelog
   carthage_archive
-  zip_release
   release
   push
 end
