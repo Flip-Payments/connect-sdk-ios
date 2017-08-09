@@ -16,7 +16,6 @@ extension UserDefaults {
         static let ClientSecret = "FCClientSecret"
         static let AccessToken = "FCAccessToken"
         static let RefreshToken = "FCRefreshToken"
-        static let PublicToken = "FCPublicToken"
         static let UserKey = "FCUserKey"
         static let RedirectURI = "FCRedirectURI"
         static let FingerPrintID = "FCFingerPrintID"
@@ -72,15 +71,6 @@ extension UserDefaults {
         }
     }
     
-    /// Token used to make requests to FlipConnect public API
-    public internal(set) var publicToken: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.PublicToken)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.PublicToken)
-        }
-    }
-    
     internal var refreshToken: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.RefreshToken)
@@ -90,7 +80,7 @@ extension UserDefaults {
     }
     
     /// UserKey is the key of the User
-    public internal(set) var accountKey: String? {
+    public internal(set) var userKey: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.UserKey)
         } set {

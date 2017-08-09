@@ -27,24 +27,18 @@ class UserViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        guard let publicToken = UserDefaults.standard.publicToken, let accountKey = UserDefaults.standard.accountKey else {
-            return
-        }
-        
-        FCApi.getUser(publicToken: publicToken, accountKey: accountKey, categories: [.Emails]) { user, error in
-            DispatchQueue.main.async {
-                self.publicProfileNameLbl.text = user.user?.publicProfile?.name
-                self.emailAddress.text = user.user?.emails.first?.address
-            }
-            print(user.user?.publicProfile?.name ?? "oops")
-        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+//        FCApi.getUser(publicToken: publicToken, accountKey: accountKey, categories: [.Emails]) { user, error in
+//            DispatchQueue.main.async {
+//                self.publicProfileNameLbl.text = user.user?.publicProfile?.name
+//                self.emailAddress.text = user.user?.emails.first?.address
+//            }
+//            print(user.user?.publicProfile?.name ?? "oops")
+//        }
     }
     
     override func didReceiveMemoryWarning() {

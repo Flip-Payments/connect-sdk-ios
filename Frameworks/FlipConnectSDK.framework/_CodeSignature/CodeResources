@@ -6,11 +6,11 @@
 	<dict>
 		<key>EmailCell.nib</key>
 		<data>
-		lNVOAkuK7MZsgOEbIv+ujdLoY+A=
+		rAyOKCW5dh6Tb/PfDN5wm0cthl0=
 		</data>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<data>
-		R8K4w5tGrPKnvjwbg2pfDaVgJMI=
+		1GSit0SEGn71ovXJ9zvn6jtSwmM=
 		</data>
 		<key>Headers/FlipConnectSDK.h</key>
 		<data>
@@ -18,23 +18,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7HKWZnXmDK6714RTKTPnp+4/0nM=
+		ha8Zb1mIq/6+3iA4XoLLgYW5QTE=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		Jjurt+eZRak19Lf4ZL2yufN836I=
+		3XyAiLg7LeNVRTarApcIWEE/RNI=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		h/dkL6HelUs2i4HZPhXRngC3A+A=
+		1n80hsYNyTzLtk9beaeEhC5byT0=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		uxYpkkepafaeYzwjgnaeSLuJxbc=
+		LHvHVK6ZlWBV0IM3a2eyyoG30Ig=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		wP2xd/8fK5gLN836HhLLeOfio04=
+		vYLRU4Y1H4JTlms8aOgkgHXgxuA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -42,15 +42,15 @@
 		</data>
 		<key>PersonalDataCell.nib</key>
 		<data>
-		AcZ0Km5nsLe6q/esYI7t6IW06p4=
+		zKH0SQyt6M2rq+miQq3PVdPgCHk=
 		</data>
 		<key>PhoneCell.nib</key>
 		<data>
-		gTxB85vlNcaGJ4DbTSMC1Tx05j4=
+		gzHyvhUynccQCT7fvyetLzeYYp4=
 		</data>
 		<key>PublicProfileCell.nib</key>
 		<data>
-		YsW+JooxDrxIr2VySiyvi/QhMMI=
+		rO57PAqCu2T6vYIakIOgmRgWw/8=
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/Info.plist</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/RegistrationEditionViewController.nib</key>
 		<data>
-		F0XzJvcD12HNJq5RkK8OS3nN7dw=
+		L1/kHBYbzdXBa1vR0EAh/KGxbak=
 		</data>
 		<key>RegistrationEditionStoryboard.storyboardc/f3d-2n-0Ul-view-cP7-v2-cyI.nib</key>
 		<data>
-		iq7VOS6Oo9OjJnsRNYrv2FrvMao=
+		fMmeWIIGiz9rJSVmgjLTQSN2p/0=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -71,22 +71,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lNVOAkuK7MZsgOEbIv+ujdLoY+A=
+			rAyOKCW5dh6Tb/PfDN5wm0cthl0=
 			</data>
 			<key>hash2</key>
 			<data>
-			L1vKWMlTmKZF1TXcBKhh79HwGrYXKqiZ3CJHfnFeeBI=
+			xxM6ORyMoHx5uSFOE6Swws1+JyyaCeFl8aCB1UtOaQU=
 			</data>
 		</dict>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			R8K4w5tGrPKnvjwbg2pfDaVgJMI=
+			1GSit0SEGn71ovXJ9zvn6jtSwmM=
 			</data>
 			<key>hash2</key>
 			<data>
-			Sec60ch10zAr+poVDZiDD5e1pPLn5J/D87Kpgp1weHs=
+			g1gqop5PX7Wlu6cto/F/W5OiEyfW95DQ0MnvULZAVDY=
 			</data>
 		</dict>
 		<key>Headers/FlipConnectSDK.h</key>
@@ -104,44 +104,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Jjurt+eZRak19Lf4ZL2yufN836I=
+			3XyAiLg7LeNVRTarApcIWEE/RNI=
 			</data>
 			<key>hash2</key>
 			<data>
-			jpk6Sf1vF0HbMu22TGIxr8IDkcseMZVuTnGjjgheOD8=
+			P/ezBR2V6eubSr9oK6NmhuKGzee9iPUD4FJYTysK/g8=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			h/dkL6HelUs2i4HZPhXRngC3A+A=
+			1n80hsYNyTzLtk9beaeEhC5byT0=
 			</data>
 			<key>hash2</key>
 			<data>
-			w69LFS40kysehGFJmuuXpvU/kZC2Hw0Br4NJ4Iq7jYs=
+			SgG05Oix1v2fi9b5ZpX9A/y1zdETUx7oLgz4YgY/BK4=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			uxYpkkepafaeYzwjgnaeSLuJxbc=
+			LHvHVK6ZlWBV0IM3a2eyyoG30Ig=
 			</data>
 			<key>hash2</key>
 			<data>
-			eztrVT7kt1rv4RY0T9lEG1JGa1PG4h1b6Yzm00nPBGA=
+			Of+/2+zM8sFrJ6W+y7RSzhysGL4ErcQQ69h8+TzyCPs=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			wP2xd/8fK5gLN836HhLLeOfio04=
+			vYLRU4Y1H4JTlms8aOgkgHXgxuA=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZFV5E1OAnTv5PnLpHXq2NmORikPbAPoIlsyp4ldFr8E=
+			5t0PX6iN3FDETChyJsdvG0NKfOPEA1Kbd+LKt+RPaHU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -159,33 +159,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AcZ0Km5nsLe6q/esYI7t6IW06p4=
+			zKH0SQyt6M2rq+miQq3PVdPgCHk=
 			</data>
 			<key>hash2</key>
 			<data>
-			/fnVhhqL70rd258vfO8g5slSt2+Mflm212n5Inh2E6Q=
+			vb1GsBzTq3OaOFZ6NvjMooHSgkmOs5YECDY3l4u7fOg=
 			</data>
 		</dict>
 		<key>PhoneCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			gTxB85vlNcaGJ4DbTSMC1Tx05j4=
+			gzHyvhUynccQCT7fvyetLzeYYp4=
 			</data>
 			<key>hash2</key>
 			<data>
-			QK3lWS+zikTM66e1qSjT0dOAFkgmvYWpGWMLME+MCps=
+			8/bmKEetWYVSQFYdxAZqP1kZAnYO2gYpvCHUA3NVwPk=
 			</data>
 		</dict>
 		<key>PublicProfileCell.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			YsW+JooxDrxIr2VySiyvi/QhMMI=
+			rO57PAqCu2T6vYIakIOgmRgWw/8=
 			</data>
 			<key>hash2</key>
 			<data>
-			ORfcgc0Von31ap3hmqWL2YdeIugwmVp8cIdwABC9YZ8=
+			kR7bC4+wTlZZyi81IhJyf0js+3UEg66SZbWR7VWyMa8=
 			</data>
 		</dict>
 		<key>RegistrationEditionStoryboard.storyboardc/Info.plist</key>
@@ -203,22 +203,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			F0XzJvcD12HNJq5RkK8OS3nN7dw=
+			L1/kHBYbzdXBa1vR0EAh/KGxbak=
 			</data>
 			<key>hash2</key>
 			<data>
-			skxRjVpma/AhWo+o+YaeqUMwdG0cKoErLfWjvSv/s64=
+			2zSVYRlWwZhJ8MFzg9yV1aEuVUp/0SV0Um1C1/XpQ68=
 			</data>
 		</dict>
 		<key>RegistrationEditionStoryboard.storyboardc/f3d-2n-0Ul-view-cP7-v2-cyI.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iq7VOS6Oo9OjJnsRNYrv2FrvMao=
+			fMmeWIIGiz9rJSVmgjLTQSN2p/0=
 			</data>
 			<key>hash2</key>
 			<data>
-			RakhSc7x3rMc55OF+jsYyZjP4gQf9ns54TtpBeFTnIE=
+			iYWOzk3kj6f2Jknz4bhl1ShvxzLzCUcQcvsDLMubGWU=
 			</data>
 		</dict>
 	</dict>

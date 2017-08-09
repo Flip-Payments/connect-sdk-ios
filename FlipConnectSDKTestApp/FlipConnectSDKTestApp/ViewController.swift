@@ -47,10 +47,9 @@ class ViewController: UIViewController {
             }
         } else {
             
-            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.accountKey, let publicToken = UserDefaults.standard.publicToken {
+            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.userKey {
                 print("Token: \(token)")
                 print("Account: \(accountKey)")
-                print("Public Token: \(publicToken)")
                 
                 fcLogin.verifyToken { error in
                     showSuccessController(unlessError: error != nil)

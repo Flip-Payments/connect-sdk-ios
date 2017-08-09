@@ -29,23 +29,23 @@ extension FCApi {
         }
     }
     
-    public static func getUser(publicToken token: String, accountKey key: String, categories: [FCEditCategoriesEnum]? = nil, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
-        let headers: Headers = [
-            "Authorization": "bearer \(token)"
-        ]
-        
-        var err: Error? = nil
-        FCApi.request(toURL: toURL(key, categories), withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
-            let user = UserResponse(json: response)
-            guard error == nil else {
-                err = error
-                completion(user, err)
-                return
-            }
-            
-            completion(user, err)
-        }
-    }
+//    public static func getUser(publicToken token: String, accountKey key: String, categories: [FCEditCategoriesEnum]? = nil, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
+//        let headers: Headers = [
+//            "Authorization": "bearer \(token)"
+//        ]
+//        
+//        var err: Error? = nil
+//        FCApi.request(toURL: toURL(key, categories), withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
+//            let user = UserResponse(json: response)
+//            guard error == nil else {
+//                err = error
+//                completion(user, err)
+//                return
+//            }
+//            
+//            completion(user, err)
+//        }
+//    }
     
     private static func toURL(_ key: String, _ categories: [FCEditCategoriesEnum]? = nil) -> URL {
         var urlString = "\(FCConsts.connectPublicApiHostAddress)public/users/\(key)"

@@ -21,17 +21,14 @@ class AddressesTableViewController: UIViewController, UITableViewDataSource, UIT
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let publicToken = UserDefaults.standard.publicToken, let accountKey = UserDefaults.standard.accountKey else {
-            return
-        }
-        
-        FCApi.getAddresses(publicToken: publicToken, accountKey: accountKey) { addresses, error in
-            self.addresses = addresses
-            DispatchQueue.main.async {
-                self.addresses = addresses
-                self.tableView.reloadData()
-            }
-        }
+       
+//        FCApi.getAddresses(publicToken: publicToken, accountKey: accountKey) { addresses, error in
+//            self.addresses = addresses
+//            DispatchQueue.main.async {
+//                self.addresses = addresses
+//                self.tableView.reloadData()
+//            }
+//        }
     }
     
     override func viewDidLoad() {

@@ -19,16 +19,15 @@ public class FCLogin {
     private init(_ configuration: FCConfiguration) throws {
         UserDefaults.standard.clientID = configuration.clientID
         UserDefaults.standard.clientSecret = configuration.clientSecret
-        UserDefaults.standard.publicToken = configuration.apiToken
         UserDefaults.standard.redirectURI = configuration.redirectURI
         UserDefaults.standard.fingerPrintID = configuration.fingerPrintID
         
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
         
-        if let fingerprintID = configuration.fingerPrintID {
+        if let fingerprintID = configuration.fingerPrintID, let accessToken = UserDefaults.standard.accessToken {
             let uuid = UUID().uuidString
             UserDefaults.standard.fingerPrintSessionID = uuid
-            FingerPrintLibrary.initFingerprint(role: "sandbox", key: fingerprintID, registerId: configuration.apiToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
+            FingerPrintLibrary.initFingerprint(role: "sandbox", key: fingerprintID, registerId: accessToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
             FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
             FingerPrintLibrary.getFingerprint()
         }
@@ -148,7 +147,7 @@ public class FCLogin {
             let isRefreshToken = resp["refreshToken"] as? String
             let isAccountKey = resp["userKey"] as? String
             
-            guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
+            guard let token = isToken, let refreshToken = isRefreshToken, let userKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
                 var message = ""
                 if let or = operationReport {
@@ -164,7 +163,7 @@ public class FCLogin {
             
             UserDefaults.standard.accessToken = token
             UserDefaults.standard.refreshToken = refreshToken
-            UserDefaults.standard.accountKey = accountKey
+            UserDefaults.standard.userKey = userKey
             completion(err)
         }
     }
@@ -191,10 +190,9 @@ public class FCLogin {
             }
             
             let isToken = resp["accessToken"] as? String
-            let isAccessToken = resp["refreshToken"] as? String
             let isAccountKey = resp["userKey"] as? String
             
-            guard let token = isToken, let refreshToken = isAccessToken, let accountKey = isAccountKey else {
+            guard let token = isToken, let userKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
                 var message = ""
                 if let or = operationReport {
@@ -209,52 +207,7 @@ public class FCLogin {
             }
             
             UserDefaults.standard.accessToken = token
-            UserDefaults.standard.refreshToken = refreshToken
-            UserDefaults.standard.accountKey = accountKey
-            completion(err)
-        }
-    }
-    
-    /**
-     Get public token to use with public API
-     
-     - Parameters:
-        - completion: Callback
-        - error: Is not nil when the execution is unsuccessfull
-    */
-    public func publicToken(completion: @escaping (_ error: Error?) -> Void) {
-        var err: Error? = nil
-        
-        guard let clientSecret = UserDefaults.standard.clientSecret,
-            let clientID = UserDefaults.standard.clientID else {
-                err = FCErrors.invalidOperation
-                completion(err)
-                return
-        }
-        
-        FCApi.requestPublicToken(clientID: clientID , clientSecret: clientSecret) { res, err in
-            guard err == nil else {
-                completion(err)
-                return
-            }
-            
-            let isPublicToken = res["accessToken"] as? String
-            
-            guard let publicToken = isPublicToken else {
-                let operationReport = res["operationReport"] as? [JSON]
-                var message = ""
-                if let or = operationReport {
-                    for operation in or {
-                        for item in operation {
-                            message += "\(item.key): \(item.value) "
-                        }
-                    }
-                }
-                completion(FCErrors.requestUnsuccessful(message: message))
-                return
-            }
-            
-            UserDefaults.standard.publicToken = publicToken
+            UserDefaults.standard.userKey = userKey
             completion(err)
         }
     }
@@ -297,7 +250,7 @@ public class FCLogin {
             let isRefreshToken = resp["refreshToken"] as? String
             let isAccountKey = resp["userKey"] as? String
             
-            guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
+            guard let token = isToken, let refreshToken = isRefreshToken, let userKey = isAccountKey else {
                 let operationReport = resp["operationReport"] as? [JSON]
                 var message = ""
                 if let or = operationReport {
@@ -313,7 +266,7 @@ public class FCLogin {
             
             UserDefaults.standard.accessToken = token
             UserDefaults.standard.refreshToken = refreshToken
-            UserDefaults.standard.accountKey = accountKey
+            UserDefaults.standard.userKey = userKey
             completion(err)
         }
     }
