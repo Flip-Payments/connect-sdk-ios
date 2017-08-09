@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         }
         
         if let url = self.url {
-            fcLogin.handleRedirect(fromURL: url) { error in
+            fcLogin.handleRedirect(fromURL: url) { _, error in
                 showSuccessController(unlessError: error != nil)
             }
         } else {

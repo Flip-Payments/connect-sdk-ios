@@ -24,13 +24,17 @@ public class FCLogin {
         
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
         
-        if let fingerprintID = configuration.fingerPrintID, let accessToken = UserDefaults.standard.accessToken {
-            let uuid = UUID().uuidString
-            UserDefaults.standard.fingerPrintSessionID = uuid
-            FingerPrintLibrary.initFingerprint(role: "sandbox", key: fingerprintID, registerId: accessToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
-            FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
-            FingerPrintLibrary.getFingerprint()
+        if let fingerPrintID = configuration.fingerPrintID, let accessToken = UserDefaults.standard.accessToken {
+            self.callFingerPrint(environment: "sandbox", fingerPrintID: fingerPrintID, accessToken: accessToken)
         }
+    }
+    
+    private func callFingerPrint(environment: String, fingerPrintID: String, accessToken: String) {
+        let uuid = UUID().uuidString
+        UserDefaults.standard.fingerPrintSessionID = uuid
+        FingerPrintLibrary.initFingerprint(role: environment, key: fingerPrintID, registerId: accessToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
+        FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
+        FingerPrintLibrary.getFingerprint()
     }
     
     private static var sharedVar: FCLogin?
@@ -218,16 +222,17 @@ public class FCLogin {
      - Parameters:
         - fromURL: URL received from Redirect
         - completion: Callback
+        - tokenResponse: Is not nil when the execution is successfull
         - error: Is not nil when the execution is unsuccessfull
     */
-    public func handleRedirect(fromURL url: URL, completion: @escaping (_ error: Error?) -> Void) {
+    public func handleRedirect(fromURL url: URL, completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
         var err: Error? = nil
         
         do {
             try redirectHandler.handleURI(open: url)
         } catch {
             err = error
-            completion(err)
+            completion(nil, err)
             return
         }
         
@@ -236,38 +241,23 @@ public class FCLogin {
               let clientID = UserDefaults.standard.clientID,
               let redirectURI = UserDefaults.standard.redirectURI else {
             err = FCErrors.invalidOperation
-            completion(err)
+            completion(nil, err)
             return
         }
         
         FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectURI, clientSecret: clientSecret, clientID: clientID) { resp, error in
             guard error == nil else {
-                completion(error)
+                completion(resp, error)
                 return
             }
             
-            let isToken = resp["accessToken"] as? String
-            let isRefreshToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["userKey"] as? String
-            
-            guard let token = isToken, let refreshToken = isRefreshToken, let userKey = isAccountKey else {
-                let operationReport = resp["operationReport"] as? [JSON]
-                var message = ""
-                if let or = operationReport {
-                    for operation in or {
-                        for item in operation {
-                            message += "\(item.key): \(item.value) "
-                        }
-                    }
-                }
-                completion(FCErrors.requestUnsuccessful(message: message))
-                return
+            if resp.success,
+               let fingerPrintID = UserDefaults.standard.fingerPrintID,
+               let accessToken = UserDefaults.standard.accessToken {
+                self.callFingerPrint(environment: "sandbox", fingerPrintID: fingerPrintID, accessToken: accessToken)
             }
             
-            UserDefaults.standard.accessToken = token
-            UserDefaults.standard.refreshToken = refreshToken
-            UserDefaults.standard.userKey = userKey
-            completion(err)
+            completion(resp, err)
         }
     }
 }

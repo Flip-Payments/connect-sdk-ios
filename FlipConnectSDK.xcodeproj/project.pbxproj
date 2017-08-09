@@ -61,6 +61,7 @@
 		A1C4F9391F20F97100DCD3BF /* TableViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */; };
 		A1C4F93C1F21228100DCD3BF /* EmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F93A1F21228100DCD3BF /* EmailCell.swift */; };
 		A1C4F93D1F21228100DCD3BF /* EmailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F93B1F21228100DCD3BF /* EmailCell.xib */; };
+		A1CBEF881F3B97DF00C105EC /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
 		A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0321F02F7420035E955 /* PatchesRequest.swift */; };
@@ -157,6 +158,7 @@
 		A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F93A1F21228100DCD3BF /* EmailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCell.swift; sourceTree = "<group>"; };
 		A1C4F93B1F21228100DCD3BF /* EmailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailCell.xib; sourceTree = "<group>"; };
+		A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenResponse.swift; path = FlipConnectSDK/TokenResponse.swift; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
 		A1DAC0321F02F7420035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchesRequest.swift; path = FlipConnectSDK/PatchesRequest.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 				A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */,
 				A1E3096F1F2A65C6006616BD /* GenericResponse.swift */,
 				A1052D171F2BF1B500EEA361 /* TemporaryProfileResponse.swift */,
+				A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -520,6 +523,7 @@
 				A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */,
 				A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */,
 				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,
+				A1CBEF881F3B97DF00C105EC /* TokenResponse.swift in Sources */,
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
 				A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */,
 				A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 extension FCApi {
-    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, clientSecret secret: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, clientSecret secret: String, clientID id: String, completion: @escaping (_ response: TokenResponse, _ error: Error?) -> Void) {
         let parameters: Parameters = [
             "grant_type": "authorization_code",
             "authorization_code": "\(code)",
@@ -17,19 +17,23 @@ extension FCApi {
             "client_secret": "\(secret)",
             "client_id": "\(id)"
         ]
-        
-        var resp = JSON()
         var err: Error? = nil
         
         FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            let tokenResponse = TokenResponse(json: response)
             guard error == nil else {
                 err = error
-                completion(resp, err)
+                completion(tokenResponse, err)
                 return
             }
-            resp = response
             
-            completion(resp, err)
+            if tokenResponse.success {
+                UserDefaults.standard.accessToken = tokenResponse.accessToken
+                UserDefaults.standard.userKey = tokenResponse.userKey
+                UserDefaults.standard.refreshToken = tokenResponse.refreshToken
+            }
+            
+            completion(tokenResponse, err)
         }
     }
     
