@@ -8,7 +8,7 @@ Veja mais aqui: [FlipConnectSDK Reference](http://cocoadocs.org/docsets/FlipConn
 
 A FlipConnectSDK funciona recebendo **ClientId** e **ClientSecret** para abrir uma página web para logar exatamente como na autenticação do Facebook e do Google. O usuário irá logar no nosso ambiente e, caso seja bem sucedido, o usuário será redirecionado para a aplicação usando a previamente configurada **RedirectURI**.
 
-Quando a aplicação abre, a SDK irá procurar por parâmetros válidos na URI, para que então possa fazer requisições para recuperar o **access token**, o **refresh token** e a **account key**.
+Quando a aplicação abre, a SDK irá procurar por parâmetros válidos na URI, para que então possa fazer requisições para recuperar o **access token**, o **refresh token** e a **user key**.
 
 Com essas informações você será capaz de acessar as informações do usuário!
 
@@ -69,7 +69,6 @@ Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let config = FCConfiguration(
-            apiToken: "AA3AD9FD402E913C51625C494FCB39D1",
             clientID: "5149B5B2-0463-4752-A8A0-C37D639A1FE4",
             clientSecret: "AF3A9D34-978A-483A-9BB0-462DFB82A75A",
             redirectURI: "flipconnect://application",
@@ -287,11 +286,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-Você deverá ser capaz de usar o **Token** e a **AccountKey** se digitar o seguinte:
+Você deverá ser capaz de usar o **Token** e a **UserKey** se digitar o seguinte:
 
 ```swift
 var accessToken: String? = UserDefaults.standard.accessToken
-var accountKey: String? = UserDefaults.standard.accountKey
+var userKey: String? = UserDefaults.standard.userKey
 ```
 
 ### Refresh Token
@@ -310,7 +309,7 @@ do {
 		}
 		print("Tokens Refreshed")
 		print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
-		print("NewAccessKey: \(String(describing: UserDefaults.standard.accountKey))")
+		print("NewAccessKey: \(String(describing: UserDefaults.standard.userKey))")
 	}
 
 } catch {
