@@ -29,7 +29,7 @@ extension FCApi {
         }
     }
     
-//    public static func getUser(publicToken token: String, accountKey key: String, categories: [FCEditCategoriesEnum]? = nil, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
+//    public static func getUser(publicToken token: String, accountKey key: String, categories: [FCCategoriesEnum]? = nil, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
 //        let headers: Headers = [
 //            "Authorization": "bearer \(token)"
 //        ]
@@ -47,7 +47,7 @@ extension FCApi {
 //        }
 //    }
     
-    private static func toURL(_ key: String, _ categories: [FCEditCategoriesEnum]? = nil) -> URL {
+    private static func toURL(_ key: String, _ categories: [FCCategoriesEnum]? = nil) -> URL {
         var urlString = "\(FCConsts.connectPublicApiHostAddress)public/users/\(key)"
         
         if let categories = categories, categories.count > 0 {

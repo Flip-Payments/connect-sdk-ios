@@ -19,7 +19,7 @@ Com essas informações você será capaz de acessar as informações do usuári
 Coloque isto no seu Cartfile:
 
 ```yaml
-github "Flip-Payments/connect-sdk-ios" ~> 0.2
+github "Flip-Payments/connect-sdk-ios" ~> 0.3
 ```
 
 e então rode o seguinte comando:
@@ -36,7 +36,7 @@ Acrescente ao seu  `Podfile`
 ```ruby
 target 'MyApplication' do
   use_frameworks!
-  pod 'FlipConnectSDK', '~> 0.2'
+  pod 'FlipConnectSDK', '~> 0.3'
 end
 ```
 
