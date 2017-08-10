@@ -286,11 +286,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 ```
 
-Você deverá ser capaz de usar o **Token** e a **UserKey** se digitar o seguinte:
+Você deverá ser capaz de usar o `accessToken`, `refreshToken` e a `userKey` se digitar o seguinte:
 
 ```swift
-var accessToken: String? = UserDefaults.standard.accessToken
-var userKey: String? = UserDefaults.standard.userKey
+let accessToken: String? = UserDefaults.standard.accessToken
+let userKey: String? = UserDefaults.standard.userKey
+let refreshToken: String? = UserDefaults.standard.refreshToken
 ```
 
 ### Refresh Token
@@ -299,17 +300,20 @@ Se o token expirar, basta fazer a implemntação que segue. Se algum erro retorn
 
 ```swift
 do {
-	loginFlip = try FCLogin.shared()
+	let fcLogin = try FCLogin.shared()
 
-	loginFlip.refreshToken() { err in
+	fcLogin.refreshToken{ tokenResponse, error in
 		guard err == nil else {
 			print("refresh with no success")
 			print(err!)
 			return
 		}
 		print("Tokens Refreshed")
-		print("NewToken: \(String(describing: UserDefaults.standard.accessToken))")
-		print("NewAccessKey: \(String(describing: UserDefaults.standard.userKey))")
+	        if let tokenResponse = tokenResponse {
+                    print(tokenResponse.accessToken!)
+                    print(tokenResponse.userKey!)
+                    print(tokenResponse.refreshToken!)
+                }
 	}
 
 } catch {
@@ -324,15 +328,18 @@ Se algum erro retornar, será porque o token verificado é inválido
 
 ```swift
 do {
-	loginFlip = try FCLogin.shared()
+	let fcLogin = try FCLogin.shared()
 
-	loginFlip.verifyToken() { err in
+	fcLogin.verifyToken { tokenResponse, error in
 		guard err == nil else {
 			print("no success verifying")
 			print(err!)
 			return
 		}
-		print("Tokens successfully verified")
+		if let tokenResponse = tokenResponse {
+                    print(tokenResponse.accessToken!)
+                    print(tokenResponse.userKey!)
+                }
 	}
 
 } catch {

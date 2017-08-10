@@ -46,19 +46,30 @@ class LoginSuccessViewController: UIViewController {
     */
     
     func refreshToken() {
-        fcLogin.refreshToken{ _, error in
+        fcLogin.refreshToken{ tokenResponse, error in
             guard error == nil else {
                 self.showErrorDialog(error!)
                 return
+            }
+            
+            if let tokenResponse = tokenResponse {
+                print(tokenResponse.accessToken!)
+                print(tokenResponse.userKey!)
+                print(tokenResponse.refreshToken!)
             }
         }
     }
 
     func verifyToken() {
-        fcLogin.verifyToken { _, error in
+        fcLogin.verifyToken { tokenResponse, error in
             guard error == nil else {
                 self.showErrorDialog(error!)
                 return
+            }
+            
+            if let tokenResponse = tokenResponse {
+                print(tokenResponse.accessToken!)
+                print(tokenResponse.userKey!)
             }
         }
     }
