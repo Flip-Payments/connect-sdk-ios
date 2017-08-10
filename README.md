@@ -69,6 +69,7 @@ Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let config = FCConfiguration(
+            environment: .sandbox,
             clientID: "5149B5B2-0463-4752-A8A0-C37D639A1FE4",
             clientSecret: "AF3A9D34-978A-483A-9BB0-462DFB82A75A",
             redirectURI: "flipconnect://application",
