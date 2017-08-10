@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Og6mQwHnzlSIYY5AfSsRlC6sSOQ=
+		XgCirR2TnOHNcIUhG8M5jXEoW7s=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		1ahQFa2J2ZIIeEQusdR55FJlMpM=
+		STBtHw2KNGfQ108u5HluqZQjrg4=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		WqB7X3FzAkfyzJa8DIj0ErcYw/M=
+		JRvhMnqsMZjhXSQphnvH1u/wsGg=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		K8VIMXIaHTsTPgkGDexOhX7HYpE=
+		vfqGnRyMwk3Adpp8QCns3pESKGI=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		1aLNL8sbocjLkAHX3faiLArvFiA=
+		RpSI0WCxwsB9/DbANhbQ5xEiSPU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,44 +65,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1ahQFa2J2ZIIeEQusdR55FJlMpM=
+			STBtHw2KNGfQ108u5HluqZQjrg4=
 			</data>
 			<key>hash2</key>
 			<data>
-			trss23lRCOLQlwRyrJvFIh34c9J1rlzEf4zi8pZL+Tw=
+			3RNjcg/cL3EqIh5oT7dw3jU7UuasG23NbkBJ1kQIIJA=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			WqB7X3FzAkfyzJa8DIj0ErcYw/M=
+			JRvhMnqsMZjhXSQphnvH1u/wsGg=
 			</data>
 			<key>hash2</key>
 			<data>
-			WZdM6wIBuxQTrfa8WTv/HT6WsCAX08sD5sRFzuK2obU=
+			1Q5MS2FFsgIcctErKLP304s2wZjkdFZDtrDGU+rzSrc=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K8VIMXIaHTsTPgkGDexOhX7HYpE=
+			vfqGnRyMwk3Adpp8QCns3pESKGI=
 			</data>
 			<key>hash2</key>
 			<data>
-			bQB4awJ2p3HGeXmRrL54qRGXx9g0CIAzy1ImfenHBjw=
+			Xm4BBQYEBTwQ3pAz+bVFwKpRRO3K+QdBEJQPzxYZloo=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			1aLNL8sbocjLkAHX3faiLArvFiA=
+			RpSI0WCxwsB9/DbANhbQ5xEiSPU=
 			</data>
 			<key>hash2</key>
 			<data>
-			Mz9RFWSSH6YohptfycCLXOkEdbZCpKFu9ASgK/c+C7c=
+			uc1HUwwIZPrjjILeKaYO4kMEUfrYfVFqXl6YDfXXbu8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

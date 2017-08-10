@@ -111,13 +111,13 @@ public class FCLogin {
             
             if let temporaryProfile = self.temporaryProfile {
                 FCApi.createTemporaryProfile(temporaryProfile, clientID: clientID) { response, error in
-                    let url = self.redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID, dataKey: response.dataKey)
+                    let url = self.redirectHandler.mountWebURL(url: URL(string: FCApiUrls.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID, dataKey: response.dataKey)
                     DispatchQueue.main.async {
                         UIApplication.shared.open(url, options: [:], completionHandler: nil)
                     }
                 }
             } else {
-                let url = self.redirectHandler.mountWebURL(url: URL(string: FCConsts.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
+                let url = self.redirectHandler.mountWebURL(url: URL(string: FCApiUrls.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
                 DispatchQueue.main.async {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }

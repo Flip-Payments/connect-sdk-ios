@@ -10,11 +10,22 @@ import Foundation
 
 /// Enum with possible categories in the API
 public enum FCCategoriesEnum: Int {
+    /// Public Profile
     case PublicProfile = 0
+    
+    /// Personal Data
     case PersonalData
+    
+    /// Emails
     case Emails
+    
+    /// Phones
     case Phones
+    
+    /// Addresses
     case Addresses
+    
+    /// Documents
     case Documents
     
     /**

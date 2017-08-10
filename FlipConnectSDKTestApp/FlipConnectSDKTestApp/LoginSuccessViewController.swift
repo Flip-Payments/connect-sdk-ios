@@ -47,7 +47,7 @@ class LoginSuccessViewController: UIViewController {
     
     func refreshToken() {
         fcLogin.refreshToken{ tokenResponse, error in
-            guard error == nil else {
+            guard error == nil, (tokenResponse?.success)! else {
                 self.showErrorDialog(error!)
                 return
             }
@@ -62,7 +62,7 @@ class LoginSuccessViewController: UIViewController {
 
     func verifyToken() {
         fcLogin.verifyToken { tokenResponse, error in
-            guard error == nil else {
+            guard error == nil, (tokenResponse?.success)! else {
                 self.showErrorDialog(error!)
                 return
             }

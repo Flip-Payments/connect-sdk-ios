@@ -10,14 +10,14 @@ import Foundation
 
 public struct Document {
     public private(set) var key: String?
-    public private(set) var documentType: DocumentType?
+    public private(set) var documentType: DocumentTypeEnum?
     public private(set) var documentTypeFriendlyName: String?
     public private(set) var documentNumber: String?
     public private(set) var data: JSON?
     
     init?(json: JSON) {
         guard let key = json["key"] as? String,
-            let type = DocumentType(rawValue: (json["documentType"] as? String)!),
+            let type = DocumentTypeEnum(rawValue: (json["documentType"] as? String)!),
             let typeFriendlyName = json["documentTypeFriendlyName"] as? String,
             let number = json["documentNumber"] as? String
             else {
@@ -33,7 +33,7 @@ public struct Document {
         if isEntityNull() { return nil }
     }
     
-    public init?(documentType: DocumentType? = nil, documentNumber: String? = nil) {
+    public init?(documentType: DocumentTypeEnum? = nil, documentNumber: String? = nil) {
         self.documentType = documentType
         self.documentNumber = documentNumber
         if isEntityNull() { return nil }
@@ -56,11 +56,4 @@ public struct Document {
             "documentNumber": self.documentNumber as Any
         ]
     }
-}
-
-public enum DocumentType: String {
-    case cpf
-    case cnpj
-    case cnh
-    case passport
 }

@@ -69,6 +69,7 @@ Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve
 ```swift
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let config = FCConfiguration(
+            environment: .sandbox,
             clientID: "5149B5B2-0463-4752-A8A0-C37D639A1FE4",
             clientSecret: "AF3A9D34-978A-483A-9BB0-462DFB82A75A",
             redirectURI: "flipconnect://application",
@@ -296,14 +297,14 @@ let refreshToken: String? = UserDefaults.standard.refreshToken
 
 ### Refresh Token
 
-Se o token expirar, basta fazer a implemntação que segue. Se algum erro retornar, é porque a requisição foi mal-sucedida
+Se o token expirar, basta fazer a implementação que segue. Se algum erro retornar ou o sucesso do `tokenResponse` for `false`, é porque a requisição foi mal-sucedida
 
 ```swift
 do {
 	let fcLogin = try FCLogin.shared()
 
 	fcLogin.refreshToken{ tokenResponse, error in
-		guard err == nil else {
+		guard error == nil, tokenResponse?.success else {
 			print("refresh with no success")
 			print(err!)
 			return
@@ -324,14 +325,14 @@ do {
 
 ### Verificar o Token
 
-Se algum erro retornar, será porque o token verificado é inválido
+Se algum erro retornar ou o sucesso do `tokenResponse` for `false`, é porque a requisição foi mal-sucedida e/ou o token verificado é inválido
 
 ```swift
 do {
 	let fcLogin = try FCLogin.shared()
 
 	fcLogin.verifyToken { tokenResponse, error in
-		guard err == nil else {
+		guard error == nil, tokenResponse?.success else {
 			print("no success verifying")
 			print(err!)
 			return

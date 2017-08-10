@@ -13,7 +13,7 @@ public struct Address {
     public private(set) var street: String?
     public private(set) var number: String?
     public private(set) var complement: String?
-    public private(set) var addressType: AddressType?
+    public private(set) var addressType: AddressTypeEnum?
     public private(set) var addressTypeFriendlyName: String?
     public private(set) var district: String?
     public private(set) var city: String?
@@ -27,7 +27,7 @@ public struct Address {
         let street = json["street"] as? String,
         let number = json["number"] as? String,
         let addressTypeString = json["addressType"] as? String,
-        let addressType = AddressType(rawValue: addressTypeString),
+        let addressType = AddressTypeEnum(rawValue: addressTypeString),
         let city = json["city"] as? String,
         let state = json["state"] as? String,
         let zipCode = json["zipCode"] as? String,
@@ -55,7 +55,7 @@ public struct Address {
     public init?(street: String? = nil,
                  number: String? = nil,
                  complement: String? = nil,
-                 addressType: AddressType? = nil,
+                 addressType: AddressTypeEnum? = nil,
                  district: String? = nil,
                  city: String? = nil,
                  state: String? = nil,
@@ -107,11 +107,4 @@ public struct Address {
             "country": self.country as Any
         ]
     }
-}
-
-public enum AddressType: String {
-    case home
-    case work
-    case billing
-    case shipping
 }

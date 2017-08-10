@@ -10,7 +10,7 @@ import Foundation
 
 public struct Phone {
     public private(set) var key: String?
-    public private(set) var phoneType: PhoneType?
+    public private(set) var phoneType: PhoneTypeEnum?
     public private(set) var phoneTypeFriendlyName: String?
     public private(set) var fullNumber: String?
     public private(set) var isValidated: Bool?
@@ -18,7 +18,7 @@ public struct Phone {
     
     init?(json: JSON) {
         guard let key = json["key"] as? String,
-            let phoneType = PhoneType(rawValue: (json["phoneType"] as? String)!),
+            let phoneType = PhoneTypeEnum(rawValue: (json["phoneType"] as? String)!),
             let phoneTypeFriendlyName = json["phoneTypeFriendlyName"] as? String,
             let fullNumber = json["fullNumber"] as? String,
             let isValidated = json["isValidated"] as? Bool,
@@ -37,7 +37,7 @@ public struct Phone {
         if isEntityNull() { return nil }
     }
     
-    public init?(phoneType: PhoneType? = nil,
+    public init?(phoneType: PhoneTypeEnum? = nil,
           fullNumber: String? = nil) {
         self.fullNumber = fullNumber
         self.phoneType = phoneType
@@ -63,10 +63,4 @@ public struct Phone {
             "fullNumber": self.fullNumber as Any
         ]
     }
-}
-
-public enum PhoneType: String {
-    case home
-    case mobile
-    case work
 }

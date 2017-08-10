@@ -38,19 +38,3 @@ extension Response {
         self.operationReport = operationReport
     }
 }
-
-public struct Report {
-    public private(set) var field: String
-    public private(set) var message: String
-    
-    init?(json: JSON) {
-        guard let field = json["field"] as? String,
-        let message = json["message"] as? String
-            else {
-                return nil
-        }
-        
-        self.field = field
-        self.message = message
-    }
-}

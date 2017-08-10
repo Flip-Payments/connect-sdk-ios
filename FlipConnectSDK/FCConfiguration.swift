@@ -20,7 +20,8 @@ public class FCConfiguration {
         - redirectURI: The desired redirect URI (example: some://example)
         - fingerPrintID: Used to send information to antifraud
     **/
-    public init(clientID: String, clientSecret: String, redirectURI: String, fingerPrintID: String? = nil) {
+    public init(environment: FCEnvironmentEnum, clientID: String, clientSecret: String, redirectURI: String, fingerPrintID: String? = nil) {
+        FCConfiguration.environment = environment
         self.fingerPrintID = fingerPrintID
         self.clientID = clientID
         self.clientSecret = clientSecret
@@ -38,4 +39,6 @@ public class FCConfiguration {
     
     /// The desired redirect URI (example: some://example)
     public var redirectURI: String
+    
+    internal static var environment: FCEnvironmentEnum = .sandbox
 }
