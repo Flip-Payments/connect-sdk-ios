@@ -38,6 +38,7 @@
 		A194A2861F3CD0D800BF9161 /* GenderTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194A2851F3CD0D800BF9161 /* GenderTypeEnum.swift */; };
 		A194A2881F3CD17B00BF9161 /* PhoneTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194A2871F3CD17B00BF9161 /* PhoneTypeEnum.swift */; };
 		A194A28A1F3CD5CE00BF9161 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194A2891F3CD5CE00BF9161 /* Report.swift */; };
+		A194A28C1F3CFB0B00BF9161 /* FCEnvironmentEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194A28B1F3CFB0B00BF9161 /* FCEnvironmentEnum.swift */; };
 		A1C4F9341F20F97100DCD3BF /* CollectionViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */; };
 		A1C4F9351F20F97100DCD3BF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F92F1F20F97100DCD3BF /* Info.plist */; };
 		A1C4F9361F20F97100DCD3BF /* NibCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F9301F20F97100DCD3BF /* NibCreatable.swift */; };
@@ -116,6 +117,7 @@
 		A194A2851F3CD0D800BF9161 /* GenderTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderTypeEnum.swift; sourceTree = "<group>"; };
 		A194A2871F3CD17B00BF9161 /* PhoneTypeEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneTypeEnum.swift; sourceTree = "<group>"; };
 		A194A2891F3CD5CE00BF9161 /* Report.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Report.swift; path = FlipConnectSDK/Report.swift; sourceTree = "<group>"; };
+		A194A28B1F3CFB0B00BF9161 /* FCEnvironmentEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCEnvironmentEnum.swift; sourceTree = "<group>"; };
 		A1C4F92E1F20F97100DCD3BF /* CollectionViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F92F1F20F97100DCD3BF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A1C4F9301F20F97100DCD3BF /* NibCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibCreatable.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				A194A2831F3CD03C00BF9161 /* DocumentTypeEnum.swift */,
 				A194A2851F3CD0D800BF9161 /* GenderTypeEnum.swift */,
 				A194A2871F3CD17B00BF9161 /* PhoneTypeEnum.swift */,
+				A194A28B1F3CFB0B00BF9161 /* FCEnvironmentEnum.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				A194A27E1F3CBA4E00BF9161 /* FCCategoriesEnum.swift in Sources */,
 				A1DAC03B1F0300150035E955 /* Email.swift in Sources */,
 				A194A2861F3CD0D800BF9161 /* GenderTypeEnum.swift in Sources */,
+				A194A28C1F3CFB0B00BF9161 /* FCEnvironmentEnum.swift in Sources */,
 				A1783E941F30FBC80066F601 /* FCConfiguration.swift in Sources */,
 				A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */,
 				A1223DEB1F0FD53000755669 /* FCApiUser.swift in Sources */,
