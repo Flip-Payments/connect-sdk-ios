@@ -17,7 +17,7 @@
 		A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */; };
 		A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF71EE7851D00B74705 /* FCErrors.swift */; };
 		A117ACFA1EE7885200B74705 /* FCRedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACF91EE7885200B74705 /* FCRedirectHandler.swift */; };
-		A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACFB1EE7A43A00B74705 /* FCConsts.swift */; };
+		A117ACFC1EE7A43A00B74705 /* FCApiUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117ACFB1EE7A43A00B74705 /* FCApiUrls.swift */; };
 		A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD4C1EE8BC6300B74705 /* FCApi.swift */; };
 		A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */; };
 		A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD501EE9289C00B74705 /* FCLogin.swift */; };
@@ -97,7 +97,7 @@
 		A117ACF51EE783D700B74705 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
 		A117ACF71EE7851D00B74705 /* FCErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCErrors.swift; sourceTree = "<group>"; };
 		A117ACF91EE7885200B74705 /* FCRedirectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCRedirectHandler.swift; sourceTree = "<group>"; };
-		A117ACFB1EE7A43A00B74705 /* FCConsts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCConsts.swift; sourceTree = "<group>"; };
+		A117ACFB1EE7A43A00B74705 /* FCApiUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiUrls.swift; sourceTree = "<group>"; };
 		A117AD4C1EE8BC6300B74705 /* FCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApi.swift; sourceTree = "<group>"; };
 		A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHelper.swift; sourceTree = "<group>"; };
 		A117AD501EE9289C00B74705 /* FCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCLogin.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 				A117ACDF1EE782FE00B74705 /* Info.plist */,
 				A117ACF71EE7851D00B74705 /* FCErrors.swift */,
 				A117ACF91EE7885200B74705 /* FCRedirectHandler.swift */,
-				A117ACFB1EE7A43A00B74705 /* FCConsts.swift */,
+				A117ACFB1EE7A43A00B74705 /* FCApiUrls.swift */,
 				A117AD501EE9289C00B74705 /* FCLogin.swift */,
 				A1E6D5BC1EE9E52400488490 /* FCColors.swift */,
 				A1783E931F30FBC80066F601 /* FCConfiguration.swift */,
@@ -450,7 +450,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14FFA391F1D6EA90011D409 /* NSLocaleExtension.swift in Sources */,
-				A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */,
+				A117ACFC1EE7A43A00B74705 /* FCApiUrls.swift in Sources */,
 				A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */,
 				A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */,
 				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,

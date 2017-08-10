@@ -18,7 +18,7 @@ extension FCApi {
         
         let json = request.toDictionary()
         
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectUserManagementUrl)user/temporaryProfile")!, withVerb: .post, withBody: json) { res, error in
+        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectUserManagementUrl)user/temporaryProfile")!, withVerb: .post, withBody: json) { res, error in
             let temporaryProfileResponse = TemporaryProfileResponse(json: res)
             guard error == nil else {
                 err = error
@@ -48,7 +48,7 @@ extension FCApi {
 //    }
     
     private static func toURL(_ key: String, _ categories: [FCCategoriesEnum]? = nil) -> URL {
-        var urlString = "\(FCConsts.connectPublicApiHostAddress)public/users/\(key)"
+        var urlString = "\(FCApiUrls.connectPublicApiHostAddress)public/users/\(key)"
         
         if let categories = categories, categories.count > 0 {
             urlString.append("?")

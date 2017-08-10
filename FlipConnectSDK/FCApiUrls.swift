@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct FCConsts {
+struct FCApiUrls {
     static let connectWebUrl = "http://flipconnect-signin-staging.herokuapp.com/"
     static let connectApiUrl = "http://dlp-qrservices.cloudapp.net:20112/api/"
     static let connectUserManagementUrl = "http://dlp-qrservices.cloudapp.net:20115/"

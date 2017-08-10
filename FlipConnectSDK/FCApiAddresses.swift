@@ -15,7 +15,7 @@ extension FCApi {
         ]
         
         var err: Error? = nil
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectUserManagementUrl)user/account/addresses")!, withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
+        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectUserManagementUrl)user/account/addresses")!, withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
             let addresses = AddressesResponse(json: response)
             guard error == nil else {
                 err = error
