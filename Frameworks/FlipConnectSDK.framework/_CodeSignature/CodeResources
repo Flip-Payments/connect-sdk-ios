@@ -4,6 +4,10 @@
 <dict>
 	<key>files</key>
 	<dict>
+		<key>FlipConnectSDK</key>
+		<data>
+		6ABqb6NXApCi67+TYX4+PJoHEg8=
+		</data>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<data>
 		1GSit0SEGn71ovXJ9zvn6jtSwmM=
@@ -11,10 +15,6 @@
 		<key>Headers/FlipConnectSDK.h</key>
 		<data>
 		RhDHU245qy0djz4ML6bUCE8ajis=
-		</data>
-		<key>Info.plist</key>
-		<data>
-		XgCirR2TnOHNcIUhG8M5jXEoW7s=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
@@ -39,6 +39,17 @@
 	</dict>
 	<key>files2</key>
 	<dict>
+		<key>FlipConnectSDK</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			6ABqb6NXApCi67+TYX4+PJoHEg8=
+			</data>
+			<key>hash2</key>
+			<data>
+			AHAGhMhGiVey1k2srZC6OHWDPqZfbhlip9rtScu1KK0=
+			</data>
+		</dict>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
