@@ -296,14 +296,14 @@ let refreshToken: String? = UserDefaults.standard.refreshToken
 
 ### Refresh Token
 
-Se o token expirar, basta fazer a implemntação que segue. Se algum erro retornar, é porque a requisição foi mal-sucedida
+Se o token expirar, basta fazer a implementação que segue. Se algum erro retornar ou o sucesso do `tokenResponse` for `false`, é porque a requisição foi mal-sucedida
 
 ```swift
 do {
 	let fcLogin = try FCLogin.shared()
 
 	fcLogin.refreshToken{ tokenResponse, error in
-		guard err == nil else {
+		guard error == nil, tokenResponse?.success else {
 			print("refresh with no success")
 			print(err!)
 			return
@@ -324,14 +324,14 @@ do {
 
 ### Verificar o Token
 
-Se algum erro retornar, será porque o token verificado é inválido
+Se algum erro retornar ou o sucesso do `tokenResponse` for `false`, é porque a requisição foi mal-sucedida e/ou o token verificado é inválido
 
 ```swift
 do {
 	let fcLogin = try FCLogin.shared()
 
 	fcLogin.verifyToken { tokenResponse, error in
-		guard err == nil else {
+		guard error == nil, tokenResponse?.success else {
 			print("no success verifying")
 			print(err!)
 			return
