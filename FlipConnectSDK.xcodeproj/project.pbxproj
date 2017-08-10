@@ -29,15 +29,7 @@
 		A14FFA391F1D6EA90011D409 /* NSLocaleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14FFA381F1D6EA90011D409 /* NSLocaleExtension.swift */; };
 		A15067AB1F0192C300794F73 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067AA1F0192C300794F73 /* Response.swift */; };
 		A15067B31F02C5F400794F73 /* EntitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15067B21F02C5F400794F73 /* EntitiesTests.swift */; };
-		A16D93F21F28D485005228E1 /* BasePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F11F28D485005228E1 /* BasePatchRequest.swift */; };
-		A16D93F61F28D98C005228E1 /* EmailPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F51F28D98C005228E1 /* EmailPatchRequest.swift */; };
-		A16D93F81F28DA43005228E1 /* PhonePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F71F28DA43005228E1 /* PhonePatchRequest.swift */; };
-		A16D93FA1F28DE29005228E1 /* AddressPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F91F28DE29005228E1 /* AddressPatchRequest.swift */; };
-		A16D93FC1F28F81C005228E1 /* DocumentPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93FB1F28F81C005228E1 /* DocumentPatchRequest.swift */; };
 		A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779AB81F18925F0055B80C /* PersonalData.swift */; };
-		A1783C551F26EFBD00AE84EF /* PublicProfilePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */; };
-		A1783C5B1F27C21500AE84EF /* PersonalDataPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */; };
-		A1783C5D1F27C25500AE84EF /* PatchRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */; };
 		A1783C5F1F27CCF700AE84EF /* SerializationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5E1F27CCF700AE84EF /* SerializationHelper.swift */; };
 		A1783E941F30FBC80066F601 /* FCConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783E931F30FBC80066F601 /* FCConfiguration.swift */; };
 		A194A27E1F3CBA4E00BF9161 /* FCCategoriesEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = A194A27D1F3CBA4E00BF9161 /* FCCategoriesEnum.swift */; };
@@ -55,7 +47,6 @@
 		A1CBEF881F3B97DF00C105EC /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
-		A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0321F02F7420035E955 /* PatchesRequest.swift */; };
 		A1DAC0351F02F7580035E955 /* AddressesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0341F02F7580035E955 /* AddressesResponse.swift */; };
 		A1DAC0371F02F76A0035E955 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0361F02F76A0035E955 /* Address.swift */; };
 		A1DAC0391F02F9840035E955 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0381F02F9840035E955 /* Phone.swift */; };
@@ -116,15 +107,7 @@
 		A14FFA381F1D6EA90011D409 /* NSLocaleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLocaleExtension.swift; sourceTree = "<group>"; };
 		A15067AA1F0192C300794F73 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Response.swift; path = FlipConnectSDK/Response.swift; sourceTree = "<group>"; };
 		A15067B21F02C5F400794F73 /* EntitiesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiesTests.swift; sourceTree = "<group>"; };
-		A16D93F11F28D485005228E1 /* BasePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasePatchRequest.swift; path = FlipConnectSDK/BasePatchRequest.swift; sourceTree = "<group>"; };
-		A16D93F51F28D98C005228E1 /* EmailPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmailPatchRequest.swift; path = FlipConnectSDK/EmailPatchRequest.swift; sourceTree = "<group>"; };
-		A16D93F71F28DA43005228E1 /* PhonePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhonePatchRequest.swift; path = FlipConnectSDK/PhonePatchRequest.swift; sourceTree = "<group>"; };
-		A16D93F91F28DE29005228E1 /* AddressPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressPatchRequest.swift; path = FlipConnectSDK/AddressPatchRequest.swift; sourceTree = "<group>"; };
-		A16D93FB1F28F81C005228E1 /* DocumentPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentPatchRequest.swift; path = FlipConnectSDK/DocumentPatchRequest.swift; sourceTree = "<group>"; };
 		A1779AB81F18925F0055B80C /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalData.swift; path = FlipConnectSDK/PersonalData.swift; sourceTree = "<group>"; };
-		A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfilePatchRequest.swift; path = FlipConnectSDK/PublicProfilePatchRequest.swift; sourceTree = "<group>"; };
-		A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalDataPatchRequest.swift; path = FlipConnectSDK/PersonalDataPatchRequest.swift; sourceTree = "<group>"; };
-		A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchRequestProtocol.swift; path = FlipConnectSDK/PatchRequestProtocol.swift; sourceTree = "<group>"; };
 		A1783C5E1F27CCF700AE84EF /* SerializationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SerializationHelper.swift; sourceTree = "<group>"; };
 		A1783E931F30FBC80066F601 /* FCConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCConfiguration.swift; sourceTree = "<group>"; };
 		A194A27D1F3CBA4E00BF9161 /* FCCategoriesEnum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCCategoriesEnum.swift; sourceTree = "<group>"; };
@@ -142,7 +125,6 @@
 		A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenResponse.swift; path = FlipConnectSDK/TokenResponse.swift; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
-		A1DAC0321F02F7420035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchesRequest.swift; path = FlipConnectSDK/PatchesRequest.swift; sourceTree = "<group>"; };
 		A1DAC0341F02F7580035E955 /* AddressesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressesResponse.swift; path = FlipConnectSDK/AddressesResponse.swift; sourceTree = "<group>"; };
 		A1DAC0361F02F76A0035E955 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Address.swift; path = FlipConnectSDK/Address.swift; sourceTree = "<group>"; };
 		A1DAC0381F02F9840035E955 /* Phone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Phone.swift; path = FlipConnectSDK/Phone.swift; sourceTree = "<group>"; };
@@ -328,15 +310,6 @@
 		A1DAC02F1F02F13C0035E955 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				A16D93F11F28D485005228E1 /* BasePatchRequest.swift */,
-				A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */,
-				A1DAC0321F02F7420035E955 /* PatchesRequest.swift */,
-				A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */,
-				A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */,
-				A16D93F51F28D98C005228E1 /* EmailPatchRequest.swift */,
-				A16D93F71F28DA43005228E1 /* PhonePatchRequest.swift */,
-				A16D93F91F28DE29005228E1 /* AddressPatchRequest.swift */,
-				A16D93FB1F28F81C005228E1 /* DocumentPatchRequest.swift */,
 				A1052D151F2BE99D00EEA361 /* TemporaryProfileRequest.swift */,
 			);
 			name = Requests;
@@ -475,7 +448,6 @@
 			files = (
 				A14FFA391F1D6EA90011D409 /* NSLocaleExtension.swift in Sources */,
 				A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */,
-				A16D93F61F28D98C005228E1 /* EmailPatchRequest.swift in Sources */,
 				A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */,
 				A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */,
 				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,
@@ -488,22 +460,16 @@
 				A1E309701F2A65C6006616BD /* GenericResponse.swift in Sources */,
 				A117ACF61EE783D700B74705 /* UserDefaultsExtension.swift in Sources */,
 				A194A2841F3CD03C00BF9161 /* DocumentTypeEnum.swift in Sources */,
-				A16D93FC1F28F81C005228E1 /* DocumentPatchRequest.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
 				A194A2881F3CD17B00BF9161 /* PhoneTypeEnum.swift in Sources */,
-				A1783C5B1F27C21500AE84EF /* PersonalDataPatchRequest.swift in Sources */,
-				A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
-				A16D93F21F28D485005228E1 /* BasePatchRequest.swift in Sources */,
 				A1DAC0391F02F9840035E955 /* Phone.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
 				A14FFA361F1D59A30011D409 /* UIViewControllerExtension.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
-				A16D93F81F28DA43005228E1 /* PhonePatchRequest.swift in Sources */,
 				A1C4F9361F20F97100DCD3BF /* NibCreatable.swift in Sources */,
-				A1783C5D1F27C25500AE84EF /* PatchRequestProtocol.swift in Sources */,
 				A194A28A1F3CD5CE00BF9161 /* Report.swift in Sources */,
 				A194A2821F3CCF7400BF9161 /* AddressTypeEnum.swift in Sources */,
 				A194A27E1F3CBA4E00BF9161 /* FCCategoriesEnum.swift in Sources */,
@@ -519,9 +485,7 @@
 				A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */,
 				A1DAC03D1F0301D50035E955 /* Document.swift in Sources */,
 				A1223DE71F0D71D700755669 /* User.swift in Sources */,
-				A1783C551F26EFBD00AE84EF /* PublicProfilePatchRequest.swift in Sources */,
 				A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */,
-				A16D93FA1F28DE29005228E1 /* AddressPatchRequest.swift in Sources */,
 				A1052D161F2BE99E00EEA361 /* TemporaryProfileRequest.swift in Sources */,
 				A1783C5F1F27CCF700AE84EF /* SerializationHelper.swift in Sources */,
 				A1C4F9381F20F97100DCD3BF /* Reusable.swift in Sources */,
