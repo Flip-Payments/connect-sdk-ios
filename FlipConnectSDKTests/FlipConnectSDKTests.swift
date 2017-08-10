@@ -61,12 +61,12 @@ class FlipConnectSDKTests: XCTestCase {
             let redirectHandler = try FCRedirectHandler(bundle: bundle.infoDictionary)
             
             let testRedirectUri = "testing://test"
-            let urlRequest = URL(string: FCConsts.connectWebUrl)!
+            let urlRequest = URL(string: FCApiUrls.connectWebUrl)!
             let clientID = UUID().uuidString
 
             let url = redirectHandler.mountWebURL(url: urlRequest, withRedirectUri: testRedirectUri, andID: clientID)
             
-            let expected = "\(FCConsts.connectWebUrl)?client_id=\(clientID)&redirect_uri=\(testRedirectUri)&state=\(UserDefaults.standard.state!)&response_type=code"
+            let expected = "\(FCApiUrls.connectWebUrl)?client_id=\(clientID)&redirect_uri=\(testRedirectUri)&state=\(UserDefaults.standard.state!)&response_type=code"
             
             XCTAssertTrue(expected == url.absoluteString)
         } catch {
@@ -84,7 +84,7 @@ class FlipConnectSDKTests: XCTestCase {
         
         let requestExpectation = expectation(description: "Make successful API Call")
         
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
             XCTAssertTrue(response.count > 0)
             XCTAssertNil(error)
             requestExpectation.fulfill()
