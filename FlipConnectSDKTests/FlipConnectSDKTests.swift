@@ -100,5 +100,5 @@ class FlipConnectSDKTests: XCTestCase {
         
         let isBrazil = locales.contains(where: { $0.countryName == "Brazil" })
         XCTAssertTrue(isBrazil)
-    }    
+    }
 }
