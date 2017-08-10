@@ -9,7 +9,7 @@
 import Foundation
 
 extension FCApi {
-    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, clientSecret secret: String, clientID id: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+    static func requestAccessToken(authorizationCode code: String, redirectUri uri: String, clientSecret secret: String, clientID id: String, completion: @escaping (_ response: TokenResponse, _ error: Error?) -> Void) {
         let parameters: Parameters = [
             "grant_type": "authorization_code",
             "authorization_code": "\(code)",
@@ -17,23 +17,27 @@ extension FCApi {
             "client_secret": "\(secret)",
             "client_id": "\(id)"
         ]
-        
-        var resp = JSON()
         var err: Error? = nil
         
         FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            let resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
                 completion(resp, err)
                 return
             }
-            resp = response
+            
+            if resp.success {
+                UserDefaults.standard.accessToken = resp.accessToken
+                UserDefaults.standard.userKey = resp.userKey
+                UserDefaults.standard.refreshToken = resp.refreshToken
+            }
             
             completion(resp, err)
         }
     }
     
-    static func requestNewToken(refreshToken token: String, clientID id: String, clientSecret secret: String, redirectURI uri: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+    static func requestNewToken(refreshToken token: String, clientID id: String, clientSecret secret: String, redirectURI uri: String, completion: @escaping (_ response: TokenResponse, _ error: Error?) -> Void) {
         let parameters: Parameters = [
             "grant_type": "refresh_token",
             "refresh_token": "\(token)",
@@ -42,20 +46,24 @@ extension FCApi {
             "redirect_uri": "\(uri)"
         ]
         
-        var resp = JSON()
         var err: Error? = nil
         
         FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            let resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
                 return
             }
-            resp = response
+            if resp.success {
+                UserDefaults.standard.accessToken = resp.accessToken
+                UserDefaults.standard.userKey = resp.userKey
+                UserDefaults.standard.refreshToken = resp.refreshToken
+            }
             completion(resp, err)
         }
     }
     
-    static func requestVerifyToken(accessToken token: String, clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
+    static func requestVerifyToken(accessToken token: String, clientID id: String, clientSecret secret: String, completion: @escaping (_ response: TokenResponse, _ error: Error?) -> Void) {
         let parameters: Parameters = [
             "grant_type": "verify_token",
             "access_token": "\(token)",
@@ -63,35 +71,18 @@ extension FCApi {
             "client_secret": "\(secret)"
         ]
         
-        var resp = JSON()
         var err: Error? = nil
         
         FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            let resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
                 return
             }
-            resp = response
-            completion(resp, err)
-        }
-    }
-    
-    static func requestPublicToken(clientID id: String, clientSecret secret: String, completion: @escaping (_ response: JSON, _ error: Error?) -> Void) {
-        let parameters: Parameters = [
-            "grant_type": "client_credentials",
-            "client_id": "\(id)",
-            "client_secret": "\(secret)"
-        ]
-        
-        var resp = JSON()
-        var err: Error? = nil
-        
-        FCApi.request(toURL: URL(string: "\(FCConsts.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
-            guard error == nil else {
-                err = error
-                return
+            if resp.success {
+                UserDefaults.standard.accessToken = resp.accessToken
+                UserDefaults.standard.userKey = resp.userKey
             }
-            resp = response
             completion(resp, err)
         }
     }

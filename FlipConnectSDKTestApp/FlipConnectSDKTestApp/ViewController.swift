@@ -42,17 +42,16 @@ class ViewController: UIViewController {
         }
         
         if let url = self.url {
-            fcLogin.handleRedirect(fromURL: url) { error in
+            fcLogin.handleRedirect(fromURL: url) { _, error in
                 showSuccessController(unlessError: error != nil)
             }
         } else {
             
-            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.accountKey, let publicToken = UserDefaults.standard.publicToken {
+            if let token = UserDefaults.standard.accessToken, let accountKey = UserDefaults.standard.userKey {
                 print("Token: \(token)")
                 print("Account: \(accountKey)")
-                print("Public Token: \(publicToken)")
                 
-                fcLogin.verifyToken { error in
+                fcLogin.verifyToken { _, error in
                     showSuccessController(unlessError: error != nil)
                 }
             } else {

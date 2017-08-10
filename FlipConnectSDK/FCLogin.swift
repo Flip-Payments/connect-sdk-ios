@@ -19,19 +19,22 @@ public class FCLogin {
     private init(_ configuration: FCConfiguration) throws {
         UserDefaults.standard.clientID = configuration.clientID
         UserDefaults.standard.clientSecret = configuration.clientSecret
-        UserDefaults.standard.publicToken = configuration.apiToken
         UserDefaults.standard.redirectURI = configuration.redirectURI
         UserDefaults.standard.fingerPrintID = configuration.fingerPrintID
         
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
         
-        if let fingerprintID = configuration.fingerPrintID {
-            let uuid = UUID().uuidString
-            UserDefaults.standard.fingerPrintSessionID = uuid
-            FingerPrintLibrary.initFingerprint(role: "sandbox", key: fingerprintID, registerId: configuration.apiToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
-            FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
-            FingerPrintLibrary.getFingerprint()
+        if let fingerPrintID = configuration.fingerPrintID, let accessToken = UserDefaults.standard.accessToken {
+            self.callFingerPrint(environment: "sandbox", fingerPrintID: fingerPrintID, accessToken: accessToken)
         }
+    }
+    
+    private func callFingerPrint(environment: String, fingerPrintID: String, accessToken: String) {
+        let uuid = UUID().uuidString
+        UserDefaults.standard.fingerPrintSessionID = uuid
+        FingerPrintLibrary.initFingerprint(role: environment, key: fingerPrintID, registerId: accessToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
+        FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
+        FingerPrintLibrary.getFingerprint()
     }
     
     private static var sharedVar: FCLogin?
@@ -122,11 +125,15 @@ public class FCLogin {
         }
     }
     
-    /// Refreshes token to access the API
-    ///
-    /// - Parameters:
-    ///    - completion: error received from callback
-    public func refreshToken(completion: @escaping (_ error: Error?) -> Void) {
+    /**
+     Refreshes token to access the API
+    
+     - Parameters:
+        - completion: error received from callback
+        - tokenResponse: Is not nil when the execution is successfull
+        - error: Is not nil when the execution is unsuccessfull
+    */
+    public func refreshToken(completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
         var err: Error? = nil
         
         guard let refreshToken = UserDefaults.standard.refreshToken,
@@ -134,128 +141,46 @@ public class FCLogin {
             let clientID = UserDefaults.standard.clientID,
             let redirectURI = UserDefaults.standard.redirectURI else {
                 err = FCErrors.invalidOperation
-                completion(err)
+                completion(nil, err)
                 return
         }
         
         FCApi.requestNewToken(refreshToken: refreshToken, clientID: clientID, clientSecret: clientSecret, redirectURI: redirectURI) { resp, error in
             guard error == nil else {
-                completion(error)
+                completion(nil, error)
                 return
             }
-            
-            let isToken = resp["accessToken"] as? String
-            let isRefreshToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["userKey"] as? String
-            
-            guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
-                let operationReport = resp["operationReport"] as? [JSON]
-                var message = ""
-                if let or = operationReport {
-                    for operation in or {
-                        for item in operation {
-                            message += "\(item.key): \(item.value) "
-                        }
-                    }
-                }
-                completion(FCErrors.requestUnsuccessful(message: message))
-                return
-            }
-            
-            UserDefaults.standard.accessToken = token
-            UserDefaults.standard.refreshToken = refreshToken
-            UserDefaults.standard.accountKey = accountKey
-            completion(err)
+        
+            completion(resp, err)
         }
     }
     
-    /// Verify if the token is valid
-    ///
-    /// - Parameters:
-    ///    - completion: error received from callback
-    public func verifyToken(completion: @escaping (_ error: Error?) -> Void) {
+    /**
+     Verify if the token is valid
+    
+     - Parameters:
+        - completion: Callback
+        - tokenResponse: Is not nil when the execution is successfull
+        - error: Is not nil when the execution is unsuccessfull
+    */
+    public func verifyToken(completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
         var err: Error? = nil
         
         guard let accessToken = UserDefaults.standard.accessToken,
             let clientSecret = UserDefaults.standard.clientSecret,
             let clientID = UserDefaults.standard.clientID else {
                 err = FCErrors.invalidOperation
-                completion(err)
+                completion(nil, err)
                 return
         }
         
         FCApi.requestVerifyToken(accessToken: accessToken, clientID: clientID, clientSecret: clientSecret) { resp, error in
             guard error == nil else {
-                completion(error)
+                completion(nil, error)
                 return
             }
             
-            let isToken = resp["accessToken"] as? String
-            let isAccessToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["userKey"] as? String
-            
-            guard let token = isToken, let refreshToken = isAccessToken, let accountKey = isAccountKey else {
-                let operationReport = resp["operationReport"] as? [JSON]
-                var message = ""
-                if let or = operationReport {
-                    for operation in or {
-                        for item in operation {
-                            message += "\(item.key): \(item.value) "
-                        }
-                    }
-                }
-                completion(FCErrors.requestUnsuccessful(message: message))
-                return
-            }
-            
-            UserDefaults.standard.accessToken = token
-            UserDefaults.standard.refreshToken = refreshToken
-            UserDefaults.standard.accountKey = accountKey
-            completion(err)
-        }
-    }
-    
-    /**
-     Get public token to use with public API
-     
-     - Parameters:
-        - completion: Callback
-        - error: Is not nil when the execution is unsuccessfull
-    */
-    public func publicToken(completion: @escaping (_ error: Error?) -> Void) {
-        var err: Error? = nil
-        
-        guard let clientSecret = UserDefaults.standard.clientSecret,
-            let clientID = UserDefaults.standard.clientID else {
-                err = FCErrors.invalidOperation
-                completion(err)
-                return
-        }
-        
-        FCApi.requestPublicToken(clientID: clientID , clientSecret: clientSecret) { res, err in
-            guard err == nil else {
-                completion(err)
-                return
-            }
-            
-            let isPublicToken = res["accessToken"] as? String
-            
-            guard let publicToken = isPublicToken else {
-                let operationReport = res["operationReport"] as? [JSON]
-                var message = ""
-                if let or = operationReport {
-                    for operation in or {
-                        for item in operation {
-                            message += "\(item.key): \(item.value) "
-                        }
-                    }
-                }
-                completion(FCErrors.requestUnsuccessful(message: message))
-                return
-            }
-            
-            UserDefaults.standard.publicToken = publicToken
-            completion(err)
+            completion(resp, err)
         }
     }
     
@@ -265,16 +190,17 @@ public class FCLogin {
      - Parameters:
         - fromURL: URL received from Redirect
         - completion: Callback
+        - tokenResponse: Is not nil when the execution is successfull
         - error: Is not nil when the execution is unsuccessfull
     */
-    public func handleRedirect(fromURL url: URL, completion: @escaping (_ error: Error?) -> Void) {
+    public func handleRedirect(fromURL url: URL, completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
         var err: Error? = nil
         
         do {
             try redirectHandler.handleURI(open: url)
         } catch {
             err = error
-            completion(err)
+            completion(nil, err)
             return
         }
         
@@ -283,38 +209,23 @@ public class FCLogin {
               let clientID = UserDefaults.standard.clientID,
               let redirectURI = UserDefaults.standard.redirectURI else {
             err = FCErrors.invalidOperation
-            completion(err)
+            completion(nil, err)
             return
         }
         
         FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectURI, clientSecret: clientSecret, clientID: clientID) { resp, error in
             guard error == nil else {
-                completion(error)
+                completion(resp, error)
                 return
             }
             
-            let isToken = resp["accessToken"] as? String
-            let isRefreshToken = resp["refreshToken"] as? String
-            let isAccountKey = resp["userKey"] as? String
-            
-            guard let token = isToken, let refreshToken = isRefreshToken, let accountKey = isAccountKey else {
-                let operationReport = resp["operationReport"] as? [JSON]
-                var message = ""
-                if let or = operationReport {
-                    for operation in or {
-                        for item in operation {
-                            message += "\(item.key): \(item.value) "
-                        }
-                    }
-                }
-                completion(FCErrors.requestUnsuccessful(message: message))
-                return
+            if resp.success,
+               let fingerPrintID = UserDefaults.standard.fingerPrintID,
+               let accessToken = UserDefaults.standard.accessToken {
+                self.callFingerPrint(environment: "sandbox", fingerPrintID: fingerPrintID, accessToken: accessToken)
             }
             
-            UserDefaults.standard.accessToken = token
-            UserDefaults.standard.refreshToken = refreshToken
-            UserDefaults.standard.accountKey = accountKey
-            completion(err)
+            completion(resp, err)
         }
     }
 }

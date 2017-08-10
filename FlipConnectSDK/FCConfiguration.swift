@@ -20,9 +20,8 @@ public class FCConfiguration {
         - redirectURI: The desired redirect URI (example: some://example)
         - fingerPrintID: Used to send information to antifraud
     **/
-    public init(apiToken: String, clientID: String, clientSecret: String, redirectURI: String, fingerPrintID: String? = nil) {
+    public init(clientID: String, clientSecret: String, redirectURI: String, fingerPrintID: String? = nil) {
         self.fingerPrintID = fingerPrintID
-        self.apiToken = apiToken
         self.clientID = clientID
         self.clientSecret = clientSecret
         self.redirectURI = redirectURI
@@ -30,9 +29,6 @@ public class FCConfiguration {
     
     /// Used to send information to antifraud
     public var fingerPrintID: String?
-    
-    /// Token received to use API
-    public var apiToken: String
     
     /// Your ClientID
     public var clientID: String

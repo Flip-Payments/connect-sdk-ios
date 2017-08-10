@@ -21,7 +21,6 @@
 		A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD4C1EE8BC6300B74705 /* FCApi.swift */; };
 		A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */; };
 		A117AD511EE9289C00B74705 /* FCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD501EE9289C00B74705 /* FCLogin.swift */; };
-		A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A117AD521EE936AB00B74705 /* PlistHelper.swift */; };
 		A120FC7E1F37A2BC009B7CD6 /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C8021F361E77001358BE /* FingerPrint_iOS.framework */; };
 		A1223DE71F0D71D700755669 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE61F0D71D700755669 /* User.swift */; };
 		A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1223DE81F0D729D00755669 /* PublicProfile.swift */; };
@@ -62,6 +61,7 @@
 		A1C4F9391F20F97100DCD3BF /* TableViewReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */; };
 		A1C4F93C1F21228100DCD3BF /* EmailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C4F93A1F21228100DCD3BF /* EmailCell.swift */; };
 		A1C4F93D1F21228100DCD3BF /* EmailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1C4F93B1F21228100DCD3BF /* EmailCell.xib */; };
+		A1CBEF881F3B97DF00C105EC /* TokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */; };
 		A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02B1F02D7520035E955 /* FCApiToken.swift */; };
 		A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */; };
 		A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DAC0321F02F7420035E955 /* PatchesRequest.swift */; };
@@ -119,7 +119,6 @@
 		A117AD4C1EE8BC6300B74705 /* FCApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApi.swift; sourceTree = "<group>"; };
 		A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHelper.swift; sourceTree = "<group>"; };
 		A117AD501EE9289C00B74705 /* FCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCLogin.swift; sourceTree = "<group>"; };
-		A117AD521EE936AB00B74705 /* PlistHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		A1223DE61F0D71D700755669 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = FlipConnectSDK/User.swift; sourceTree = "<group>"; };
 		A1223DE81F0D729D00755669 /* PublicProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfile.swift; path = FlipConnectSDK/PublicProfile.swift; sourceTree = "<group>"; };
 		A1223DEA1F0FD53000755669 /* FCApiUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiUser.swift; sourceTree = "<group>"; };
@@ -159,6 +158,7 @@
 		A1C4F9331F20F97100DCD3BF /* TableViewReusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewReusable.swift; sourceTree = "<group>"; };
 		A1C4F93A1F21228100DCD3BF /* EmailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailCell.swift; sourceTree = "<group>"; };
 		A1C4F93B1F21228100DCD3BF /* EmailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmailCell.xib; sourceTree = "<group>"; };
+		A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TokenResponse.swift; path = FlipConnectSDK/TokenResponse.swift; sourceTree = "<group>"; };
 		A1DAC02B1F02D7520035E955 /* FCApiToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiToken.swift; sourceTree = "<group>"; };
 		A1DAC02D1F02D7B80035E955 /* FCApiAddresses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FCApiAddresses.swift; sourceTree = "<group>"; };
 		A1DAC0321F02F7420035E955 /* PatchesRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchesRequest.swift; path = FlipConnectSDK/PatchesRequest.swift; sourceTree = "<group>"; };
@@ -264,7 +264,6 @@
 			isa = PBXGroup;
 			children = (
 				A1783C5E1F27CCF700AE84EF /* SerializationHelper.swift */,
-				A117AD521EE936AB00B74705 /* PlistHelper.swift */,
 				A117AD4E1EE8D46900B74705 /* HTTPHelper.swift */,
 			);
 			name = Helpers;
@@ -325,6 +324,7 @@
 				A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */,
 				A1E3096F1F2A65C6006616BD /* GenericResponse.swift */,
 				A1052D171F2BF1B500EEA361 /* TemporaryProfileResponse.swift */,
+				A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -517,13 +517,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A14FFA391F1D6EA90011D409 /* NSLocaleExtension.swift in Sources */,
-				A117AD531EE936AB00B74705 /* PlistHelper.swift in Sources */,
 				A117ACFC1EE7A43A00B74705 /* FCConsts.swift in Sources */,
 				A16D93F61F28D98C005228E1 /* EmailPatchRequest.swift in Sources */,
 				A15067A91EFDAA6B00794F73 /* RegistrationEditionViewController.swift in Sources */,
 				A1DCC6971F0C50610072D964 /* DocumentsResponse.swift in Sources */,
 				A1052D141F2BB71100EEA361 /* Vehicle.swift in Sources */,
 				A1DAC02E1F02D7B80035E955 /* FCApiAddresses.swift in Sources */,
+				A1CBEF881F3B97DF00C105EC /* TokenResponse.swift in Sources */,
 				A117AD4D1EE8BC6300B74705 /* FCApi.swift in Sources */,
 				A1223DE91F0D729D00755669 /* PublicProfile.swift in Sources */,
 				A1DCC6991F0C55670072D964 /* FCApiDocuments.swift in Sources */,
