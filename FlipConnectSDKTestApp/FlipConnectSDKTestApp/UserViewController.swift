@@ -14,11 +14,7 @@ class UserViewController: UIViewController {
     @IBOutlet weak var emailAddress: UILabel!
     
     @IBAction func editAction(_ sender: Any) {
-        let categories: [FCEditCategoriesEnum] = [.Emails, .PublicProfile, .PersonalData, .Phones]
         
-        FCEditUser.loadView(categories: categories) { viewController in
-            self.present(viewController, animated: true, completion: nil)
-        }
     }
     
     @IBAction func backButton(_ sender: UIBarButtonItem) {
