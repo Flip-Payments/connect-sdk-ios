@@ -125,18 +125,6 @@ class EntitiesTests: XCTestCase {
         XCTAssertTrue(user.success)
     }
     
-    func testJSONtoAccountResponseConversion() {
-        let accountJSON = "{\"account\":{\"accountKey\":\"83159889-b4a5-48ca-bb01-6ebaf3418bb1\",\"isEnabled\":true,\"isNewsLetterAllowed\":false,\"publicProfile\":{\"name\":\"Ganondorf Dragmire\",\"pictureUrl\":null},\"personalData\":{\"birthdate\":\"1985-05-15\",\"genderType\":\"masculine\",\"genderTypeFriendlyName\":\"Masculino\",\"dependentCount\":0,\"country\":null},\"emails\":[{\"key\":\"8e6fc241-2f5c-e711-80c2-0003ff345086\",\"address\":\"ipiranga@mailinator.com\",\"isValidated\":true,\"isPrimary\":false}],\"phones\":[{\"key\":\"466dc241-2f5c-e711-80c2-0003ff345086\",\"phoneType\":\"mobile\",\"phoneTypeFriendlyName\":\"Celular\",\"fullNumber\":\"+5521999999999\",\"isValidated\":false,\"isPrimary\":false}]},\"success\":true,\"operationReport\":[]}"
-        
-        let data = accountJSON.data(using: String.Encoding.utf8)!
-        let json = try! JSONSerialization.jsonObject(with: data, options: []) as! JSON
-        
-        let account = AccountResponse(json: json)
-        
-        XCTAssert(account.account?.accountKey == "83159889-b4a5-48ca-bb01-6ebaf3418bb1")
-        XCTAssertTrue(account.success)
-    }
-    
     func testPatchesToJSONConversion() {
         let patches = Patches()
         patches.publicProfile = PublicProfilePatchRequest()
