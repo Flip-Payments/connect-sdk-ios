@@ -10,7 +10,7 @@ import Foundation
 
 public struct PersonalData {
     public private(set) var birthdate: Date? = nil
-    public private(set) var genderType: GenderType? = nil
+    public private(set) var genderType: GenderTypeEnum? = nil
     public private(set) var genderTypeFriendlyName: String? = nil
     public private(set) var country: String? = nil
     public private(set) var dependentCount: Int? = nil
@@ -25,7 +25,7 @@ public struct PersonalData {
         self.genderTypeFriendlyName = json["genderTypeFriendlyName"] as? String
         self.dependentCount = json["dependentCount"] as? Int
         if let genderType = json["genderType"] as? String {
-            self.genderType = GenderType(rawValue: genderType)
+            self.genderType = GenderTypeEnum(rawValue: genderType)
         }
         if let birthdate = json["birthdate"] as? String {
             let date = dateFormatter.date(from: birthdate)
@@ -36,7 +36,7 @@ public struct PersonalData {
     }
     
     public init?(birthdate: Date? = nil,
-         genderType: GenderType? = nil,
+         genderType: GenderTypeEnum? = nil,
          country: String? = nil,
          dependentCount: Int? = nil) {
         
@@ -87,10 +87,4 @@ public struct PersonalData {
             "country": self.country as Any
         ]
     }
-}
-
-public enum GenderType: String {
-    case masculine
-    case feminine
-    case unmentioned
 }
