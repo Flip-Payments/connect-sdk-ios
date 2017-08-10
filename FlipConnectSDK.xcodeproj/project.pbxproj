@@ -35,8 +35,6 @@
 		A16D93FA1F28DE29005228E1 /* AddressPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93F91F28DE29005228E1 /* AddressPatchRequest.swift */; };
 		A16D93FC1F28F81C005228E1 /* DocumentPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16D93FB1F28F81C005228E1 /* DocumentPatchRequest.swift */; };
 		A1779AB91F18925F0055B80C /* PersonalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1779AB81F18925F0055B80C /* PersonalData.swift */; };
-		A1783C4F1F26CC7C00AE84EF /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */; };
-		A1783C511F26CE2B00AE84EF /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C501F26CE2B00AE84EF /* Account.swift */; };
 		A1783C551F26EFBD00AE84EF /* PublicProfilePatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */; };
 		A1783C5B1F27C21500AE84EF /* PersonalDataPatchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */; };
 		A1783C5D1F27C25500AE84EF /* PatchRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */; };
@@ -119,8 +117,6 @@
 		A16D93F91F28DE29005228E1 /* AddressPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddressPatchRequest.swift; path = FlipConnectSDK/AddressPatchRequest.swift; sourceTree = "<group>"; };
 		A16D93FB1F28F81C005228E1 /* DocumentPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DocumentPatchRequest.swift; path = FlipConnectSDK/DocumentPatchRequest.swift; sourceTree = "<group>"; };
 		A1779AB81F18925F0055B80C /* PersonalData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalData.swift; path = FlipConnectSDK/PersonalData.swift; sourceTree = "<group>"; };
-		A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountResponse.swift; path = FlipConnectSDK/AccountResponse.swift; sourceTree = "<group>"; };
-		A1783C501F26CE2B00AE84EF /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Account.swift; path = FlipConnectSDK/Account.swift; sourceTree = "<group>"; };
 		A1783C541F26EFBD00AE84EF /* PublicProfilePatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PublicProfilePatchRequest.swift; path = FlipConnectSDK/PublicProfilePatchRequest.swift; sourceTree = "<group>"; };
 		A1783C5A1F27C21500AE84EF /* PersonalDataPatchRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalDataPatchRequest.swift; path = FlipConnectSDK/PersonalDataPatchRequest.swift; sourceTree = "<group>"; };
 		A1783C5C1F27C25500AE84EF /* PatchRequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatchRequestProtocol.swift; path = FlipConnectSDK/PatchRequestProtocol.swift; sourceTree = "<group>"; };
@@ -252,7 +248,6 @@
 				A1DAC03C1F0301D50035E955 /* Document.swift */,
 				A1223DE81F0D729D00755669 /* PublicProfile.swift */,
 				A1779AB81F18925F0055B80C /* PersonalData.swift */,
-				A1783C501F26CE2B00AE84EF /* Account.swift */,
 				A1052D131F2BB71100EEA361 /* Vehicle.swift */,
 				A1052D191F2C126B00EEA361 /* TemporaryProfile.swift */,
 			);
@@ -267,7 +262,6 @@
 				A1DAC0341F02F7580035E955 /* AddressesResponse.swift */,
 				A15067AA1F0192C300794F73 /* Response.swift */,
 				A1DCC69A1F0ED6F90072D964 /* UserResponse.swift */,
-				A1783C4E1F26CC7C00AE84EF /* AccountResponse.swift */,
 				A1E3096F1F2A65C6006616BD /* GenericResponse.swift */,
 				A1052D171F2BF1B500EEA361 /* TemporaryProfileResponse.swift */,
 				A1CBEF871F3B97DF00C105EC /* TokenResponse.swift */,
@@ -473,7 +467,6 @@
 				A16D93FC1F28F81C005228E1 /* DocumentPatchRequest.swift in Sources */,
 				A117AD4F1EE8D46900B74705 /* HTTPHelper.swift in Sources */,
 				A1783C5B1F27C21500AE84EF /* PersonalDataPatchRequest.swift in Sources */,
-				A1783C511F26CE2B00AE84EF /* Account.swift in Sources */,
 				A1DAC0331F02F7420035E955 /* PatchesRequest.swift in Sources */,
 				A117ACF81EE7851D00B74705 /* FCErrors.swift in Sources */,
 				A15067AB1F0192C300794F73 /* Response.swift in Sources */,
@@ -481,7 +474,6 @@
 				A1DAC0391F02F9840035E955 /* Phone.swift in Sources */,
 				A1E6D5BD1EE9E52400488490 /* FCColors.swift in Sources */,
 				A1DAC0371F02F76A0035E955 /* Address.swift in Sources */,
-				A1783C4F1F26CC7C00AE84EF /* AccountResponse.swift in Sources */,
 				A14FFA361F1D59A30011D409 /* UIViewControllerExtension.swift in Sources */,
 				A1DAC02C1F02D7520035E955 /* FCApiToken.swift in Sources */,
 				A16D93F81F28DA43005228E1 /* PhonePatchRequest.swift in Sources */,
