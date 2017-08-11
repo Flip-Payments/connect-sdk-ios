@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>FlipConnectSDK</key>
-		<data>
-		X0vFkZfBvcd6KZOShmx6aXCyDic=
-		</data>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<data>
 		1GSit0SEGn71ovXJ9zvn6jtSwmM=
@@ -16,21 +12,25 @@
 		<data>
 		RhDHU245qy0djz4ML6bUCE8ajis=
 		</data>
+		<key>Info.plist</key>
+		<data>
+		kOo4V44pOzAlXEcIa0R6gJL1bEg=
+		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		LxwPP2YIWEbUULtpPo4PEN7DVo8=
+		ZpvgWAImQN55zgeJNNAieHfMcUA=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		2s8xZhHQGoAkCAkevNuKvD2RAV8=
+		wzk3RAyn3F3jBNgbi31C/ZQy+Pw=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		o6a7ljIIsgiVzPxQFgMKI0k82h4=
+		cnR9bhOEtculNbDzYwjeDYT1eg4=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		0yAwsIh9o4xWd5qgb7sb+u041YM=
+		u2T6mqnf3Q7j3KLUsNPpYWOMOww=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -39,17 +39,6 @@
 	</dict>
 	<key>files2</key>
 	<dict>
-		<key>FlipConnectSDK</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			X0vFkZfBvcd6KZOShmx6aXCyDic=
-			</data>
-			<key>hash2</key>
-			<data>
-			bTCQe4ndc+Vpvrwd74Hafv3oSG8R4NqZxdXV+nJ6vPE=
-			</data>
-		</dict>
 		<key>Headers/FlipConnectSDK-Swift.h</key>
 		<dict>
 			<key>hash</key>
@@ -76,44 +65,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LxwPP2YIWEbUULtpPo4PEN7DVo8=
+			ZpvgWAImQN55zgeJNNAieHfMcUA=
 			</data>
 			<key>hash2</key>
 			<data>
-			wDxS2SYsfu3hVW8Ru6SGaArp4d0bknKSpS0uhO86Jhw=
+			ClvdiwslpwJMvl7HTV3minyW6XyrOMEsXsUXQY/HHZI=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			2s8xZhHQGoAkCAkevNuKvD2RAV8=
+			wzk3RAyn3F3jBNgbi31C/ZQy+Pw=
 			</data>
 			<key>hash2</key>
 			<data>
-			jjFKfwxf6lxz6o7zGsVQEsBp2/pgb00FAlfdZGmoc4Q=
+			/E+ZecY1MDMgqr6PoWlpfM+FVPKm0hoZo7RhFLSbn/I=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			o6a7ljIIsgiVzPxQFgMKI0k82h4=
+			cnR9bhOEtculNbDzYwjeDYT1eg4=
 			</data>
 			<key>hash2</key>
 			<data>
-			YjLLkf1sx11GkLDB5/OISdfBJSZldruxguA9XV909gk=
+			nJ+uvUJGNnz2CqcRwDUf+4i8G9Gla6XHvVrt2RLGGIc=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0yAwsIh9o4xWd5qgb7sb+u041YM=
+			u2T6mqnf3Q7j3KLUsNPpYWOMOww=
 			</data>
 			<key>hash2</key>
 			<data>
-			P1A0eZ8VsiKdi8TQ8E4CjT62CwI0/zdcedsIL1dtZaM=
+			I9teknSo/epdupdnhnI4NrqorR+R7AnOR7tXzL4osVo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

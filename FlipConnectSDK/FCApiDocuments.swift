@@ -15,7 +15,7 @@ extension FCApi {
         ]
         
         var err: Error? = nil
-        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectUserManagementUrl)user/account/documents")!, withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
+        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.userManagementURL)user/account/documents")!, withVerb: .get, withParameters: nil, withHeaders: headers) { response, error in
             let documents = DocumentsResponse(json: response)
             guard error == nil else {
                 err = error

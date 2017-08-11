@@ -104,7 +104,7 @@ public class FCLogin {
     public func openLoginURL() {
         if let temporaryProfile = self.temporaryProfile {
             FCApi.createTemporaryProfile(temporaryProfile, clientID: FCConfiguration.clientID) { response, error in
-                let url = self.redirectHandler.mountWebURL(url: URL(string: FCApiUrls.connectWebUrl)!,
+                let url = self.redirectHandler.mountWebURL(url: URL(string: FCConfiguration.environment.webURL)!,
                                                            withRedirectUri: FCConfiguration.redirectURI,
                                                            andID: FCConfiguration.clientID,
                                                            dataKey: response.dataKey)
@@ -113,7 +113,7 @@ public class FCLogin {
                 }
             }
         } else {
-            let url = self.redirectHandler.mountWebURL(url: URL(string: FCApiUrls.connectWebUrl)!,
+            let url = self.redirectHandler.mountWebURL(url: URL(string: FCConfiguration.environment.webURL)!,
                                                        withRedirectUri: FCConfiguration.redirectURI,
                                                        andID: FCConfiguration.clientID)
             DispatchQueue.main.async {
