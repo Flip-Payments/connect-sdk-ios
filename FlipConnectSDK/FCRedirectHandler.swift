@@ -23,6 +23,8 @@ struct FCRedirectHandler {
     private var plist: JSON = [:]
     private var config: [JSON] = [[:]]
     
+    internal static var state: String = ""
+    
     /// Scheme used for DeepLinking
     let urlScheme: String
     
@@ -62,12 +64,12 @@ struct FCRedirectHandler {
     }
     
     func mountWebURL(url: URL, withRedirectUri uri: String, andID clientID: String, dataKey: String? = nil) -> URL {
-        UserDefaults.standard.state = UUID().uuidString
+        FCRedirectHandler.state = UUID().uuidString
         var dataKeyURL: String = ""
         if let dataKey = dataKey {
             dataKeyURL = "&data_key=\(dataKey)"
         }
-        return URL(string: "\(url.absoluteString)?client_id=\(clientID)&redirect_uri=\(uri)&state=\(UserDefaults.standard.state!)&response_type=code\(dataKeyURL)")!
+        return URL(string: "\(url.absoluteString)?client_id=\(clientID)&redirect_uri=\(uri)&state=\(FCRedirectHandler.state)&response_type=code\(dataKeyURL)")!
     }
     
     func handleURI(open url: URL) throws {
@@ -84,7 +86,7 @@ struct FCRedirectHandler {
         
         // Verify if the state is valid
         let stateValue = items.filter{ $0.name.lowercased() == urlQueryStateKey }.first?.value
-        guard stateValue! == UserDefaults.standard.state! else {
+        guard stateValue! == FCRedirectHandler.state else {
             throw FCErrors.stateIsInvalid
         }
         

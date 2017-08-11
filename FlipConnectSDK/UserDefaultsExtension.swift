@@ -11,7 +11,6 @@ import Foundation
 extension UserDefaults {
     private struct Keys {
         static let AuthorizationCode = "FCAuthorizationCode"
-        static let State = "FCState"
         static let AccessToken = "FCAccessToken"
         static let RefreshToken = "FCRefreshToken"
         static let UserKey = "FCUserKey"
@@ -23,14 +22,6 @@ extension UserDefaults {
             return UserDefaults.standard.string(forKey: Keys.AuthorizationCode)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.AuthorizationCode)
-        }
-    }
-    
-    internal var state: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.State)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.State)
         }
     }
     
