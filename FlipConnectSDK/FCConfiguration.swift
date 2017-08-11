@@ -22,23 +22,23 @@ public class FCConfiguration {
     **/
     public init(environment: FCEnvironmentEnum, clientID: String, clientSecret: String, redirectURI: String, fingerPrintID: String? = nil) {
         FCConfiguration.environment = environment
-        self.fingerPrintID = fingerPrintID
-        self.clientID = clientID
-        self.clientSecret = clientSecret
-        self.redirectURI = redirectURI
+        FCConfiguration.fingerPrintID = fingerPrintID
+        FCConfiguration.clientID = clientID
+        FCConfiguration.clientSecret = clientSecret
+        FCConfiguration.redirectURI = redirectURI
     }
     
     /// Used to send information to antifraud
-    public var fingerPrintID: String?
+    internal static var fingerPrintID: String?
     
     /// Your ClientID
-    public var clientID: String
+    internal static var clientID: String = ""
     
     /// Your Client Secret
-    public var clientSecret: String
+    internal static var clientSecret: String = ""
     
     /// The desired redirect URI (example: some://example)
-    public var redirectURI: String
+    internal static var redirectURI: String = ""
     
     internal static var environment: FCEnvironmentEnum = .sandbox
 }
