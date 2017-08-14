@@ -70,25 +70,23 @@ class LoginSuccessViewController: UIViewController {
     }
 
     func verifyToken() {
-        if let token = UserDefaults.standard.accessToken {
-            FCApi.requestTokenVerification(accessToken: token) { tokenResponse, error in
-                guard error == nil else {
-                    self.showErrorDialog("\(error!)")
-                    return
+        FCApi.requestTokenVerification() { tokenResponse, error in
+            guard error == nil else {
+                self.showErrorDialog("\(error!)")
+                return
+            }
+            
+            if tokenResponse.success {
+                // DO SOMETHING
+                print(tokenResponse.accessToken!)
+                print(tokenResponse.userKey!)
+            } else {
+                // ERROR HANDLING
+                var message = ""
+                for report in tokenResponse.operationReport {
+                    message.append("\(report.field) - \(report.message)")
                 }
-                
-                if tokenResponse.success {
-                    // DO SOMETHING
-                    print(tokenResponse.accessToken!)
-                    print(tokenResponse.userKey!)
-                } else {
-                    // ERROR HANDLING
-                    var message = ""
-                    for report in tokenResponse.operationReport {
-                        message.append("\(report.field) - \(report.message)")
-                    }
-                    self.showErrorDialog(message)
-                }
+                self.showErrorDialog(message)
             }
         }
     }

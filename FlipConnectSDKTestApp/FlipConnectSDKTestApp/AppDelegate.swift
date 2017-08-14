@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         do {
-            Configuration.fcLogin = try FCLogin.shared(configuration: Configuration.shared)
+            Configuration.fcLogin = try FCLogin.shared()
         } catch {
             print(error)
         }

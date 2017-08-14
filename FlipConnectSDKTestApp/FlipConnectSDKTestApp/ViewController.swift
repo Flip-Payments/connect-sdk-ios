@@ -42,8 +42,15 @@ class ViewController: UIViewController {
         }
         
         if let url = self.url {
-            fcLogin.handleRedirect(fromURL: url) { _, error in
-                showSuccessController(unlessError: error != nil)
+            fcLogin.handleRedirect(fromURL: url) { tokenResponse, error in
+                if tokenResponse.success {
+                    // DO SOMETHING
+                    print(tokenResponse.accessToken!)
+                    print(tokenResponse.userKey!)
+                    print(tokenResponse.refreshToken!)
+                }
+                
+                showSuccessController(unlessError: error != nil || !tokenResponse.success)
             }
         } else {
             
@@ -51,7 +58,7 @@ class ViewController: UIViewController {
                 print("Token: \(token)")
                 print("Account: \(accountKey)")
                 
-                FCApi.requestTokenVerification(accessToken: token) { _, error in
+                FCApi.requestTokenVerification() { _, error in
                     showSuccessController(unlessError: error != nil)
                 }
             } else {

@@ -87,12 +87,17 @@ extension FCApi {
     /**
      Verify Token to guarantee you can get data from the User
      - Parameters:
-        - accessToken: A valid Access Token
         - completion: Callback
         - response: `TokenResponse` type that should come with success `true` if the request is successful
         - error: Should be `nil` on a successful request
      */
-    public static func requestTokenVerification(accessToken token: String, completion: @escaping (_ response: TokenResponse, _ error: Error?) -> Void) {
+    public static func requestTokenVerification(completion: @escaping (_ response: TokenResponse, _ error: Error?) -> Void) {
+        var resp = TokenResponse(json: [:])
+        guard let token = UserDefaults.standard.accessToken else {
+            completion(resp, FCErrors.accessTokenNotFound)
+            return
+        }
+        
         let parameters: Parameters = [
             "grant_type": "verify_token",
             "access_token": "\(token)",
@@ -103,7 +108,7 @@ extension FCApi {
         var err: Error? = nil
         
         FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
-            let resp = TokenResponse(json: response)
+            resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
                 return
@@ -119,12 +124,17 @@ extension FCApi {
     /**
      Revoke Token so the user will not be "logged" anymore
      - Parameters:
-        - accessToken: A valid Access Token
         - completion: Callback
         - response: `TokenResponse` type that should come with success `true` if the request is successful
         - error: Should be `nil` on a successful request
     */
-    public static func requestTokenRevocation(accessToken token: String, completion: @escaping(_ response: TokenResponse, _ error: Error?) -> Void) {
+    public static func requestTokenRevocation(completion: @escaping(_ response: TokenResponse, _ error: Error?) -> Void) {
+        var resp = TokenResponse(json: [:])
+        guard let token = UserDefaults.standard.accessToken else {
+            completion(resp, FCErrors.accessTokenNotFound)
+            return
+        }
+        
         let parameters: Parameters = [
             "grant_type": "revoke_token",
             "access_token": "\(token)",
@@ -135,7 +145,7 @@ extension FCApi {
         var err: Error? = nil
         
         FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
-            let resp = TokenResponse(json: response)
+            resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
                 return

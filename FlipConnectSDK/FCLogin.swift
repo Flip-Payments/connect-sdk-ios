@@ -16,7 +16,7 @@ public class FCLogin {
     /// entity used to load registration data on login web form
     public var temporaryProfile: TemporaryProfile? = nil
     
-    private init(_ configuration: FCConfiguration) throws {
+    private init() throws {
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
         
         if let fingerPrintID = FCConfiguration.fingerPrintID, let accessToken = UserDefaults.standard.accessToken {
@@ -35,33 +35,18 @@ public class FCLogin {
     private static var sharedVar: FCLogin?
     
     /**
-     - Parameters:
-     - configuration: it should contain the necessary information to use on the API
      - Returns: Singleton instance of FCLogin
-     
      */
-    public static func shared(configuration: FCConfiguration) throws -> FCLogin {
+    public static func shared() throws -> FCLogin {
         if sharedVar == nil {
             do {
-                sharedVar = try FCLogin(configuration)
+                sharedVar = try FCLogin()
             } catch {
                 throw error
             }
         }
         
         return sharedVar!
-    }
-    
-    /**
-     - Returns: Singleton instance of FCLogin if it was already instantiated
-     
-     */
-    public static func shared() throws -> FCLogin {
-        guard let login = sharedVar else {
-            throw FCErrors.classNotInstatiated
-        }
-        
-        return login
     }
     
     /// Generates button targeting login web page on Safari
@@ -131,30 +116,32 @@ public class FCLogin {
      - tokenResponse: Is not nil when the execution is successfull
      - error: Is not nil when the execution is unsuccessfull
      */
-    public func handleRedirect(fromURL url: URL, completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
+    public func handleRedirect(fromURL url: URL, completion: @escaping (_ tokenResponse: TokenResponse, _ error: Error?) -> Void) {
         var err: Error? = nil
+        var resp = TokenResponse(json: [:])
         
         do {
             try redirectHandler.handleURI(open: url)
         } catch {
             err = error
-            completion(nil, err)
+            completion(resp, err)
             return
         }
         
-        FCApi.requestAccessToken() { resp, error in
-                                    guard error == nil else {
-                                        completion(resp, error)
-                                        return
-                                    }
-                                    
-                                    if resp.success,
-                                        let fingerPrintID = FCConfiguration.fingerPrintID,
-                                        let accessToken = UserDefaults.standard.accessToken {
-                                        self.callFingerPrint(fingerPrintID: fingerPrintID, accessToken: accessToken)
-                                    }
-                                    
-                                    completion(resp, err)
+        FCApi.requestAccessToken() { response, error in
+            resp = response
+            guard error == nil else {
+                completion(resp, error)
+                return
+            }
+            
+            if resp.success,
+                let fingerPrintID = FCConfiguration.fingerPrintID,
+                let accessToken = UserDefaults.standard.accessToken {
+                self.callFingerPrint(fingerPrintID: fingerPrintID, accessToken: accessToken)
+            }
+            
+            completion(resp, err)
         }
     }
 }

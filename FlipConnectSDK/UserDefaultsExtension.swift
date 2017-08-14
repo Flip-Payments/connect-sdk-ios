@@ -34,7 +34,8 @@ extension UserDefaults {
         }
     }
     
-    internal var refreshToken: String? {
+    /// Token used to refresh user session
+    public internal(set) var refreshToken: String? {
         get {
             return UserDefaults.standard.string(forKey: Keys.RefreshToken)
         } set {

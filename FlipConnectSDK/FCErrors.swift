@@ -22,4 +22,5 @@ enum FCErrors: Error {
     case requestUnsuccessful(message: String)
     case classNotInstatiated
     case refreshTokenNotFound
+    case accessTokenNotFound
 }
