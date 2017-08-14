@@ -9,11 +9,11 @@
 import Foundation
 
 extension FCApi {
-    static func createTemporaryProfile(_ temporaryProfile: TemporaryProfile, clientID: String, completion: @escaping (_ response: TemporaryProfileResponse, _ error: Error?) -> Void) {
+    static func createTemporaryProfile(_ temporaryProfile: TemporaryProfile, completion: @escaping (_ response: TemporaryProfileResponse, _ error: Error?) -> Void) {
         var err: Error? = nil
         
         var request = TemporaryProfileRequest()
-        request.clientID = clientID
+        request.clientID = FCConfiguration.clientID
         request.data = temporaryProfile
         
         let json = request.toDictionary()

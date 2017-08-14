@@ -23,7 +23,7 @@ class LoginSuccessViewController: UIViewController {
         self.fcLogin = fcLogin
     }
     
-    func showErrorDialog(_ error: Error) {
+    func showErrorDialog(_ error: String) {
         let alertController = UIAlertController(title: "Erro", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
         
         let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
@@ -46,30 +46,49 @@ class LoginSuccessViewController: UIViewController {
     */
     
     func refreshToken() {
-        fcLogin.refreshToken{ tokenResponse, error in
-            guard error == nil, (tokenResponse?.success)! else {
-                self.showErrorDialog(error!)
+        
+        FCApi.requestTokenRefresh() { tokenResponse, error in
+            guard error == nil else {
+                self.showErrorDialog("\(error!)")
                 return
             }
             
-            if let tokenResponse = tokenResponse {
+            if tokenResponse.success {
+                // DO SOMETHING
                 print(tokenResponse.accessToken!)
                 print(tokenResponse.userKey!)
                 print(tokenResponse.refreshToken!)
+            } else {
+                // ERROR HANDLING
+                var message = ""
+                for report in tokenResponse.operationReport {
+                    message.append("\(report.field) - \(report.message)")
+                }
+                self.showErrorDialog(message)
             }
         }
     }
 
     func verifyToken() {
-        fcLogin.verifyToken { tokenResponse, error in
-            guard error == nil, (tokenResponse?.success)! else {
-                self.showErrorDialog(error!)
-                return
-            }
-            
-            if let tokenResponse = tokenResponse {
-                print(tokenResponse.accessToken!)
-                print(tokenResponse.userKey!)
+        if let token = UserDefaults.standard.accessToken {
+            FCApi.requestTokenVerification(accessToken: token) { tokenResponse, error in
+                guard error == nil else {
+                    self.showErrorDialog("\(error!)")
+                    return
+                }
+                
+                if tokenResponse.success {
+                    // DO SOMETHING
+                    print(tokenResponse.accessToken!)
+                    print(tokenResponse.userKey!)
+                } else {
+                    // ERROR HANDLING
+                    var message = ""
+                    for report in tokenResponse.operationReport {
+                        message.append("\(report.field) - \(report.message)")
+                    }
+                    self.showErrorDialog(message)
+                }
             }
         }
     }

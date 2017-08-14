@@ -51,7 +51,7 @@ class ViewController: UIViewController {
                 print("Token: \(token)")
                 print("Account: \(accountKey)")
                 
-                fcLogin.verifyToken { _, error in
+                FCApi.requestTokenVerification(accessToken: token) { _, error in
                     showSuccessController(unlessError: error != nil)
                 }
             } else {

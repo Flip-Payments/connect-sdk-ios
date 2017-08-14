@@ -41,4 +41,6 @@ public class FCConfiguration {
     internal static var redirectURI: String = ""
     
     internal static var environment: FCEnvironmentEnum = .sandbox
+    
+    internal static var authorizationCode: String = ""
 }

@@ -103,7 +103,7 @@ public class FCLogin {
     /// Opens Safari with Login Page
     public func openLoginURL() {
         if let temporaryProfile = self.temporaryProfile {
-            FCApi.createTemporaryProfile(temporaryProfile, clientID: FCConfiguration.clientID) { response, error in
+            FCApi.createTemporaryProfile(temporaryProfile) { response, error in
                 let url = self.redirectHandler.mountWebURL(url: URL(string: FCConfiguration.environment.webURL)!,
                                                            withRedirectUri: FCConfiguration.redirectURI,
                                                            andID: FCConfiguration.clientID,
@@ -119,63 +119,6 @@ public class FCLogin {
             DispatchQueue.main.async {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
-        }
-    }
-    
-    /**
-     Refreshes token to access the API
-     
-     - Parameters:
-     - completion: error received from callback
-     - tokenResponse: Is not nil when the execution is successfull
-     - error: Is not nil when the execution is unsuccessfull
-     */
-    public func refreshToken(completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
-        var err: Error? = nil
-        
-        guard let refreshToken = UserDefaults.standard.refreshToken else {
-            err = FCErrors.invalidOperation
-            completion(nil, err)
-            return
-        }
-        
-        FCApi.requestNewToken(refreshToken: refreshToken,
-                              clientID: FCConfiguration.clientID,
-                              clientSecret: FCConfiguration.clientSecret,
-                              redirectURI: FCConfiguration.redirectURI) { resp, error in
-                                guard error == nil else {
-                                    completion(nil, error)
-                                    return
-                                }
-                                completion(resp, err)
-        }
-    }
-    
-    /**
-     Verify if the token is valid
-     
-     - Parameters:
-     - completion: Callback
-     - tokenResponse: Is not nil when the execution is successfull
-     - error: Is not nil when the execution is unsuccessfull
-     */
-    public func verifyToken(completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
-        var err: Error? = nil
-        
-        guard let accessToken = UserDefaults.standard.accessToken else {
-            err = FCErrors.invalidOperation
-            completion(nil, err)
-            return
-        }
-        
-        FCApi.requestVerifyToken(accessToken: accessToken,
-                                 clientID: FCConfiguration.clientID,
-                                 clientSecret: FCConfiguration.clientSecret) { resp, error in
-                                    guard error == nil else {
-                                        completion(nil, error)
-                                        return
-                                    }
-                                    completion(resp, err)
         }
     }
     
@@ -199,16 +142,7 @@ public class FCLogin {
             return
         }
         
-        guard let authCode = UserDefaults.standard.authorizationCode else {
-            err = FCErrors.invalidOperation
-            completion(nil, err)
-            return
-        }
-        
-        FCApi.requestAccessToken(authorizationCode: authCode,
-                                 redirectUri: FCConfiguration.redirectURI,
-                                 clientSecret: FCConfiguration.clientSecret,
-                                 clientID: FCConfiguration.clientID) { resp, error in
+        FCApi.requestAccessToken() { resp, error in
                                     guard error == nil else {
                                         completion(resp, error)
                                         return

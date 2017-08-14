@@ -110,6 +110,6 @@ struct FCRedirectHandler {
             throw FCErrors.wrongParameters(message: "\(urlQueryAuthCodeKey) was not found as a parameter")
         }
         
-        UserDefaults.standard.authorizationCode = propertyValue
+        FCConfiguration.authorizationCode = propertyValue
     }
 }
