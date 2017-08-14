@@ -55,15 +55,15 @@ extension FCApi {
             urlString.append("?")
             for category in categories {
                 switch category {
-                case .Addresses:
+                case .addresses:
                     urlString.append("include=addresses&")
-                case .Documents:
+                case .documents:
                     urlString.append("include=documents&")
-                case .Emails:
+                case .emails:
                     urlString.append("include=emails&")
-                case .PersonalData:
+                case .personalData:
                     urlString.append("include=personaldata&")
-                case .Phones:
+                case .phones:
                     urlString.append("include=phones&")
                 default: break
                 }
