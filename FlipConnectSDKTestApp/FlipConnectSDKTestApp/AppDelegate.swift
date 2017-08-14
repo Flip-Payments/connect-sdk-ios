@@ -10,9 +10,7 @@ import UIKit
 import CoreData
 import FlipConnectSDK
 
-public class Configuration {
-    public static let shared = FCConfiguration(environment: .sandbox, clientID: "5149B5B2-0463-4752-A8A0-C37D639A1FE4", clientSecret: "FC3E9D34-978B-483B-9CC0-462DFB82A75B", redirectURI: "ipirangaConnect://ipiranga", fingerPrintID: "c470458e-7845-4380-a5db-e7e28548c243")
-    
+public class Configuration {    
     static var fcLogin: FCLogin? = nil
 }
 
@@ -40,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        _ = FCConfiguration(environment: .sandbox,
+                            clientID: "5149B5B2-0463-4752-A8A0-C37D639A1FE4",
+                            clientSecret: "FC3E9D34-978B-483B-9CC0-462DFB82A75B",
+                            redirectURI: "ipirangaConnect://ipiranga",
+                            fingerPrintID: "c470458e-7845-4380-a5db-e7e28548c243")
         do {
             Configuration.fcLogin = try FCLogin.shared()
         } catch {
