@@ -86,4 +86,29 @@ extension FCApi {
             completion(resp, err)
         }
     }
+    
+    static func requestRevokeToken(accessToken token: String, clientID id: String, clientSecret secret: String, completion: @escaping(_ response: TokenResponse, _ error: Error?) -> Void) {
+        let parameters: Parameters = [
+            "grant_type": "revoke_token",
+            "access_token": "\(token)",
+            "client_id": "\(id)",
+            "client_secret": "\(secret)"
+        ]
+        
+        var err: Error? = nil
+        
+        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+            let resp = TokenResponse(json: response)
+            guard error == nil else {
+                err = error
+                return
+            }
+            if resp.success {
+                UserDefaults.standard.accessToken = nil
+                UserDefaults.standard.userKey = nil
+                UserDefaults.standard.refreshToken = nil
+            }
+            completion(resp, err)
+        }
+    }
 }
