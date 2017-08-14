@@ -8,10 +8,9 @@
 
 import Foundation
 
-public struct User {
+public struct Account {
     public private(set) var accountKey: String
     public private(set) var isEnabled: Bool
-    public private(set) var membershipCreateDate: Date?
     public private(set) var isNewsLetterAllowed: Bool?
     public private(set) var publicProfile: PublicProfile?
     public private(set) var personalData: PersonalData?
@@ -36,10 +35,6 @@ public struct User {
         }
         if let personalDataJSON = json["personalData"] as? JSON {
             self.personalData = PersonalData(json: personalDataJSON)
-        }
-        if let membershipCreateDateString = json["membershipCreateDate"] as? String {
-            let membershipCreateDate = dateFormatter.date(from: membershipCreateDateString)
-            self.membershipCreateDate = membershipCreateDate
         }
         if let isNewsLetterAllowed = json["isNewsLetterAllowed"] as? Bool {
             self.isNewsLetterAllowed = isNewsLetterAllowed

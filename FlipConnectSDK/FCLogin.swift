@@ -17,22 +17,17 @@ public class FCLogin {
     public var temporaryProfile: TemporaryProfile? = nil
     
     private init(_ configuration: FCConfiguration) throws {
-        UserDefaults.standard.clientID = configuration.clientID
-        UserDefaults.standard.clientSecret = configuration.clientSecret
-        UserDefaults.standard.redirectURI = configuration.redirectURI
-        UserDefaults.standard.fingerPrintID = configuration.fingerPrintID
-        
         redirectHandler = try FCRedirectHandler(bundle: Bundle.main.infoDictionary)
         
-        if let fingerPrintID = configuration.fingerPrintID, let accessToken = UserDefaults.standard.accessToken {
-            self.callFingerPrint(environment: "sandbox", fingerPrintID: fingerPrintID, accessToken: accessToken)
+        if let fingerPrintID = FCConfiguration.fingerPrintID, let accessToken = UserDefaults.standard.accessToken {
+            self.callFingerPrint(fingerPrintID: fingerPrintID, accessToken: accessToken)
         }
     }
     
-    private func callFingerPrint(environment: String, fingerPrintID: String, accessToken: String) {
+    private func callFingerPrint(fingerPrintID: String, accessToken: String) {
         let uuid = UUID().uuidString
         UserDefaults.standard.fingerPrintSessionID = uuid
-        FingerPrintLibrary.initFingerprint(role: environment, key: fingerPrintID, registerId: accessToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
+        FingerPrintLibrary.initFingerprint(role: FCConfiguration.environment.rawValue, key: fingerPrintID, registerId: accessToken, sessionId: uuid) // "c470458e-7845-4380-a5db-e7e28548c243"
         FingerPrintLibrary.configFingerprint(phoneData: true, contactList: true, location: true)
         FingerPrintLibrary.getFingerprint()
     }
@@ -41,10 +36,10 @@ public class FCLogin {
     
     /**
      - Parameters:
-        - configuration: it should contain the necessary information to use on the API
+     - configuration: it should contain the necessary information to use on the API
      - Returns: Singleton instance of FCLogin
- 
-    */
+     
+     */
     public static func shared(configuration: FCConfiguration) throws -> FCLogin {
         if sharedVar == nil {
             do {
@@ -107,92 +102,92 @@ public class FCLogin {
     
     /// Opens Safari with Login Page
     public func openLoginURL() {
-        if let clientID = UserDefaults.standard.clientID, let redirectURI = UserDefaults.standard.redirectURI {
-            
-            if let temporaryProfile = self.temporaryProfile {
-                FCApi.createTemporaryProfile(temporaryProfile, clientID: clientID) { response, error in
-                    let url = self.redirectHandler.mountWebURL(url: URL(string: FCApiUrls.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID, dataKey: response.dataKey)
-                    DispatchQueue.main.async {
-                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                    }
-                }
-            } else {
-                let url = self.redirectHandler.mountWebURL(url: URL(string: FCApiUrls.connectWebUrl)!, withRedirectUri: redirectURI, andID: clientID)
+        if let temporaryProfile = self.temporaryProfile {
+            FCApi.createTemporaryProfile(temporaryProfile, clientID: FCConfiguration.clientID) { response, error in
+                let url = self.redirectHandler.mountWebURL(url: URL(string: FCConfiguration.environment.webURL)!,
+                                                           withRedirectUri: FCConfiguration.redirectURI,
+                                                           andID: FCConfiguration.clientID,
+                                                           dataKey: response.dataKey)
                 DispatchQueue.main.async {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }
+            }
+        } else {
+            let url = self.redirectHandler.mountWebURL(url: URL(string: FCConfiguration.environment.webURL)!,
+                                                       withRedirectUri: FCConfiguration.redirectURI,
+                                                       andID: FCConfiguration.clientID)
+            DispatchQueue.main.async {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
             }
         }
     }
     
     /**
      Refreshes token to access the API
-    
+     
      - Parameters:
-        - completion: error received from callback
-        - tokenResponse: Is not nil when the execution is successfull
-        - error: Is not nil when the execution is unsuccessfull
-    */
+     - completion: error received from callback
+     - tokenResponse: Is not nil when the execution is successfull
+     - error: Is not nil when the execution is unsuccessfull
+     */
     public func refreshToken(completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
         var err: Error? = nil
         
-        guard let refreshToken = UserDefaults.standard.refreshToken,
-            let clientSecret = UserDefaults.standard.clientSecret,
-            let clientID = UserDefaults.standard.clientID,
-            let redirectURI = UserDefaults.standard.redirectURI else {
-                err = FCErrors.invalidOperation
-                completion(nil, err)
-                return
+        guard let refreshToken = UserDefaults.standard.refreshToken else {
+            err = FCErrors.invalidOperation
+            completion(nil, err)
+            return
         }
         
-        FCApi.requestNewToken(refreshToken: refreshToken, clientID: clientID, clientSecret: clientSecret, redirectURI: redirectURI) { resp, error in
-            guard error == nil else {
-                completion(nil, error)
-                return
-            }
-        
-            completion(resp, err)
+        FCApi.requestNewToken(refreshToken: refreshToken,
+                              clientID: FCConfiguration.clientID,
+                              clientSecret: FCConfiguration.clientSecret,
+                              redirectURI: FCConfiguration.redirectURI) { resp, error in
+                                guard error == nil else {
+                                    completion(nil, error)
+                                    return
+                                }
+                                completion(resp, err)
         }
     }
     
     /**
      Verify if the token is valid
-    
+     
      - Parameters:
-        - completion: Callback
-        - tokenResponse: Is not nil when the execution is successfull
-        - error: Is not nil when the execution is unsuccessfull
-    */
+     - completion: Callback
+     - tokenResponse: Is not nil when the execution is successfull
+     - error: Is not nil when the execution is unsuccessfull
+     */
     public func verifyToken(completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
         var err: Error? = nil
         
-        guard let accessToken = UserDefaults.standard.accessToken,
-            let clientSecret = UserDefaults.standard.clientSecret,
-            let clientID = UserDefaults.standard.clientID else {
-                err = FCErrors.invalidOperation
-                completion(nil, err)
-                return
+        guard let accessToken = UserDefaults.standard.accessToken else {
+            err = FCErrors.invalidOperation
+            completion(nil, err)
+            return
         }
         
-        FCApi.requestVerifyToken(accessToken: accessToken, clientID: clientID, clientSecret: clientSecret) { resp, error in
-            guard error == nil else {
-                completion(nil, error)
-                return
-            }
-            
-            completion(resp, err)
+        FCApi.requestVerifyToken(accessToken: accessToken,
+                                 clientID: FCConfiguration.clientID,
+                                 clientSecret: FCConfiguration.clientSecret) { resp, error in
+                                    guard error == nil else {
+                                        completion(nil, error)
+                                        return
+                                    }
+                                    completion(resp, err)
         }
     }
     
     /**
      Handles redirect from login for token creation
-    
+     
      - Parameters:
-        - fromURL: URL received from Redirect
-        - completion: Callback
-        - tokenResponse: Is not nil when the execution is successfull
-        - error: Is not nil when the execution is unsuccessfull
-    */
+     - fromURL: URL received from Redirect
+     - completion: Callback
+     - tokenResponse: Is not nil when the execution is successfull
+     - error: Is not nil when the execution is unsuccessfull
+     */
     public func handleRedirect(fromURL url: URL, completion: @escaping (_ tokenResponse: TokenResponse?, _ error: Error?) -> Void) {
         var err: Error? = nil
         
@@ -204,28 +199,28 @@ public class FCLogin {
             return
         }
         
-        guard let authCode = UserDefaults.standard.authorizationCode,
-              let clientSecret = UserDefaults.standard.clientSecret,
-              let clientID = UserDefaults.standard.clientID,
-              let redirectURI = UserDefaults.standard.redirectURI else {
+        guard let authCode = UserDefaults.standard.authorizationCode else {
             err = FCErrors.invalidOperation
             completion(nil, err)
             return
         }
         
-        FCApi.requestAccessToken(authorizationCode: authCode, redirectUri: redirectURI, clientSecret: clientSecret, clientID: clientID) { resp, error in
-            guard error == nil else {
-                completion(resp, error)
-                return
-            }
-            
-            if resp.success,
-               let fingerPrintID = UserDefaults.standard.fingerPrintID,
-               let accessToken = UserDefaults.standard.accessToken {
-                self.callFingerPrint(environment: "sandbox", fingerPrintID: fingerPrintID, accessToken: accessToken)
-            }
-            
-            completion(resp, err)
+        FCApi.requestAccessToken(authorizationCode: authCode,
+                                 redirectUri: FCConfiguration.redirectURI,
+                                 clientSecret: FCConfiguration.clientSecret,
+                                 clientID: FCConfiguration.clientID) { resp, error in
+                                    guard error == nil else {
+                                        completion(resp, error)
+                                        return
+                                    }
+                                    
+                                    if resp.success,
+                                        let fingerPrintID = FCConfiguration.fingerPrintID,
+                                        let accessToken = UserDefaults.standard.accessToken {
+                                        self.callFingerPrint(fingerPrintID: fingerPrintID, accessToken: accessToken)
+                                    }
+                                    
+                                    completion(resp, err)
         }
     }
 }

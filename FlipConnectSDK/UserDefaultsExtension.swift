@@ -11,14 +11,9 @@ import Foundation
 extension UserDefaults {
     private struct Keys {
         static let AuthorizationCode = "FCAuthorizationCode"
-        static let State = "FCState"
-        static let ClientID = "FCClientID"
-        static let ClientSecret = "FCClientSecret"
         static let AccessToken = "FCAccessToken"
         static let RefreshToken = "FCRefreshToken"
         static let UserKey = "FCUserKey"
-        static let RedirectURI = "FCRedirectURI"
-        static let FingerPrintID = "FCFingerPrintID"
         static let FingerPrintSessionID = "FCRLFingerPrintSessionID"
     }
     
@@ -27,38 +22,6 @@ extension UserDefaults {
             return UserDefaults.standard.string(forKey: Keys.AuthorizationCode)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.AuthorizationCode)
-        }
-    }
-    
-    internal var fingerPrintID: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.FingerPrintID)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.FingerPrintID)
-        }
-    }
-    
-    internal var state: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.State)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.State)
-        }
-    }
-    
-    internal var clientID: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.ClientID)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.ClientID)
-        }
-    }
-    
-    internal var clientSecret: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.ClientSecret)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.ClientSecret)
         }
     }
     
@@ -94,14 +57,6 @@ extension UserDefaults {
             return UserDefaults.standard.string(forKey: Keys.FingerPrintSessionID)
         } set {
             UserDefaults.standard.set(newValue, forKey: Keys.FingerPrintSessionID)
-        }
-    }
-    
-    internal var redirectURI: String? {
-        get {
-            return UserDefaults.standard.string(forKey: Keys.RedirectURI)
-        } set {
-            UserDefaults.standard.set(newValue, forKey: Keys.RedirectURI)
         }
     }
 }

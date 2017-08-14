@@ -19,7 +19,7 @@ extension FCApi {
         ]
         var err: Error? = nil
         
-        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
             let resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
@@ -48,7 +48,7 @@ extension FCApi {
         
         var err: Error? = nil
         
-        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
             let resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
@@ -73,7 +73,7 @@ extension FCApi {
         
         var err: Error? = nil
         
-        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectApiUrl)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
             let resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error

@@ -8,20 +8,20 @@
 
 import Foundation
 
-public struct UserResponse: Response {
+public struct AccountResponse: Response {
     public var operationReport: [Report] = []
     
     public var success: Bool = false
     
-    public private(set) var user: User?
+    public private(set) var account: Account?
     
     public init(json: JSON) {
         self.initializeResponse(json: json)
         
-        guard let user = (json["user"] as? JSON) else {
+        guard let account = (json["account"] as? JSON) else {
             return
         }
         
-        self.user = User(json: user)
+        self.account = Account(json: account)
     }
 }

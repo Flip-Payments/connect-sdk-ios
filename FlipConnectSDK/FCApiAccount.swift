@@ -18,7 +18,7 @@ extension FCApi {
         
         let json = request.toDictionary()
         
-        FCApi.request(toURL: URL(string: "\(FCApiUrls.connectUserManagementUrl)user/temporaryProfile")!, withVerb: .post, withBody: json) { res, error in
+        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.userManagementURL)user/temporaryProfile")!, withVerb: .post, withBody: json) { res, error in
             let temporaryProfileResponse = TemporaryProfileResponse(json: res)
             guard error == nil else {
                 err = error
@@ -29,7 +29,7 @@ extension FCApi {
         }
     }
     
-//    public static func getUser(publicToken token: String, accountKey key: String, categories: [FCCategoriesEnum]? = nil, completion: @escaping (_ user: UserResponse, _ error: Error?) -> Void) {
+//    public static func getAccount(publicToken token: String, accountKey key: String, categories: [FCCategoriesEnum]? = nil, completion: @escaping (_ user: AccountResponse, _ error: Error?) -> Void) {
 //        let headers: Headers = [
 //            "Authorization": "bearer \(token)"
 //        ]
@@ -47,8 +47,9 @@ extension FCApi {
 //        }
 //    }
     
+    // TODO: return Parameters instead of URL, this for is useless
     private static func toURL(_ key: String, _ categories: [FCCategoriesEnum]? = nil) -> URL {
-        var urlString = "\(FCApiUrls.connectPublicApiHostAddress)public/users/\(key)"
+        var urlString = "\(FCConfiguration.environment.userManagementURL)user/account?\(key)"
         
         if let categories = categories, categories.count > 0 {
             urlString.append("?")
