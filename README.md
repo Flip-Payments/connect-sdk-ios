@@ -70,13 +70,13 @@ Se a Merchant URI registrada é `flipConnect://application` sua Url Schemes deve
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let config = FCConfiguration(
             environment: .sandbox,
-            clientID: "5149B5B2-0463-4752-A8A0-C37D639A1FE4",
-            clientSecret: "AF3A9D34-978A-483A-9BB0-462DFB82A75A",
-            redirectURI: "flipconnect://application",
-            fingerPrintID: "a470458a-7845-4380-c5ad-a7a28548b243"
+            clientID: "{SEU_CLIENT_ID}",
+            clientSecret: "{SEU_CLIENT_SECRET}",
+            redirectURI: "{SUA_REDIRECT_URI}", // EX: flipconnect://application
+            fingerPrintID: "{SEU_FINGERPRINT_ID}"
         )
         do {
-            _ = try FCLogin.shared(configuration: config)
+            _ = try FCLogin.shared()
         } catch {
             print(error)
         }
@@ -109,15 +109,15 @@ import FlipConnectSDK
 ```swift
 class ViewController: UIViewController {
 
-    var flipLogin: FCLogin!
+    var fcLogin: FCLogin!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         do {
-            flipLogin = try FCLogin.shared()
+            fcLogin = try FCLogin.shared()
 
-            let loginBtn = flipLogin.loginWithButton(center: view.center, frame: CGRect(x: 0, y: 0, width: 180, height: 40), color: .darkGray, title: "FlipConnect Login")
+            let loginBtn = fcLogin.loginWithButton(center: view.center, frame: CGRect(x: 0, y: 0, width: 180, height: 40), color: .darkGray, title: "FlipConnect Login")
             view.addSubview(loginBtn)
 
         } catch {
@@ -135,20 +135,20 @@ O botão parecerá com algum destes:
 ```swift
 class ViewController: UIViewController {
 
-    var flipLogin: FCLogin!
+    var fcLogin: FCLogin!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         do {
-            flipLogin = try FCLogin.shared()
+            fcLogin = try FCLogin.shared()
         } catch {
             print(error)
         }
     }
 
-    @IBAction func printCookies(_ sender: UIButton) {
-        self.flipLogin.loginButtonClicked()
+    @IBAction func loginAction(_ sender: UIButton) {
+        self.fcLogin.loginButtonClicked()
     }
 }
 ```
@@ -172,13 +172,13 @@ Para utilizar basta atribuir um valor do tipo `TemporaryProfile` a variável `te
 ```swift
 class ViewController: UIViewController {
 
-    var flipLogin: FCLogin!
+    var fcLogin: FCLogin!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         do {
-            flipLogin = try FCLogin.shared()
+            fcLogin = try FCLogin.shared()
 
 	    let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
@@ -200,14 +200,14 @@ class ViewController: UIViewController {
             temporaryProfile.phones = [phone, phone2]
             temporaryProfile.vehicles = [vehicle, vehicle2]
 
-	    flipLogin.temporaryProfile = temporaryProfile
+	    fcLogin.temporaryProfile = temporaryProfile
         } catch {
             print(error)
         }
     }
 
-    @IBAction func printCookies(_ sender: UIButton) {
-        self.flipLogin.loginButtonClicked()
+    @IBAction func loginAction(_ sender: UIButton) {
+        self.fcLogin.loginButtonClicked()
     }
 }
 ```
@@ -217,13 +217,13 @@ Ou na chamada do método `loginWithButton()`:
 ```swift
 class ViewController: UIViewController {
 
-    var flipLogin: FCLogin!
+    var fcLogin: FCLogin!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         do {
-            flipLogin = try FCLogin.shared()
+            fcLogin = try FCLogin.shared()
 
 	    let formatter = DateFormatter()
             formatter.dateFormat = "yyyy/MM/dd"
@@ -245,7 +245,7 @@ class ViewController: UIViewController {
             temporaryProfile.phones = [phone, phone2]
             temporaryProfile.vehicles = [vehicle, vehicle2]
 
-	    let btn = flipLogin.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
+	    let btn = fcLogin.loginWithButton(center: view.center, temporaryProfile: temporaryProfile)
 
 	    view.addSubview(btn)
         } catch {
@@ -253,8 +253,8 @@ class ViewController: UIViewController {
         }
     }
 
-    @IBAction func printCookies(_ sender: UIButton) {
-        self.flipLogin.loginButtonClicked()
+    @IBAction func loginAction(_ sender: UIButton) {
+        self.fcLogin.loginButtonClicked()
     }
 }
 ```
@@ -269,14 +269,20 @@ Após um login bem sucedido, o redirecionamento passará por aqui com alguma inf
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         do {
-            let loginFlip = try FCLogin.shared()
-            loginFlip.handleRedirect(fromURL: url) { error in
+            let fcLogin = try FCLogin.shared()
+            fcLogin.handleRedirect(fromURL: url) { tokenResponse, error in
+
                 guard error == nil else {
                     print(error!)
                     return
                 }
 
-                // DO SOMETHING
+                if tokenResponse.success {
+                    // DO SOMETHING
+                    print(tokenResponse.accessToken!)
+                    print(tokenResponse.userKey!)
+                    print(tokenResponse.refreshToken!)
+                }
             }
         } catch {
             print(error)
@@ -303,18 +309,26 @@ Se o token expirar, basta fazer a implementação que segue. Se algum erro retor
 do {
 	let fcLogin = try FCLogin.shared()
 
-	fcLogin.refreshToken{ tokenResponse, error in
-		guard error == nil, tokenResponse?.success else {
-			print("refresh with no success")
+	FCApi.requestTokenRefresh() { tokenResponse, error in
+		guard error == nil else {
+			print("Refresh with NO success")
 			print(err!)
 			return
 		}
-		print("Tokens Refreshed")
-	        if let tokenResponse = tokenResponse {
-                    print(tokenResponse.accessToken!)
-                    print(tokenResponse.userKey!)
-                    print(tokenResponse.refreshToken!)
+
+            if tokenResponse.success {
+                // DO SOMETHING
+                print("Tokens Refreshed")
+                print(tokenResponse.accessToken!)
+                print(tokenResponse.userKey!)
+                print(tokenResponse.refreshToken!)
+            } else {
+                // ERROR HANDLING
+                var message = ""
+                for report in tokenResponse.operationReport {
+                    message.append("\(report.field) - \(report.message)")
                 }
+            }
 	}
 
 } catch {
@@ -331,16 +345,25 @@ Se algum erro retornar ou o sucesso do `tokenResponse` for `false`, é porque a 
 do {
 	let fcLogin = try FCLogin.shared()
 
-	fcLogin.verifyToken { tokenResponse, error in
-		guard error == nil, tokenResponse?.success else {
-			print("no success verifying")
-			print(err!)
-			return
-		}
-		if let tokenResponse = tokenResponse {
-                    print(tokenResponse.accessToken!)
-                    print(tokenResponse.userKey!)
+	FCApi.requestTokenVerification() { tokenResponse, error in
+            guard error == nil else {
+                print("Verify with NO success")
+		print(err!)
+                return
+            }
+            
+            if tokenResponse.success {
+                // DO SOMETHING
+                print(tokenResponse.accessToken!)
+                print(tokenResponse.userKey!)
+            } else {
+                // ERROR HANDLING
+                var message = ""
+                for report in tokenResponse.operationReport {
+                    message.append("\(report.field) - \(report.message)")
                 }
+                print(message)
+            }
 	}
 
 } catch {
