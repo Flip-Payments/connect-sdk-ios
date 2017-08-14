@@ -371,6 +371,37 @@ do {
 }
 ```
 
+### Revogar Token
+
+Para revogar o Token do usuário, basta chamar o método `requestTokenRevocation` como no exemplo abaixo:
+
+```swift
+do {
+	let fcLogin = try FCLogin.shared()
+
+        FCApi.requestTokenRevocation() { tokenResponse, error in
+            guard error == nil else {
+                self.showErrorDialog("\(error!)")
+                return
+            }
+            
+            if tokenResponse.success {
+                // DO SOMETHING
+                print("Logged out")
+            } else {
+                // ERROR HANDLING
+                var message = ""
+                for report in tokenResponse.operationReport {
+                    message.append("\(report.field) - \(report.message)")
+                }
+                print(message)
+            }
+
+} catch {
+	print(error)
+}
+```
+
 ## Contribuições
 
 Pull Requests serão muito bem-vindos!

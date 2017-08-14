@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -83,14 +83,44 @@
                                     <segue destination="fA4-cu-Y7D" kind="show" id="j9O-2B-uMF"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFy-ET-Qun">
+                                <rect key="frame" x="136" y="518" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutBtnPressed:" destination="zfu-se-CUx" eventType="touchUpInside" id="ac3-BS-Bqz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZS-BI-4Gt">
+                                <rect key="frame" x="117" y="480" width="86" height="30"/>
+                                <state key="normal" title="Verify Token"/>
+                                <connections>
+                                    <action selector="verifyBtnPressed:" destination="zfu-se-CUx" eventType="touchUpInside" id="LjO-5c-QaQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-JD-ZtC">
+                                <rect key="frame" x="110" y="442" width="100" height="30"/>
+                                <state key="normal" title="Refresh Token"/>
+                                <connections>
+                                    <action selector="refreshBtnPressed:" destination="zfu-se-CUx" eventType="touchUpInside" id="Tar-iq-HsH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="IZS-BI-4Gt" secondAttribute="trailing" constant="101" id="7Hm-t2-hnR"/>
                             <constraint firstItem="J2k-ys-zQU" firstAttribute="top" secondItem="ZNu-nR-m0y" secondAttribute="bottom" id="Btj-wa-1HP"/>
+                            <constraint firstItem="IZS-BI-4Gt" firstAttribute="top" secondItem="bkw-JD-ZtC" secondAttribute="bottom" constant="8" id="CBH-Uz-x8n"/>
+                            <constraint firstItem="IZS-BI-4Gt" firstAttribute="leading" secondItem="4lO-gA-OF8" secondAttribute="leadingMargin" constant="101" id="CP2-JV-gmP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="HFy-ET-Qun" secondAttribute="trailing" constant="120" id="KQX-hD-0O1"/>
+                            <constraint firstItem="bkw-JD-ZtC" firstAttribute="leading" secondItem="4lO-gA-OF8" secondAttribute="leadingMargin" constant="94" id="Kg1-j3-Hdv"/>
+                            <constraint firstItem="HFy-ET-Qun" firstAttribute="leading" secondItem="4lO-gA-OF8" secondAttribute="leadingMargin" constant="120" id="L4z-sB-Vdv"/>
                             <constraint firstItem="A8L-AF-1vt" firstAttribute="leading" secondItem="4lO-gA-OF8" secondAttribute="leadingMargin" constant="108" id="VLk-M3-wrm"/>
                             <constraint firstItem="J2k-ys-zQU" firstAttribute="centerX" secondItem="4lO-gA-OF8" secondAttribute="centerX" id="fRz-1W-bLa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="A8L-AF-1vt" secondAttribute="trailing" constant="107" id="haD-tX-lWJ"/>
                             <constraint firstItem="A8L-AF-1vt" firstAttribute="top" secondItem="J2k-ys-zQU" secondAttribute="bottom" constant="30" id="psR-yk-Nqs"/>
+                            <constraint firstItem="8nW-SB-3bH" firstAttribute="top" secondItem="HFy-ET-Qun" secondAttribute="bottom" constant="20" id="tJS-Oe-AEd"/>
+                            <constraint firstItem="HFy-ET-Qun" firstAttribute="top" secondItem="IZS-BI-4Gt" secondAttribute="bottom" constant="8" id="tUF-eD-JXG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bkw-JD-ZtC" secondAttribute="trailing" constant="94" id="zdf-7O-Gce"/>
                         </constraints>
                     </view>
                 </viewController>
