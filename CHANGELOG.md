@@ -1,3 +1,6 @@
+## [0.4.0] - 2017-08-15
+[Full Changelog](https://github.com/Flip-Payments/connect-sdk-ios/compare/0.3.3...0.4.0)
+
 ## [0.3.3] - 2017-08-14
 [Full Changelog](https://github.com/Flip-Payments/connect-sdk-ios/compare/0.3.2...0.3.3)
 
