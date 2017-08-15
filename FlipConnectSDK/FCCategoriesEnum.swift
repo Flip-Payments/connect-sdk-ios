@@ -11,34 +11,34 @@ import Foundation
 /// Enum with possible categories in the API
 public enum FCCategoriesEnum: Int {
     /// Public Profile
-    case PublicProfile = 0
+    case publicProfile = 0
     
     /// Personal Data
-    case PersonalData
+    case personalData
     
     /// Emails
-    case Emails
+    case emails
     
     /// Phones
-    case Phones
+    case phones
     
     /// Addresses
-    case Addresses
+    case addresses
     
     /// Documents
-    case Documents
+    case documents
     
     /**
      Returns string version of enumerator
     */
     public func toString() -> String {
         switch self {
-        case .PublicProfile: return "Public Profile"
-        case .PersonalData:  return "Personal Data"
-        case .Emails: return "Emails"
-        case .Phones: return "Phones"
-        case .Addresses: return "Addresses"
-        case .Documents: return "Documents"
+        case .publicProfile: return "Public Profile"
+        case .personalData:  return "Personal Data"
+        case .emails: return "Emails"
+        case .phones: return "Phones"
+        case .addresses: return "Addresses"
+        case .documents: return "Documents"
         }
     }
     

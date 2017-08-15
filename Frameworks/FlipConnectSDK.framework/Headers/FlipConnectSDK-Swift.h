@@ -169,6 +169,8 @@ SWIFT_CLASS("_TtC14FlipConnectSDK16TemporaryProfile")
 @interface NSUserDefaults (SWIFT_EXTENSION(FlipConnectSDK))
 /// Token used to make requests to FlipConnect
 @property (nonatomic, readonly, copy) NSString * _Nullable accessToken;
+/// Token used to refresh user session
+@property (nonatomic, readonly, copy) NSString * _Nullable refreshToken;
 /// UserKey is the key of the User
 @property (nonatomic, readonly, copy) NSString * _Nullable userKey;
 /// fingerPrintSessionID is the ID generated for the session of the user
