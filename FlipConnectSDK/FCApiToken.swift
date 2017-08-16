@@ -73,6 +73,7 @@ extension FCApi {
             resp = TokenResponse(json: response)
             guard error == nil else {
                 err = error
+                completion(resp, err)
                 return
             }
             if resp.success {

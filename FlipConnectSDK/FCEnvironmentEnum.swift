@@ -16,6 +16,20 @@ public enum FCEnvironmentEnum: String {
     /// Production Environment
     case production
     
+    init(rawType: String) {
+        switch rawType {
+        case "production":
+            self = .production
+        case "sandbox":
+            self = .sandbox
+        case "staging":
+            ApiUrls.isStaging = true
+            self = .sandbox
+        default:
+            self = .sandbox
+        }
+    }
+    
     /**
      Return Web URL to open login page
     */
@@ -59,6 +73,8 @@ public enum FCEnvironmentEnum: String {
     }
     
     private struct ApiUrls {
+        static var isStaging: Bool = false
+        
         static let connectSandboxWebUrl = "https://signin-sandbox.flipconnect.io/"
         static let connectSandboxApiUrl = "https://auth-sandbox.flipconnect.io/api/"
         static let connectSandboxUserManagementUrl = "https://api-sandbox.flipconnect.io/"
