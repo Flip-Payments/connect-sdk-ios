@@ -59,12 +59,12 @@ public enum FCEnvironmentEnum: String {
     }
     
     private struct ApiUrls {
-        static let connectSandboxWebUrl = "http://flipconnect-signin-develop.herokuapp.com/"
-        static let connectSandboxApiUrl = "http://dlp-qrservices.cloudapp.net:20112/api/"
-        static let connectSandboxUserManagementUrl = "http://dlp-qrservices.cloudapp.net:20115/"
+        static let connectSandboxWebUrl = "https://signin-sandbox.flipconnect.io/"
+        static let connectSandboxApiUrl = "https://auth-sandbox.flipconnect.io/api/"
+        static let connectSandboxUserManagementUrl = "https://api-sandbox.flipconnect.io/"
         
-        static let connectProductionWebUrl = "http://flipconnect-signin-develop.herokuapp.com/"
-        static let connectProductionApiUrl = "http://dlp-qrservices.cloudapp.net:20112/api/"
-        static let connectProductionUserManagementUrl = "http://dlp-qrservices.cloudapp.net:20115/"
+        static let connectProductionWebUrl = "https://signin.flipconnect.io/"
+        static let connectProductionApiUrl = "https://auth.flipconnect.io/api/"
+        static let connectProductionUserManagementUrl = "https://api.flipconnect.io/"
     }
 }
