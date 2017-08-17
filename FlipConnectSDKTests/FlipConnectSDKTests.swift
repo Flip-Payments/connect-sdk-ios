@@ -75,23 +75,23 @@ class FlipConnectSDKTests: XCTestCase {
         }
     }
     
-    func testApiRequest() {
-        let parameters: Parameters = [
-            "grantType": "authorization_code",
-            "authorizationCode": "29bd29a5-b62c-4876-9e5f-572ee9c53ed9",
-            "redirectUri": "https://www.ipiranga.com.br"
-        ]
-        
-        let requestExpectation = expectation(description: "Make successful API Call")
-        
-        FCConfiguration.environment = FCEnvironmentEnum(rawValue: "staging")
-        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
-            XCTAssertTrue(response.count > 0)
-            XCTAssertNil(error)
-            requestExpectation.fulfill()
-        }
-        waitForExpectations(timeout: 60, handler: nil)
-    }
+//    func testApiRequest() {
+//        let parameters: Parameters = [
+//            "grantType": "authorization_code",
+//            "authorizationCode": "29bd29a5-b62c-4876-9e5f-572ee9c53ed9",
+//            "redirectUri": "https://www.ipiranga.com.br"
+//        ]
+//        
+//        let requestExpectation = expectation(description: "Make successful API Call")
+//        
+//        FCConfiguration.environment = FCEnvironmentEnum(rawValue: "staging")
+//        FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
+//            XCTAssertTrue(response.count > 0)
+//            XCTAssertNil(error)
+//            requestExpectation.fulfill()
+//        }
+//        waitForExpectations(timeout: 60, handler: nil)
+//    }
     
     func testNSLocaleExtenstion() {
         let locales = NSLocale.locales()
