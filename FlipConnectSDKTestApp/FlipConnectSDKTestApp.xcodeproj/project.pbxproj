@@ -20,6 +20,7 @@
 		A1B8DE791F143A10005D9D83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */; };
 		A1B8DE7A1F143A10005D9D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE771F143A10005D9D83 /* Main.storyboard */; };
 		A1B8DE7B1F143A10005D9D83 /* AddressTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */; };
+		A1BB79F81F4522DE00F7941C /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BB79F71F4522DE00F7941C /* Configuration.swift */; };
 		A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */; };
 		A1F8C80D1F362092001358BE /* FingerPrint_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C80C1F362092001358BE /* FingerPrint_iOS.framework */; };
 		A1F8C80E1F362092001358BE /* FingerPrint_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A1F8C80C1F362092001358BE /* FingerPrint_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -55,6 +56,7 @@
 		A1B8DE761F143A10005D9D83 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A1B8DE771F143A10005D9D83 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1B8DE781F143A10005D9D83 /* AddressTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddressTableViewCell.xib; sourceTree = "<group>"; };
+		A1BB79F71F4522DE00F7941C /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		A1CD561F1EEEFED400B531ED /* LoginSuccessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginSuccessViewController.swift; sourceTree = "<group>"; };
 		A1F8C80C1F362092001358BE /* FingerPrint_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FingerPrint_iOS.framework; path = ../Frameworks/FingerPrint_iOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,6 +97,7 @@
 				A1B8DE3F1F140FF6005D9D83 /* Views */,
 				A1CD56211EEEFF6700B531ED /* Controllers */,
 				A117AD331EE8BA9B00B74705 /* AppDelegate.swift */,
+				A1BB79F71F4522DE00F7941C /* Configuration.swift */,
 				A117AD3D1EE8BA9B00B74705 /* Assets.xcassets */,
 				A117AD421EE8BA9B00B74705 /* Info.plist */,
 				A117AD3A1EE8BA9B00B74705 /* FlipConnectSDKTestApp.xcdatamodeld */,
@@ -212,6 +215,7 @@
 				A1CD56201EEEFED400B531ED /* LoginSuccessViewController.swift in Sources */,
 				A1223DED1F0FDA6300755669 /* UserViewController.swift in Sources */,
 				A117AD361EE8BA9B00B74705 /* ViewController.swift in Sources */,
+				A1BB79F81F4522DE00F7941C /* Configuration.swift in Sources */,
 				A117AD341EE8BA9B00B74705 /* AppDelegate.swift in Sources */,
 				A1223DE51F06F2CC00755669 /* LoginViewController.swift in Sources */,
 				A1223DEF1F13F49100755669 /* AddressesTableViewController.swift in Sources */,

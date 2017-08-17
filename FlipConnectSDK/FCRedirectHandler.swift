@@ -86,12 +86,12 @@ struct FCRedirectHandler {
         
         // Verify if the state is valid
         let stateValue = items.filter{ $0.name.lowercased() == urlQueryStateKey }.first?.value
-        guard stateValue! == FCRedirectHandler.state else {
+        guard let state = stateValue, state == FCRedirectHandler.state else {
             throw FCErrors.stateIsInvalid
         }
         
         //deeplink://something?operation=authorize&code=f117d5fe-a5ef-40bd-b171-55c8210c1cbd&state=undefined
-        guard let operation = items.first?.value! else {
+        guard let operation = items.first?.value else {
             throw FCErrors.invalidOperation
         }
         

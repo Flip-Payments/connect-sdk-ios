@@ -16,41 +16,45 @@ class ViewController: UIViewController {
     var url: URL? = nil
     var window: UIWindow?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loading.startAnimating()
-        
-        var initialViewController = UIViewController()
+    var initialViewController = UIViewController()
+    
+    func showSuccessController(unlessError: Bool, errorText: String? = nil) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let viewControllerID = unlessError ? "LoginViewController" : "LoginSuccessViewController"
+        
+        initialViewController = storyboard.instantiateViewController(withIdentifier: viewControllerID)
+        
+        DispatchQueue.main.async {
+            self.window?.rootViewController = self.initialViewController
+            self.window?.makeKeyAndVisible()
+            if unlessError, let error = errorText {
+                Configuration.showErrorDialog(error, on: self.initialViewController)
+            }
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         guard let fcLogin = Configuration.fcLogin else {
             print("Something went wrong!")
+            Configuration.showErrorDialog("FCLogin não instanciado", on: self)
             return
-        }
-        
-        func showSuccessController(unlessError: Bool) {
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            
-            let viewControllerID = unlessError ? "LoginViewController" : "LoginSuccessViewController"
-            
-            initialViewController = storyboard.instantiateViewController(withIdentifier: viewControllerID)
-
-            DispatchQueue.main.async {
-                self.window?.rootViewController = initialViewController
-                self.window?.makeKeyAndVisible()
-            }
         }
         
         if let url = self.url {
             fcLogin.handleRedirect(fromURL: url) { tokenResponse, error in
                 if tokenResponse.success {
                     // DO SOMETHING
-                    print(tokenResponse.accessToken!)
-                    print(tokenResponse.userKey!)
-                    print(tokenResponse.refreshToken!)
+                    print("AccessToken: \(tokenResponse.accessToken!)")
+                    print("UserKey: \(tokenResponse.userKey!)")
+                    print("RefreshToken: \(tokenResponse.refreshToken!)")
                 }
                 
-                showSuccessController(unlessError: error != nil || !tokenResponse.success)
+                self.showSuccessController(unlessError: error != nil || !tokenResponse.success,
+                                           errorText: error?.localizedDescription ?? tokenResponse.operationReport.first?.message)
             }
         } else {
             
@@ -59,12 +63,17 @@ class ViewController: UIViewController {
                 print("Account: \(accountKey)")
                 
                 FCApi.requestTokenVerification() { _, error in
-                    showSuccessController(unlessError: error != nil)
+                    self.showSuccessController(unlessError: error != nil, errorText: error?.localizedDescription)
                 }
             } else {
-                showSuccessController(unlessError: true)
+                self.showSuccessController(unlessError: true)
             }
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loading.startAnimating()
     }
 }
 

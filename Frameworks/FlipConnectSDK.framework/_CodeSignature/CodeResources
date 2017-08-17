@@ -14,23 +14,23 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		RMQXP2bcBXul0zAjyDeXA6DPfhs=
+		rx9pIXOvNsJYyc2OOsEXLVj01HY=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftdoc</key>
 		<data>
-		/Sz6e407L0U/77DW2S/qKy2WyK4=
+		2o9PkG03FCZfVvDNjl0qkIjSBh4=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<data>
-		sWjOGLIVbsTVYyN9Ou4Y1+8uJNI=
+		cVXimSRtyTE0aImDQbyLqHq5Mkc=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<data>
-		XkkPZrOoDei9kS4VIi3XzEzh8zo=
+		tVsb+XvmdSntRCKpvqKFh58eCfk=
 		</data>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<data>
-		KmaqAsS4KLrwZ2qCIPQIPnz8INo=
+		tt9734+/qv4F21K6hTlpgDLFNy4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,44 +65,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/Sz6e407L0U/77DW2S/qKy2WyK4=
+			2o9PkG03FCZfVvDNjl0qkIjSBh4=
 			</data>
 			<key>hash2</key>
 			<data>
-			QRvLiaPCpdD2b3Db+fks7mcI/VaIMSSRE2cDw3HxI3w=
+			4yoKe+GlSKnX3gz9gFyN65TJif3hX4a+lYSGxg/PeMs=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			sWjOGLIVbsTVYyN9Ou4Y1+8uJNI=
+			cVXimSRtyTE0aImDQbyLqHq5Mkc=
 			</data>
 			<key>hash2</key>
 			<data>
-			Wljco0euDgZiiZb+BeRdhzvQOcsdROY39kHjeDi50fY=
+			m4NRfwQofXkOXBRCiCR6srsPKVIKMf/21Rwman3MaNU=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftdoc</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XkkPZrOoDei9kS4VIi3XzEzh8zo=
+			tVsb+XvmdSntRCKpvqKFh58eCfk=
 			</data>
 			<key>hash2</key>
 			<data>
-			MyEY/6KLg2Y1ph5Zm8xdhZ9OiGBAunPV5DdgXDzBwUk=
+			3P8CKA6uF0mAi+EW5Pt/u7Kv3KM2jRNwo6qcQWh6oPg=
 			</data>
 		</dict>
 		<key>Modules/FlipConnectSDK.swiftmodule/arm64.swiftmodule</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			KmaqAsS4KLrwZ2qCIPQIPnz8INo=
+			tt9734+/qv4F21K6hTlpgDLFNy4=
 			</data>
 			<key>hash2</key>
 			<data>
-			okjn7VrfTr5vZPEHQwYxtsjvnPmRNhlTCmAAugy+974=
+			LxOa1UaGYdHoyPMccJyBUgclwOWRiHHVylgeTZn7nkA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

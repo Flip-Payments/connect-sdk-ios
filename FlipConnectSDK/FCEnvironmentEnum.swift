@@ -17,10 +17,33 @@ public enum FCEnvironmentEnum: String {
     case production
     
     /**
+     Create `FCEnvironmentEnum` by passing a `String`.
+     Default value is `.sandbox`.
+     
+     - parameters:
+        - rawValue: String that contains corresponding value to the enumerator
+    */
+    public init(rawValue: String) {
+        ApiUrls.isStaging = false
+        switch rawValue.lowercased() {
+        case "production":
+            self = .production
+        case "sandbox":
+            self = .sandbox
+        case "staging":
+            ApiUrls.isStaging = true
+            self = .sandbox
+        default:
+            self = .sandbox
+        }
+    }
+    
+    /**
      Return Web URL to open login page
     */
     internal var webURL: String {
         get {
+            if ApiUrls.isStaging { return ApiUrls.connectStagingWebUrl }
             switch self {
             case .production:
                 return ApiUrls.connectProductionWebUrl
@@ -35,6 +58,7 @@ public enum FCEnvironmentEnum: String {
     */
     internal var apiURL: String {
         get {
+            if ApiUrls.isStaging { return ApiUrls.connectStagingApiUrl }
             switch self {
             case .production:
                 return ApiUrls.connectProductionApiUrl
@@ -49,6 +73,7 @@ public enum FCEnvironmentEnum: String {
      */
     internal var userManagementURL: String {
         get {
+            if ApiUrls.isStaging { return ApiUrls.connectStagingUserManagementUrl }
             switch self {
             case .production:
                 return ApiUrls.connectProductionUserManagementUrl
@@ -59,12 +84,18 @@ public enum FCEnvironmentEnum: String {
     }
     
     private struct ApiUrls {
-        static let connectSandboxWebUrl = "http://flipconnect-signin-develop.herokuapp.com/"
-        static let connectSandboxApiUrl = "http://dlp-qrservices.cloudapp.net:20112/api/"
-        static let connectSandboxUserManagementUrl = "http://dlp-qrservices.cloudapp.net:20115/"
+        static var isStaging: Bool = false
         
-        static let connectProductionWebUrl = "http://flipconnect-signin-develop.herokuapp.com/"
-        static let connectProductionApiUrl = "http://dlp-qrservices.cloudapp.net:20112/api/"
-        static let connectProductionUserManagementUrl = "http://dlp-qrservices.cloudapp.net:20115/"
+        static let connectStagingWebUrl = "http://flipconnect-signin-develop.herokuapp.com/"
+        static let connectStagingApiUrl = "http://dlp-qrservices.cloudapp.net:20112/api/"
+        static let connectStagingUserManagementUrl = "http://dlp-qrservices.cloudapp.net:20115/"
+        
+        static let connectSandboxWebUrl = "https://signin-sandbox.flipconnect.io/"
+        static let connectSandboxApiUrl = "https://auth-sandbox.flipconnect.io/api/"
+        static let connectSandboxUserManagementUrl = "https://api-sandbox.flipconnect.io/"
+        
+        static let connectProductionWebUrl = "https://signin.flipconnect.io/"
+        static let connectProductionApiUrl = "https://auth.flipconnect.io/api/"
+        static let connectProductionUserManagementUrl = "https://api.flipconnect.io/"
     }
 }

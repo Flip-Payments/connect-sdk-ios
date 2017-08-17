@@ -15,26 +15,23 @@ class LoginSuccessViewController: UIViewController {
     
     var window: UIWindow?
     
+    @IBOutlet weak var environmentSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        switch Configuration.environment {
+        case .production:
+            self.environmentSwitch.setOn(true, animated: false)
+        case .sandbox:
+            self.environmentSwitch.setOn(false, animated: false)
+        }
         
         guard let fcLogin = Configuration.fcLogin else {
             return
         }
         
         self.fcLogin = fcLogin
-    }
-    
-    func showErrorDialog(_ error: String) {
-        let alertController = UIAlertController(title: "Erro", message: "\(error)", preferredStyle: UIAlertControllerStyle.alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
-            (result : UIAlertAction) -> Void in
-            print("OK")
-        }
-        
-        alertController.addAction(okAction)
-        self.present(alertController, animated: true, completion: nil)
     }
 
     /*
@@ -49,7 +46,7 @@ class LoginSuccessViewController: UIViewController {
     @IBAction func refreshBtnPressed(_ sender: UIButton) {
         FCApi.requestTokenRefresh() { tokenResponse, error in
             guard error == nil else {
-                self.showErrorDialog("\(error!)")
+                Configuration.showErrorDialog("\(error!)", on: self)
                 return
             }
             
@@ -65,14 +62,15 @@ class LoginSuccessViewController: UIViewController {
                 for report in tokenResponse.operationReport {
                     message.append("\(report.field) - \(report.message)")
                 }
-                self.showErrorDialog(message)
+                Configuration.showErrorDialog(message, on: self)
             }
         }
     }
-    @IBAction func logoutBtnPressed(_ sender: UIButton) {
+    
+    private func logout() {
         FCApi.requestTokenRevocation() { tokenResponse, error in
             guard error == nil else {
-                self.showErrorDialog("\(error!)")
+                Configuration.showErrorDialog("\(error!)", on: self)
                 return
             }
             
@@ -88,7 +86,7 @@ class LoginSuccessViewController: UIViewController {
                 for report in tokenResponse.operationReport {
                     message.append("\(report.field) - \(report.message)")
                 }
-                self.showErrorDialog(message)
+                Configuration.showErrorDialog(message, on: self)
             }
         }
         
@@ -106,11 +104,32 @@ class LoginSuccessViewController: UIViewController {
             self.window?.makeKeyAndVisible()
         }
     }
+    
+    @IBAction func logoutBtnPressed(_ sender: UIButton) {
+        self.logout()
+    }
+    @IBAction func switchValueChanged(_ sender: UISwitch) {
+        Configuration.environment = sender.isOn ? FCEnvironmentEnum.production : FCEnvironmentEnum.sandbox
+        self.logout()
+    }
 
+    @IBAction func switchStagingValueChanged(_ sender: UISwitch) {
+        switch sender.isOn {
+        case true:
+            Configuration.environment = FCEnvironmentEnum(rawValue: "staging")
+        case false && Configuration.environment == .production:
+            Configuration.environment = FCEnvironmentEnum(rawValue: FCEnvironmentEnum.production.rawValue)
+        case false && Configuration.environment == .sandbox:
+            Configuration.environment = FCEnvironmentEnum(rawValue: FCEnvironmentEnum.sandbox.rawValue)
+        default:
+            break
+        }
+        self.logout()
+    }
     @IBAction func verifyBtnPressed(_ sender: UIButton) {
         FCApi.requestTokenVerification() { tokenResponse, error in
             guard error == nil else {
-                self.showErrorDialog("\(error!)")
+                Configuration.showErrorDialog("\(error!)", on: self)
                 return
             }
             
@@ -125,7 +144,7 @@ class LoginSuccessViewController: UIViewController {
                 for report in tokenResponse.operationReport {
                     message.append("\(report.field) - \(report.message)")
                 }
-                self.showErrorDialog(message)
+                Configuration.showErrorDialog(message, on: self)
             }
         }
     }
