@@ -84,6 +84,7 @@ class FlipConnectSDKTests: XCTestCase {
         
         let requestExpectation = expectation(description: "Make successful API Call")
         
+        FCConfiguration.environment = FCEnvironmentEnum(rawValue: "staging")
         FCApi.request(toURL: URL(string: "\(FCConfiguration.environment.apiURL)oauth/token")!, withVerb: .post, withParameters: parameters) { response, error in
             XCTAssertTrue(response.count > 0)
             XCTAssertNil(error)

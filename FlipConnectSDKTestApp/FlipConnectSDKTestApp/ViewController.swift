@@ -48,9 +48,9 @@ class ViewController: UIViewController {
             fcLogin.handleRedirect(fromURL: url) { tokenResponse, error in
                 if tokenResponse.success {
                     // DO SOMETHING
-                    print(tokenResponse.accessToken!)
-                    print(tokenResponse.userKey!)
-                    print(tokenResponse.refreshToken!)
+                    print("AccessToken: \(tokenResponse.accessToken!)")
+                    print("UserKey: \(tokenResponse.userKey!)")
+                    print("RefreshToken: \(tokenResponse.refreshToken!)")
                 }
                 
                 self.showSuccessController(unlessError: error != nil || !tokenResponse.success,

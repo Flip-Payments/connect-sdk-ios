@@ -113,6 +113,19 @@ class LoginSuccessViewController: UIViewController {
         self.logout()
     }
 
+    @IBAction func switchStagingValueChanged(_ sender: UISwitch) {
+        switch sender.isOn {
+        case true:
+            Configuration.environment = FCEnvironmentEnum(rawValue: "staging")
+        case false && Configuration.environment == .production:
+            Configuration.environment = FCEnvironmentEnum(rawValue: FCEnvironmentEnum.production.rawValue)
+        case false && Configuration.environment == .sandbox:
+            Configuration.environment = FCEnvironmentEnum(rawValue: FCEnvironmentEnum.sandbox.rawValue)
+        default:
+            break
+        }
+        self.logout()
+    }
     @IBAction func verifyBtnPressed(_ sender: UIButton) {
         FCApi.requestTokenVerification() { tokenResponse, error in
             guard error == nil else {
